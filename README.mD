@@ -7,7 +7,8 @@ ___JOSE RAMOS___
 ver si podemos ingresar foto...
 ```
 ```
-INFORMACION
+Mi nombre es Ramos Soto Jose Ezequiel, tengo 23 años necido en Tierra Del Fuego e Islas Del Atlantico sur en la ciudad de Rio Grande, me mude a la provincia de Neuquen en febrero de 2015 en busca de una mejor oportunidad academica , me recibi en 2020 con el titulo de tecnico mecanico de la epet n°10 .
+Mis intenciones al entrar en el curso de programacion es un futuro laboral y tener una base de inciar una carrera que me fascina , ingrese sin tener una idea de lo que era programacion pero ahora mas que nunca quiero terminar de aprender esta profesion y dedicarme a ella , y si es posible aprender los distintos caminos que te puede llevar esta profesion . 
 ```
 ___THAIEL HERNANDEZ___
 ```
