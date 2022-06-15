@@ -21,7 +21,8 @@ INFORMACION
 ver si podemos ingresar foto...
 ```
 ```
-INFORMACION
+Soy de cutral co Neuquen Argentina, un estudiante de 19 anios en licenciatura en ciencias de la computacion.
+Quede en el curso de programacion wed fullStack que ofrece Formar Argentina. Mi interes con este curso es agrandar mis horizontes de conocimientos para en algun momento en el futuro poder insertarme en el mercado y asi poder trabajar, vivir de lo que quiero. Me interesa mucho mas el back-end
 ```
 ***JUAN EDUARDO LICCIARDI***
 ```
