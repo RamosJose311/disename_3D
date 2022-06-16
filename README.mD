@@ -22,7 +22,8 @@ INFORMACION
 ver si podemos ingresar foto...
 ```
 ```
-INFORMACION
+Soy de cutral co Neuquen Argentina, un estudiante de 19 anios en licenciatura en ciencias de la computacion.
+Quede en el curso de programacion wed fullStack que ofrece Formar Argentina. Mi interes con este curso es agrandar mis horizontes de conocimientos para en algun momento en el futuro poder insertarme en el mercado y asi poder trabajar, vivir de lo que quiero. Me interesa mucho mas el back-end
 ```
 ***JUAN EDUARDO LICCIARDI***
 ```
@@ -33,4 +34,15 @@ Nacido en la ciudad de General Roca, Provincia de Rio Negro, el 02 de octubre de
 Recide en la comarca petrolera de Cutral Co - Plaza Huincul de la provincia del Neuquén desde 1997, su familia se conforma de su esposa y dos hijos adolescentes.- 
 Actualmente es empleado del Poder Judicial de la provincia de Neuquén desempeñandose en el escalafon Ordenanza.-
 Se postulo para el curso que brida el grupo Formar Argentina, en el cual quedo seleccionado y se encuentra realizando curso de Programador Web Full Stack, capacitación con la cual pretende ingresar al mundo laboral de la programación, es de su interes el desarrollo en Back end.-  
+```
+### **descripcion**
+```
+impresiones de piezas personalizadas acorde a la nececidad del cliente,trabajamos con distintos tipos de materiales entre los mas usados:
+```
+* PLA
+* ABS
+* TPE
+* impresiones con aluminio
+```
+ creamos piezas de distintos tamaños y funcionalidades , tanto mecanicas como estaticas , tenemos piezas en stock , los pedidos se hacen por mensaje directo con personal capacitado  , es de venta a todo el publico .
 ```
