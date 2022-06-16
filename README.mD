@@ -14,7 +14,9 @@ ___THAIEL HERNANDEZ___
 ver si podemos ingresar foto...
 ```
 ```
-INFORMACION
+Resido en la ciudad de Cutral-Co Neuquen Argentina; en la cual me forme como Maestro Mayor de Obra.
+Actualmente me encuentro cursando "programacion wed Full Stack" curso becado que ofrece Formar Argentina.
+mi objetivo es ampliar mis conocimientos para insertarme en el mundo laboral de la programacion.
 ```
 ***GEREMIAS ZALOKAR***
 ```
