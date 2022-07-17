@@ -40,13 +40,7 @@ una carrera que me fascina , ingrese sin tener una idea de lo que era programaci
 nunca quiero terminar de aprender esta profesion y dedicarme a ella , y si es posible aprender los 
 distintos caminos que te puede llevar esta profesion . 
 ```
-___THAIEL HERNANDEZ___
 
-```
-Resido en la ciudad de Cutral-Co Neuquen Argentina; en la cual me forme como Maestro Mayor de Obra.
-Actualmente me encuentro cursando "programacion wed Full Stack" curso becado que ofrece Formar Argentina.
-mi objetivo es ampliar mis conocimientos para insertarme en el mundo laboral de la programacion.
-```
 ***GEREMIAS ZALOKAR***
 
 ```
