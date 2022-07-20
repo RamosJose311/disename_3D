@@ -62,6 +62,16 @@ Se postulo para el curso que brida el grupo Formar Argentina, en el cual quedo s
 realizando curso de Programador Web Full Stack, capacitación con la cual pretende ingresar al mundo laboral de la programación, es de su interes el desarrollo en Back end.-  
 ```
 
+***Santiago Rodriguez***
+
+```
+Me presento, mi nombre es: Santiago Sebastian Rodriguez, nacido, criado y viviendo en Cutral-co Neuquen Argentina, tengo actualmente 21 años.
+Me recibi en el 2018 con el titulo de perito mercantil en en Centro Provincial de enseñansas medias Nro 6 (C.P.E.M Nro 6).
+Luego comence mis estudios terciarios el la UTN hacindo enfasis en la  carrera de Ingeniería Electronica donde estuve 2 años pero por temas personales no pude seguir.
+Este año me entere del curso de programacion web full stack que ofrece la fundacion Formar, me postule y quede seleccionado, el mundo de la tecnologia siempre me a gustado mucho y siento que es que una gran oportunidad para progresar y encontrar un trabajo que me apacione.
+```
+
+
 ## **PAGINAS DE REFERENCIA**
 ---
 ___PROPUESTAS POR EL GRUPO DE TRABAJO___
@@ -118,3 +128,5 @@ integrantes del grupo de trabajo.
 * A diferencia de la pagina anterior esta cuenta con colores mas vivos
 * Se puede considerar una pagina informativa y explicativa del producto que ofrece
   y de la empresa.
+
+  
