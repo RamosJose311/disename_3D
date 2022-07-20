@@ -1,0 +1,40 @@
+.footer{
+    background-color: brown;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sociales{
+    border: 1px solid forestgreen;
+    width: 32%;
+    
+}
+.footer--sociales{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 13px;
+
+}
+.contacto{
+    border: 1px solid cyan;
+    width: 32%;
+
+}
+.servicios{
+    border: 1px solid yellow;
+    width: 32%;
+    
+}
+.servicios ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.derechos{
+    border: 1px solid forestgreen;
+    width: 100%;
+
+}
