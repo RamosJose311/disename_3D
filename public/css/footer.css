@@ -1,13 +1,17 @@
 .footer{
-    background-color: brown;
+    background-color: var(--colorCelest);
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.footer h4{
+    font-size: 21px;
+}
 .sociales{
-    border: 1px solid forestgreen;
     width: 32%;
+    text-align: center;
+    
     
 }
 .footer--sociales{
@@ -15,16 +19,36 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 13px;
+    
 
 }
+.footer--sociales a{
+    color: white;
+    font-size: 18px;
+    
+}
 .contacto{
-    border: 1px solid cyan;
-    width: 32%;
+    width: 65%;
+    text-align: center;
+}
+.contacto a{
+    color: white;
+}
+.contacto--item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 5px;
+
+    
 
 }
 .servicios{
-    border: 1px solid yellow;
+    text-align: center;
     width: 32%;
+    display: none;
+    
     
 }
 .servicios ul{
@@ -36,5 +60,8 @@
 .derechos{
     border: 1px solid forestgreen;
     width: 100%;
+    text-align: center;
+    background-color: var(--colorLetra);
+    color: white;
 
 }

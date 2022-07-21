@@ -1,6 +1,27 @@
 .header{
-    background-color: aqua;
+    background-color: var(--colorCelest);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header--nav{
+    padding: 15px 15px;
+}
+.header--nav a{
+    margin-right: 20px;
+    font-size: 15px;
+}
+.carrito{
+    font-size: 25px;
+}
+.header ul{
+    display: none;
 }
 .header--logo img{
     width: 100px;
+}
+.header--nav button{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
 }
