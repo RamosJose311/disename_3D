@@ -1,5 +1,5 @@
 .footer{
-    background-color: var(--colorCelest);
+    background-color: var(--colorAzulOscuro);
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -11,6 +11,7 @@
 .sociales{
     width: 32%;
     text-align: center;
+    font-family: var(--letraGaramond);
     
     
 }
@@ -20,11 +21,13 @@
     justify-content: center;
     gap: 13px;
     
+    
 
 }
 .footer--sociales a{
     color: white;
     font-size: 18px;
+    
     
 }
 .contacto{
@@ -58,10 +61,12 @@
     
 }
 .derechos{
-    border: 1px solid forestgreen;
     width: 100%;
     text-align: center;
-    background-color: var(--colorLetra);
+    background-color: var(--colorGrisOscuro);
     color: white;
+    font-family: var(--letraGaramond);
+    text-transform: uppercase;
+    font-size: 7px;
 
 }
