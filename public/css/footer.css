@@ -1,3 +1,6 @@
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
 .footer{
     background-color: var(--colorAzulOscuro);
     display: flex;
@@ -5,68 +8,109 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.footer h4{
-    font-size: 21px;
-}
+
 .sociales{
     width: 32%;
     text-align: center;
     font-family: var(--letraGaramond);
-    
-    
 }
-.footer--sociales{
+
+.footer h4{
+    font-size: 21px;
+    margin: 5px;
+    color: var(--colorCeleste);
+}
+
+.footer_sociales--icon{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 13px;
-    
-    
-
 }
-.footer--sociales a{
+.footer_sociales--icon a{
     color: white;
     font-size: 18px;
-    
-    
 }
+
 .contacto{
     width: 65%;
     text-align: center;
 }
-.contacto a{
-    color: white;
-}
+
 .contacto--item{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 7px;
     margin-bottom: 5px;
-
-    
-
 }
+
+.contacto--item a{
+    color: white;
+}
+
 .servicios{
-    text-align: center;
-    width: 32%;
     display: none;
-    
-    
 }
-.servicios ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
-}
+
 .derechos{
     width: 100%;
     text-align: center;
     background-color: var(--colorGrisOscuro);
     color: white;
     font-family: var(--letraGaramond);
-    text-transform: uppercase;
-    font-size: 7px;
-
+    font-size: 8px;
 }
+
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+
+    .footer{
+        justify-content: space-around;
+    }
+
+    .sociales{
+        width: 30%;
+    }
+    
+    .contacto{
+        width: 30%;
+    }
+   
+    .servicios{
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .servicios_menu{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .servicios_menu li a{
+        color: var(--colorBlanco);
+    }
+    
+}
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+
+@media(min-width: 1024px){
+
+
+    
+}
+
+
+
+
+
+
+
+
+

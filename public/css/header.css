@@ -1,28 +1,174 @@
-.header{
-    background-color: var(--colorCelest);
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
+.header {
+    background-color: var(--colorBlanco);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url(/img/Background_img_T.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.header--nav{
-    padding: 15px 15px;
+
+.header--logo {
+    width: 38%;
+    padding: 10% 0 3%;
 }
-.header--nav a{
-    margin-right: 20px;
-    font-size: 15px;
+
+.header--logo img {
+    width: 54%;
+    position: relative;
+    left: 33%;
 }
-.carrito{
-    font-size: 25px;
+
+.header_buscar_burger {
+    width: 60%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
 }
-.header ul{
+
+.header_buscar_form--search {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    width: 81%;
+    margin-top: 33%;
+}
+
+.header_buscar_form--search input {
+    width: 80%;
+}
+
+.header_burger {
+    width: 18%;
+    margin-top: 0%;
+    margin-left: 28%;
+}
+
+.header_nav {
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header_nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header_nav nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav nav ul li {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1px;
+}
+
+.header_nav nav ul li a {
+    font-size: 12px;
+}
+
+.header_nav_in{
     display: none;
 }
-.header--logo img{
-    width: 100px;
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+
+    .header_buscar_form--search {
+        margin-top: 25%;
+    }
+    
+    .header_burger {
+        display: none;    
+    }
+        
+    .header_nav_in {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 55%;
+        position: absolute;
+        left: 34%;
+        bottom: 53%;
+
+    }
+
+    .header_nav_in nav {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header_nav_in nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header_nav_in nav ul li {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .header_nav_in nav ul li a {
+        font-size: 16px;
+        text-decoration: none;
+    }
 }
-.header--nav button{
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+
+@media(min-width: 1024px){
+
+    .header_buscar_form--search {
+        width: 90%;
+        margin-top: 27%;
+    }
+
+    .header_buscar_form--search input {
+            width: 80%;
+            font-size: 18px;
+    }
+        
+    .header_nav_in nav ul li a {
+        font-size: 20px;
+    }
+
 }
+
+
 
