@@ -152,7 +152,16 @@
 
 /* ======================= MEDIA QUERY || DESKTOP =======================*/
 
-@media(min-width: 1024px){
+@media (min-width: 1024px){
+
+    body{
+        max-width: 1024px;
+        margin: 0px auto;
+    }
+
+    .header{
+        position: relative;
+    }
 
     .header_buscar_form--search {
         width: 90%;
@@ -164,6 +173,15 @@
             font-size: 18px;
     }
         
+    .header_nav_in {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: absolute;
+        top: 86%;
+    }
+
     .header_nav_in nav ul li a {
         font-size: 20px;
     }
