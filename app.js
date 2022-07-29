@@ -9,3 +9,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'home.html' )));
 
 app.listen(serv, () => console.log('Server runing in http://localhost:' + serv));
+
+
+
+app.get('/inicio', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'inicio.html' )));
