@@ -11,7 +11,6 @@
     padding-top: 10px;
     background-color: var(--colorCeleste);
     gap: 5px 0;
-
 }
 
 .cart_return{
@@ -32,8 +31,6 @@
     padding-top: 10px;
     background-color: var(--colorBlanco);
     border: 1px solid var(--colorAzulOscuro);
-
-
 }
 
 .cart_product-global{
@@ -98,9 +95,7 @@
     justify-content: center;
     padding-top: 10px;
     background-color: var(--colorCeleste);
-
 }
-
 
 .cart_article-resumenpedido{
     width: 90%;
@@ -121,8 +116,6 @@
     padding: 0;
     margin: 0;
     text-align: center;
-
-
 }
 
 .cart_article-resumenpedido hr{
@@ -138,7 +131,6 @@
     margin: 0;
     padding-top: 10px;
 }
-
 
 .resumen_h2 h2{
     width: 50%;
@@ -174,7 +166,53 @@
 /* ======================= MEDIA QUERY || TABLET =======================*/
 @media (min-width:768px) {
 
+    .cart_main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
+
+    .cart_main-contener{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .cart_section-product{
+        width: 65%;
+    }
+
+    .cart_article-muestra{
+        justify-content: space-around;
+    }
+
+    .cart_section-venta{
+        margin: 0 auto;
+        width: 35%;
+    }
+
+
+    .cart_product-global{
+        width: 60%;
+    }
+
+    .cart_product-cant{
+        width: 20%;
+        order: 0;
+
+    }
+    
+    .cart_product-precio{
+        width: 60%;
+        order: 1;
+    }
+
+    .cart_product_button{
+        width: 35%;
+        order: 2;
+    }
 
 }
 
