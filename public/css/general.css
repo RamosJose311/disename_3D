@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+
+}
+:root{
+    /* Colores */
+    --colorLila :#EB7CE2;
+    --colorCreema: #EBD09D;
+    --colorVioletaClaro: #A587EB;
+    --colorVerde: #93EB6E;
+    --colorCeleste: #7AAAEB;
+    --colorLetra:#2A1D52;
+    --colorVerdeOscuro: #025454;
+    /* nuevos */
+    --colorAzulOscuro: #003B74;
+    --ColorAzulIntermedio: #008BED;
+    --colorAzulClaro: #04A5D3;
+    --colorCeleste: #97E7FE;
+    --colorGrisOscuro: #323333;
+    --colorBlanco: #ffffff;
+
+    /* Tipografia */
+    --letraGaramond: 'EB Garamond';
+
+
+
+}
+
+
+
