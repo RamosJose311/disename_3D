@@ -1,0 +1,38 @@
+
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
+
+
+
+
+/* FOOTER   */
+.cart_footer{
+    display: none;
+}
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+
+
+    
+}
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+
+@media (min-width: 1024px){
+
+    body{
+        max-width: 1024px;
+        margin: 0px auto;
+    }
+
+    
+    
+}
+
+
+
+
+
+
