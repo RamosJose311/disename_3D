@@ -12,3 +12,18 @@ app.get('/productCart.html', (req, res) => res.sendFile(path.resolve(__dirname ,
 
 
 app.listen(serv, () => console.log('Server runing in http://localhost:' + serv));
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get('/detalle', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'detalle.html' )));
+
