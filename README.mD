@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ## ***PROYECTO INTEGRADOR - GRUPO 01 - COMISION 15***
 ---
 # *TITULO DEL PROYECTO* ***DISEÑAME 3D***
@@ -144,4 +142,3 @@ integrantes del grupo de trabajo.
   y de la empresa.
 
   
->>>>>>> 3602cbc04cb863dec1d258c6aebd0ddd95296ee5
