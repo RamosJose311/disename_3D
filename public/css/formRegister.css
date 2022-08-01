@@ -1,5 +1,5 @@
 
-.footer{
+.register_footer{
     display: none;
 }
 
@@ -27,6 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .register_section-header h1 {
@@ -47,8 +48,6 @@
     justify-content: space-around;
     width: 100%;
 }
-
-
 
 .reg_sec_main_opt-reg{
     width: 50%;

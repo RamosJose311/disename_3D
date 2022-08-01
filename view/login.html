@@ -12,7 +12,7 @@
 
 <!-- =================== BODY || MAQUETADO DEL ARCHIVO HTML (Header, Main, Footer) =================== -->
 
-<body>
+<body class="login_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <header class="header">
         <div class="header--logo">
@@ -31,10 +31,10 @@
             <nav>
                 <ul>
                     <li><a href="">Nosotros <i class="fa-solid fa-people-group"></i></a></li>
-                    <li><a href="">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
-                    <li><a href="">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+                    <li><a href="detalle.html">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
+                    <li><a href="register.html">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
                     <li><a href="productCart.html">Carrito  <i class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
+               </ul>
             </nav>
         </div>
     </header>
@@ -52,14 +52,47 @@
     </div>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main>
-        <div class="menu">
-
+    <main class="login_main" >
+        <div class="login_return">
+            <a href="/">Inicio</a>
+            <span>/Ingresar</span>
         </div>
+        <section class="login_section">
+            <header class="login_section-header" >
+                <h1>ingresar</h1>
+            </header>
+            <main class="login_section-main">
+                <div class="login_section_main-option">
+                    <div class="log_sec_main_opt-reg">
+                        <a href="register.html">Registrarse</a>
+                    </div>
+                    <div class="log_sec_main_opt-log">
+                        <a href="login.html">Iniciar Sesión</a>
+                    </div>
+                </div>
+                <form action="" class="login_section_main-form">
+                    <div class="log_sec_main_form-container">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id= "email" >
+                    </div>
+                    <div class="log_sec_main_form-container">
+                        <label for="password">Clave</label>
+                        <input type="password" id="password" >
+                    </div>
+                    <div class="log_sec_main_form-container">
+                        <button type="submit">Iniciar Sesión</button>
+                    </div>
+                    <div class="login_section_main-correo">
+                        <P>o iniciar sesión con</P>
+                        <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
+                    </div>
+                </form>
+            </main>
+        </section>
     </main>
 
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
-    <footer class="footer">
+    <footer class="login_footer">
         <div class="sociales">
             <h4>Sociales</h4>
             <div class="footer_sociales--icon">

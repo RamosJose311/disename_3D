@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'inicio.html' )));
 app.get('/productCart.html', (req, res) => res.sendFile(path.resolve(__dirname ,'view','productCart.html' )));
-app.get('/detalle,html', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'detalle.html' )));
+app.get('/detalle.html', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'detalle.html' )));
 app.get('/login.html', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'login.html' )));
 app.get('/register.html', (req, res) => res.sendFile(path.resolve(__dirname , 'view', 'register.html' )));
 
