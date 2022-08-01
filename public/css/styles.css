@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 @import './general.css';
-@import './home.css';
 @import './header.css';
 @import './footer.css';
 @import './inicio.css';
+@import './detalle.css';
+@import './productCart.css';
+@import './formLogin.css';
+@import './formRegister.css';

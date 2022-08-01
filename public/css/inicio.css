@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+<<<<<<< HEAD
     background-color:blue;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -40,9 +41,119 @@
 
 .menu--bottom img{
     width: 100%;
+=======
+    flex-direction:column;
+    flex-wrap:wrap;
+    background-color:blue;
+    
+}
+
+.caja_bottom{
+    display : flex;
+    flex-wrap:wrap ;
+    padding: 10px;
+    
+}
+.caja_bottom a{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    text-decoration:none;
+}
+.caja_bottom p{
+    margin: 0;
+    margin-top: 5px;
+    color:black;
+    font-family:var(--letraGaramond);
+    text-decoration:none;
+    font-weight: 900;
+}
+.caja-bottom2 {
+    display:flex;
+    flex-wrap: wrap;
+   
+    flex-direction: row;
+justify-content:center;
+}
+.caja-bottom2 a{
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-decoration:none;
+}
+.caja-bottom2 p{
+    margin:0;
+    margin-top: 5px;
+    color:black;
+    font-family:var(--letraGaramond);
+    text-decoration:none;
+    font-weight: 900;
+    
+}
+    .menu--bottom{
+    
+    display:flex;
+    
+   background-color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+   
+}
+
+.menu--bottom img{
+    width:50%;
+    border-radius: 50%;
+    border: 1px solid black;
+    justify-self: center;
+>>>>>>> develop
 }
 
 .descripcion{
+<<<<<<< HEAD
     width: 40%;
     background-color: rgb(139, 11, 101);
 }
+=======
+    width: 100%;
+    text-align:center;
+    background-color: white;
+    font-family:var(--letraGaramond)
+}
+
+.description p{
+    text-align: center;
+
+}
+
+@media(min-width:768px){
+ .menu--bottom{
+    justify-content: center;
+    padding-top: 30px;
+ }
+    .caja_bottom{
+        justify-content: center;
+        padding:0;
+        align-content: center;
+    }
+    .caja_bottom a{
+        width: 100%;
+    }
+ .caja-bottom2{
+    align-content:center ;
+    justify-content: space-around;
+ }
+    .caja-bottom2 a{
+    width: 50%;
+    }
+}
+
+@media(min-width:1024px){
+    
+}
+>>>>>>> develop

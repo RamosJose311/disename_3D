@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISENAME3D || PARTE</title>
+    <title>DISENAME3D || Registro</title>
     <script src="https://kit.fontawesome.com/965e5e405e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -31,9 +31,9 @@
             <nav>
                 <ul>
                     <li><a href="">Nosotros <i class="fa-solid fa-people-group"></i></a></li>
-                    <li><a href="">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
-                    <li><a href="">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-                    <li><a href="">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="detalle.html">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
+                    <li><a href="register.html">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+                    <li><a href="productCart.html">Carrito  <i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -45,21 +45,69 @@
             <ul>
                 <li><a href="">Nosotros <i class="fa-solid fa-people-group"></i></a></li>
                 <li><a href="">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
-                <li><a href="">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-                <li><a href="">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="register.html">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+                <li><a href="productCart.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </nav>
     </div>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main>
-        <div class="menu">
-
+    <main class="register_main" >
+        <div class="register_return">
+            <a href="/">Inicio</a>
+            <span>/Registro</span>
         </div>
+        <section class="register_section">
+            <header class="register_section-header" >
+                <h1>registrate</h1>
+            </header>
+            <main class="register_section-main">
+                <div class="register_section_main-option">
+                    <div class="reg_sec_main_opt-reg">
+                        <a href="register.html">Registrarse</a>
+                    </div>
+                    <div class="reg_sec_main_opt-log">
+                        <a href="login.html">Iniciar Sesión</a>
+                    </div>
+                </div>
+                <div class="register_section_main-correo">
+                    <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
+                    <P>registrate con el correo electrónico</P>
+                </div>
+                <form action="" class="register_section_main-form">
+                    <div class="reg_sec_main_form-container">
+                        <input type="text" placeholder="Nombre">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="text" placeholder="Apellido">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="email" placeholder="Ingresa e-mail">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="password" placeholder="Ingresa contraseña">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="password" placeholder="Confirmar Contraseña">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <button type="submit">Iniciar Sesión</button>
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <span>Al hacer clic en Iniciar Sesión acepta nuestra</span>
+                        <a href="">Declaración de privacidad</a>
+                        <span>y</span>
+                        <a href="">Términos y Condiciones</a>
+                    </div>
+                </form>
+            </main>
+        </section>
+        
+        
     </main>
 
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
-    <footer class="footer">
+    <footer class="register_footer">
         <div class="sociales">
             <h4>Sociales</h4>
             <div class="footer_sociales--icon">
