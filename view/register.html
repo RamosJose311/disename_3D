@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- ======================== HEAD || CONFIGURACION ARCHIVO HTML ======================== -->
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISENAME3D || DETALLE</title>
+    <title>DISENAME3D || Registro</title>
     <script src="https://kit.fontawesome.com/965e5e405e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -34,7 +33,7 @@
                     <li><a href="">Nosotros <i class="fa-solid fa-people-group"></i></a></li>
                     <li><a href="">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
                     <li><a href="">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-                    <li><a href="">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="productCart.html">Carrito  <i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -46,64 +45,65 @@
             <ul>
                 <li><a href="">Nosotros <i class="fa-solid fa-people-group"></i></a></li>
                 <li><a href="">Vender modelo 3D <i class="fa-brands fa-connectdevelop"></i></a></li>
-                <li><a href="">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-                <li><a href="">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="register.html">Registro <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+                <li><a href="productCart.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </nav>
     </div>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main>
-        <section class="detalle__menu--section--producto">
-            <article class="detalle__menu--article--producto">
-                <div class="detalle__menu--image">
-                    <img src="/img/groott-redes-v-1080x810-1-1024x768.png" alt="">
-                </div>
-                <div class="detalle__menu--caja1">
-                    <h3 class="detalle__menu--titulo">Precio:</h3>
-                <div class="detalle__menu--button">
-                    <!-- <button class="detalle__menu--button1"><a href="">añadir al carrito</a></button> -->
-                    <!-- <button class="detalle__menu--button2"><a href="">comprar</a></button> -->
-                    <a class="detalle__menu--button1" href="productCart.html">añadir al carrito</a>
-                    <a class="detalle__menu--button2" href="">comprar</a>
-                </div>
-                <article class="detalle__menu--article--descripcion">
-                    <h4 class="detalle__menu--titulo">*Descripcion</h4>
-                    <div class="detalle__menu--p">
-                        <p>altura:</p>
-                        <p>material:</p>
-                        <p>tiempo:</p>
+    <main class="register_main" >
+        <div class="register_return">
+            <a href="/">Inicio</a>
+            <span>/Registro</span>
+        </div>
+        <section class="register_section">
+            <header class="register_section-header" >
+                <h1>registrate</h1>
+            </header>
+            <main class="register_section-main">
+                <div class="register_section_main-option">
+                    <div class="reg_sec_main_opt-reg">
+                        <a href="register.html">Registrarse</a>
                     </div>
-                    <p class="detalle__menu--descripcion--general">Descripcion general:</p>
-                        <p class="detalle__menu--parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, eveniet, eius minima quam deleniti ut magnam qui ducimus voluptates harum sit, maxime debitis? Mollitia aperiam facilis fugit earum labore. Officiis!</p>
-                </article>
+                    <div class="reg_sec_main_opt-log">
+                        <a href="login.html">Iniciar Sesión</a>
+                    </div>
                 </div>
-                
-            </article>
-            
+                <div class="register_section_main-correo">
+                    <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
+                    <P>registrate con el correo electrónico</P>
+                </div>
+                <form action="" class="register_section_main-form">
+                    <div class="reg_sec_main_form-container">
+                        <input type="text" placeholder="Nombre">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="text" placeholder="Apellido">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="email" placeholder="Ingresa e-mail">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="password" placeholder="Ingresa contraseña">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <input type="password" placeholder="Confirmar Contraseña">
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <button type="submit">Iniciar Sesión</button>
+                    </div>
+                    <div class="reg_sec_main_form-container">
+                        <span>Al hacer clic en Iniciar Sesión acepta nuestra</span>
+                        <a href="">Declaración de privacidad</a>
+                        <span>y</span>
+                        <a href="">Términos y Condiciones</a>
+                    </div>
+                </form>
+            </main>
         </section>
-        <h3 class="detalle__menu--tituo--comentario">*comentarios*</h3>
-        <section class="detalle__menu--section--comentarios">
-            <div class="detalle__menu--comentario detalle--comentario1">
-                <h6 >perfil del usuario</h6>
-                <p class="detalle__menu--lorem" >Lorem ipsum dolor sit amet. <a href="">ver más</a></p>
-            </div>
-            <div class="detalle__menu--comentario detalle--comentario2">
-                <h6>perfil del usuario</h6>
-                <p class="detalle__menu--lorem">Lorem ipsum dolor sit amet consectetur. <a href="">ver más</a></p>
-            </div>
-            <div class="detalle__menu--comentario detalle--comentario3">
-                <h6>perfil del usuario. </h6>
-                <p class="detalle__menu--lorem">Lorem ipsum dolor sit. <a href="">ver más</a></p>
-            </div>
-        </section>
-        <section class="detalle__menu--comentar">
-            <h3>Déjanos tu comentario</h3>
-            <div class="detalle__menu--caja--textarea">
-                <textarea class="detalle--textarea" name="comentario" id="comentario" cols="35" rows="3"></textarea>
-                <a class="detalle__menu--button-enviar" href="">enviar</a>
-            </div>
-        </section>
+        
+        
     </main>
 
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
