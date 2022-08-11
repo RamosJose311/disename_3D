@@ -1,4 +1,13 @@
+/* gliter */
+.caja--gliter{
+    width: 100%;
+}
+
+
 /* imagenes */
+.detalle__menu--article--producto{
+    width: 90%;
+}
 .detalle__menu--image{
     width: 100%;
     margin-top: 8%;
@@ -7,6 +16,7 @@
 .detalle__menu--image img{
     width: 100%;
     padding: 0 4%;
+    height: 100%;
     
 }
 .detalle__menu--titulo{
@@ -160,6 +170,7 @@
     }
     .detalle__menu--image img{
         margin: auto;
+        width: 100%;
     }
     .detalle__menu--titulo{
         width: 30%;
@@ -189,7 +200,7 @@
     .detalle__menu--article--producto{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        width: 90%;
     }
     .detalle__menu--article--descripcion{
         width: 100%;
