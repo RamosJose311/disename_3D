@@ -1,23 +1,16 @@
 {
-  "dependencies": {
-    "express": "^4.18.1"
-  },
-  "name": "grupo_1_disename-3d",
-  "description": "---\r # *TITULO DEL PROYECTO* ***DISEÑAME 3D***\r ---\r ## *LOGOTIPO*",
-  "version": "1.0.0",
-  "main": "app.js",
+  "name": "grupo-1-disename-3d",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RamosJose311/grupo_1_DISENAME-3D.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RamosJose311/grupo_1_DISENAME-3D/issues"
-  },
-  "homepage": "https://github.com/RamosJose311/grupo_1_DISENAME-3D#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
 }
