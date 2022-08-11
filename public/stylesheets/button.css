@@ -1,0 +1,16 @@
+.bt-neon{
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 15PX;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .2s;
+    border-radius: 10px;
+}
+.bt-neon:hover{
+    background-color: #a945c7;
+    box-shadow: 0 0 10px #a945c7, 0 0 30px #a945c7,0 0 100px #a945c7;
+    color: #fff;
+}

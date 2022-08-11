@@ -1,191 +1,163 @@
 /* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
 
 /* ======================= MEDIA QUERY || MOBILE =======================*/
-.header {
-    background-color: var(--colorBlanco);
+
+.body{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: center;
     width: 100%;
-    padding: 0;
     margin: 0;
-    background-image: url('../images/Background_img_T.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.header--logo {
-    width: 38%;
-    padding: 10% 0 3%;
-}
-
-.header--logo img {
-    width: 54%;
-    position: relative;
-    left: 33%;
-}
-
-.header_buscar_burger {
-    width: 60%;
     padding: 0;
-    margin: 0;
+}
+
+.header{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
-
+    background-color: #1a0321;
 }
 
-.header_buscar_form--search {
+.header_Top{
+    background-color: #32093f;
+    width: 100%;
+    height: 10px;
+}
+
+.header_Logo{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
-    width: 81%;
-    margin-top: 33%;
+    width: 50%;
 }
 
-.header_buscar_form--search input {
+.img_Logo{
+    width: 75%;
+}
+.text_Logo{
     width: 80%;
-}
-
-.header_burger {
-    width: 18%;
-    margin-top: 0%;
-    margin-left: 28%;
-}
-
-.header_nav {
-    display: none;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.header_nav nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.header_nav nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.header_nav nav ul li {
-    list-style: none;
+.menu_Bar{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1px;
+    align-items: center;
+    width: 50%;
 }
 
-.header_nav nav ul li a {
-    font-size: 12px;
+.menu_Bar_Conten{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a0321;
+    font-family: consolas;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.header_nav_in{
+.menu_burguer button {
+    background-color: #ed70f8;
+    color:  #1a0321;
+    font-size: 40px;
+}
+
+.menu_register a {
+    display: inline-block;
+    color: #ed70f8;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+.menu_Form input{
+    width: 90%;
+}
+
+.menu_Form a{
+    color:#ed70f8;
+}
+
+.menu_Bar_option{
+    display: none;
+    width: 100%;
+}
+
+.Show{
+    display:block;
+} 
+
+.menu_Bar_option ul li{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    margin: 10px 10px;
+}
+
+.menu_Bar_option ul li a{
+    color:#8AFF00;
+    text-transform: uppercase;
+}
+
+.header_Bottom_reg{
     display: none;
 }
+
+.header_Bottom{
+    background-color:#32093f;
+    width: 100%;
+    height: 10px;
+}
+
+
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
 @media (min-width:768px) {
-
-    .header_buscar_form--search {
-        margin-top: 25%;
-    }
-    
-    .header_burger {
-        display: none;    
-    }
-        
-    .header_nav_in {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-end;
-        width: 55%;
-        position: absolute;
-        left: 34%;
-        bottom: 70%;
+    .header_Logo{
+        width: 25%;
     }
 
-    .header_nav_in nav {
-        justify-content: space-between;
+    .menu_burguer button {
+        display: none;
+    }
+
+    .menu_register{
+        display: none;
+    }
+
+    .menu_Form input{
         width: 100%;
     }
 
-    .header_nav_in nav ul {
+    .menu_Bar_option{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        justify-content: end;
     }
-
-    .header_nav_in nav ul li {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 1px;
-    }
-
-    .header_nav_in nav ul li a {
-        font-size: 16px;
-        text-decoration: none;
-    }
-}
-
-/* ======================= MEDIA QUERY || DESKTOP =======================*/
-
-@media (min-width: 1024px){
-
-    body{
-        max-width: 1024px;
-        margin: 0px auto;
-    }
-
-    .header{
-        position: relative;
-    }
-
-    .header_buscar_form--search {
+    .menu_Bar_option ul{
         width: 90%;
-        margin-top: 27%;
     }
 
-    .header_buscar_form--search input {
-            width: 80%;
-            font-size: 18px;
-    }
-        
-    .header_nav_in {
-        display: flex;
-        flex-wrap: wrap;
+    .menu_Bar_option ul li{
         flex-direction: row;
-        justify-content: flex-end;
-        position: absolute;
-        top: 86%;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 10px;
     }
 
-    .header_nav_in nav ul li a {
-        font-size: 20px;
+    .header_Bottom_reg{
+        display: block;
     }
 
 }
 
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:1024px) {
 
-
+}
