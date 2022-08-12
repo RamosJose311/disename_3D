@@ -21,6 +21,11 @@
     --colorGrisOscuro: #323333;
     --colorBlanco: #ffffff;
     --colorRojo: #ff0000;
+    /* neon */
+    --colorFondo : #1a0321;
+    --colorLetraHeader : #ed70f8;
+    --colorMargendiv : #32093f ;
+    --colorTitulo : rgba(6, 236, 158, 1);
 
 
     /* Tipografia */

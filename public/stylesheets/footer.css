@@ -1,7 +1,165 @@
 /* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
 
 /* ======================= MEDIA QUERY || MOBILE =======================*/
-.footer{
+.caja--footer{
+    background-color: var(--colorFondo);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* titulo */
+.footer h4{ 
+    color: var(--colorLetraHeader);
+    margin-top: 0;
+    padding-top: 10px;
+    font-family: var(--letraGaramond);
+}
+.footer a{
+    color: white;
+    font-size: 14px;
+}
+/* redes sociales */
+.redes--sociales--footer{
+    width: 35%;
+    text-align: center;
+    margin-left: 5%;
+}
+.contactos--footer{
+    width: 60%;
+    text-align: center;
+}
+.redes--sociales--iconos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 5px;
+    justify-content: center;
+    width: 100%;
+
+}
+/* contactanos */
+.contacto--iconos--footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 7px;
+}
+.contacto--iconos--footer span{
+    margin-left: 5px;
+}
+
+.footer--top{
+    background-color: var(--colorMargendiv);
+    width: 100%;
+    height: 10px;
+}
+
+.footer--botton{
+    background-color: var(--colorMargendiv);
+    width: 100%;
+    height: 10px;
+}
+/* servicio */
+
+.servicios--footer{
+    display: none;
+}
+.servicios--footer li{
+    list-style: none;
+}
+/* derechos reservados */
+.derechos--footer{
+    width: 100%;
+    color: var(--colorTitulo);
+    font-size: 10px;
+    text-align: center;
+}
+
+.hr{
+    color: blanchedalmond;
+    width: 100%;
+    margin-bottom: -2px;
+}
+
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+    .caja--footer{
+        justify-content: space-around;
+    }
+    .footer h4{
+        font-size: 20px;
+    }
+
+    .redes--sociales--footer{
+        width: 30%;
+        margin-left: 0%;
+    }
+    .redes--sociales--iconos{
+        margin-top: 12%;
+    }
+    
+    .contactos--footer{
+        width: 30%;
+    }
+    .servicios--footer{
+        display: inline-block;
+        text-align: center;
+        width: 30%;
+    }
+    .servicios--menu--footer li{
+        margin-right: 18%;
+        margin-bottom: 5%;
+    }
+    .footer a{
+        margin-bottom: -15px;
+    }
+    .iconify{
+        margin-right: 2%;
+    }
+    .derechos--footer{
+        font-size: 12px;
+    }
+    
+
+}
+
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+
+@media(min-width: 1024px){
+    .servicios--menu--footer li{
+        margin-bottom: 3%;
+    }
+    .servicios--menu--footer li{
+        margin-right: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
+
+/* .footer{
     background-color: var(--colorAzulOscuro);
     display: flex;
     width: 100%;
@@ -61,11 +219,12 @@
     color: white;
     font-family: var(--letraGaramond);
     font-size: 8px;
-}
+} */
 
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
-@media (min-width:768px) {
+
+/* @media (min-width:768px) {
 
     .footer{
         justify-content: space-around;
@@ -97,15 +256,15 @@
         color: var(--colorBlanco);
     }
     
-}
+} */
 
 /* ======================= MEDIA QUERY || DESKTOP =======================*/
 
-@media(min-width: 1024px){
+/* @media(min-width: 1024px){
 
 
     
-}
+} */
 
 
 

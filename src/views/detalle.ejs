@@ -13,7 +13,7 @@
         <section class="detalle__menu--section--producto">
             <article class="detalle__menu--article--producto">
                 <div class="detalle__menu--image">
-                    <img src="/img/groott-redes-v-1080x810-1-1024x768.png" alt="">
+                    <img src="/images/groott-redes-v-1080x810-1-1024x768.png" alt="">
                 </div>
                 <div class="detalle__menu--caja1">
                     <h3 class="detalle__menu--titulo">Precio:</h3>
@@ -64,6 +64,46 @@
 
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
+
+
+    <!-- ==================================== GLIDER ==================================== -->
+
+    
+    <script src="/js/glider.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 1,
+                dots: '#dots',
+                draggable: true,
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                },
+                responsive: [
+                    {
+                        // screens greater than >= 768px
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: '1',
+                            slidesToScroll: 'auto',
+                            itemWidth: 150,
+                            duration: 0.25
+                        }
+                    }, {
+                        // screens greater than >= 1024px
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            itemWidth: 150,
+                            duration: 0.25
+                        }
+                    }
+                ]
+            });
+        })
+    </script>
     
 </body>
 
