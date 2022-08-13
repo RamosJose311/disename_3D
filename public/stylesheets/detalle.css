@@ -1,4 +1,25 @@
+/* gliter */
+.caja--gliter{
+    width: 90%;
+}
+
+
 /* imagenes */
+.detalle__menu--section--producto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.detalle__menu--article--producto{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.detalle--menu--principal{
+    width: 100%;
+}
+
 .detalle__menu--image{
     width: 100%;
     margin-top: 8%;
@@ -7,6 +28,7 @@
 .detalle__menu--image img{
     width: 100%;
     padding: 0 4%;
+    height: 100%;
     
 }
 .detalle__menu--titulo{
@@ -94,7 +116,7 @@
     color: var(--colorBlanco);
 }
 .detalle__menu--comentario{
-    background-image: url('/img/9cd94f33bb2e49c785d59018d1a7ac67.jpeg') ;
+    background-image: url('/images/fondoComentario.jpeg') ;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100px;
@@ -149,17 +171,30 @@
 
 /* TABLET | 768px */
 @media (min-width: 768px){
+    .glider-contain{
+        width: 80%;
+    }
+
+
+    .detalle__menu--article--producto{
+        width: 100%;
+    }
     .detalle__menu--section--producto{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
 
     }
+    .detalle--menu--principal{
+        width: 40%;
+        padding-left: 2px;
+    }
     .detalle__menu--image{
-        width: 65%;
+        width: 60%;
     }
     .detalle__menu--image img{
         margin: auto;
+        width: 100%;
     }
     .detalle__menu--titulo{
         width: 30%;
@@ -173,7 +208,7 @@
         font-size: 17px;
     }
     .detalle__menu--caja1{
-        width: 35%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -189,7 +224,7 @@
     .detalle__menu--article--producto{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        width: 90%;
     }
     .detalle__menu--article--descripcion{
         width: 100%;
@@ -203,7 +238,7 @@
     }
     .detalle__menu--comentario{
         width: 32%;
-        background-image: url('/img/9cd94f33bb2e49c785d59018d1a7ac67.jpeg');
+        background-image: url('/images/fondoComentario.jpeg');
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 20px;
@@ -266,6 +301,7 @@
     }
 
 }
+
 
 
 

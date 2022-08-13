@@ -1,5 +1,5 @@
 .glider-contain {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   position: relative;
   margin-left: 5%;
@@ -37,7 +37,7 @@
   user-select: none;
   justify-content: center;
   align-content: center;
-  width: 100%;
+  /* width: 100%; */
 }
 .glider-slide img {
   max-width: 100%;
@@ -74,6 +74,7 @@
 .glider-next {
   right: -23px;
   left: auto;
+  /* padding-right: 48px; */
 }
 .glider-next.disabled,
 .glider-prev.disabled {
@@ -83,6 +84,7 @@
 }
 .glider-slide {
   min-width: 150px;
+  /* margin-right: 45px; */
 }
 .glider-hide {
   opacity: 0;

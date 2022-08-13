@@ -9,30 +9,40 @@
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main>
+    <main class="detalle--main">
         <section class="detalle__menu--section--producto">
             <article class="detalle__menu--article--producto">
                 <div class="detalle__menu--image">
-                    <img src="/images/groott-redes-v-1080x810-1-1024x768.png" alt="">
-                </div>
-                <div class="detalle__menu--caja1">
-                    <h3 class="detalle__menu--titulo">Precio:</h3>
-                <div class="detalle__menu--button">
-                    <!-- <button class="detalle__menu--button1"><a href="">añadir al carrito</a></button> -->
-                    <!-- <button class="detalle__menu--button2"><a href="">comprar</a></button> -->
-                    <a class="detalle__menu--button1" href="productCart.html">añadir al carrito</a>
-                    <a class="detalle__menu--button2" href="">comprar</a>
-                </div>
-                <article class="detalle__menu--article--descripcion">
-                    <h4 class="detalle__menu--titulo">*Descripcion</h4>
-                    <div class="detalle__menu--p">
-                        <p>altura:</p>
-                        <p>material:</p>
-                        <p>tiempo:</p>
+                    <div class="glider-contain">
+                        <div class="glider caja--gliter">
+                            <div><img src="/images/groott-redes-v-1080x810-1-1024x768.png" alt=""></div>
+                            <div><img src="/images/groot1.jpg" alt=""></div>
+                            <div><img src="/images/groot2.jpg" alt=""></div>
+                            <div><img src="/images/groot3.jpg" alt=""></div>
+                        </div>
+                        <button aria-label="Previous" class="glider-prev">«</button>
+                        <button aria-label="Next" class="glider-next">»</button>
+                        <div role="tablist" class="dots"></div>
                     </div>
-                    <p class="detalle__menu--descripcion--general">Descripcion general:</p>
-                        <p class="detalle__menu--parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, eveniet, eius minima quam deleniti ut magnam qui ducimus voluptates harum sit, maxime debitis? Mollitia aperiam facilis fugit earum labore. Officiis!</p>
-                </article>
+                </div>
+                <div class="detalle--menu--principal">
+                    <div class="detalle__menu--caja1">
+                        <h3 class="detalle__menu--titulo">Precio:</h3>
+                    <div class="detalle__menu--button">
+                        <a class="detalle__menu--button1" href="productCart.html">añadir al carrito</a>
+                        <a class="detalle__menu--button2" href="">comprar</a>
+                    </div>
+                    <article class="detalle__menu--article--descripcion">
+                        <h4 class="detalle__menu--titulo">*Descripcion</h4>
+                        <div class="detalle__menu--p">
+                            <p>altura:</p>
+                            <p>material:</p>
+                            <p>tiempo:</p>
+                        </div>
+                        <p class="detalle__menu--descripcion--general">Descripcion general:</p>
+                            <p class="detalle__menu--parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, eveniet, eius minima quam deleniti ut magnam qui ducimus voluptates harum sit, maxime debitis? Mollitia aperiam facilis fugit earum labore. Officiis!</p>
+                    </article>
+                </div>
                 </div>
                 
             </article>
@@ -69,7 +79,7 @@
     <!-- ==================================== GLIDER ==================================== -->
 
 
-    <script src="/js/glider.js"></script>
+    <script src="/javascripts/glider.js"></script>
     <script>
         window.addEventListener('load', function () {
             new Glider(document.querySelector('.glider'), {
