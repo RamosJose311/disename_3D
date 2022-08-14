@@ -9,11 +9,13 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 10px;
+    margin-bottom: 15px;
     font-family: var(--letraGaramond);
+    background-image: url(/images/back1.jpg);
 }
 
 .login_return{
-    width: 90%;
+    width: 100%;
     padding-left: 20px;
     margin : 10px 0 2px;
     font-family: var(--letraGaramond);
@@ -23,6 +25,7 @@
 }
 
 .login_section{
+    background-image: none;
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -31,10 +34,11 @@
 }
 
 .login_section-header h1 {
+    color: white;
     font-size: 30px;
     text-transform: uppercase;
     padding: 0;
-    margin: 0;
+    margin: 10px 0px;
 }
 
 .login_section-main {
@@ -52,21 +56,33 @@
 
 .log_sec_main_opt-log{
     width: 50%;
-    background-color: var(--colorCeleste);
+    background-color: none;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
 }
 
+.log_sec_main_opt-log a{
+    color:var(--colorBlanco);
+    text-decoration: none;
+}
+
 .log_sec_main_opt-reg{
     width: 50%;
-    background-color: var(--colorBlanco);
+    background-color: none;
     text-align: center;
-    border-right: 1px solid var(--colorAzulOscuro);
-    border-bottom: 1px solid var(--colorAzulOscuro);
+    border-right: 2px solid var(--colorAzulClaro);
+    border-bottom: 2px solid var(--colorAzulClaro);
+}
+
+.log_sec_main_opt-reg a{
+    color:var(--colorAzulClaro);
+    text-decoration: none;
+
 }
 
 .login_section_main-correo p{
+    color: var(--colorBlanco);
     text-transform: uppercase;
     text-align: center;
     font-size: 10px;
@@ -78,12 +94,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
+    margin-top: 15px;
     gap: 10px;
 }
 
 .log_sec_main_form-container{
     width: 95%;
     text-align: center;
+    color:blueviolet
 }
 
 .log_sec_main_form-container input{

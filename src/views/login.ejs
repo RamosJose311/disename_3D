@@ -2,7 +2,7 @@
 
 <!-- =================== BODY || MAQUETADO DEL ARCHIVO HTML (Header, Main, Footer) =================== -->
 
-<%- include('./partials/head') %> 
+<%- include('./partials/head', {title:"LOGIN"}) %> 
 
 <body>
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
@@ -12,7 +12,7 @@
     <main class="login_main" >
         <div class="login_return">
             <a href="/">Inicio</a>
-            <span>/Ingresar</span>
+            <span>/Login</span>
         </div>
         <section class="login_section">
             <header class="login_section-header" >
@@ -21,10 +21,10 @@
             <main class="login_section-main">
                 <div class="login_section_main-option">
                     <div class="log_sec_main_opt-reg">
-                        <a href="register.html">Registrarse</a>
+                        <a href="../users/register">Registrarse</a>
                     </div>
                     <div class="log_sec_main_opt-log">
-                        <a href="login.html">Iniciar Sesión</a>
+                        <a href="../users/login">Iniciar Sesión</a>
                     </div>
                 </div>
                 <form action="" class="login_section_main-form">

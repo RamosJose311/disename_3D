@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-const {detalle} = require('../controllers/productController');
+const {detalle,productCart} = require('../controllers/productController');
 
-/* /producst */
+/* /products*/
 router
     .get('/detalle', detalle)
+    .get('/productCart', productCart)
 
 module.exports = router;
