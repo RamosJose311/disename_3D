@@ -37,7 +37,6 @@
   user-select: none;
   justify-content: center;
   align-content: center;
-  /* width: 100%; */
 }
 .glider-slide img {
   max-width: 100%;
@@ -59,7 +58,7 @@
   border: 0;
   top: 30%;
   cursor: pointer;
-  color: #666;
+  color: var(--colorTitulo);
   opacity: 1;
   line-height: 1;
   transition: opacity .5s cubic-bezier(.17,.67,.83,.67),
@@ -74,17 +73,14 @@
 .glider-next {
   right: -23px;
   left: auto;
-  /* padding-right: 48px; */
 }
 .glider-next.disabled,
 .glider-prev.disabled {
   opacity: .25;
-  color: #666;
   cursor: default;
 }
 .glider-slide {
   min-width: 150px;
-  /* margin-right: 45px; */
 }
 .glider-hide {
   opacity: 0;

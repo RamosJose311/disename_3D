@@ -1,3 +1,12 @@
+/* imagen fondo body */
+.imagen-fondo-body-detalle{
+    background-image: url('/images/fondo3.jpg');
+    background-size: 100%;
+    background-size:auto;
+}
+
+
+
 /* gliter */
 .caja--gliter{
     width: 90%;
@@ -35,7 +44,7 @@
     text-transform: uppercase;
     font-family: var(--letraGaramond);
     padding-left: 4%;
-    color: var(--colorLetra);
+    color: var(--colorTitulo);
 }
 /* botones */
 .detalle__menu--button{
@@ -74,22 +83,23 @@
 .detalle__menu--p{
     margin-left: 4%;
     font-size: 15px;
-    color: var(--colorGrisOscuro);
+    color: var(--colorBlanco);
 }
 .detalle__menu--descripcion--general{
     font-family: var(--letraGaramond);
-    color: var(--colorAzulOscuro);
+    color: var(--colorTitulo);
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
 }
 .detalle__menu--parrafo{
     margin-top: 0;
+    color: var(--colorCreema);
 }
 
 /* comentarios */
 .detalle__menu--tituo--comentario{
-    color: var(--colorAzulOscuro);
+    color: var(--colorTitulo);
     font-family: var(--letraGaramond);
     font-size: 16px;
     text-transform: uppercase;
@@ -131,7 +141,7 @@
 
 .detalle__menu--comentar h3{
     font-family: var(--letraGaramond);
-    color: var(--colorAzulOscuro);
+    color: var(--colorTitulo);
     margin-bottom: 5px;
 }
 .detalle--comentario2{
@@ -212,7 +222,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        padding-top: 8%;
+        padding-top: 18%;
     }
     .detalle__menu--button{
         display: inline;
