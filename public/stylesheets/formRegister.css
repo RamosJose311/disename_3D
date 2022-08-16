@@ -10,10 +10,11 @@
     flex-direction: column;
     margin-top: 10px;
     font-family: var(--letraGaramond);
+    background-image: url(/images/back1.jpg);
 }
 
 .register_return{
-    width: 90%;
+    width: 100%;
     padding-left: 20px;
     margin : 10px 0 2px;
     font-family: var(--letraGaramond);
@@ -28,13 +29,15 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
+    color: var(--colorBlanco)
 }
 
 .register_section-header h1 {
     font-size: 30px;
     text-transform: uppercase;
     padding: 0;
-    margin: 0;
+    margin: 10px 0px;
+    color: var(--colorBlanco)
 }
 
 .register_section-main {
@@ -51,18 +54,31 @@
 
 .reg_sec_main_opt-reg{
     width: 50%;
-    background-color: var(--colorCeleste);
+    background-color: none;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
 }
 
+.reg_sec_main_opt-reg a{
+    color:var(--colorBlanco);
+    text-decoration: none;
+
+}
+
+
 .reg_sec_main_opt-log{
     width: 50%;
-    background-color: var(--colorBlanco);
     text-align: center;
-    border-left: 1px solid var(--colorAzulOscuro);
-    border-bottom: 1px solid var(--colorAzulOscuro);
+    border-left: 2px solid var(--colorAzulClaro);
+    border-bottom: 2px solid var(--colorAzulClaro);
+    background-color: none;
+}
+
+.reg_sec_main_opt-log a{
+    color:var(--colorAzulClaro);
+    text-decoration: none;
+
 }
 
 .register_section_main-correo{

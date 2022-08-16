@@ -87,17 +87,14 @@
     width: 100%;
 }
 
-.Show{
-    display:block;
-} 
 
 .menu_Bar_option ul li{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    width: 80%;
-    margin: 10px 10px;
+    width: 90%;
+    margin: 10px 0px;
 }
 
 .menu_Bar_option ul li a{
@@ -115,6 +112,9 @@
     height: 10px;
 }
 
+.Show{
+    display:block;
+} 
 
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
@@ -141,7 +141,7 @@
         justify-content: end;
     }
     .menu_Bar_option ul{
-        width: 90%;
+        width: 100%;
     }
 
     .menu_Bar_option ul li{
