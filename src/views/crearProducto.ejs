@@ -1,0 +1,80 @@
+
+<!-- ========================= HEAD ============================ -->
+<%- include('./partials/head', {title:"CrearProducto"})%>
+
+<!-- ======================== HEADER =========================== -->
+<body class="body--add">
+    <%- include('./partials/header') %>
+
+    <main class="main-add"> 
+        <section class="section--add">
+            <h1 class="form__title--add">Agregar producto</h1>
+            <form action="" class="form__register-add">
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
+                    <label for="name" class="label--add">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div> 
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder=" Nombre de Usuario"> -->
+                    <label for="price" class="label--add">Precio</label>
+                    <input type="number" class="form-control" id="price" name="price">
+                </div>
+                <div class="caja--product--add">
+                    <label for="discount" class="label--add">Descuento</label>
+                    <input type="number" class="form-control" id="discount" name="discount">
+                    
+                </div>
+                <div class="caja--product--add">
+                    <label for="altura" class="label--add">Altura</label>
+                    <input type="number" class="form-control" id="altura" name="altura" placeholder="en centimetros">
+                </div>
+                <div class="caja--product--add">
+                    <label for="material" class="label--add">Material</label>
+                    <input type="text" class="form-control" id="material" name="material">
+                </div>
+                <div class="caja--product--add">
+                    <label for="time" class="label--add">Tiempo</label>
+                    <input type="number" class="form-control" id="time" name="time" placeholder="en minutos">
+                </div>
+                <!-- <div class="form--options">
+                    <label for="electro"><input class="checkbox" type="checkbox" name="electro">Electro </label>
+                    <label for="moda"><input class="checkbox" type="checkbox" name="moda">Moda</label>
+                    <label for="hogar"><input class="checkbox" type="checkbox" name="hogar">Hogar </label>
+                    <label for="juguete"><input class="checkbox" type="checkbox" name="juguete">juguete</label>
+                    <label for="vida"><input class="checkbox" type="checkbox" name="vida">Vida Sana </label>
+                </div> -->
+                <div class="caja--product--add">
+                    <label for="category" class="label--add">Categoría</label>
+                    <select class="form-select" aria-label="Default select example" id="category"
+                        name="category">
+                        <option value="" selected hidden>Seleccione...</option>
+                        <option value="cat. 1">cat. 1</option>
+                        <option value="cat. 2">cat. 2</option>
+                        <option value="cat. 3">cat. 3</option>
+                    </select>
+                    </div>
+                    
+                <div class="tex--add">
+                    <h4 class="Descripcion-add">Descripcion</h4>
+                    <textarea class="detalle--textarea-add" name="comentario" id="comentario" cols="35" rows="3"></textarea>
+                </div>
+                </div>
+                <div class="label--add">
+                    <a class="imagen--product--add" href="">
+                        <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
+                    <input hidden class="form--input" type="file" id="imagen" name="imagen">
+                    </a>
+                </div>
+                <div class="caja--product--add boton--cancelar--guardar">
+                    <a href="/" class="form__button form__button--cancel">Cancelar</a>
+                    <button class="form__button form__button--send" type="submit">Guardar</button>
+                </div>
+                
+
+
+            </form>
+        </section>
+    </main>
+</body>
+
