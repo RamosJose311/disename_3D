@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {detalle,productCart,crearProducto,editarProducto} = require('../controllers/productController');
+const {detalle,productCart} = require('../controllers/productController');
 
 /* /products*/
 router
@@ -9,3 +9,4 @@ router
     .get('/productCart', productCart)
 
 module.exports = router;
+
