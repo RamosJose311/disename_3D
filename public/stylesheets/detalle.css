@@ -206,8 +206,12 @@
         margin: auto;
         width: 100%;
     }
+    .detalle-h3{
+        font-size: 20px;
+        width: 100%;
+    }
     .detalle__menu--titulo{
-        width: 30%;
+        /* width: 30%; */
         margin-top: 9%;
         display: inline-block;
         height: 30px;
