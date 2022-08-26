@@ -7,8 +7,9 @@ module.exports = {
         const product = products.find(product => product.id === +req.params.id);
 
         return res.render('detalle', {
-            product
-        })
+			product,
+			toThousand
+		})
     },
     productCart : (req,res) =>{
         return res.render('productCart')
@@ -24,3 +25,4 @@ module.exports = {
     }
 
 }
+

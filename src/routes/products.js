@@ -6,7 +6,7 @@ const {detalle,productCart,archivo,personalizado,proyecto,} = require('../contro
 
 /* /products*/
 router
-    .get('/detalle:id', detalle)// agrego id del producto
+    .get('/detalle/:id', detalle)// agrego id del producto
     .get('/productCart', productCart)
     .get('/archivo',archivo)
     .get('/personalizado',personalizado)
