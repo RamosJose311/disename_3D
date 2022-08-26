@@ -118,5 +118,17 @@
         "descripcion": "portajousting de metalgear ,con adornos incluidos",
         "imagen": "i10.png"
 
+    },
+     {
+        "id": 11,
+        "nombre": "portajousting ",
+        "precio": 1500,
+        "descuento": 0,
+        "altura": 20,
+        "tiempo": 480,
+        "categoria": "portajousting",
+        "descripcion": "portajousting de metalgear ,con adornos incluidos",
+        "imagen": "i10.png"
+
     }
 ]
