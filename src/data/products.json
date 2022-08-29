@@ -7,6 +7,7 @@
       "altura": 40,
       "tiempo": 400,
       "categoria": "masetas",
+      "material": "pla",
       "descripcion": "maseta de groot (guardianes de la galaxia)",
       "imagen": "i2.png"
    },
@@ -18,6 +19,7 @@
       "altura": 10,
       "tiempo": 300,
       "categoria": "mates",
+      "material": "pla",
       "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
       "imagen": "i1.png"
    },
@@ -29,6 +31,7 @@
       "altura": 20,
       "tiempo": 800,
       "categoria": "figura",
+      "material": "pla",
       "descripcion": "figura de anime demon slayer  ",
       "imagen": "i3.png"
    },
@@ -40,6 +43,7 @@
       "altura": 20,
       "tiempo": 450,
       "categoria": "figura",
+      "material": "pla",
       "descripcion": "figura de jefe maestro(halo)",
       "imagen": "i4.png"
    },
@@ -51,6 +55,7 @@
       "altura": 15,
       "tiempo": 4320,
       "categoria": "mate",
+      "material": "pla",
       "descripcion": "equipo de mate (set de azucarero,yerbero y mate",
       "imagen": "i5.png"
    },
@@ -62,6 +67,7 @@
       "altura": 20,
       "tiempo": 1200,
       "categoria": "figura",
+      "material": "pla",
       "descripcion": "figura parodia del pokemon",
       "imagen": "i6.png"
    },
@@ -73,6 +79,7 @@
       "altura": 20,
       "tiempo": 1300,
       "categoria": "portajousting",
+      "material": "pla",
       "descripcion": "portajousting y celular de los caza fantasma",
       "imagen": "i7.png"
    },
@@ -84,6 +91,7 @@
       "altura": 20,
       "tiempo": 1200,
       "categoria": "figura",
+      "material": "pla",
       "descripcion": "figura de pokemon ",
       "imagen": "i8.png"
    },
@@ -95,6 +103,7 @@
       "altura": 20,
       "tiempo": 2880,
       "categoria": "figura",
+      "material": "pla",
       "descripcion": "figura de baby yoda ,en su nave",
       "imagen": "i9.png"
    },
@@ -106,19 +115,9 @@
       "altura": 20,
       "tiempo": 480,
       "categoria": "portajousting",
+      "material": "pla",
       "descripcion": "portajousting de metalgear ,con adornos incluidos",
       "imagen": "i10.png"
-   },
-   {
-      "id": 12,
-      "nombre": "medias plasticas",
-      "precio": 1500,
-      "descuento": 16,
-      "altura": 43,
-      "tiempo": 12,
-      "categoria": "cat. 1",
-      "descripcion": "medias para adorno",
-      "imagen": "groot1.jpg"
    }
 ]
-
+>>>>>>> 846c9a09879488a00c3f7c921b2e78ad0fd220ff

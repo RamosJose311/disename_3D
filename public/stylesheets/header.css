@@ -25,11 +25,16 @@
     height: 10px;
 }
 
+.HT_ref{
+    display: block;
+    width:50%;
+}
+
 .header_Logo{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 50%;
+    width: 70%;
 }
 
 .img_Logo{
