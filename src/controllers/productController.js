@@ -5,7 +5,7 @@ module.exports = {
     detalle : (req,res) =>{
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
-
+    
         return res.render('detalle', {
 			product,
 			toThousand
@@ -22,7 +22,8 @@ module.exports = {
     },
     proyecto :(req,res) =>{
         return res.render('proyecto')
-    }
+    },
+    
 
 }
 

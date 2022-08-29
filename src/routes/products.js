@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-const {detalle,productCart,archivo,personalizado,proyecto,} = require('../controllers/productController');
+const {detalle,productCart,archivo,personalizado,proyecto} = require('../controllers/productController');
 
 /* /products*/
 router
@@ -12,4 +12,5 @@ router
     .get('/personalizado',personalizado)
     .get('/proyecto',proyecto)
 module.exports = router;
+
 
