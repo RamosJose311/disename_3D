@@ -1,7 +1,7 @@
 const { loadProducts, storeProducts } = require('../data/dbModules');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-module.exports = {,
+module.exports = {
     productCart: (req, res) => {
         return res.render('productCart')
     },
