@@ -6,7 +6,12 @@ module.exports = {
         return res.render('productCart')
     },
     archivo: (req, res) => {
-        return res.render('archivo')
+        const products =loadproducts();
+
+         return res.render('archivo',{
+            products,
+            toThousand
+         })
     },
     personalizado: (req, res) => {
         const products = loadProducts();
@@ -19,7 +24,13 @@ module.exports = {
 
     },
     proyecto: (req, res) => {
-        return res.render('proyecto')
+        const product =loadProducts();
+
+         return res.render('proyecto',{
+            products,
+            toThousand
+         })
+        
     },
     detalle: (req, res) => {
         const products = loadProducts();
