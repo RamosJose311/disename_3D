@@ -28,15 +28,22 @@
                 <div class="detalle--menu--principal">
                     <div class="detalle__menu--caja1">
                         <h3 class="detalle__menu--titulo detalle-h3"><%= product.nombre %></h3>
-                        <h3 class="detalle__menu--titulo">Precio:  <% if (product.descuento > 0) { %>
-                            <p>U$S</p><h3><%= (product.precio) - (product.precio * product.descuento / 100) %></h3> <p >u$s<%= product.precio %></p>
+                        <h3 class="detalle__menu--titulo">Precio:  <span class="detalle--span"><%= product.precio %>.</span>
+                            <br>
+                            <span class="detalle--span">descuento :</span>
+                            <b class="detalle--span"><%= product.descuento %>% OFF</b>
+                        </p>
+                        <span class="detalle--span">total</span>
+                        <% if (product.descuento > 0) { %> <span class="detalle--span"></span>
+                            <p class="detalle--span">
+                                 $<%= toThousand((product.precio - (product.precio * product.descuento / 100)).toFixed(0))%>
+                            </p>
+                        
                         <% }else{ %>
-                            <p>U$S</p><h3><%= product.precio %></h3>
+                        <p class="detalle--span">
+                            <%= product.precio %>
+                        </p>
                         <% } %>
-                    </div>
-                    <% if (product.descuento > 0) { %>
-                        <h4 ><%= product.descuento %>% OFF</h4>
-                    <% } %></h3>
                     <div class="detalle__menu--button">
                         <a class="detalle__menu--button1" href="productCart.html">añadir al carrito</a>
                         <a class="detalle__menu--button2" href="">comprar</a>
