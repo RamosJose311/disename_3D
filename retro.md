@@ -19,3 +19,13 @@
 # **temporada2**
 # *la batalla continua*
 - se arranco el sprint numero 3
+
+---
+# **Arranca el sprint 4 **
+- Empieza el 4to Sprint!!!! A no bajar los brazosss
+En este sprint haciendo retrospectiva nos dimos cuenta de varias cosas a cambiar y a seguir haciendo. Lo mas importante es q nunca les fallamos a las daily de los días lunes y viernes, (donde nos enteramos de como avanzamos y dificultades que tuvimos, también hablamos de nosotros como personas).
+Vimos necesario implementar medidas nuevas como elegir lideres por democracia por cada sprint y hacer reportes diarios del sprint, Tambien vimos necesario mejorar la parte de la comunicación y pedir mas ayuda a los demás miembros del equipo. Por lo demás seguimos como antes 
+<p style = 'text-align:center;'>
+<img src=".\public\images\retrospectiva\WhatsApp Image 2022-07-20 at 4.17.21 PM.jpeg" alt="Logo de Diseñame3d" >
+</p>
+

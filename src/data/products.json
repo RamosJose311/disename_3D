@@ -1,132 +1,122 @@
 [
-    {
-        "id": 1,
-        "nombre": "maseta groot",
-        "precio": 800,
-        "descuento": 0,
-        "altura": 40,
-        "tiempo": 400,
-        "categoria": "masetas",
-        "material":"pla",
-        "descripcion": "maseta de groot (guardianes de la galaxia)",
-        "imagen": "i2.png"
-
-    },
-    {
-        "id": 2,
-        "nombre": "mate superman",
-        "precio": 1500,
-        "descuento": 5,
-        "altura": 10,
-        "tiempo": 300,
-        "categoria": "mates",
-        "material":"pla",
-        "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
-        "imagen": "i1.png"
-
-    },
-    {
-        "id": 3,
-        "nombre": "figura",
-        "precio": 2500,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 800,
-        "categoria": "figura",
-        "material":"pla",
-        "descripcion": "figura de anime demon slayer  ",
-        "imagen": "i3.png"
-
-    },
-    {
-        "id": 4,
-        "nombre": "jefe maestro",
-        "precio": 1500,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 450,
-        "categoria": "figura",
-        "material":"pla",
-        "descripcion": "figura de jefe maestro(halo)",
-        "imagen": "i4.png"
-
-    },
-    {
-        "id": 5,
-        "nombre": "set mate camion",
-        "precio": 3000,
-        "descuento": 0,
-        "altura": 15,
-        "tiempo": 4320,
-        "categoria": "mate",
-        "material":"pla",
-        "descripcion": "equipo de mate (set de azucarero,yerbero y mate",
-        "imagen": "i5.png"
-
-    },
-    {
-        "id": 6,
-        "nombre": "charmander mamado",
-        "precio": 1500,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 1200,
-        "categoria": "figura",
-        "material":"pla",
-        "descripcion": "figura parodia del pokemon",
-        "imagen": "i6.png"
-
-    },
-    {
-        "id": 7,
-        "nombre": "portajousting cazafantasmas",
-        "precio": 2800,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 1300,
-        "categoria": "portajousting",
-        "material":"pla",
-        "descripcion": "portajousting y celular de los caza fantasma",
-        "imagen": "i7.png"
-
-    },
-    {
-        "id": 8,
-        "nombre": "squitle",
-        "precio": 1500,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 1200,
-        "categoria": "figura",
-        "material":"pla",
-        "descripcion": "figura de pokemon ",
-        "imagen": "i8.png"
-
-    },
-     {
-        "id": 9,
-        "nombre": "figura de yoda",
-        "precio": 3000,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 2880,
-        "categoria": "figura",
-        "material":"pla",
-        "descripcion": "figura de baby yoda ,en su nave",
-        "imagen": "i9.png"
-
-    },
-    {
-        "id": 10,
-        "nombre": "portajousting ",
-        "precio": 1500,
-        "descuento": 0,
-        "altura": 20,
-        "tiempo": 480,
-        "categoria": "portajousting",
-        "material":"pla",
-        "descripcion": "portajousting de metalgear ,con adornos incluidos",
-        "imagen": "i10.png"
-
-    }
-   ]
+   {
+      "id": 1,
+      "nombre": "CASA",
+      "precio": 800,
+      "descuento": 0,
+      "altura": 40,
+      "tiempo": 400,
+      "categoria": "masetas",
+      "material": "pla",
+      "descripcion": "maseta de groot (guardianes de la galaxia)",
+      "imagen": "i2.png"
+   },
+   {
+      "id": 2,
+      "nombre": "mate superman",
+      "precio": 1500,
+      "descuento": 5,
+      "altura": 10,
+      "tiempo": 300,
+      "categoria": "mates",
+      "material": "pla",
+      "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
+      "imagen": "i1.png"
+   },
+   {
+      "id": 3,
+      "nombre": "figura",
+      "precio": 2500,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 800,
+      "categoria": "figura",
+      "material": "pla",
+      "descripcion": "figura de anime demon slayer  ",
+      "imagen": "i3.png"
+   },
+   {
+      "id": 4,
+      "nombre": "jefe maestro",
+      "precio": 1500,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 450,
+      "categoria": "figura",
+      "material": "pla",
+      "descripcion": "figura de jefe maestro(halo)",
+      "imagen": "i4.png"
+   },
+   {
+      "id": 5,
+      "nombre": "set mate camion",
+      "precio": 3000,
+      "descuento": 0,
+      "altura": 15,
+      "tiempo": 4320,
+      "categoria": "mate",
+      "material": "pla",
+      "descripcion": "equipo de mate (set de azucarero,yerbero y mate",
+      "imagen": "i5.png"
+   },
+   {
+      "id": 6,
+      "nombre": "charmander mamado",
+      "precio": 1500,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 1200,
+      "categoria": "figura",
+      "material": "pla",
+      "descripcion": "figura parodia del pokemon",
+      "imagen": "i6.png"
+   },
+   {
+      "id": 7,
+      "nombre": "portajousting cazafantasmas",
+      "precio": 2800,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 1300,
+      "categoria": "portajousting",
+      "material": "pla",
+      "descripcion": "portajousting y celular de los caza fantasma",
+      "imagen": "i7.png"
+   },
+   {
+      "id": 8,
+      "nombre": "squitle",
+      "precio": 1500,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 1200,
+      "categoria": "figura",
+      "material": "pla",
+      "descripcion": "figura de pokemon ",
+      "imagen": "i8.png"
+   },
+   {
+      "id": 9,
+      "nombre": "figura de yoda",
+      "precio": 3000,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 2880,
+      "categoria": "figura",
+      "material": "pla",
+      "descripcion": "figura de baby yoda ,en su nave",
+      "imagen": "i9.png"
+   },
+   {
+      "id": 10,
+      "nombre": "portajousting ",
+      "precio": 1500,
+      "descuento": 0,
+      "altura": 20,
+      "tiempo": 480,
+      "categoria": "portajousting",
+      "material": "pla",
+      "descripcion": "portajousting de metalgear ,con adornos incluidos",
+      "imagen": "i10.png"
+   }
+]
