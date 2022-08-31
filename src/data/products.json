@@ -1,9 +1,9 @@
 [
    {
       "id": 1,
-      "nombre": "maseta groot",
-      "precio": 800,
-      "descuento": 0,
+      "nombre": "CASA",
+      "precio": 8000,
+      "descuento": 33,
       "altura": 40,
       "tiempo": 400,
       "categoria": "masetas",
@@ -119,5 +119,4 @@
       "descripcion": "portajousting de metalgear ,con adornos incluidos",
       "imagen": "i10.png"
    }
-   
 ]
