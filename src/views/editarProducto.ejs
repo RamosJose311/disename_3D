@@ -9,47 +9,47 @@
     <main class="main-add"> 
         <section class="section--add">
             <h1 class="form__title--add">editar producto</h1>
-            <form action="" class="form__register-add">
+            <form action="" class="form__register-add" action="/products/update/<%= product.id %>?_method=PUT"  method="POST">
                 <div class="caja--product--add">
                     <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
                     <label for="nombre" class="label--add">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<%= product.nombre %>">
                 </div> 
                 <div class="caja--product--add">
                     <!-- <input class="form--input" type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder=" Nombre de Usuario"> -->
                     <label for="precio" class="label--add">Precio</label>
-                    <input type="number" class="form-control" id="precio" name="precio">
+                    <input type="number" class="form-control" id="precio" name="precio" value="<%= product.precio %>">
                 </div>
                 <div class="caja--product--add">
                     <label for="descuento" class="label--add">Descuento</label>
-                    <input type="number" class="form-control" id="descuento" name="descuento">
+                    <input type="number" class="form-control" id="descuento" name="descuento" value="<%= product.descuento %>">
                     
                 </div>
                 <div class="caja--product--add">
                     <label for="altura" class="label--add">Altura</label>
-                    <input type="number" class="form-control" id="altura" name="altura" placeholder="en centimetros">
+                    <input type="number" class="form-control" id="altura" name="altura" placeholder="en centimetros" value="<%= product.altura %>">
                 </div>
                 <div class="caja--product--add">
                     <label for="material" class="label--add">Material</label>
-                    <input type="text" class="form-control" id="material" name="material">
+                    <input type="text" class="form-control" id="material" name="material" value="<%= product.material %>">
                 </div>
                 <div class="caja--product--add">
                     <label for="tiempo" class="label--add">Tiempo</label>
-                    <input type="number" class="form-control" id="tiempo" name="tiempo" placeholder="en minutos">
+                    <input type="number" class="form-control" id="tiempo" name="tiempo" placeholder="en minutos" value="<%= product.tiempo %>">
                 </div>
                 <div class="caja--product--add">
                     <label for="categoria" class="label--add">Categoría</label>
                     <select class="form-select" aria-label="Default select example" id="categoria"
                         name="categoria">
                         <option value="" selected hidden>Seleccione...</option>
-                        <option value="mates">Mates</option>
-                        <option value="figuras">Figuras</option>
-                        <option value="llaveros">Llaveros</option>
-                        <option value="articulados">Articulados</option>
-                        <option value="portacelular">Portacelular</option>
-                        <option value="cosplay">Cosplay</option>
-                        <option value="juegos">Juegos</option>
-                        <option value="funkos">Funkos</option>
+                        <option value="mates" <%= product.categoria === "mates" && 'selected'%>>Mates</option>
+                        <option value="figuras" <%= product.categoria === "Figuras" && 'selected'%>>Figuras</option>
+                        <option value="llaveros" <%= product.categoria === "llaveros" && 'selected'%>>Llaveros</option>
+                        <option value="articulados" <%= product.categoria === "articulados" && 'selected'%>>Articulados</option>
+                        <option value="portacelular" <%= product.categoria === "portacelular" && 'selected'%>>Portacelular</option>
+                        <option value="cosplay" <%= product.categoria === "cosplay" && 'selected'%>>Cosplay</option>
+                        <option value="juegos" <%= product.categoria === "juegos" && 'selected'%>>Juegos</option>
+                        <option value="funkos" <%= product.categoria === "funkos" && 'selected'%>>Funkos</option>
                     </select>
                     </div>
                     
