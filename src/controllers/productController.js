@@ -6,7 +6,7 @@ module.exports = {
         return res.render('productCart')
     },
     archivo: (req, res) => {
-        const products =loadproducts();
+        const products = loadProducts();
 
          return res.render('archivo',{
             products,
@@ -24,7 +24,7 @@ module.exports = {
 
     },
     proyecto: (req, res) => {
-        const product =loadProducts();
+        const products =loadProducts();
 
          return res.render('proyecto',{
             products,

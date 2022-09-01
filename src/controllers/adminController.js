@@ -50,8 +50,18 @@ module.exports = {
             else{  return product }
         } )
         storeProducts(productsEdit);
-        return res.redirect('/')
-    }
+        return res.redirect('/products/detalle/'+id)
+    },
     
+    destroy : (req,res) => {
+        const products = loadProducts();
+        const {id} = req.params;
+        let productsModify=products.filter(product=> product.id !== +id )
+        storeProducts(productsModify);
+        return res.redirect('/');        
+    }
+
 
 }
+
+

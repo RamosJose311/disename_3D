@@ -1,9 +1,9 @@
 [
    {
       "id": 1,
-      "nombre": "CASA",
-      "precio": 8000,
-      "descuento": 33,
+      "nombre": "mate groot",
+      "precio": 800,
+      "descuento": 0,
       "altura": 40,
       "tiempo": 400,
       "categoria": "masetas",
@@ -21,7 +21,7 @@
       "categoria": "mates",
       "material": "pla",
       "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
-      "imagen": "i1.png"
+      "imagen":"i1.png"
    },
    {
       "id": 3,
@@ -75,7 +75,7 @@
       "id": 7,
       "nombre": "portajousting cazafantasmas",
       "precio": 2800,
-      "descuento": 0,
+      "descuento": 10,
       "altura": 20,
       "tiempo": 1300,
       "categoria": "portajousting",
