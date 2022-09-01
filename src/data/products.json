@@ -1,18 +1,6 @@
 [
    {
       "id": 1,
-      "nombre": "mate groot",
-      "precio": 800,
-      "descuento": 0,
-      "altura": 40,
-      "tiempo": 400,
-      "categoria": "masetas",
-      "material": "pla",
-      "descripcion": "maseta de groot (guardianes de la galaxia)",
-      "imagen": "i2.png"
-   },
-   {
-      "id": 2,
       "nombre": "mate superman",
       "precio": 1500,
       "descuento": 5,
@@ -21,10 +9,10 @@
       "categoria": "mates",
       "material": "pla",
       "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
-      "imagen":"i1.png"
+      "imagen": "i1.png"
    },
    {
-      "id": 3,
+      "id": 2,
       "nombre": "figura",
       "precio": 2500,
       "descuento": 0,
@@ -36,7 +24,7 @@
       "imagen": "i3.png"
    },
    {
-      "id": 4,
+      "id": 3,
       "nombre": "jefe maestro",
       "precio": 1500,
       "descuento": 0,
@@ -48,7 +36,7 @@
       "imagen": "i4.png"
    },
    {
-      "id": 5,
+      "id": 4,
       "nombre": "set mate camion",
       "precio": 3000,
       "descuento": 0,
@@ -60,7 +48,7 @@
       "imagen": "i5.png"
    },
    {
-      "id": 6,
+      "id": 5,
       "nombre": "charmander mamado",
       "precio": 1500,
       "descuento": 0,
@@ -72,7 +60,7 @@
       "imagen": "i6.png"
    },
    {
-      "id": 7,
+      "id": 6,
       "nombre": "portajousting cazafantasmas",
       "precio": 2800,
       "descuento": 10,
@@ -84,7 +72,7 @@
       "imagen": "i7.png"
    },
    {
-      "id": 8,
+      "id": 7,
       "nombre": "squitle",
       "precio": 1500,
       "descuento": 0,
@@ -96,7 +84,7 @@
       "imagen": "i8.png"
    },
    {
-      "id": 9,
+      "id": 8,
       "nombre": "figura de yoda",
       "precio": 3000,
       "descuento": 0,
@@ -108,7 +96,7 @@
       "imagen": "i9.png"
    },
    {
-      "id": 10,
+      "id": 9,
       "nombre": "portajousting ",
       "precio": 1500,
       "descuento": 0,
