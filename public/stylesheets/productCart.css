@@ -1,0 +1,253 @@
+
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
+
+/* ========== MAIN ========== */
+
+.cart_main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: var(--letraGaramond);
+    background-image: url(/images/back1.jpg);
+}
+
+
+.cart_section-product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    background-color: var(--colorMargendiv);
+    gap: 5px 0;
+}
+
+.cart_return{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin : 10px 0;
+    font-family: var(--letraGaramond);
+    font-size: 12px;
+    text-decoration: none;
+    background-color: var(--colorBlanco);
+}
+
+.cart_article-muestra{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    background-color: var(--colorBlanco);
+    border: 1px solid var(--colorAzulOscuro);
+}
+
+.cart_product-global{
+    display: flex;
+    width: 100%;
+    margin: 0 5%;
+}
+
+.cart_product-img{
+    width: 60%;
+    border-right: 2px solid var(--colorCeleste);
+    border-bottom: 2px solid var(--colorCeleste);
+}
+
+.cart_product-img img{
+    width: 100%;
+}
+
+.cart_producto-info{
+    padding: 0%;
+    background-color: var(--colorBlanco);
+    width: 40%;
+    margin-left: 2%;
+    text-align: center;
+    font-family: var(--letraGaramond);
+    font-size: .7em;
+    border-bottom: 2px solid var(--colorCeleste);
+}
+
+.cart_product-precio{
+    width: 60%;
+    text-align: center;
+}
+
+.cart_product-precio h3{
+    width: 100%;    
+    padding: 5px 0;
+    margin: 0;
+}
+
+.cart_product-cant{
+    width: 40%;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.cart_product-cant section{
+    width: 100%;
+}
+
+.cart_product_button{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0 5px;
+}
+
+.cart_section-venta{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    background-color: var(--colorMargendiv);
+}
+
+.cart_article-resumenpedido{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3px;
+    margin-bottom: 10px;
+    background-color: var(--colorBlanco);
+    border: 1px solid var(--colorAzulOscuro);
+    flex-direction: column;
+    box-shadow:
+    0 0 10px var(--colorCeleste);
+    0 0 250px var(--colorBlanco);
+}
+
+.cart_article-resumenpedido h1{
+    width: 100%;
+    font-family: var(--letraGaramond);
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.cart_article-resumenpedido hr{
+    border-top: 1px solid var(--colorAzulOscuro);
+    width: 90%;
+}
+
+.cart_article-resumenpedido-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.resumen_h2 h2{
+    width: 50%;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+.resumen_h2 .valor{
+    width: 50%;
+    margin: 0;
+    padding: 0 15px 0 0;
+    text-align: right;
+}
+
+.resumen_h2 a{
+    margin-left: 5;
+    padding: 0 0 0 15px;
+}
+
+.buton_confirmar{
+    width: 80%;
+    margin: 20px 0;
+    padding: 5px 0;
+    border-radius: 10px;
+    margin: 5px auto;
+    background-color: var(--colorAzulOscuro);
+    color: var(--colorBlanco);
+}
+
+/* ========== FOOTER ========== */
+
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+
+    .cart_main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .cart_main-contener{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .cart_section-product{
+        width: 65%;
+    }
+
+    .cart_article-muestra{
+        justify-content: space-around;
+    }
+
+    .cart_section-venta{
+        margin: 0 auto;
+        width: 35%;
+    }
+
+
+    .cart_product-global{
+        width: 60%;
+    }
+
+    .cart_product-cant{
+        width: 20%;
+        order: 0;
+
+    }
+    
+    .cart_product-precio{
+        width: 60%;
+        order: 1;
+    }
+
+    .cart_product_button{
+        width: 35%;
+        order: 2;
+    }
+
+}
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+
+@media (min-width: 1024px){
+
+    .cart_body{
+        max-width: 1024px;
+        margin: 0px auto;
+    }
+
+    
+    
+}
+
+
+
+
+
+

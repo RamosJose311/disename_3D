@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ## ***PROYECTO INTEGRADOR - GRUPO 01 - COMISION 15***
 ---
 # *TITULO DEL PROYECTO* ***DISEÑAME 3D***
@@ -7,22 +5,35 @@
 ## *LOGOTIPO* 
 
 <p style = 'text-align:center;'>
-<img src="./design/Logo_disename3d.jpg" alt="Logo de Diseñame3d" width="200px">
+<img src="./public/img/Logo__Disename3d_SB_Hilo.png" alt="Logo de Diseñame3d" width="200px">
 </p>
 
 - Tipo de letra:  ***ORBITRON***
-- Paleta de Colores : Blanco y Negro
+- Paleta de Colores : Blanco y Azul
 
 ---
-### **DESCRIPCION DEL SERVICIO**
+### **DESCRIPCION DEL SERVICIO DE DESARROLLADOR WEB**
 ```
-Impresiones de piezas personalizadas acorde a la nececidad del cliente,trabajamos con distintos tipos 
+Somos un equipo de DESARROLLADORES WEB, perteneciente al Curso de Full Stack que ofrece Digital House
+a travez de la Formacion FORMAR en conjunto con otras empresas, y somos integrantes de la Comisión
+Quince, la cual se encuentra a cargo de los docentes ERIC MENA, JULIAN AQUINO, en la formación de 
+programacion (Teoria y Practica) y en la formacion de Habilidades Blandas, conjuntamente con la tarea 
+de coordinacion del grupo, el docente JUAN VIEYRA. 
+El presente desafio es parte del Proyecto Integrador que se debe cumplir y en el cual como alumnos
+vamos incorporando los conocimientos adquiridos.
+Todos los integrantes del grupo pertenecemos a la zona geografica de la Patagonia Argentina, mas 
+especificamente a la comarca petrolera de las ciudades de Cutral Co y Plaza Huincul de la provincia
+de Neuquén.
+```
+---
+### **DESCRIPCION DEL SERVICIO QUE OFRECE EL CLIENTE**
+```
+Impresiones de piezas personalizadas acorde a la nececidad del cliente, trabajamos con distintos tipos 
 de materiales entre los mas usados:
 ```
 * PLA
 * ABS
 * TPE
-* impresiones con aluminio
 ```
 Creamos piezas de distintos tamaños y funcionalidades , tanto mecanicas como estaticas , tenemos piezas 
 en stock , los pedidos se hacen por mensaje directo con personal capacitado  , es de venta a todo 
@@ -72,7 +83,6 @@ Me recibi en el 2018 con el titulo de perito mercantil en en Centro Provincial d
 Luego comence mis estudios terciarios el la UTN hacindo enfasis en la  carrera de Ingeniería Electronica donde estuve 2 años pero por temas personales no pude seguir.
 Este año me entere del curso de programacion web full stack que ofrece la fundacion Formar, me postule y quede seleccionado, el mundo de la tecnologia siempre me a gustado mucho y siento que es que una gran oportunidad para progresar y encontrar un trabajo que me apacione.
 ```
-
 
 ## **PAGINAS DE REFERENCIA**
 ---
@@ -132,4 +142,3 @@ integrantes del grupo de trabajo.
   y de la empresa.
 
   
->>>>>>> 3602cbc04cb863dec1d258c6aebd0ddd95296ee5

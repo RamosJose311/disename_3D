@@ -1,0 +1,55 @@
+<!-- ======================== HEAD || CONFIGURACION ARCHIVO HTML ======================== -->
+
+<!-- =================== BODY || MAQUETADO DEL ARCHIVO HTML (Header, Main, Footer) =================== -->
+
+<%- include('./partials/head', {title:"LOGIN"}) %> 
+
+<body>
+    <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
+    <%- include('./partials/header') %>
+
+    <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
+    <main class="login_main" >
+        <div class="login_return">
+            <a href="/">Inicio</a>
+            <span>/Login</span>
+        </div>
+        <section class="login_section">
+            <header class="login_section-header" >
+                <h1>ingresar</h1>
+            </header>
+            <main class="login_section-main">
+                <div class="login_section_main-option">
+                    <div class="log_sec_main_opt-reg">
+                        <a href="../users/register">Registrarse</a>
+                    </div>
+                    <div class="log_sec_main_opt-log">
+                        <a href="../users/login">Iniciar Sesión</a>
+                    </div>
+                </div>
+                <form action="" class="login_section_main-form">
+                    <div class="log_sec_main_form-container">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id= "email" >
+                    </div>
+                    <div class="log_sec_main_form-container">
+                        <label for="password">Clave</label>
+                        <input type="password" id="password" >
+                    </div>
+                    <div class="log_sec_main_form-container">
+                        <button type="submit">Iniciar Sesión</button>
+                    </div>
+                    <div class="login_section_main-correo">
+                        <P>o iniciar sesión con</P>
+                        <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
+                    </div>
+                </form>
+            </main>
+        </section>
+    </main>
+
+    <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

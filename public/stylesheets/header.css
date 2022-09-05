@@ -1,0 +1,168 @@
+/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
+
+/* ======================= MEDIA QUERY || MOBILE =======================*/
+
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #1a0321;
+}
+
+.header_Top{
+    background-color: #32093f;
+    width: 100%;
+    height: 10px;
+}
+
+.HT_ref{
+    display: block;
+    width:50%;
+}
+
+.header_Logo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 70%;
+}
+
+.img_Logo{
+    width: 75%;
+}
+.text_Logo{
+    width: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_Bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+}
+
+.menu_Bar_Conten{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a0321;
+    font-family: consolas;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.menu_burguer button {
+    background-color: #ed70f8;
+    color:  #1a0321;
+    font-size: 40px;
+}
+
+.menu_register a {
+    display: inline-block;
+    color: #ed70f8;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+.menu_Form input{
+    width: 90%;
+}
+
+.menu_Form a{
+    color:#ed70f8;
+}
+
+.menu_Bar_option{
+    display: none;
+    width: 100%;
+}
+
+
+.menu_Bar_option ul li{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    margin: 10px 0px;
+}
+
+.menu_Bar_option ul li a{
+    color:#8AFF00;
+    text-transform: uppercase;
+}
+
+.header_Bottom_reg{
+    display: none;
+}
+
+.header_Bottom{
+    background-color:#32093f;
+    width: 100%;
+    height: 10px;
+}
+
+.Show{
+    display:block;
+} 
+
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+    .header_Logo{
+        width: 25%;
+    }
+
+    .menu_burguer button {
+        display: none;
+    }
+
+    .menu_register{
+        display: none;
+    }
+
+    .menu_Form input{
+        width: 100%;
+    }
+
+    .menu_Bar_option{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+    .menu_Bar_option ul{
+        width: 100%;
+    }
+
+    .menu_Bar_option ul li{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 10px;
+    }
+
+    .header_Bottom_reg{
+        display: block;
+    }
+
+}
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:1024px) {
+
+}

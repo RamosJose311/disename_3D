@@ -1,0 +1,80 @@
+
+<!-- ========================= HEAD ============================ -->
+<%- include('./partials/head', {title:"EditarProducto"}) %>
+
+<!-- ======================== HEADER =========================== -->
+<body class="body--add">
+    <%- include('./partials/header') %>
+
+    <main class="main-add"> 
+        <section class="section--add">
+            <h1 class="form__title--add">editar producto</h1>
+            <form action="/admin/update/<%= product.id %> ?_method=PUT" class="form__register-add" method="POST">
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
+                    <label for="nombre" class="label--add">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<%= product.nombre %>">
+                </div> 
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder=" Nombre de Usuario"> -->
+                    <label for="precio" class="label--add">Precio</label>
+                    <input type="number" class="form-control" id="precio" name="precio" value="<%= product.precio %>">
+                </div>
+                <div class="caja--product--add">
+                    <label for="descuento" class="label--add">Descuento</label>
+                    <input type="number" class="form-control" id="descuento" name="descuento" value="<%= product.descuento %>" >
+                    
+                </div>
+                <div class="caja--product--add">
+                    <label for="altura" class="label--add">Altura</label>
+                    <input type="number" class="form-control" id="altura" name="altura" placeholder="en centimetros" value="<%= product.altura %>">
+                </div>
+                <div class="caja--product--add">
+                    <label for="material" class="label--add">Material</label>
+                    <input type="text" class="form-control" id="material" name="material"value="<%= product.altura %>">
+                </div>
+                <div class="caja--product--add">
+                    <label for="tiempo" class="label--add">Tiempo</label>
+                    <input type="number" class="form-control" id="tiempo" name="tiempo" placeholder="en minutos" value="<%= product.tiempo %>">
+                </div>
+                <!-- <div class="form--options">
+                    <label for="electro"><input class="checkbox" type="checkbox" name="electro">Electro </label>
+                    <label for="moda"><input class="checkbox" type="checkbox" name="moda">Moda</label>
+                    <label for="hogar"><input class="checkbox" type="checkbox" name="hogar">Hogar </label>
+                    <label for="juguete"><input class="checkbox" type="checkbox" name="juguete">juguete</label>
+                    <label for="vida"><input class="checkbox" type="checkbox" name="vida">Vida Sana </label>
+                </div> -->
+                <div class="caja--product--add">
+                    <label for="categoria" class="label--add">Categoría</label>
+                    <select class="form-select" aria-label="Default select example" id="categoria"
+                        name="categoria">
+                        <option value="" selected hidden>Seleccione...</option>
+                        <option value="cat. 1" <%= product.categoria === "masetas" && 'selected' %> >maseta</option>
+                        <option value="cat. 1" <%= product.categoria === "mate" && 'selected' %> >mate</option>
+                        <option value="cat. 1" <%= product.categoria === "portajousting" && 'selected' %> >portajousting</option>
+                        <option value="cat. 1" <%= product.categoria === "figura" && 'selected' %> >figura</option>
+                    </select>
+                    </div>
+                    
+                <div class="tex--add">
+                    <h4 class="Descripcion-add">Descripcion</h4>
+                    <textarea class="detalle--textarea-add" name="comentario" id="comentario" cols="35" rows="3" ></textarea>
+                </div>
+                </div>
+                <div class="label--add">
+                    <a class="imagen--product--add" href="">
+                        <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
+                    <input hidden class="form--input" type="file" id="imagen" name="imagen" value="<%= product.imagen %>">
+                    </a>
+                </div>
+                <div class="caja--product--add boton--cancelar--guardar">
+                    <a href="/products/detalle/<%= product.id %>" class="form__button form__button--cancel">Cancelar</a>
+                    <button class="form__button form__button--send" type="submit">Guardar</button>
+                </div>
+                
+
+
+            </form>
+        </section>
+    </main>
+</body>

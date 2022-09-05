@@ -1,0 +1,40 @@
+<%- include('./partials/head', {title:"Diseño"}) %>
+
+<!-- =================== BODY || MAQUETADO DEL ARCHIVO HTML (Header, Main, Footer) =================== -->
+<body>
+    <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
+    <%- include('./partials/header') %>
+    
+    <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
+    <main class="main_menu">
+        <div class="carrucel">
+         
+        </div>
+        <div class="caja--menu-lista">
+         <div class="listado_categoria"><h1>categoria</h1>
+           
+            
+             <div><a href="/">mates</a></div>
+             <div><a href="/">figuras</a></div>
+             <div><a href="/">llaveros</a></div>
+             <div><a href="/">articulados</a></div>
+             <div><a href="/">portacelular</a></div>
+             <div><a href="/">cosplay</a></div>
+             <div><a href="/">juegos</a></div>
+             <div><a href="/">funkos</a></div>
+
+         </div>
+         <div class="caja-de-imagenes">
+            
+            <% products.forEach(product => { %>
+                <div class="caja"><a href="/products/detalle/<%= product.id%>"><img src="/images/<%= product.imagen %> " ><p><%= product.nombre %>   <%= product.precio %> </p></div></a>
+            <% }) %>
+
+
+        </div>
+        </div>
+    </main>
+    <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
+    <%- include('./partials/footer') %>
+</body>
+</html>

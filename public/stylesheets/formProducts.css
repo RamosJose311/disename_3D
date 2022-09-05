@@ -1,0 +1,140 @@
+
+.body--add{
+    background-image: url('/images/fondoComentario.jpeg');
+    background-size: 100%;
+    background-size:cover;
+    text-align: center;
+    font-family: var(--letraGaramond);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+
+.body--add a{
+    text-decoration: none;
+}
+.main-add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.section--add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+}
+.form__register-add{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8%;
+}
+.caja--product--add{
+    width: 100%;
+}
+.section--add input, select, textarea{
+    border: solid 1px white;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10%;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.form__title--add{
+    width: 100%;
+    text-align: center;
+    color: var(--colorTitulo);
+    margin-left: 5%;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.label--add{
+    font-family: var(--letraGaramond);
+    color: var(--colorBlanco);
+    font-weight: 700;
+}
+.imagen--product--add{
+    border-radius: 5px;
+    padding: 4px 23px;
+    background-color: var(--colorAzulOscuro);
+    font-family: var(--letraGaramond);
+    color: white;
+    
+    height: 5%;
+    text-decoration: none;
+    margin-top: 7%;
+    
+}
+.Descripcion-add{
+    margin-top: 0px;
+    font-family: var(--letraGaramond);
+    color: var(--colorBlanco);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.detalle--textarea-add{
+    width: 100%;
+}
+
+/* botones */
+.form__button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+}
+.form__button--cancel {
+    background-color: grey;
+    cursor:default;
+}
+
+.form__button--cancel:hover {
+    background-color: DarkGray;
+    cursor: pointer;
+}
+
+.form__button--send {
+    background-color: var(--colorRojo);
+}
+
+.form__button--send:hover {
+    background-color: OrangeRed;
+    cursor: pointer;
+}
+.boton--cancelar--guardar{
+    margin-top: 10%;
+}
+
+/* Tablet || 768 px */
+@media (min-width:768px){
+    .caja--product--add{
+        width: 48%;
+    }
+    .form__register-add{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .label--add{
+        width: 100%;
+    }
+    .tex--add{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 48%;
+    }
+    .boton--cancelar--guardar{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,26 @@
+[
+        {
+            "id": 1,
+            "nombre": "Zack",
+            "apellido": "Burdis",
+            "email": "zburdis0@vistaprint.com",
+            "contraseña": "alagrandelepusecuca",
+            "imagen": "https ://robohash.org/hicquiquia.png?size=50x50&set=set1"
+        },
+        {
+            "id": 2,
+            "nombre": "Christan",
+            "apellido": "Sillitoe",
+            "email": "csillitoe1@exblog .jp",
+            "contraseña": "aguantemessi1234",
+            "imagen": "https://robohash.org/cupiditateomnismagnam.png?size=50x50&set=set1"
+        },
+        {
+            "id": 3,
+            "nombre": "Sydney ",
+            "apellido": "Pankettman",
+            "email": "spankettman2@java.com",
+            "contraseña": "miramargesoyunpollo",
+            "imagen": "https://robohash.org/voluptatemomnisomnis.png?size=50x50&set=set1"
+        }
+    ]
