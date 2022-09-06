@@ -36,7 +36,7 @@ module.exports = {
         const products = loadProducts();
          /* return res.send(req.body) */
         const {id} = req.params;
-        const {nombre,precio,descuento, categoria, descripcion, tiempo, altura} = req.body;
+        const {nombre,precio,descuento, categoria, descripcion, tiempo, altura, imagen} = req.body;
         const productsEdit= products.map(product => {
             if(product.id === +id){
                return {
@@ -45,7 +45,9 @@ module.exports = {
                 precio: +precio,
                 descuento: +descuento,
                 altura: +altura,
-                tiempo: +tiempo        }
+                tiempo: +tiempo ,
+                imagen : imagen
+                   }
             }
             else{  return product }
         } )
