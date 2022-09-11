@@ -1,11 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-const {login,register} = require('../controllers/userController');
+const {login,register,processLogin} = require('../controllers/userController');
 
 /* /user */
 router
-  .get('/login',login)
   .get('/register',register)
+// crear ruta de post register
+
+  .get('/login',login)
+  .post('/login',processLogin)
+
+// Crear ruta get de profile
+// crear ruta put update (actualiza profile)
 
 module.exports = router;
