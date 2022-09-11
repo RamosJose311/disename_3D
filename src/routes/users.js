@@ -5,7 +5,6 @@ const {login,register,processRegister} = require('../controllers/userController'
 
 /* /user */
 router
-  .get('/login',login)
   .get('/register',register)
   .post('/process',processRegister)
 
