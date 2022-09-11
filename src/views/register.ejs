@@ -31,21 +31,21 @@
                     <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
                     <P>registrate con el correo electrónico</P>
                 </div>
-                <form action="" class="register_section_main-form">
+                <form action="process" class="register_section_main-form" method="post">
                     <div class="reg_sec_main_form-container">
-                        <input type="text" placeholder="Nombre">
+                        <input type="text" name="nombre">
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="text" placeholder="Apellido">
+                        <input type="text" name="apellido">
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="email" placeholder="Ingresa e-mail">
+                        <input type="email" name="email">
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" placeholder="Ingresa contraseña">
+                        <input type="password" name="password">
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" placeholder="Confirmar Contraseña">
+                        <input type="password2" name="password2">
                     </div>
                     <div class="reg_sec_main_form-container">
                         <button type="submit">Iniciar Sesión</button>

@@ -4,5 +4,8 @@ module.exports = {
     },
     register : (req,res) =>{
         return res.render('register')
+    },
+    processRegister :(req,res) =>{
+        return res.send (req.body)
     }
-}
+ }
