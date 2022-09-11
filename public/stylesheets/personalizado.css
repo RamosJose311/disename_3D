@@ -1,96 +1,133 @@
-.main_menu{
+.main menu{
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
     border: 1px solid black;
     width: 100%;
-   /*background-image: url(/img/fondo.png);*/
+   background-image: a;
     align-items: center;
-
+}
+ .caja-formulario{
+    background-image: url('/images/fondoComentario.jpeg');
+    color :blueviolet;
 }
 
-.carrucel{
-    display:flex;
-    flex-wrap: wrap;
-    background-color: white;
-    border: 1px solid red;
-    width: 80%;
-    height: 60px;
-    margin-top:7px;
-}
-.caja--menu-lista{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-   
-    width: 100%;
-
-}
-
-
-
-
-.caja-de-imagenes{
-    display:flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    width: 80%;
-    justify-content: space-evenly;
-  border: 1px solid white;
-
-}
-.listado_categoria{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 25%;
-    border: 1px solid white;
-    align-content: flex-start;
-    padding: 0px;
-    margin-top: 7px;
-    background-color: black;
-    box-shadow: 0 0 10px red;
-    color:var(--colorLetra);
-    height: -webkit-fill-available;;
-}
-.listado_categoria h1{
-    font-size: 13px;
-    padding: opx;
-    margin: 0px;
-    color:white;
-
-}
-.listado_categoria a{
-    font-size: 12px;
-    margin:0px;
-    padding: 0px;
-    text-decoration: none;
-    color :white;
     
-}
-
-.caja{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
     
-    width: 48%;
-    padding: 0px;
-    margin-top: 7px;
-    margin-right: 4px;
-    margin-bottom :7px;
-    box-shadow: 0 0 10px red;
-   background-color: aliceblue;
-}
-
-.caja img{
-    width: 100%;
-
-}
-
-.caja p{
-    margin:0px;
-    padding: 0px;
-}
+    .section--add{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+    }
+    .form__register-add{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 8%;
+    }
+    .caja--product--add{
+        width: 100%;
+    }
+    .section--add input, select, textarea{
+        border: solid 1px white;
+        outline: none;
+        padding: 10px 0;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10%;
+        margin-top: 3%;
+        text-align: center;
+    }
+    
+    .form__title--add{
+        width: 100%;
+        text-align: center;
+        color: var(--colorTitulo);
+        margin-left: 5%;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    .label--add{
+        font-family: var(--letraGaramond);
+        color: var(--colorAzulOscuro);
+        font-weight: 700;
+    }
+    .imagen--product--add{
+        border-radius: 5px;
+        padding: 4px 23px;
+        background-color: var(--colorAzulOscuro);
+        font-family: var(--letraGaramond);
+        color: white;
+        
+        height: 5%;
+        text-decoration: none;
+        margin-top: 7%;
+        
+    }
+    .Descripcion-add{
+        margin-top: 0px;
+        font-family: var(--letraGaramond);
+        color: var(--colorBlanco);
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+    .detalle--textarea-add{
+        width: 100%;
+    }
+    
+    /* botones */
+    .form__button {
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px;
+    }
+    .form__button--cancel {
+        background-color: grey;
+        cursor:default;
+    }
+    
+    .form__button--cancel:hover {
+        background-color: DarkGray;
+        cursor: pointer;
+    }
+    
+    .form__button--send {
+        background-color: var(--colorRojo);
+    }
+    
+    .form__button--send:hover {
+        background-color: OrangeRed;
+        cursor: pointer;
+    }
+    .boton--cancelar--guardar{
+        margin-top: 10%;
+    }
+    
+    /* Tablet || 768 px */
+    @media (min-width:768px){
+        .caja--product--add{
+            width: 48%;
+        }
+        .form__register-add{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .label--add{
+            width: 100%;
+        }
+        .tex--add{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 48%;
+        }
+        .boton--cancelar--guardar{
+            width: 100%;
+        }
+    
+    }
