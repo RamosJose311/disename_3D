@@ -26,6 +26,9 @@ module.exports = {
         
         const {nombre,apellido,email,password} =req.body;
         const usuario= loadUser();
+        if(errors.isEmpty()){
+            return res.render('inicio')                              //redirigir a algun lado 
+        } else{
 
         const nuevoUsuario={
             id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
@@ -38,6 +41,7 @@ module.exports = {
 
 
         }
+    }
 
         const userModify=[...usuario,nuevoUsuario];
 
