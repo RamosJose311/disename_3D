@@ -2,6 +2,7 @@ const {loadUser,storeUser} =require ("../data/dbModules")
 const {validationResult} = require ('express-validator')
 
 module.exports = {
+
     login : (req,res) =>{
         return res.render('login')
     },
@@ -30,6 +31,7 @@ module.exports = {
     register : (req,res) =>{
         return res.render('register')
     },
+
     processRegister :(req,res) =>{
         
         const {nombre,apellido,email,password} =req.body;
