@@ -34,15 +34,19 @@
                 <form action="process" class="register_section_main-form" method="post">
                     <div class="reg_sec_main_form-container">
                         <input type="text" name="nombre"  placeholder="ingrese su nombre" >
+                        <span class="login_error"> <%= locals.errors && errors.nombre ? errors.nombre.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <input type="text" name="apellido" placeholder="ingrese apellido" >
+                        <span class="login_error"> <%= locals.errors && errors.apellido ? errors.apellido.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <input type="email" name="email" placeholder="ingrese email" >
+                        <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <input type="password" name="password" placeholder="ingrese password" >
+                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <input type="password2" name="password2" placeholder="confirme su password " >
