@@ -6,7 +6,7 @@ module.exports = [
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email valido'),
 
-    body('contraseña')
+    body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .custom((value, {req}) => {
             const user = loadUser().find(user => user.email === req.body.email && (user.contraseña === value)   )

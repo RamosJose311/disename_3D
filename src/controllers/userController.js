@@ -14,7 +14,7 @@ module.exports = {
     },
     processRegister :(req,res) =>{
         const {nombre,apellido,email,password,} =req.body;
-        const usuario=loadUser;
+        const usuario=loadUser();
 
         const nuevoUsuario={
             Id:usuario[usuario.length=1] ? usuario[usuario.length=1].id+1:1,
