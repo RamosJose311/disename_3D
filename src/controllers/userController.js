@@ -33,8 +33,7 @@ module.exports = {
     processRegister :(req,res) =>{
         
         const {nombre,apellido,email,password} =req.body;
-        const usuario= loadUser();
-                            //redirigir a algun lado 
+        const usuario = loadUser();
 
         const nuevoUsuario={
             id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
@@ -45,7 +44,7 @@ module.exports = {
             Rol:"user",
             avatar:null,
         }
-
+    
 
         const userModify=[...usuario,nuevoUsuario];
 
