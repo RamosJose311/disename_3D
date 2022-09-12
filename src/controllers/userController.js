@@ -18,7 +18,7 @@ module.exports = {
                 Rol
             }
 
-            return res.render('inicio')                              //redirigir a algun lado 
+            return res.redirect('/')                              //redirigir a algun lado 
         } else{
             return res.render('login', {
                 errors:errors.mapped()
