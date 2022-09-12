@@ -5,7 +5,7 @@
       "apellido": "asd",
       "email": "asd@hotmail.com",
       "password": "1234",
-      "Rol": "user",
+      "Rol": "admin",
       "avatar": null
    },
    {
@@ -23,7 +23,7 @@
       "apellido": "asdfsa",
       "email": "benicciovlicciardi@gmail.com",
       "password": "12341234",
-      "Rol": "user",
+      "Rol": "admin",
       "avatar": null
    },
    {
@@ -41,6 +41,15 @@
       "apellido": "",
       "email": "",
       "password": "",
+      "Rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 6,
+      "nombre": "santiago",
+      "apellido": "rodriguez",
+      "email": "santiagocarp987@gmail.com",
+      "password": "123456",
       "Rol": "user",
       "avatar": null
    }
