@@ -27,10 +27,20 @@
             <div class="header_Bottom"></div>
             <ul>
                 <li>
-                    <a class="bt-neon" href="">nosotros <i class="fa-solid fa-people-group"> </i></a>
-                    <a class="bt-neon" href="">vender modelo 3d </a>
-                    <a class="bt-neon" href="../products/productCart">carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                    <a class="header_Bottom_reg bt-neon" href="../users/login">registrate <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    <% if (locals.userLogin) { %>
+                        <a class="header_Bottom_reg bt-neon" href="/users/profile"><%= userLogin.nombre %></a>
+                        <a class="bt-neon" href="../products/productCart">carrito <i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="../users/logout">salir</a>
+                        <% if (userLogin.Rol === "admin") { %>
+                            <a class="header_Bottom_reg bt-neon" href="../admin/crearProducto">crearProducto <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                            <a class="bt-neon" href="">vender modelo 3d </a>
+                         
+                        <% } %>
+                        <% } else { %>
+                            <a class="header_Bottom_reg bt-neon" href="../users/register">registrate <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                            <a class="header_Bottom_reg bt-neon" href="../users/login">login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                            <a class="bt-neon" href="">nosotros <i class="fa-solid fa-people-group"> </i></a>
+                    <% } %>
                 </li>
             </ul>
         </nav>

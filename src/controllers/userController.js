@@ -19,7 +19,7 @@ module.exports = {
                 Rol
             }
 
-            return res.render('inicio')                              //redirigir a algun lado 
+            return res.redirect('/')                              //redirigir a algun lado 
         } else{
             return res.render('login', {
                 errors:errors.mapped()
@@ -35,10 +35,7 @@ module.exports = {
     processRegister :(req,res) =>{
         
         const {nombre,apellido,email,password} =req.body;
-        const usuario= loadUser();
-        if(errors.isEmpty()){
-            return res.render('inicio')                              //redirigir a algun lado 
-        } else{
+        const usuario = loadUser();
 
         const nuevoUsuario={
             id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
@@ -48,15 +45,17 @@ module.exports = {
             password ,
             Rol:"user",
             avatar:null,
-
-
         }
-    }
+    
 
         const userModify=[...usuario,nuevoUsuario];
 
         storeUser(userModify);
         return res.redirect('/users/login')
+    },
+    logout: (req, res)=> {
+        req.session.destroy();
+        return res.redirect('/');
     }
     
- }
+}

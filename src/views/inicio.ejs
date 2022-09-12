@@ -24,9 +24,16 @@
                         <a href="../products/archivo"><img src="/images/2.png" alt="">
                             <p>Diseño</p>
                         </a>
-                        <a href="../products/personalizado"><img src="/images/3.png" alt="">
-                            <p>Personalizado</p>
-                        </a>
+                        
+                            <a <% if (locals.userLogin) { %>
+                                    href="../products/personalizado"><img src="/images/3.png" alt="">
+                                <p>Personalizado</p>
+                                <% }else{ %>
+                                    <a href="../users/login"><img src="/images/3.png" alt="">
+                                        <p>Personalizado</p>
+                                    <% } %>
+                            </a>
+                        
                     </div>
 
                     <a href=""><img src="/images/archivo.jpg" alt=""></a>
