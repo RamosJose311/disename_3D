@@ -50,6 +50,10 @@ module.exports = {
 
         storeUser(userModify);
         return res.redirect('/users/login')
+    },
+    logout: (req, res)=> {
+        req.session.destroy();
+        return res.redirect('/');
     }
     
 }
