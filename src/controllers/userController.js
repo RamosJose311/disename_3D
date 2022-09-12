@@ -1,4 +1,5 @@
 const {loadUser,storeUser} =require ("../data/dbModules")
+const {validationResult} = require ('express-validator')
 
 module.exports = {
     login : (req,res) =>{
@@ -6,7 +7,16 @@ module.exports = {
     },
 
     processLogin : (req,res) => {
-        res.send(req.body)
+        const errors = validationResult(req)
+        
+        if(errors.isEmpty()){
+            return res.render('inicio')                              //redirigir a algun lado 
+        } else{
+            return res.render('login', {
+                errors:errors.mapped()
+            })
+        }
+ 
     },
 
     register : (req,res) =>{

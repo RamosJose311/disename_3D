@@ -27,16 +27,16 @@
                         <a href="../users/login">Iniciar Sesión</a>
                     </div>
                 </div>
-                <form action=""  method="POST" class="login_section_main-form">    <!-- Formulario Login-->
+                <form action="login"  method="POST" class="login_section_main-form">    <!-- Formulario Login-->
                     <div class="log_sec_main_form-container">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id= "email" name="email">
+                        <input type="email" id= "email" name="email" placeholder="Ingrese su email">
+                        <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
                     </div>
                     <div class="log_sec_main_form-container">
-                        <label for="password">Clave</label>
-                        <input type="password" id="password" name="password" >
+                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %>  </span>
                     </div>
-                    <div class="log_sec_main_form-container">
+                    <div class="log_sec_main_form-container-boton">
                         <button type="submit">Iniciar Sesión</button>
                     </div>
                     <div class="login_section_main-correo">       <!-- Otra opcion de loguin-->

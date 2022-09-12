@@ -16,5 +16,23 @@
       "password": "1234",
       "Rol": "user",
       "avatar": null
+   },
+   {
+      "id": 3,
+      "nombre": "JUAN",
+      "apellido": "asdfsa",
+      "email": "benicciovlicciardi@gmail.com",
+      "password": "12341234",
+      "Rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 4,
+      "nombre": "JUAN",
+      "apellido": "LICCIARDI",
+      "email": "juanelicciardi@gmail.com",
+      "password": "123456",
+      "Rol": "user",
+      "avatar": null
    }
 ]

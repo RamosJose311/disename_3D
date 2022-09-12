@@ -100,12 +100,22 @@
 
 .log_sec_main_form-container{
     width: 95%;
-    text-align: center;
+    text-align: left;
     color:blueviolet
 }
 
+.log_sec_main_form-container-boton{
+    width: 95%;
+    text-align: center;
+    color:blueviolet
+}
 .log_sec_main_form-container input{
     width: 100%;
+}
+
+.login_error{
+    font-size: 15px;
+    color: var(--colorBlanco)
 }
 
 .log_sec_main_form-container label{
