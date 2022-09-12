@@ -1,4 +1,4 @@
-const {loadUser} =require ("../data/dbModules")
+const {loadUser,storeUser} =require ("../data/dbModules")
 
 module.exports = {
     login : (req,res) =>{
@@ -13,11 +13,12 @@ module.exports = {
         return res.render('register')
     },
     processRegister :(req,res) =>{
-        const {nombre,apellido,email,password,} =req.body;
-        const usuario=loadUser;
+        
+        const {nombre,apellido,email,password} =req.body;
+        const usuario= loadUser();
 
         const nuevoUsuario={
-            Id:usuario[usuario.length=1] ? usuario[usuario.length=1].id+1:1,
+            id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
             nombre:nombre.trim(),
             apellido:apellido.trim(),
             email:email.trim(),
@@ -31,7 +32,7 @@ module.exports = {
         const userModify=[...usuario,nuevoUsuario];
 
         storeUser(userModify);
-        return res.redirec('/users/login')
+        return res.redirect('/users/login')
     }
     
  }
