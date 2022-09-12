@@ -34,5 +34,14 @@
       "password": "123456",
       "Rol": "user",
       "avatar": null
+   },
+   {
+      "id": 5,
+      "nombre": "",
+      "apellido": "",
+      "email": "",
+      "password": "",
+      "Rol": "user",
+      "avatar": null
    }
 ]
