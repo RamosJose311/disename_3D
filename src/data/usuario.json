@@ -1,26 +1,20 @@
 [
-        {
-            "id": 1,
-            "nombre": "Zack",
-            "apellido": "Burdis",
-            "email": "zburdis0@vistaprint.com",
-            "password": "alagrandelepusecuca",
-            "imagen": "https ://robohash.org/hicquiquia.png?size=50x50&set=set1"
-        },
-        {
-            "id": 2,
-            "nombre": "Christan",
-            "apellido": "Sillitoe",
-            "email": "csillitoe1@exblog .jp",
-            "password": "aguantemessi1234",
-            "imagen": "https://robohash.org/cupiditateomnismagnam.png?size=50x50&set=set1"
-        },
-        {
-            "id": 3,
-            "nombre": "Sydney ",
-            "apellido": "Pankettman",
-            "email": "spankettman2@java.com",
-            "password": "miramargesoyunpollo",
-            "imagen": "https://robohash.org/voluptatemomnisomnis.png?size=50x50&set=set1"
-        }
-    ]
+   {
+      "id": 1,
+      "nombre": "asd",
+      "apellido": "asd",
+      "email": "asd@hotmail.com",
+      "password": "1234",
+      "Rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 2,
+      "nombre": "asd",
+      "apellido": "asd",
+      "email": "asd@hotmail.com",
+      "password": "1234",
+      "Rol": "user",
+      "avatar": null
+   }
+]
