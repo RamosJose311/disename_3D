@@ -5,6 +5,10 @@ module.exports = {
         return res.render('login')
     },
 
+    processLogin : (req,res) => {
+        res.send(req.body)
+    },
+
     register : (req,res) =>{
         return res.render('register')
     },
