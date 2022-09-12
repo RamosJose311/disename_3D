@@ -10,6 +10,14 @@ module.exports = {
         const errors = validationResult(req)
         
         if(errors.isEmpty()){
+            const {id,nombre,Rol} = loadUser().find(user => user.email === req.body.email);
+
+            req.session.userLogin = {
+                id,
+                nombre,
+                Rol
+            }
+
             return res.render('inicio')                              //redirigir a algun lado 
         } else{
             return res.render('login', {
