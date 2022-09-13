@@ -4,23 +4,40 @@ const {loadUser} = require ('../data/dbModules');
 module.exports = [
     check('nombre')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
-       .withMessage('Debe ser un valor valido'),
+    .isAlpha('es-ES').withMessage('Debe ingresar valores alfabeticos'),
     
     
     check('apellido')
     .notEmpty().withMessage('El apellido es obligatorio').bail()
-        .withMessage('Debe ser un valor valido'),
+    .isAlpha('es-ES').withMessage('Debe ingresar valores alfabeticos'),
        
      
-    check('email')
+    body('email')
     .notEmpty().withMessage('El email es obligatorio').bail()
-    .isEmail().withMessage('Debe ser un email valido'),
+    .isEmail().withMessage('Debe ser un email valido').bail()
+    .custom((value, {req}) => {
+        const user = loadUser().find(user => user.email === value)   
+            return user ? false : true
+    }).withMessage('El mail ingresado existe'),
+
 
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
+        .isLength({
+            min:6,
+            max:12
+        }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+
+    body('password2')
+        .notEmpty().withMessage('Debe repetir la contraseña').bail()
         .custom((value, {req}) => {
-            const user = loadUser().find(user => user.email === req.body.email && (user.password === value)   )
-                return user ? true : false
-        }).withMessage('Alguno de los datos no es valido'),
+              const pass= req.body.password
+              if (pass === value){
+                return true;
+              } else {
+                return false
+              }
+        }).withMessage('La contraseña ingresada no es igual'),
+
 
 ]
