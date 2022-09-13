@@ -25,5 +25,14 @@
       "password": "$2a$10$NTiSN4nIJYpqTTFz3QeOIOTKqmUulvWFzbMJynkcq0NHcaCUMNK2G",
       "Rol": "admin",
       "avatar": null
+   },
+   {
+      "id": 4,
+      "nombre": "jose",
+      "apellido": "ramos",
+      "email": "josesito@hotmail.com",
+      "password": "$2a$10$UvVUHrsq3g.DgQu4FJc2fuYbQ8LZrlHRqcKZGLqML9rj28mTn7BOK",
+      "Rol": "user",
+      "avatar": null
    }
 ]

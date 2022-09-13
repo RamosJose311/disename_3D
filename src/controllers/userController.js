@@ -58,6 +58,7 @@ module.exports = {
     },
 
     logout: (req, res)=> {
+        return res.send(req.body)
         req.session.destroy();
         return res.redirect('/');
     }

@@ -11,6 +11,6 @@ router
 .post('/login',loginValidator,processLogin)
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
-.post('/logout', logout)
+.get('/logout', logout)
 
 module.exports = router;
