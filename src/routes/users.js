@@ -9,8 +9,10 @@ const registerValidator =require('../validations/registerValidation')
 router
 .get('/login',login)
 .post('/login',loginValidator,processLogin)
+
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
-.get('/logout', logout)
+
+.get('/logout',logout)
 
 module.exports = router;

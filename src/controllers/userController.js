@@ -50,15 +50,17 @@ module.exports = {
         const userModify=[...usuario,nuevoUsuario];
 
         storeUser(userModify);
+
         return res.redirect('/users/login')
-     }else{
-     return res.render ('/users/register',{errors:errors.mapped(),old:req.body})
-       
+     }else {
+        return res.render('register',{
+            errors:errors.mapped(),
+            old:req.body
+        })
      }
     },
 
     logout: (req, res)=> {
-        return res.send(req.body)
         req.session.destroy();
         return res.redirect('/');
     }
