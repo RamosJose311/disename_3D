@@ -43,11 +43,9 @@ module.exports = {
             nombre:nombre.trim(),
             apellido:apellido.trim(),
             email:email.trim(),
-            password :bcryptjs.hashSync(pass.trim(),10),
+            password :bcryptjs.hashSync(password.trim(),10),
             Rol:"user",
             avatar:null,
-
-
         } 
         const userModify=[...usuario,nuevoUsuario];
 
@@ -57,4 +55,11 @@ module.exports = {
      return res.render ('/users/register',{errors:errors.mapped(),old:req.body})
        
      }
-}}
+    },
+
+    logout: (req, res)=> {
+        req.session.destroy();
+        return res.redirect('/');
+    }
+
+}

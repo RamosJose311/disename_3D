@@ -1,56 +1,29 @@
 [
    {
       "id": 1,
-      "nombre": "asd",
-      "apellido": "asd",
-      "email": "asd@hotmail.com",
-      "password": "1234",
+      "nombre": "SANTIAGO",
+      "apellido": "RODRIGUEZ",
+      "email": "santi@gmail.com",
+      "password": "$2a$10$oYyDrlB1FpWZFybVvNvO7OIAkXqbVah8vYVCV2wFe9zqQ9KhGCrDu",
       "Rol": "admin",
       "avatar": null
    },
    {
       "id": 2,
-      "nombre": "asd",
-      "apellido": "asd",
-      "email": "asd@hotmail.com",
-      "password": "1234",
+      "nombre": "JOSE",
+      "apellido": "RAMOS",
+      "email": "jose@gmail.com",
+      "password": "$2a$10$eR3GAgmug8JSLjC9EGxRBO3TvgfhITSPQ03z7zab/4k7PSAC1hdKe",
       "Rol": "user",
       "avatar": null
    },
    {
       "id": 3,
-      "nombre": "JUAN",
-      "apellido": "asdfsa",
-      "email": "benicciovlicciardi@gmail.com",
-      "password": "12341234",
+      "nombre": "GEREMIAS",
+      "apellido": "ZALOKAR",
+      "email": "geremias@gmail.com",
+      "password": "$2a$10$NTiSN4nIJYpqTTFz3QeOIOTKqmUulvWFzbMJynkcq0NHcaCUMNK2G",
       "Rol": "admin",
-      "avatar": null
-   },
-   {
-      "id": 4,
-      "nombre": "JUAN",
-      "apellido": "LICCIARDI",
-      "email": "juanelicciardi@gmail.com",
-      "password": "123456",
-      "Rol": "user",
-      "avatar": null
-   },
-   {
-      "id": 5,
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "password": "",
-      "Rol": "user",
-      "avatar": null
-   },
-   {
-      "id": 6,
-      "nombre": "santiago",
-      "apellido": "rodriguez",
-      "email": "santiagocarp987@gmail.com",
-      "password": "123456",
-      "Rol": "user",
       "avatar": null
    }
 ]

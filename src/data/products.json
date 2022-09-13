@@ -118,5 +118,16 @@
       "material": "pla",
       "descripcion": "portajousting de metalgear ,con adornos incluidos",
       "imagen": "i10.png"
+   },
+   {
+      "id": 11,
+      "nombre": "LKALSKFLASKFLKSA90909809",
+      "precio": 124333242,
+      "descuento": 233,
+      "altura": 3213,
+      "tiempo": 312312,
+      "categoria": "mates",
+      "descripcion": "321321",
+      "imagen": "groot1.jpg"
    }
 ]
