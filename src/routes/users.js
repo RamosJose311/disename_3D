@@ -11,5 +11,5 @@ router
 .post('/login',loginValidator,processLogin)
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
-
+.get('/admin',login)
 module.exports = router;
