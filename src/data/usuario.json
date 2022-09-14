@@ -1,39 +1,29 @@
 [
    {
       "id": 1,
-      "nombre": "SANTIAGO",
-      "apellido": "RODRIGUEZ",
-      "email": "santi@gmail.com",
-      "password": "$2a$10$oYyDrlB1FpWZFybVvNvO7OIAkXqbVah8vYVCV2wFe9zqQ9KhGCrDu",
-      "Rol": "admin",
+      "nombre": "administrador",
+      "apellido": "creador",
+      "email": "admin@comision15.com",
+      "password": "$2a$10$rPFnJ4CA13I9U5zGrS.F5.88hZj0Pfdb5yPCr89vrrUOPMaywRn2C",
+      "rol": "admin",
       "avatar": null
    },
    {
       "id": 2,
-      "nombre": "JOSE",
-      "apellido": "RAMOS",
-      "email": "jose@gmail.com",
-      "password": "$2a$10$eR3GAgmug8JSLjC9EGxRBO3TvgfhITSPQ03z7zab/4k7PSAC1hdKe",
-      "Rol": "user",
+      "nombre": "administrador",
+      "apellido": "administrador",
+      "email": "admin@disename3d.com",
+      "password": "$2a$10$Ib4cMZoyMN1rQNKi0Cy2mOiLnjFedtKhjrGNi3hs17sLINv4wiFgK",
+      "rol": "admin",
       "avatar": null
    },
    {
       "id": 3,
-      "nombre": "GEREMIAS",
-      "apellido": "ZALOKAR",
-      "email": "geremias@gmail.com",
-      "password": "$2a$10$NTiSN4nIJYpqTTFz3QeOIOTKqmUulvWFzbMJynkcq0NHcaCUMNK2G",
-      "Rol": "admin",
+      "nombre": "Santiago",
+      "apellido": "Rodriguez",
+      "email": "santiagocarp987@gmail.com",
+      "password": "$2a$10$X8aDU2XEqptk0cWs6ds2v.3Y7RLi3J2C6tSIK8F045QNwR0aj32K2",
+      "rol": "user",
       "avatar": null
-   },
-   {
-      "id": 4,
-      "nombre": "jose",
-      "apellido": "ramos",
-      "email": "josesito@hotmail.com",
-      "password": "$2a$10$UvVUHrsq3g.DgQu4FJc2fuYbQ8LZrlHRqcKZGLqML9rj28mTn7BOK",
-      "Rol": "user",
-      "avatar": null
-      
    }
 ]

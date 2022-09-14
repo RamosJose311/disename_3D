@@ -12,12 +12,12 @@ module.exports = {
         const errors = validationResult(req)
         
         if(errors.isEmpty()){
-            const {id,nombre,Rol} = loadUser().find(user => user.email === req.body.email);
+            const {id,nombre,rol} = loadUser().find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id,
                 nombre,
-                Rol
+                rol
             }
 
             return res.redirect('/')                              //redirigir a algun lado 
@@ -44,7 +44,7 @@ module.exports = {
             apellido:apellido.trim(),
             email:email.trim(),
             password :bcryptjs.hashSync(password.trim(),10),
-            Rol:"user",
+            rol:"user",
             avatar:null,
         } 
         const userModify=[...usuario,nuevoUsuario];

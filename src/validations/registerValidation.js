@@ -24,9 +24,9 @@ module.exports = [
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .isLength({
-            min:6,
+            min:5,
             max:12
-        }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+        }).withMessage('La contraseña debe tener entre 5 y 12 caracteres'),
 
     body('password2')
         .notEmpty().withMessage('Debe repetir la contraseña').bail()
