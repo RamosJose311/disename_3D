@@ -18,6 +18,10 @@ const loadUser =()  => {
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'usuario.json'),'utf-8'))
 }
 
+const loadCategories = () => {
+    return JSON.parse(fs.readFileSync(path.join(__dirname, 'categorias.json'),'utf-8'))
+}
+
 
 
 module.exports = {
@@ -25,6 +29,7 @@ module.exports = {
     loadUser,
     storeProducts,
     storeUser,
+    loadCategories
 }
 
 
