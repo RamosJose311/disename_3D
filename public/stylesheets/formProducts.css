@@ -59,8 +59,12 @@
 }
 .label--add{
     font-family: var(--letraGaramond);
-    color: var(--colorBlanco);
+    color: white;
     font-weight: 700;
+}
+.text-danger{
+    color: red;
+    font-size: 15px;
 }
 .imagen--product--add{
     border-radius: 5px;
