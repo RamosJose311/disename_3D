@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {login,register,processRegister,processLogin, logout} = require('../controllers/userController');
+const {login,register,processRegister,processLogin,profile,logout} = require('../controllers/userController');
 const loginValidator = require ('../validations/loginValidator')
 const registerValidator =require('../validations/registerValidation')
 
@@ -13,6 +13,7 @@ router
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
 
+.get('/profile',profile)
 .get('/logout',logout)
 
 module.exports = router;

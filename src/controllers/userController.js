@@ -59,6 +59,9 @@ module.exports = {
         })
      }
     },
+    profile:(req,res)=>{
+        return res.render('profile')
+    },
 
     logout: (req, res)=> {
         req.session.destroy();

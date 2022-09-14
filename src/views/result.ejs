@@ -5,12 +5,12 @@
 
     <main>
         <div>
-            <div>
+            <div class="caja--menu-lista">
                 <h2 class="products-title">Resultados de la búsqueda: <strong><%= keywords %></strong></h2>
-            </div>
+            </div class="caja-de-imagenes">
             <% if (products.length > 0) { %>
 				<% products.forEach(({id,nombre,precio,imagen}) => { %>
-					<div >
+					<div class ="caja">
                         <img src="/images/<%= imagen %>" alt="">
                         <div>
                             <p><%= nombre %> </p>
