@@ -1,0 +1,12 @@
+.main_menu{
+    display:flex;
+    background-color:blue;
+    border: solid 1px black;
+}
+
+.caja_de_datos{
+    border:solid 1px red;
+    display:flex;
+    
+}
+
