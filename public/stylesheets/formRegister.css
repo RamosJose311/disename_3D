@@ -3,7 +3,7 @@
     display: none;
 }
 
-.register_main{
+/* .register_main{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
     margin-top: 10px;
     font-family: var(--letraGaramond);
     background-image: url(/images/back1.jpg);
-}
+} */
 
 .register_return{
     width: 100%;
@@ -37,7 +37,7 @@
     text-transform: uppercase;
     padding: 0;
     margin: 10px 0px;
-    color: var(--colorBlanco)
+    color: var(--colorMargendiv);
 }
 
 .register_section-main {
@@ -61,7 +61,7 @@
 }
 
 .reg_sec_main_opt-reg a{
-    color:var(--colorBlanco);
+    color:var(--colorMargendiv);
     text-decoration: none;
 
 }
@@ -70,13 +70,13 @@
 .reg_sec_main_opt-log{
     width: 50%;
     text-align: center;
-    border-left: 2px solid var(--colorAzulClaro);
-    border-bottom: 2px solid var(--colorAzulClaro);
+    border-left: 2px solid var(--colorAzulOscuro);
+    border-bottom: 2px solid var(--colorAzulOscuro);
     background-color: none;
 }
 
 .reg_sec_main_opt-log a{
-    color:var(--colorAzulClaro);
+    color:var(--colorAzulOscuro);
     text-decoration: none;
 
 }
@@ -143,13 +143,19 @@
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
 @media (min-width:768px) {
-    .register_main{
+    /* .register_main{
         width: 70%;
         margin: 10px auto;
         font-family: var(--letraGaramond);
         box-shadow: 5px 5px 5px #000;
-    }
+    } */
     
+    .register_section{
+        width: 60%;
+        margin: 20px 0px;
+        border: 2px solid var(--colorBlanco);
+        box-shadow: 5px 5px 8px var(--colorMargendiv);
+    }
 
 
 }

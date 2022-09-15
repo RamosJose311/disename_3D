@@ -3,7 +3,6 @@
 
 }
 
-
 :root{
     /* Colores */
     --colorLila :#EB7CE2;
@@ -32,9 +31,27 @@
     /* Tipografia */
     --letraGaramond: 'EB Garamond';
 
-
-
 }
 
 
+.general_body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
 
+.general_main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0px 0px;
+    color: var(--letraHeader);
+    background: linear-gradient(
+                    45deg,
+                    rgb(104, 223, 104),rgb(221, 115, 216),rgb(104, 223, 104),rgb(108, 106, 214));
+    background-size: 400% 400%;
+    animation: cambiar 15s ease-in-out infinite;
+
+}

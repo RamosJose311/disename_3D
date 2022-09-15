@@ -25,5 +25,14 @@
       "password": "$2a$10$X8aDU2XEqptk0cWs6ds2v.3Y7RLi3J2C6tSIK8F045QNwR0aj32K2",
       "rol": "user",
       "avatar": null
+   },
+   {
+      "id": 4,
+      "nombre": "JUAN",
+      "apellido": "LICCIARDI",
+      "email": "juanelicciardi@gmail.com",
+      "password": "$2a$10$AgGsPnPZ03Tutp4Sce9mKOq/WE4sHruE10KlkY0ZC3fkaXM8zei2S",
+      "rol": "user",
+      "avatar": null
    }
 ]

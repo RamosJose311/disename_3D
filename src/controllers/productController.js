@@ -5,14 +5,16 @@ module.exports = {
     productCart: (req, res) => {
         return res.render('productCart')
     },
-    archivo: (req, res) => {
+
+    modelDisponible: (req, res) => {
         const products = loadProducts();
 
-         return res.render('archivo',{
+         return res.render('modelDisponible',{
             products,
             toThousand
          })
     },
+
     personalizado: (req, res) => {
         const products = loadProducts();
 
@@ -23,10 +25,11 @@ module.exports = {
         })
 
     },
-    proyecto: (req, res) => {
+    
+    imprimir: (req, res) => {
         const products =loadProducts();
 
-         return res.render('proyecto',{
+         return res.render('modelPrint',{
             products,
             toThousand
          })

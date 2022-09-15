@@ -4,22 +4,43 @@
 
 <%- include('./partials/head', {title:"PROFILE"}) %> 
 
-<body>
+<body class="general_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <div class="main_menu">
-        <h2>perfil de usuario</h2>
-        <div class="caja_de_datos">
-            
-            <div class="cajas"><p>hola</p></div>
-            <div class="cajas"><p>hola</p></div>
-            <div class="cajas"><p>hola</p></div>
-         </div>
-    </div>
+    <main class="general_main">
+        <h1 class="profile_titulo">PERFIL DE USUARIO</h2>
+        <section class="profile_section">
+            <form action="">
+                <div>
+                    <label for="nomber"></label>
+                    <input type="text" id="nombre">
+                </div>
+                <div>
+                    <label for="apellido"></label>
+                    <input type="text" id="apellido">
+                </div>
+                <div>
+                    <label for="nacimiento"></label>
+                    <input type="date" id="nacimiento">
+                </div>
+                <div>
+                    <H2>GENERO</H2>
+                    
+                    <input type="radio" id="genero">  
+                    <label for="genero">MASULINO</label>  <br>
+                    <input type="radio" id="genero">
+                    <label for="genero">FEMENINO</label>  <br>
+                    <input type="radio" id="genero">
+                    <label for="genero">OTROS</label>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
 </body>
-
 </html>
