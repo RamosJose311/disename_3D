@@ -1,17 +1,17 @@
 <%- include('./partials/head', {title:"Modelo"}) %>
 
 <!-- =================== BODY || MAQUETADO DEL ARCHIVO HTML (Header, Main, Footer) =================== -->
-<body>
+<body general_body>
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
     
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main class="main_menu">
+    <main class="general_main">
         <div class="carrucel">
          
         </div>
         <div class="caja--menu-lista">
-         <div class="listado_categoria"><h1>categoria</h1>
+        <div class="listado_categoria"><h1>categoria</h1>
            
             
              <div><a href="/">mates</a></div>
@@ -27,10 +27,18 @@
          <div class="caja-de-imagenes">
             
             <% products.forEach(product => { %>
-                <div class="caja"><a href="/products/detalle/<%= product.id%>"><img src="/images/<%= product.imagen %> " ><p><%= product.nombre %>   <%= product.precio %> </p></div></a>
+                <div class="caja-de-producto">
+                    <a href="/products/detalle/<%= product.id%>">
+                        <figure>
+                            <img src="/images/<%= product.imagen %> " >
+                        </figure>
+                        <article>
+                            <p><%= product.nombre %>   <%= product.precio %> </p>
+                        </article>
+                    </a>
+                </div>
+                
             <% }) %>
-
-
         </div>
         </div>
     </main>
