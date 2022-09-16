@@ -4,12 +4,12 @@ const {loadUser} = require ('../data/dbModules');
 module.exports = [
     check('nombre')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
-    .isAlpha('es-ES').withMessage('Debe ingresar valores alfabeticos'),
+    .isAlpha('es-ES',{ignore: ' '}).withMessage('Debe ingresar valores alfabeticos'),
     
     
     check('apellido')
     .notEmpty().withMessage('El apellido es obligatorio').bail()
-    .isAlpha('es-ES').withMessage('Debe ingresar valores alfabeticos'),
+    .isAlpha('es-ES',{ignore: ' '}).withMessage('Debe ingresar valores alfabeticos'),
        
      
     body('email')

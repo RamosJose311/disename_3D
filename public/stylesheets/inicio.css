@@ -12,15 +12,15 @@
 .caja_bottom {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 50%;
+    justify-content: space-between;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px;
 }
 
 
 .menu--bottom img {
-    width: 50%;
+    width: 100%;
     border-radius: 20% 0 20% 0;
     border: 1px solid black;
     justify-self: center;
@@ -91,9 +91,11 @@
 }
 
 @media(min-width:768px) {
+
     .menu--bottom {
         justify-content: center;
         padding-top: 30px;
+        gap: 3%;
     }
 
     .caja_bottom {
@@ -101,6 +103,10 @@
         width: 30%;
         padding: 0;
         align-content: center;
+    }
+
+    .menu--bottom img {
+        width: 100%;
     }
 
     .caja_bottom a {

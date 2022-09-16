@@ -3,14 +3,6 @@
 
 
 
-/* imagen fondo body */
-.imagen-fondo-body-detalle{
-    background-image: url('/images/fondo3.jpg');
-    background-size: 100%;
-    background-size:auto;
-}
-
-
 
 /* gliter */
 .caja--gliter{
@@ -90,6 +82,7 @@
     transition-duration: 0.9s;
     width: 100%;
     text-align: center;
+    margin-bottom: 3%;
 }
 .detalle__menu--button1{
     border-radius: 5px;
@@ -125,6 +118,9 @@
     
 }
 /* descripcion */
+
+
+
 .detalle__menu--p{
     margin-left: 4%;
     font-size: 15px;
@@ -144,6 +140,16 @@
 }
 
 /* comentarios */
+
+
+.detalle__menu--section--comentarios{
+    border-bottom: none;
+    text-align: center;
+    width: 100%;
+    
+}
+
+
 .detalle__menu--tituo--comentario{
     color: var(--colorTitulo);
     font-family: var(--letraGaramond);
@@ -151,11 +157,7 @@
     text-transform: uppercase;
 }
 
-.detalle__menu--section--comentarios{
-    border-bottom: none;
-    text-align: center;
-    
-}
+
 .detalle__menu--section--comentarios h6{
     margin-bottom: 0;
     font-family: var(--letraGaramond);
@@ -231,7 +233,6 @@
         width: 80%;
     }
 
-
     .detalle__menu--article--producto{
         width: 100%;
     }
@@ -239,7 +240,6 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-
     }
     .detalle--menu--principal{
 
@@ -293,13 +293,12 @@
         width: 100%;
         margin-top: 5%;
     }
-    .detalle__menu--section--comentarios{
 
+    .detalle__menu--section--comentarios{
         display: flex;
         justify-content: space-between;
         border: none;
         height: 130px;
-        
     }
     .detalle__menu--comentario{
         width: 32%;
@@ -325,7 +324,10 @@
         display: inline-block;
     }
     .detalle__menu--tituo--comentario{
-        margin-top: 30%;
+        width: 100%;
+        margin-top: 5%;
+        margin-left: 3%;
+        text-align: left;
     }
 }
 
@@ -334,15 +336,15 @@
 @media (min-width:1024px){
 
     .detalle__menu--article--descripcion{
-        order: -1;
+        
     }
     .detalle__menu--titulo{
-        order: 0;
+      
         font-size: 22px;
         
     }
     .detalle__menu--butto{
-        order: 1;
+       
     }
     .detalle__menu--button{
         margin-left: 14%;
@@ -354,10 +356,13 @@
     .detalle__menu--button a{
         font-size: 17px;
     }
+    
     .detalle__menu--tituo--comentario{
         font-size: 20px;
-        margin-left: 3%;
+    
     }
+
+    
     .detalle__menu--section--comentarios{
         margin: 0 2%;
     }
@@ -369,10 +374,6 @@
     .detalle__menu--caja--textarea{
         padding: 0 5%;
     }
-    .detalle__menu--tituo--comentario{
-        margin-top: 25%;
-    }
-
 }
 
 

@@ -15,7 +15,7 @@
                 </button>
             </div>
             <div class="menu_register menu_Bar_Conten">
-                <a class="bt-neon" href="../user/login">  registrate  <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                <a class="bt-neon" href="../users/login">  ingresar  <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
             </div>
             <form action="/products/search" class="menu_Form menu_Bar_Conten" method="get">
                 <input type="search" name="keywords" >
@@ -28,18 +28,16 @@
             <ul>
                 <li>
                     <% if (locals.userLogin) { %>
-                        <a class="header_Bottom_reg bt-neon" href="/users/profile"><%= userLogin.nombre %></a>
-                        <a class="bt-neon" href="../products/productCart">carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                        <a href="../users/logout">salir</a>
                         <% if (userLogin.rol === "admin") { %>
                             <a class="header_Bottom_reg bt-neon" href="../admin/crearProducto">crearProducto <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                            <a class="bt-neon" href="">vender modelo 3d </a>
-                         
                         <% } %>
+                        <a class="bt-neon" href="../products/productCart">carrito <i class="fa-solid fa-cart-shopping"></i></a>
+                        <a class="header_Bottom_reg bt-neon" href="/users/profile"><%= userLogin.nombre %></a>
+                        <a class="header_Bottom_reg bt-neon" href="/users/logout">salir</a>
                         <% } else { %>
-                            <a class="header_Bottom_reg bt-neon" href="../users/register">registrate <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                            <a class="header_Bottom_reg bt-neon" href="../users/login">login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                             <a class="bt-neon" href="">nosotros <i class="fa-solid fa-people-group"> </i></a>
+                          <!--  <a class="header_Bottom_reg bt-neon" href="../users/register">registrate <i class="fa-solid fa-arrow-right-to-bracket"></i></a> -->
+                            <a class="header_Bottom_reg bt-neon" href="../users/login">login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                     <% } %>
                 </li>
             </ul>

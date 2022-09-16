@@ -28,11 +28,12 @@
    },
    {
       "id": 4,
-      "nombre": "JUAN",
+      "nombre": "JUAN EDUARDO",
       "apellido": "LICCIARDI",
       "email": "juanelicciardi@gmail.com",
-      "password": "$2a$10$AgGsPnPZ03Tutp4Sce9mKOq/WE4sHruE10KlkY0ZC3fkaXM8zei2S",
+      "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
       "rol": "user",
       "avatar": null
    }
+   
 ]
