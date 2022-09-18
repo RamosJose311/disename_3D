@@ -4,6 +4,9 @@ var router = express.Router();
 const {login,register,processRegister,processLogin,profile,logout} = require('../controllers/userController');
 const loginValidator = require ('../validations/loginValidator')
 const registerValidator =require('../validations/registerValidation')
+const userSessionCheck = require('../../middlewares/userSessionCheck');
+
+
 
 /* /user */
 router
@@ -13,7 +16,9 @@ router
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
 
-.get('/profile',profile)
+.get('/profile',userSessionCheck,profile)
+
+
 .get('/logout',logout)
 
 module.exports = router;
