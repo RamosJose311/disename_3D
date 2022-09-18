@@ -12,31 +12,73 @@
     <main class="general_main">
         <h1 class="profile_titulo">PERFIL DE USUARIO</h2>
         <section class="profile_section">
-            <form action="">
-                <div>
-                    <label for="nomber"></label>
-                    <input type="text" id="nombre">
-                </div>
-                <div>
-                    <label for="apellido"></label>
-                    <input type="text" id="apellido">
-                </div>
-                <div>
-                    <label for="nacimiento"></label>
-                    <input type="date" id="nacimiento">
-                </div>
-                <div>
-                    <H2>GENERO</H2>
-                    
-                    <input type="radio" id="genero">  
-                    <label for="genero">MASULINO</label>  <br>
-                    <input type="radio" id="genero">
-                    <label for="genero">FEMENINO</label>  <br>
-                    <input type="radio" id="genero">
-                    <label for="genero">OTROS</label>
+            <form class="profile_form" action="">
+                <div class="profile_form_group" >
+                    <div class="profile_form_contenedor">
+                        <label for="nomber">Nombre</label>
+                        <input  type="text" id="nombre">
+                    </div>
+                    <div class="profile_form_contenedor">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido">
+                    </div>
+                    <div class="profile_form_contenedor">
+                        <label for="email">Correo Electronico</label>
+                        <input type="text" id="email">
+                    </div>
+                    <div class="profile_form_contenedor">
+                        <label for="nacimiento">Fecha de Nacimiento</label> <br>
+                        <input type="date" id="nacimiento">
+                    </div>
                 </div>
 
-            </form>
+                <div class="genero_hobbies" >
+                    <div>
+                        <H3>Género</H3>
+                        <input type="radio" id="genero">  
+                        <label for="genero">Masculino</label>  <br>
+                        <input type="radio" id="genero">
+                        <label for="genero">Femenino</label>  <br>
+                        <input type="radio" id="genero">
+                        <label for="genero">Otro</label>
+                    </div>
+                    <div>
+                        <H3>Hobbies</H3>
+                        <input type="checkbox" id="musica">  
+                        <label for="musica">Música</label>  <br>
+                        <input type="checkbox" id="deporte">
+                        <label for="deporte">Deporte</label>  <br>
+                        <input type="checkbox" id="aireLibre">
+                        <label for="aireLibre">Aire Libre</label>
+                    </div>
+                </div>
+
+                <div class="profile_form_group">
+                    <div class="profile_form_contenedor">
+                        <h3> Domicilio</h3>
+
+                        <label for="domicilio"> Calle</label>
+                        <input type="text">
+                        <hr>
+                        <select name="" id="">
+                            <option value="">Seleccione su ciudad</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">Seleccione su provincia</option>
+                        </select>
+                    </div>
+                    <div class="profile_form_contenedor">
+                        <h3>Acerca de mi</h3>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <label for="imagen">Seleccione imagen</label>
+                        <input type="file" id="imagen" name="imagen">
+                    </div>
+                </div>
+                <div class="profile_form_button" >
+                    <button>boton uno</button>                    
+                    <button>boton dos</button>                    
+                </div>
+             </form>
 
         </section>
     </main>
