@@ -3,10 +3,10 @@
 <%- include('./partials/head', {title:"EditarProducto"}) %>
 
 <!-- ======================== HEADER =========================== -->
-<body class="body--add">
+<body class="general_body">
     <%- include('./partials/header') %>
 
-    <main class="main-add"> 
+    <main class="general_main"> 
         <section class="section--add">
             <h1 class="form__title--add">editar producto</h1>
             <form action="/admin/update/<%= product.id %> ?_method=PUT" class="form__register-add" method="POST">
