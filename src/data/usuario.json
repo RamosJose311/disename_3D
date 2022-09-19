@@ -54,16 +54,16 @@
       "email": "juanelicciardi@gmail.com",
       "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
       "rol": "user",
-      "nacimiento": "1980-10-12",
+      "nacimiento": "1976-10-12",
       "imagen": "",
       "genero": "m",
       "hobbies": [
          "musica",
          "aireLibre"
       ],
-      "domicilio": "la mas conocida              ",
+      "domicilio": "la mas conocida                     ",
       "ciudad": "buenos aires",
       "provincia": "jujuy",
-      "nosotros": "estamos escribiendo algo nuestro"
+      "nosotros": ""
    }
 ]
