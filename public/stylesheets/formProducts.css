@@ -1,5 +1,5 @@
 
-.body--add{
+/* .body--add{
     background-image: url('/images/fondoComentario.jpeg');
     background-size: 100%;
     background-size:cover;
@@ -11,22 +11,26 @@
     
 }
 
-
 .body--add a{
     text-decoration: none;
 }
+
 .main-add{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
+ */
+
+
 .section--add{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 90%;
 }
+
 .form__register-add{
     width: 100%;
     display: flex;
@@ -59,8 +63,12 @@
 }
 .label--add{
     font-family: var(--letraGaramond);
-    color: var(--colorBlanco);
+    color: white;
     font-weight: 700;
+}
+.text-danger{
+    color: red;
+    font-size: 15px;
 }
 .imagen--product--add{
     border-radius: 5px;
@@ -117,12 +125,23 @@
 
 /* Tablet || 768 px */
 @media (min-width:768px){
+
+    .section--add{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        border: 3px solid blue;
+    }
     .caja--product--add{
         width: 48%;
     }
     .form__register-add{
         flex-direction: row;
         justify-content: space-between;
+        width: 60%;
+        border: 3px solid rgb(136, 16, 32);
+        
     }
     .label--add{
         width: 100%;

@@ -1,12 +1,19 @@
 /* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
 
 /* ======================= MEDIA QUERY || MOBILE =======================*/
-.caja--footer{
-    background-color: var(--colorFondo);
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
+}
+
+.caja--footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: var(--colorFondo);
+    width: 100%;
 }
 /* titulo */
 .footer h4{ 
@@ -129,6 +136,8 @@
 /* ======================= MEDIA QUERY || DESKTOP =======================*/
 
 @media(min-width: 1024px){
+    
+    
     .servicios--menu--footer li{
         margin-bottom: 3%;
     }
@@ -139,132 +148,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =============== ESTRATEGIA DE DISEÑO || MOVILE FIRST ================*/
-
-/* ======================= MEDIA QUERY || MOBILE =======================*/
-
-/* .footer{
-    background-color: var(--colorAzulOscuro);
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-   
-}
-
-.sociales{
-    width: 32%;
-    text-align: center;
-    font-family: var(--letraGaramond);
-}
-
-.footer h4{
-    font-size: 21px;
-    margin: 5px;
-    color: var(--colorCeleste);
-}
-
-.footer_sociales--icon{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 13px;
-}
-.footer_sociales--icon a{
-    color: white;
-    font-size: 18px;
-}
-
-.contacto{
-    width: 65%;
-    text-align: center;
-}
-
-.contacto--item{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 7px;
-    margin-bottom: 5px;
-}
-
-.contacto--item a{
-    color: white;
-}
-
-.servicios{
-    display: none;
-}
-
-.derechos{
-    width: 100%;
-    text-align: center;
-    background-color: var(--colorGrisOscuro);
-    color: white;
-    font-family: var(--letraGaramond);
-    font-size: 8px;
-} */
-
-
-/* ======================= MEDIA QUERY || TABLET =======================*/
-
-/* @media (min-width:768px) {
-
-    .footer{
-        justify-content: space-around;
-    }
-
-    .sociales{
-        width: 30%;
-    }
-    
-    .contacto{
-        width: 30%;
-    }
-   
-    .servicios{
-        width: 30%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        text-align: center;
-
-    }
-    .servicios_menu{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        
-    }
-    .servicios_menu li a{
-        color: var(--colorBlanco);
-    }
-    
-} */
-
-/* ======================= MEDIA QUERY || DESKTOP =======================*/
-
-/* @media(min-width: 1024px){
-
-
-    
-} */
 
 
 

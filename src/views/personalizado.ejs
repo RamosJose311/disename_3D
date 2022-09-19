@@ -6,34 +6,78 @@
     <%- include('./partials/header') %>
     
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main class="main_menu">
-        <div class="carrucel">
-         
-        </div>
-        <div class="caja--menu-lista">
-         <div class="listado_categoria"><h1>categoria</h1>
-           
+   <div class="main menu">
+     <div class="caja-formulario">
+     
+        
+        
+         <section class="section--add">
             
-             <div><a href="/">mates</a></div>
-             <div><a href="/">figuras</a></div>
-             <div><a href="/">llaveros</a></div>
-             <div><a href="/">articulados</a></div>
-             <div><a href="/">portacelular</a></div>
-             <div><a href="/">cosplay</a></div>
-             <div><a href="/">juegos</a></div>
-             <div><a href="/">funkos</a></div>
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
+                    <label for="nombre" class="label--add">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div> 
+                <div class="caja--product--add">
+                    <!-- <input class="form--input" type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder=" Nombre de Usuario"> -->
+                    <label for="precio" class="label--add">Precio</label>
+                    <input type="number" class="form-control" id="precio" name="precio">
+                </div>
+                <div class="caja--product--add">
+                    <label for="descuento" class="label--add">Descuento</label>
+                    <input type="number" class="form-control" id="descuento" name="descuento">
+                    
+                </div>
+                <div class="caja--product--add">
+                    <label for="altura" class="label--add">Altura</label>
+                    <input type="number" class="form-control" id="altura" name="altura" placeholder="en centimetros">
+                </div>
+                <div class="caja--product--add">
+                    <label for="material" class="label--add">Material</label>
+                    <input type="text" class="form-control" id="material" name="material">
+                </div>
+                <div class="caja--product--add">
+                    <label for="tiempo" class="label--add">Tiempo</label>
+                    <input type="number" class="form-control" id="tiempo" name="tiempo" placeholder="en horas/minutos">
+                </div>
+                <div class="caja--product--add">
+                    <label for="categoria" class="label--add">Categoría</label>
+                    <select class="form-select" aria-label="Default select example" id="categoria"
+                        name="categoria">
+                        <option value="" selected hidden>Seleccione...</option>
+                        <option value="mates">Mates</option>
+                        <option value="figuras">Figuras</option>
+                        <option value="llaveros">Llaveros</option>
+                        <option value="articulados">Articulados</option>
+                        <option value="portacelular">Portacelular</option>
+                        <option value="cosplay">Cosplay</option>
+                        <option value="juegos">Juegos</option>
+                        <option value="funkos">Funkos</option>
+                    </select>
+                    </div>
+                    
+                <div class="tex--add">
+                    <h4 class="Descripcion-add">Descripcion</h4>
+                    <textarea class="detalle--textarea-add" name="descripcion" id="descripcion" cols="35" rows="3"></textarea>
+                </div>
+                </div>
+                <div class="label--add">
+                    <a class="imagen--product--add" href="">
+                        <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
+                    <input hidden class="form--input" type="file" id="imagen" name="imagen">
+                    </a>
+                </div>
+                <div class="caja--product--add boton--cancelar--guardar">
+                    <a href="/" class="form__button form__button--cancel">Cancelar</a>
+                    <button class="form__button form__button--send" type="submit">enviar</button>
+                </div>
+                
 
-         </div>
-         <div class="caja-de-imagenes">
+
             
-            <% products.forEach(product => { %>
-                <div class="caja"><a href="/products/detalle/<%= product.id%>"><img src="/images/<%= product.imagen %> " ><p><%= product.nombre %>   <%= product.precio %> </p></div></a>
-            <% }) %>
-
-
-        </div>
-        </div>
-    </main>
+         </section>
+      
+     </div>
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
 </body>

@@ -4,12 +4,12 @@
 
 <%- include('./partials/head', {title:"REGISTER"}) %> 
 
-<body>
+<body class="general_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main class="register_main" >
+    <main class="general_main">
         <div class="register_return">
             <a href="/">Inicio</a>
             <span>/Registro</span>
@@ -31,21 +31,26 @@
                     <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
                     <P>registrate con el correo electrónico</P>
                 </div>
-                <form action="" class="register_section_main-form">
+                <form action="process" class="register_section_main-form" method="post">
                     <div class="reg_sec_main_form-container">
-                        <input type="text" placeholder="Nombre">
+                        <input type="text" name="nombre"  placeholder="ingrese su nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>">
+                        <span class="login_error"> <%= locals.errors && errors.nombre ? errors.nombre.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="text" placeholder="Apellido">
+                        <input type="text" name="apellido" placeholder="ingrese apellido" value="<%= locals.old && old.apellido ? old.apellido : null %>">
+                        <span class="login_error"> <%= locals.errors && errors.apellido ? errors.apellido.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="email" placeholder="Ingresa e-mail">
+                        <input type="email" name="email" placeholder="ingrese email" value="<%= locals.old && old.email ? old.email : null %>">
+                        <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" placeholder="Ingresa contraseña">
+                        <input type="password" name="password" placeholder="ingrese password" >
+                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" placeholder="Confirmar Contraseña">
+                        <input type="password" name="password2" placeholder="confirme su password " >
+                        <span class="login_error"> <%= locals.errors && errors.password2 ? errors.password2.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <button type="submit">Iniciar Sesión</button>

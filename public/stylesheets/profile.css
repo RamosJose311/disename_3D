@@ -1,0 +1,111 @@
+
+
+.profile_titulo{
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 10px;
+    margin: 0%;
+    text-align: center;
+    font-weight: bolder;
+    font-family: var(--letraGaramond);
+}
+
+.profile_section{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255,.7);
+    box-shadow: 5px 5px 8px black;
+
+}
+
+
+.profile_form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: center;
+    gap: 7px;
+    margin: 20px 0px;
+}
+
+.profile_form_group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+}
+
+.profile_form h3{
+    width: 100%;
+    color: orangered;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+
+}
+
+.profile_form_contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 98%;
+    gap: 3px;
+}
+
+.profile_form_contenedor input{
+    width: 100%;    
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-bottom: 1px solid grey;
+    background-color: none;
+    text-transform: uppercase;
+}
+
+.genero_hobbies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+
+
+
+/* ======================= MEDIA QUERY || TABLET =======================*/
+@media (min-width:768px) {
+ 
+    .profile_section{
+        width: 60%;
+    }
+    .profile_form_group{
+        width: 100%;
+        justify-content: space-evenly;
+        gap: 16px 0px;
+    }
+
+    .profile_form_contenedor{
+        width: 45%;
+    }
+
+    .genero_hobbies{
+        margin: 20px 0px;
+    }
+
+    .profile_form_button{
+        margin: 10px 0;
+    }
+
+}
+
+/* ======================= MEDIA QUERY || DESKTOP =======================*/
+@media (min-width:1024px) {
+
+}

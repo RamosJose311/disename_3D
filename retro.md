@@ -27,3 +27,19 @@ Vimos necesario implementar medidas nuevas como elegir lideres por democracia po
 <p style = 'text-align:center;'>
 <img src="./public/images/retrospectiva/retrospectiva-4.jpg" alt="Logo de Diseñame3d" >
 </p>
+
+---
+# **Arranca el sprint 5, a seguir adelante!!!**
+- Esta retrospectiva corresponde a lo sucedido en el sprint número 4. Como grupo, hemos mejorado en varias cosas y en otras hay que seguir trabajando. En conclusiòn, debemos "seguir haciendo"  las reuniones acordadas los dìas lunes y viernes, y seguir asignando un lìder por sprint.
+Como grupo deberiamos "hacer màs" registros de daylis y seguir con las reuniones despues de ser lanzado el sprint (para la division de tareas).
+Cuando hablamos de "empezar a hacer" nos dimos cuenta que debemos de empezar a cumplir con las fechas de entrega pactada con el grupo y mantener siempre la rama develop actualizada con nuestros cambios y no subir todo a ùltimo momento.
+Tambièn estuvimos de acuerdo en  "dejar de hacer"  la entrega de sprints al lìmite de la fecha pactada y en ocasiones hasta fuera de tèrmino y dejar de tener mala comunicaciòn en algunas oportunidades.
+Por ùltimo en "hacer menos" como grupo solo llegamos a la conclusiòn de no mandar audios tan largos por wpp, se pide ser mas concreto y preciso a la hora de hablar siempre y cuando sea posible.
+En fin, èsta serìa la retrospectiva del 4to sprint:  a medida que realizamos el trabajo nos dimos  cuenta que tuvimos errores y fallas , los cuales pudimos resolver sin contratiempos y de tal manera nos hemos propuesto no volver a repetirlos.  
+Nos vemos en la retro del proximo Sprint!!!
+
+<p style = 'text-align:center;'>
+<img src="" >
+</p>
+
+

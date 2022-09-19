@@ -3,7 +3,7 @@
     display: none;
 }
 
-.login_main{
+/* .login_main{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@
     margin-bottom: 15px;
     font-family: var(--letraGaramond);
     background-image: url(/images/back1.jpg);
-}
+} */
 
 .login_return{
     width: 100%;
@@ -25,20 +25,25 @@
 }
 
 .login_section{
-    background-image: none;
-    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
+    width: 90%;
+}
+
+.login_section-header{
+    width: 100%;
+    text-align: center;
 }
 
 .login_section-header h1 {
-    color: white;
+    color: var(--colorMargendiv);
     font-size: 30px;
     text-transform: uppercase;
     padding: 0;
     margin: 10px 0px;
+    width: 100%;
 }
 
 .login_section-main {
@@ -63,7 +68,7 @@
 }
 
 .log_sec_main_opt-log a{
-    color:var(--colorBlanco);
+    color: var(--colorMargendiv);
     text-decoration: none;
 }
 
@@ -71,12 +76,12 @@
     width: 50%;
     background-color: none;
     text-align: center;
-    border-right: 2px solid var(--colorAzulClaro);
-    border-bottom: 2px solid var(--colorAzulClaro);
+    border-right: 2px solid var(--colorAzulOscuro);
+    border-bottom: 2px solid var(--colorAzulOscuro);
 }
 
 .log_sec_main_opt-reg a{
-    color:var(--colorAzulClaro);
+    color:var(--colorAzulOscuro);
     text-decoration: none;
 
 }
@@ -100,12 +105,22 @@
 
 .log_sec_main_form-container{
     width: 95%;
-    text-align: center;
+    text-align: left;
     color:blueviolet
 }
 
+.log_sec_main_form-container-boton{
+    width: 95%;
+    text-align: center;
+    color:blueviolet
+}
 .log_sec_main_form-container input{
     width: 100%;
+}
+
+.login_error{
+    font-size: 15px;
+    color: var(--colorBlanco)
 }
 
 .log_sec_main_form-container label{
@@ -152,13 +167,20 @@
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
 @media (min-width:768px) {
-    .login_main{
+    /* .login_main{
         width: 70%;
         margin: 10px auto;
         font-family: var(--letraGaramond);
         box-shadow: 5px 5px 5px #000;
-    }
+    } */
     
+    .login_section{
+        width: 60%;
+        margin: 20px 0px;
+        border: 2px solid var(--colorBlanco);
+        box-shadow: 5px 5px 8px var(--colorMargendiv);
+    }
+
 
 
 }

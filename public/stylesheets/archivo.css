@@ -1,10 +1,10 @@
-.main_menu{
+/* .main_menu{
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
     border: 1px solid black;
     width: 100%;
-   /*background-image: url(/images/fondo.png);*/
+    background-image: url(/images/fondo.png);
     align-items: center;
 
 }
@@ -13,7 +13,7 @@
     display:flex;
     flex-wrap: wrap;
     background-color: white;
-    border: 1px solid red;
+    border: 1px solid rgb(38, 0, 255);
     width: 80%;
     height: 60px;
     margin-top:7px;
@@ -27,16 +27,12 @@
 
 }
 
-
-
-
 .caja-de-imagenes{
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
     width: 80%;
     justify-content: space-evenly;
-  border: 1px solid white;
 
 }
 .listado_categoria{
@@ -93,4 +89,4 @@
 .caja p{
     margin:0px;
     padding: 0px;
-}
+} */

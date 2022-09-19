@@ -4,21 +4,21 @@
 
 <%- include('./partials/head', {title:"LOGIN"}) %> 
 
-<body>
+<body class="general_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main class="login_main" >
-        <div class="login_return">
+    <main class="general_main" >
+        <div class="login_return">          <!-- Opcion de retorno a Inicio-->
             <a href="/">Inicio</a>
             <span>/Login</span>
         </div>
-        <section class="login_section">
-            <header class="login_section-header" >
+        <section class="login_section">               <!-- Seccion completa para loguear-->
+            <header class="login_section-header" >    <!-- Titulo de Login-->
                 <h1>ingresar</h1>
             </header>
-            <main class="login_section-main">
+            <main class="login_section-main">         <!-- Opcion de Registrarse o Loguearse cambio formulario-->
                 <div class="login_section_main-option">
                     <div class="log_sec_main_opt-reg">
                         <a href="../users/register">Registrarse</a>
@@ -27,19 +27,19 @@
                         <a href="../users/login">Iniciar Sesión</a>
                     </div>
                 </div>
-                <form action="" class="login_section_main-form">
+                <form action="login"  method="POST" class="login_section_main-form">    <!-- Formulario Login-->
                     <div class="log_sec_main_form-container">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id= "email" >
+                        <input type="email" id= "email" name="email" placeholder="Ingrese su email">
+                        <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
                     </div>
                     <div class="log_sec_main_form-container">
-                        <label for="password">Clave</label>
-                        <input type="password" id="password" >
+                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %>  </span>
                     </div>
-                    <div class="log_sec_main_form-container">
+                    <div class="log_sec_main_form-container-boton">
                         <button type="submit">Iniciar Sesión</button>
                     </div>
-                    <div class="login_section_main-correo">
+                    <div class="login_section_main-correo">       <!-- Otra opcion de loguin-->
                         <P>o iniciar sesión con</P>
                         <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
                     </div>

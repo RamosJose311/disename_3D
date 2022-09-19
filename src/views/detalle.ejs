@@ -4,71 +4,74 @@
 
 <%- include('./partials/head', {title:"DETALLE"}) %> 
 
-<body class="imagen-fondo-body-detalle">
+<body class="general_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
-    <main class="detalle--main">
+    <main class="general_main">
         <section class="detalle__menu--section--producto">
             <article class="detalle__menu--article--producto">
+
                 <div class="detalle__menu--image">
                     <div class="glider-contain">
                         <div class="glider caja--gliter">
-
                             <div><img src="/images/<%= product.imagen %>" alt=""></div>
                             <div><img src="/images/<%= product.imagen %>" alt=""></div>
-
                         </div>
-
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
                         <div role="tablist" class="dots"></div>
                     </div>
                 </div>
+
                 <div class="detalle--menu--principal">
+                    <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.nombre %></h3>
+
                     <div class="detalle__menu--caja1">
-                        <h3 class="detalle__menu--titulo detalle-h3"><%= product.nombre %></h3>
-                        <h3 class="detalle__menu--titulo">Precio:  <span class="detalle--span"><%= product.precio %>.</span>
-                            <br>
-                            <span class="detalle--span">descuento :</span>
-                            <b class="detalle--span"><%= product.descuento %>% OFF</b>
-                        </p>
-                        <span class="detalle--span">total</span>
-                        <% if (product.descuento > 0) { %> <span class="detalle--span"></span>
-                            <p class="detalle--span">
-                                 $<%= toThousand((product.precio - (product.precio * product.descuento / 100)).toFixed(0))%>
-                            </p>
-                        
-                        <% }else{ %>
-                        <p class="detalle--span">
-                            <%= product.precio %>
-                        </p>
-                        <% } %>
-                    <div class="detalle__menu--button">
-                        <a class="detalle__menu--button1" href="productCart.html">añadir al carrito</a>
-                        <a class="detalle__menu--button2" href="/admin/editarProducto/<%= product.id %>">EDITAR</a>
-                        <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST" class="form_delete">
-							<button type="submit" class="detalle__menu--button2">ELIMINAR</button>
-						</form>
-                    </div>
+                        <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.precio %></span></h3>
+                        <h3 class="detalle__menu--titulo detalle-h3">descuento : <span class="detalle--span"><%= product.descuento %></span>% OFF</h3>
+                        <h3 class="detalle__menu--titulo detalle-h3">total: $ 
+                            <% if (product.descuento > 0) { %> 
+                                <span class="detalle--span">que paso</span>
+                                <p class="detalle--span">
+                                    $<%= toThousand((product.precio - (product.precio * product.descuento / 100)).toFixed(0))%>
+                                </p>
+                             <% }else{ %>
+                            <b class="detalle--span">
+                                <%= product.precio %>
+                            </b>
+                            <% } %>
+                            </h3>
+                    </div>       
                     <article class="detalle__menu--article--descripcion">
-                        <h4 class="detalle__menu--titulo">*Descripcion</h4>
+                        <h4 class="detalle__menu--descripcion--general">*Descripcion</h4>
                         <div class="detalle__menu--p">
-                            <p>altura:     <%= product.altura %></p>
-                            <p>material:   <%= product.material %></p>
-                            <p>tiempo:     <%= product.tiempo %>  (en minutos)</p>
+                            <p>Altura:     <%= product.altura %></p>
+                            <p>Material:   <%= product.material %></p>
+                            <p>Tiempo:     <%= product.tiempo %>  (en minutos)</p>
                         </div>
                         <p class="detalle__menu--descripcion--general">Descripcion general:</p>
                             <p class="detalle__menu--parrafo"><%= product.descripcion %> </p>
                     </article>
+                    <div class="detalle__menu--button">
+                        <a class="detalle__menu--button1" <% if (locals.userLogin) { %> href="productCart.html"
+                            <% }else{ %>
+                                href="/users/login" <% } %>>
+                                añadir al carrito</a>
+                                
+                        <% if (locals.userLogin && userLogin.rol === 'admin') { %>
+                            <a class="detalle__menu--button2" href="/admin/editarProducto/<%= product.id %>">EDITAR</a>
+                            <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST" class="form_delete">
+                                <button type="submit" class="detalle__menu--button2">ELIMINAR</button>
+                            </form>
+                        <% } %>
+                    </div>
                 </div>
-                </div>
-                
-            </article>
-            
-        </section>
-        <h3 class="detalle__menu--tituo--comentario">*comentarios*</h3>
+             </article>
+        </section >
+
+        <h3 class="detalle__menu--tituo--comentario" >*comentarios*</h3>
         <section class="detalle__menu--section--comentarios">
             <div class="detalle__menu--comentario detalle--comentario1">
                 <h6 >perfil del usuario</h6>

@@ -1,26 +1,69 @@
 [
-        {
-            "id": 1,
-            "nombre": "Zack",
-            "apellido": "Burdis",
-            "email": "zburdis0@vistaprint.com",
-            "contraseña": "alagrandelepusecuca",
-            "imagen": "https ://robohash.org/hicquiquia.png?size=50x50&set=set1"
-        },
-        {
-            "id": 2,
-            "nombre": "Christan",
-            "apellido": "Sillitoe",
-            "email": "csillitoe1@exblog .jp",
-            "contraseña": "aguantemessi1234",
-            "imagen": "https://robohash.org/cupiditateomnismagnam.png?size=50x50&set=set1"
-        },
-        {
-            "id": 3,
-            "nombre": "Sydney ",
-            "apellido": "Pankettman",
-            "email": "spankettman2@java.com",
-            "contraseña": "miramargesoyunpollo",
-            "imagen": "https://robohash.org/voluptatemomnisomnis.png?size=50x50&set=set1"
-        }
-    ]
+   {
+      "id": 1,
+      "nombre": "administrador",
+      "apellido": "creador",
+      "email": "admin@comision15.com",
+      "password": "$2a$10$rPFnJ4CA13I9U5zGrS.F5.88hZj0Pfdb5yPCr89vrrUOPMaywRn2C",
+      "rol": "admin",
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
+   },
+   {
+      "id": 2,
+      "nombre": "administrador",
+      "apellido": "administrador",
+      "email": "admin@disename3d.com",
+      "password": "$2a$10$Ib4cMZoyMN1rQNKi0Cy2mOiLnjFedtKhjrGNi3hs17sLINv4wiFgK",
+      "rol": "admin",
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
+   },
+   {
+      "id": 3,
+      "nombre": "Santiago",
+      "apellido": "Rodriguez",
+      "email": "santiagocarp987@gmail.com",
+      "password": "$2a$10$X8aDU2XEqptk0cWs6ds2v.3Y7RLi3J2C6tSIK8F045QNwR0aj32K2",
+      "rol": "user",
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
+   },
+   {
+      "id": 4,
+      "nombre": "Juan Eduardo",
+      "apellido": "LICCIARDI",
+      "email": "juanelicciardi@gmail.com",
+      "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
+      "rol": "user",
+      "nacimiento": "1980-10-12",
+      "imagen": "",
+      "genero": "m",
+      "hobbies": [
+         "musica",
+         "aireLibre"
+      ],
+      "domicilio": "la mas conocida              ",
+      "ciudad": "buenos aires",
+      "provincia": "jujuy",
+      "nosotros": "estamos escribiendo algo nuestro"
+   }
+]

@@ -1,4 +1,5 @@
-const {loadProducts,storeProducts} = require('../data/dbModules');
+const {loadProducts,storeProducts,loadCategories} = require('../data/dbModules');
+const {validationResult} = require('express-validator');
 
 
 module.exports = {
@@ -6,25 +7,44 @@ module.exports = {
         return res.render('crearProducto')
     },
     add : (req,res) => {
-        return res.render('crearProducto')
+        return res.render('crearProducto',{
+            categorias : loadCategories().sort()
+        })
     },
     store : (req,res) => {
-    const{nombre, precio, descuento, altura, tiempo, categoria, descripcion}= req.body;
-		let products = loadProducts();
-		const newProduct = {
-			id : products[products.length -1].id +1,
-			nombre : nombre.trim(),
-			precio : +precio,
-			descuento :  +descuento,
-			altura : +altura,
-			tiempo : +tiempo,
-            categoria: categoria,
-            descripcion : descripcion.trim(),
-			imagen : 'groot1.jpg'
-		}
-		productsModify = [...products, newProduct];
-		storeProducts(productsModify);
-		return res.redirect('/')
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            
+            const{nombre, precio, descuento, altura, tiempo, categoria, descripcion, material}= req.body;
+            let products = loadProducts();
+            const newProduct = {
+                id : products[products.length -1].id +1,
+                nombre : nombre.trim(),
+                precio : +precio,
+                descuento :  +descuento,
+                altura : +altura,
+                tiempo : +tiempo,
+                categoria: categoria,
+                material : material,
+                descripcion : descripcion.trim(),
+                imagen : 'imagen-default.webp'
+            }
+            productsModify = [...products, newProduct];
+            storeProducts(productsModify);
+            return res.redirect('/')
+            
+        }else{
+            return res.render('crearProducto', {
+                errors : errors.mapped(),
+                old : req.body
+            })
+
+        }
+        
+
+
+   
 	},
     editarProducto : (req,res) =>{
         const products = loadProducts();
@@ -36,7 +56,7 @@ module.exports = {
         const products = loadProducts();
          /* return res.send(req.body) */
         const {id} = req.params;
-        const {nombre,precio,descuento, categoria, descripcion, tiempo, altura} = req.body;
+        const {nombre,precio,descuento, categoria, descripcion, tiempo, altura, imagen} = req.body;
         const productsEdit= products.map(product => {
             if(product.id === +id){
                return {
@@ -45,7 +65,9 @@ module.exports = {
                 precio: +precio,
                 descuento: +descuento,
                 altura: +altura,
-                tiempo: +tiempo        }
+                tiempo: +tiempo ,
+                imagen : imagen
+                   }
             }
             else{  return product }
         } )

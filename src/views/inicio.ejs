@@ -4,36 +4,38 @@
 
 <%- include('./partials/head', {title:"HOME"}) %> 
 
-<body>
+<body class="general_body">
     <!-- ======================== BODY || MAQUETADO DEL HEADER ======================== -->
     <%- include('./partials/header') %>
 
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
 
-            <main class="main-menu">
-
-
+            <main class="general_main">
                 <section class="menu--bottom">
                     <div class="caja_bottom">
-                        <a href="../products/proyecto"><img src="/images/1.png" alt="">
-                            <p>Modelo</p>
-                        </a>
-
-                    </div>
-                    <div class="caja-bottom2">
-                        <a href="../products/archivo"><img src="/images/2.png" alt="">
-                            <p>Diseño</p>
-                        </a>
-                        <a href="../products/personalizado"><img src="/images/3.png" alt="">
-                            <p>Personalizado</p>
+                        <a href="../products/imprimir"><img src="/images/imgHome/imgModelosImprimir.jpg" alt="">
+                            <p>Modelos para Imprimir</p>
                         </a>
                     </div>
 
-                    <a href=""><img src="/images/archivo.jpg" alt=""></a>
-                    <a href=""><img src="/images/figura.jpg" alt=""></a>
-
-
+                    <div class="caja_bottom">
+                        <a href="../products/disponible"><img src="/images/imgHome/imgModeloStock.jpg" alt="">
+                            <p>Modelos Disponibles</p>
+                        </a>
+                    </div>
+                    
+                    <div class="caja_bottom">
+                        <a <% if (locals.userLogin) { %>
+                                    href="../products/personalizado"><img src="/images/imgHome/imgPersonalizado.webp" alt="">
+                                <p>Personalizado</p>
+                                <% }else{ %>
+                                    <a href="../users/login"><img src="/images/imgHome/imgPersonalizado.webp" alt="Registrate">
+                                        <p>Modelos Personalizados</p>
+                                    <% } %>
+                        </a>
+                    </div>
                 </section>
+
                 <section class="descripcion">
 
                     <h1 class="titulo">Descripcion</h1>
@@ -43,14 +45,9 @@
                         piezas mecanicas que se necesitan que sean mas duras.
                         Trabajamos piezas estandar como piezas personalizadas a pedido
                     </p>
-
                 </section>
-
-
             </main>
-
 
             <%- include('./partials/footer') %>
         </body>
-
         </html>

@@ -1,6 +1,21 @@
 [
    {
       "id": 1,
+<<<<<<< HEAD
+=======
+      "nombre": "mate groot",
+      "precio": 800,
+      "descuento": 0,
+      "altura": 40,
+      "tiempo": 400,
+      "categoria": "masetas",
+      "material": "pla",
+      "descripcion": "maseta de groot (guardianes de la galaxia)",
+      "imagen": "imagen-default.webp"
+   },
+   {
+      "id": 2,
+>>>>>>> develop
       "nombre": "mate superman",
       "precio": 1500,
       "descuento": 5,
@@ -106,5 +121,50 @@
       "material": "pla",
       "descripcion": "portajousting de metalgear ,con adornos incluidos",
       "imagen": "i10.png"
+   },
+   {
+      "id": 11,
+      "nombre": "LKALSKFLASKFLKSA90909809",
+      "precio": 124333242,
+      "descuento": 233,
+      "altura": 3213,
+      "tiempo": 312312,
+      "categoria": "mates",
+      "descripcion": "321321",
+      "imagen": "groot1.jpg"
+   },
+   {
+      "id": 12,
+      "nombre": "medias plasticas",
+      "precio": 1000,
+      "descuento": 99,
+      "altura": 125,
+      "tiempo": 800,
+      "categoria": "figuras",
+      "descripcion": "algo bueno",
+      "imagen": "groot1.jpg"
+   },
+   {
+      "id": 13,
+      "nombre": "mate de la mujer maravilla",
+      "precio": 2000,
+      "descuento": 25,
+      "altura": 96,
+      "tiempo": 500,
+      "categoria": "llaveros",
+      "descripcion": "una descripcion",
+      "imagen": "groot1.jpg"
+   },
+   {
+      "id": 14,
+      "nombre": "llavero de groot",
+      "precio": 800,
+      "descuento": 5,
+      "altura": 12,
+      "tiempo": 50,
+      "categoria": "llaveros",
+      "material": "plastico",
+      "descripcion": "llavero de groot",
+      "imagen": "imagen-default.webp"
    }
 ]
