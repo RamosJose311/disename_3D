@@ -6,7 +6,14 @@
       "email": "admin@comision15.com",
       "password": "$2a$10$rPFnJ4CA13I9U5zGrS.F5.88hZj0Pfdb5yPCr89vrrUOPMaywRn2C",
       "rol": "admin",
-      "avatar": null
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
    },
    {
       "id": 2,
@@ -15,7 +22,14 @@
       "email": "admin@disename3d.com",
       "password": "$2a$10$Ib4cMZoyMN1rQNKi0Cy2mOiLnjFedtKhjrGNi3hs17sLINv4wiFgK",
       "rol": "admin",
-      "avatar": null
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
    },
    {
       "id": 3,
@@ -24,16 +38,32 @@
       "email": "santiagocarp987@gmail.com",
       "password": "$2a$10$X8aDU2XEqptk0cWs6ds2v.3Y7RLi3J2C6tSIK8F045QNwR0aj32K2",
       "rol": "user",
-      "avatar": null
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
    },
    {
       "id": 4,
-      "nombre": "JUAN EDUARDO",
+      "nombre": "Juan Eduardo",
       "apellido": "LICCIARDI",
       "email": "juanelicciardi@gmail.com",
       "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
       "rol": "user",
-      "avatar": null
+      "nacimiento": "1980-10-12",
+      "imagen": "",
+      "genero": "m",
+      "hobbies": [
+         "musica",
+         "aireLibre"
+      ],
+      "domicilio": "la mas conocida              ",
+      "ciudad": "buenos aires",
+      "provincia": "jujuy",
+      "nosotros": "estamos escribiendo algo nuestro"
    }
-   
 ]

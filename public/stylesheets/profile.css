@@ -61,8 +61,10 @@
     width: 100%;    
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 15px;
     border-bottom: 1px solid grey;
+    background-color: none;
+    text-transform: uppercase;
 }
 
 .genero_hobbies{

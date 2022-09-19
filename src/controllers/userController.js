@@ -45,7 +45,14 @@ module.exports = {
             email:email.trim(),
             password :bcryptjs.hashSync(password.trim(),10),
             rol:"user",
-            avatar:null,
+            nacimiento: null,
+            imagen:null,
+            genero:null,
+            hobbies : [],
+            domicilio: null,
+            ciudad: null,
+            provincia: null,
+            nosotros: null
         } 
         const userModify=[...usuario,nuevoUsuario];
 
@@ -59,9 +66,46 @@ module.exports = {
         })
      }
     },
+
+
+
     profile:(req,res)=>{
-        return res.render('profile')
+        const user = loadUser().find(user => user.id === req.session.userLogin.id)
+        
+        return res.render('profile', {
+            user
+        })
     },
+
+
+    update : (req,res) => {
+        
+        const {nombre,apellido,nacimiento,domicilio,ciudad,provincia,nosotros} = req.body
+        const users = loadUser();
+
+        let usersModify = users.map(user => { 
+
+            if(user.id === +req.params.id){
+                return{
+                    ...user,
+                    ...req.body
+                } 
+            }
+            return user
+        });
+
+        req.session.userLogin = {
+            ...req.session.userLogin,
+            nombre
+        }
+        
+        storeUser(usersModify);
+        return res.redirect('/users/profile')
+
+
+    },
+
+
 
     logout: (req, res)=> {
         req.session.destroy();

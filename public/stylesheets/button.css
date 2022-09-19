@@ -14,3 +14,11 @@
     box-shadow: 0 0 10px #a945c7, 0 0 30px #a945c7,0 0 100px #a945c7;
     color: #fff;
 }
+
+.boton_salir{
+    border: 1px solid red;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 3px 10px;
+
+}
