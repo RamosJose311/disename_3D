@@ -1,8 +1,6 @@
 [
    {
       "id": 1,
-<<<<<<< HEAD
-=======
       "nombre": "mate groot",
       "precio": 800,
       "descuento": 0,
@@ -15,7 +13,6 @@
    },
    {
       "id": 2,
->>>>>>> develop
       "nombre": "mate superman",
       "precio": 1500,
       "descuento": 5,
