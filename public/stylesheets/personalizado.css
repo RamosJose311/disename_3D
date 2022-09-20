@@ -1,4 +1,4 @@
-.main menu{
+/* .main menu{
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -78,9 +78,10 @@
     .detalle--textarea-add{
         width: 100%;
     }
-    
-    /* botones */
-    .form__button {
+   */  
+  
+   /* botones */
+  /*   .form__button {
         border: none;
         border-radius: 5px;
         color: #fff;
@@ -107,9 +108,9 @@
     .boton--cancelar--guardar{
         margin-top: 10%;
     }
-    
+   */  
     /* Tablet || 768 px */
-    @media (min-width:768px){
+  /*   @media (min-width:768px){
         .caja--product--add{
             width: 48%;
         }
@@ -130,4 +131,4 @@
             width: 100%;
         }
     
-    }
+    } */

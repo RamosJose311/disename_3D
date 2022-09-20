@@ -140,7 +140,7 @@
         flex-direction: row;
         justify-content: space-between;
         width: 60%;
-        border: 3px solid rgb(136, 16, 32);
+        border: 10px solid rgb(136, 16, 32);
         
     }
     .label--add{

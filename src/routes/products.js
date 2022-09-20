@@ -4,12 +4,14 @@ var router = express.Router();
 
 const {detalle,productCart,modelDisponible,personalizado,imprimir,search} = require('../controllers/productController');
 
+const productSessionCheck = require('../../middlewares/productSessionCheck');
+
 /* /products*/
 router
-    .get('/detalle/:id', detalle)// agrego id del producto
-    .get('/productCart', productCart)
+    .get('/detalle/:id',productSessionCheck,detalle)// agrego id del producto
+    .get('/productCart',productSessionCheck, productCart)
     .get('/disponible',modelDisponible)
-    .get('/personalizado',personalizado)
+    .get('/personalizado',productSessionCheck,personalizado)
     .get('/imprimir',imprimir)
     .get('/search',search)
 
