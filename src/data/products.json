@@ -13,7 +13,7 @@
    },
    {
       "id": 2,
-      "nombre": "mate superman",
+      "nombre": "figura de Halo",
       "precio": 1500,
       "descuento": 5,
       "altura": 10,
@@ -25,7 +25,7 @@
    },
    {
       "id": 3,
-      "nombre": "figura",
+      "nombre": "set mate camion",
       "precio": 2500,
       "descuento": 0,
       "altura": 20,
@@ -49,7 +49,7 @@
    },
    {
       "id": 5,
-      "nombre": "set mate camion",
+      "nombre": "figura charmander mamadisimo",
       "precio": 3000,
       "descuento": 0,
       "altura": 15,
@@ -61,7 +61,7 @@
    },
    {
       "id": 6,
-      "nombre": "charmander mamado",
+      "nombre": "figura",
       "precio": 1500,
       "descuento": 0,
       "altura": 20,
@@ -73,7 +73,7 @@
    },
    {
       "id": 7,
-      "nombre": "portajousting cazafantasmas",
+      "nombre": "figura squirtle(pokemon)",
       "precio": 2800,
       "descuento": 10,
       "altura": 20,
@@ -85,7 +85,7 @@
    },
    {
       "id": 8,
-      "nombre": "squitle",
+      "nombre": "figura maestro yoda",
       "precio": 1500,
       "descuento": 0,
       "altura": 20,
@@ -97,7 +97,7 @@
    },
    {
       "id": 9,
-      "nombre": "figura de yoda",
+      "nombre": "porta joystick",
       "precio": 3000,
       "descuento": 0,
       "altura": 20,
@@ -131,17 +131,6 @@
       "imagen": "groot1.jpg"
    },
    {
-      "id": 12,
-      "nombre": "medias plasticas",
-      "precio": 1000,
-      "descuento": 99,
-      "altura": 125,
-      "tiempo": 800,
-      "categoria": "figuras",
-      "descripcion": "algo bueno",
-      "imagen": "groot1.jpg"
-   },
-   {
       "id": 13,
       "nombre": "mate de la mujer maravilla",
       "precio": 2000,
@@ -151,17 +140,5 @@
       "categoria": "llaveros",
       "descripcion": "una descripcion",
       "imagen": "groot1.jpg"
-   },
-   {
-      "id": 14,
-      "nombre": "llavero de groot",
-      "precio": 800,
-      "descuento": 5,
-      "altura": 12,
-      "tiempo": 50,
-      "categoria": "llaveros",
-      "material": "plastico",
-      "descripcion": "llavero de groot",
-      "imagen": "imagen-default.webp"
    }
 ]
