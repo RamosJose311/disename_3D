@@ -13,15 +13,15 @@
    },
    {
       "id": 2,
-      "nombre": "mate superman",
+      "nombre": "Figura groot",
       "precio": 1500,
-      "descuento": 5,
+      "descuento": 20,
       "altura": 10,
       "tiempo": 300,
       "categoria": "mates",
       "material": "pla",
       "descripcion": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
-      "imagen": "i1.png"
+      "imagen": "i2.png"
    },
    {
       "id": 3,
@@ -145,23 +145,11 @@
       "id": 13,
       "nombre": "mate de la mujer maravilla",
       "precio": 2000,
-      "descuento": 25,
+      "descuento": 123,
       "altura": 96,
       "tiempo": 500,
       "categoria": "llaveros",
       "descripcion": "una descripcion",
-      "imagen": "groot1.jpg"
-   },
-   {
-      "id": 14,
-      "nombre": "llavero de groot",
-      "precio": 800,
-      "descuento": 5,
-      "altura": 12,
-      "tiempo": 50,
-      "categoria": "llaveros",
-      "material": "plastico",
-      "descripcion": "llavero de groot",
-      "imagen": "imagen-default.webp"
+      "imagen": ""
    }
 ]

@@ -8,7 +8,7 @@ const productSessionCheck = require('../../middlewares/productSessionCheck');
 
 /* /products*/
 router
-    .get('/detalle/:id',productSessionCheck,detalle)// agrego id del producto
+    .get('/detalle/:id',detalle)// agrego id del producto
     .get('/productCart',productSessionCheck, productCart)
     .get('/disponible',modelDisponible)
     .get('/personalizado',productSessionCheck,personalizado)
