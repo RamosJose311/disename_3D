@@ -54,7 +54,7 @@
                             <p class="detalle__menu--parrafo"><%= product.descripcion %> </p>
                     </article>
                     <div class="detalle__menu--button">
-                        <a class="detalle__menu--button1" <% if (locals.userLogin) { %> href="productCart.html"
+                        <a class="detalle__menu--button1" <% if (locals.userLogin) { %> href="/products/productCart"
                             <% }else{ %>
                                 href="/users/login" <% } %>>
                                 añadir al carrito</a>
