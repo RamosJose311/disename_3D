@@ -55,13 +55,13 @@
       "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
       "rol": "user",
       "nacimiento": "1976-10-12",
-      "imagen": "",
+      "imagen": "imgModelosImprimir.jpg",
       "genero": "m",
       "hobbies": [
          "musica",
          "aireLibre"
       ],
-      "domicilio": "la mas conocida                     ",
+      "domicilio": "la mas conocida                      ",
       "ciudad": "buenos aires",
       "provincia": "jujuy",
       "nosotros": ""
