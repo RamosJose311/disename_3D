@@ -9,7 +9,7 @@
       "categoria": "masetas",
       "material": "pla",
       "descripcion": "maseta de groot (guardianes de la galaxia)",
-      "imagen": "imagen-default.webp"
+      "imagen": "homer-3d.png"
    },
    {
       "id": 2,
@@ -140,5 +140,17 @@
       "categoria": "llaveros",
       "descripcion": "una descripcion",
       "imagen": ""
+   },
+   {
+      "id": 14,
+      "nombre": "figura de homero simpson",
+      "precio": 1500,
+      "descuento": 5,
+      "altura": 25,
+      "tiempo": 200,
+      "categoria": "figuras",
+      "material": "plastico",
+      "descripcion": "figura de plastico del mismisimo Homero padre de familia",
+      "imagen": "imagen-default.webp"
    }
 ]

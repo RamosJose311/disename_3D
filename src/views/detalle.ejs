@@ -31,9 +31,8 @@
                     <div class="detalle__menu--caja1">
                         <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.precio %></span></h3>
                         <h3 class="detalle__menu--titulo detalle-h3">descuento : <span class="detalle--span"><%= product.descuento %></span>% OFF</h3>
-                        <h3 class="detalle__menu--titulo detalle-h3">total: $ 
-                            <% if (product.descuento > 0) { %> 
-                                <span class="detalle--span">que paso</span>
+                        <h3 class="detalle__menu--titulo detalle-h3">total: $ <% if (product.descuento > 0) { %> 
+                                <span class="detalle--span"></span>
                                 <p class="detalle--span">
                                     $<%= toThousand((product.precio - (product.precio * product.descuento / 100)).toFixed(0))%>
                                 </p>
