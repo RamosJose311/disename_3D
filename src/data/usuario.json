@@ -61,9 +61,15 @@
          "musica",
          "aireLibre"
       ],
+<<<<<<< HEAD
       "domicilio": "la mas conocida                            ",
       "ciudad": "plaza huincul",
       "provincia": "neuquen",
+=======
+      "domicilio": "la mas conocida                ",
+      "ciudad": "buenos aires",
+      "provincia": "jujuy",
+>>>>>>> master
       "nosotros": ""
    }
 ]
