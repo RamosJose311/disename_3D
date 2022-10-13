@@ -4,7 +4,7 @@ var router = express.Router();
 
 const {detalle,productCart,modelDisponible,personalizado,imprimir,search} = require('../controllers/productController');
 
-const productSessionCheck = require('../../middlewares/productSessionCheck');
+const productSessionCheck = require('../middlewares/productSessionCheck');
 
 /* /products*/
 router

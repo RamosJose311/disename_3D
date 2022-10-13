@@ -1,6 +1,6 @@
 const { loadProducts, storeProducts } = require('../data/dbModules');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db = require('../database/models')
+//const db = require('../database/models')
 
 module.exports = {
     productCart: (req, res) => {
@@ -38,12 +38,14 @@ module.exports = {
     },
     detalle: (req, res) => {
         const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
+                const product = products.find(product => product.id === +req.params.id);
         return res.render('detalle', {
             product,
             toThousand
         })
     },
+
+
     search : (req,res) => {
 
         const products = loadProducts();

@@ -54,22 +54,16 @@
       "email": "juanelicciardi@gmail.com",
       "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
       "rol": "user",
-      "nacimiento": "1976-10-15",
+      "nacimiento": "1976-10-02",
       "imagen": "",
-      "genero": "m",
+      "genero": "o",
       "hobbies": [
          "musica",
-         "aireLibre"
+         "deporte"
       ],
-<<<<<<< HEAD
-      "domicilio": "la mas conocida                            ",
+      "domicilio": "la mas conocida                       ",
       "ciudad": "plaza huincul",
       "provincia": "neuquen",
-=======
-      "domicilio": "la mas conocida                ",
-      "ciudad": "buenos aires",
-      "provincia": "jujuy",
->>>>>>> master
       "nosotros": ""
    }
 ]

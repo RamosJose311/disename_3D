@@ -3,7 +3,7 @@ var router = express.Router();
 
 const {crearProducto,editarProducto, add, store, update, destroy} = require('../controllers/adminController');
 const productValidator = require('../validations/productsValidator')
-const adminSessionCheck = require ('../../middlewares/adminSessionCheck')
+const adminSessionCheck = require ('../middlewares/adminSessionCheck')
 
 /* /admin */
 
