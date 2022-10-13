@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -32,9 +34,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
+app.use(express.urlencoded({ extended: false }));
 app.use(localsUserCheck);
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products',productsRouter);
