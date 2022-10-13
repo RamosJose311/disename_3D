@@ -336,16 +336,10 @@
 
 @media (min-width:1024px){
 
-    .detalle__menu--article--descripcion{
-        
-    }
     .detalle__menu--titulo{
       
         font-size: 22px;
         
-    }
-    .detalle__menu--butto{
-       
     }
     .detalle__menu--button{
         margin-left: 14%;
