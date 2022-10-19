@@ -5,148 +5,187 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema Disename3D
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema db_disename-3d
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema Disename3D
+-- Schema db_disename-3d
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `Disename3D` DEFAULT CHARACTER SET utf8 ;
-USE `Disename3D` ;
+CREATE SCHEMA IF NOT EXISTS `db_disename-3d` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `db_disename-3d` ;
 
 -- -----------------------------------------------------
--- Table `Disename3D`.`materials`
+-- Table `db_disename-3d`.`genders`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`materials` (
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`genders` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `Disename3D`.`categories`
+-- Table `db_disename-3d`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`categories` (
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Disename3D`.`products`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`products` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `createdAt` TIMESTAMP NULL DEFAULT NULL,
-  `updatedAt` TIMESTAMP NULL DEFAULT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  `price` DECIMAL NOT NULL,
-  `discount` INT NULL DEFAULT 0,
-  `height` DECIMAL NOT NULL,
-  `time` INT NOT NULL,
-  `description` TEXT NOT NULL,
-  `material_id` INT NOT NULL,
-  `category_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_products_materials_idx` (`material_id` ASC) VISIBLE,
-  INDEX `fk_products_categories_idx` (`category_id` ASC) VISIBLE,
-  CONSTRAINT `fk_products_materials`
-    FOREIGN KEY (`material_id`)
-    REFERENCES `Disename3D`.`materials` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_products_categories`
-    FOREIGN KEY (`category_id`)
-    REFERENCES `Disename3D`.`categories` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Disename3D`.`images_products`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`images_products` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `images` VARCHAR(45) NOT NULL,
-  `products_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_images_products_products_idx` (`products_id` ASC) VISIBLE,
-  CONSTRAINT `fk_images_products_products`
-    FOREIGN KEY (`products_id`)
-    REFERENCES `Disename3D`.`products` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Disename3D`.`users`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`users` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `createdAt` TIMESTAMP NULL DEFAULT NULL,
-  `updatedAt` TIMESTAMP NULL DEFAULT NULL,
-  `firts_name` VARCHAR(45) NOT NULL,
-  `last_name` VARCHAR(45) NOT NULL,
+  `firstName` VARCHAR(255) NOT NULL,
+  `lastName` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
-  `rol` TINYINT NOT NULL DEFAULT 0,
-  `date_birth` DATE NOT NULL,
-  `adress` VARCHAR(255) NOT NULL,
-  `city` VARCHAR(100) NOT NULL,
-  `province` VARCHAR(100) NOT NULL,
-  `country` VARCHAR(100) NOT NULL,
-  `description` TEXT NULL,
-  `genre_id` INT NOT NULL,
+  `rol` TINYINT(1) NOT NULL,
+  `dateBirth` DATETIME NOT NULL,
+  `address` VARCHAR(255) NOT NULL,
+  `city` VARCHAR(255) NOT NULL,
+  `province` VARCHAR(255) NOT NULL,
+  `contry` VARCHAR(255) NOT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `genderId` INT NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NOT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
-ENGINE = InnoDB;
+  INDEX `genderId` (`genderId` ASC) VISIBLE,
+  CONSTRAINT `users_ibfk_1`
+    FOREIGN KEY (`genderId`)
+    REFERENCES `db_disename-3d`.`genders` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `Disename3D`.`avatars`
+-- Table `db_disename-3d`.`avatars`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`avatars` (
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`avatars` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `avatar` VARCHAR(45) NOT NULL,
-  `user_id` INT NOT NULL,
+  `avatar` VARCHAR(255) NOT NULL,
+  `userId` INT NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_avatars_users_idx` (`user_id` ASC) VISIBLE,
-  CONSTRAINT `fk_avatars_users`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `Disename3D`.`users` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  INDEX `userId` (`userId` ASC) VISIBLE,
+  CONSTRAINT `avatars_ibfk_1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `db_disename-3d`.`users` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `Disename3D`.`carts`
+-- Table `db_disename-3d`.`materials`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Disename3D`.`carts` (
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`materials` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `createdAt` TIMESTAMP NULL DEFAULT NULL,
-  `updatedAt` TIMESTAMP NULL DEFAULT NULL,
-  `status` TINYINT NULL DEFAULT 0,
-  `user_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `db_disename-3d`.`categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `db_disename-3d`.`products`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`products` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `price` INT NOT NULL,
+  `discount` INT NULL DEFAULT '0',
+  `height` DECIMAL(10,0) NOT NULL,
+  `time` INT NOT NULL,
+  `description` TEXT NOT NULL,
+  `materialId` INT NOT NULL,
+  `view` VARCHAR(255) NOT NULL,
+  `categoryId` INT NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_carts_users_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_carts_products_idx` (`product_id` ASC) VISIBLE,
-  CONSTRAINT `fk_carts_users`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `Disename3D`.`users` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_carts_products`
-    FOREIGN KEY (`product_id`)
-    REFERENCES `Disename3D`.`products` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  INDEX `materialId` (`materialId` ASC) VISIBLE,
+  INDEX `categoryId` (`categoryId` ASC) VISIBLE,
+  CONSTRAINT `products_ibfk_1`
+    FOREIGN KEY (`materialId`)
+    REFERENCES `db_disename-3d`.`materials` (`id`),
+  CONSTRAINT `products_ibfk_2`
+    FOREIGN KEY (`categoryId`)
+    REFERENCES `db_disename-3d`.`categories` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `db_disename-3d`.`carts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`carts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `status` TINYINT(1) NOT NULL,
+  `userId` INT NOT NULL,
+  `productId` INT NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `userId` (`userId` ASC) VISIBLE,
+  INDEX `productId` (`productId` ASC) VISIBLE,
+  CONSTRAINT `carts_ibfk_1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `db_disename-3d`.`users` (`id`),
+  CONSTRAINT `carts_ibfk_2`
+    FOREIGN KEY (`productId`)
+    REFERENCES `db_disename-3d`.`products` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `db_disename-3d`.`images`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_disename-3d`.`images` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `images` VARCHAR(255) NULL DEFAULT NULL,
+  `productsId` INT NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `deletedAt` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `productsId` (`productsId` ASC) VISIBLE,
+  CONSTRAINT `images_ibfk_1`
+    FOREIGN KEY (`productsId`)
+    REFERENCES `db_disename-3d`.`products` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

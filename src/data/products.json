@@ -24,13 +24,8 @@
       "imagen": "i2.png"
    },
    {
-<<<<<<< HEAD
-      "id": 3,
-      "nombre": "set mate camion",
-=======
       "id": 2,
       "nombre": "figura",
->>>>>>> master
       "precio": 2500,
       "descuento": 0,
       "altura": 20,
@@ -53,13 +48,8 @@
       "imagen": "i4.png"
    },
    {
-<<<<<<< HEAD
-      "id": 5,
-      "nombre": "figura charmander mamadisimo",
-=======
       "id": 4,
       "nombre": "set mate camion",
->>>>>>> master
       "precio": 3000,
       "descuento": 0,
       "altura": 15,
@@ -70,13 +60,8 @@
       "imagen": "i5.png"
    },
    {
-<<<<<<< HEAD
-      "id": 6,
-      "nombre": "figura",
-=======
       "id": 5,
       "nombre": "charmander mamado",
->>>>>>> master
       "precio": 1500,
       "descuento": 0,
       "altura": 20,
@@ -87,13 +72,8 @@
       "imagen": "i6.png"
    },
    {
-<<<<<<< HEAD
-      "id": 7,
-      "nombre": "figura squirtle(pokemon)",
-=======
       "id": 6,
       "nombre": "portajousting cazafantasmas",
->>>>>>> master
       "precio": 2800,
       "descuento": 10,
       "altura": 20,
@@ -104,13 +84,8 @@
       "imagen": "i7.png"
    },
    {
-<<<<<<< HEAD
-      "id": 8,
-      "nombre": "figura maestro yoda",
-=======
       "id": 7,
       "nombre": "squitle",
->>>>>>> master
       "precio": 1500,
       "descuento": 0,
       "altura": 20,
@@ -121,13 +96,8 @@
       "imagen": "i8.png"
    },
    {
-<<<<<<< HEAD
-      "id": 9,
-      "nombre": "porta joystick",
-=======
       "id": 8,
       "nombre": "figura de yoda",
->>>>>>> master
       "precio": 3000,
       "descuento": 0,
       "altura": 20,
