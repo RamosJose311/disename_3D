@@ -4,7 +4,7 @@ var router = express.Router();
 const {login,register,processRegister,processLogin,profile,logout,update} = require('../controllers/userController');
 const loginValidator = require ('../validations/loginValidator')
 const registerValidator =require('../validations/registerValidation')
-const userSessionCheck = require('../../middlewares/userSessionCheck');
+const userSessionCheck = require('../middlewares/userSessionCheck');
 
 
 
