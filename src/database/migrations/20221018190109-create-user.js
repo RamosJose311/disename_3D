@@ -30,7 +30,7 @@ module.exports = {
       },
       dateBirth: {
         type: Sequelize.DATE,
-        allowNull:false
+        allowNull:true
       },
       address: {
         type: Sequelize.STRING,
@@ -44,7 +44,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
-      contry: {
+      country: {
         type: Sequelize.STRING,
         allowNull:false
       },
@@ -65,7 +65,6 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
 

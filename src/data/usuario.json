@@ -30,40 +30,5 @@
       "ciudad": null,
       "provincia": null,
       "nosotros": null
-   },
-   {
-      "id": 3,
-      "nombre": "Santiago",
-      "apellido": "Rodriguez",
-      "email": "santiagocarp987@gmail.com",
-      "password": "$2a$10$X8aDU2XEqptk0cWs6ds2v.3Y7RLi3J2C6tSIK8F045QNwR0aj32K2",
-      "rol": "user",
-      "nacimiento": null,
-      "imagen": null,
-      "genero": null,
-      "hobbies": [],
-      "domicilio": null,
-      "ciudad": null,
-      "provincia": null,
-      "nosotros": null
-   },
-   {
-      "id": 4,
-      "nombre": "Juan Eduardo",
-      "apellido": "LICCIARDI",
-      "email": "juanelicciardi@gmail.com",
-      "password": "$2a$10$p3DHmUMAXr8JGGtI5l10Lu71.6qYaNXLQARx/7fyyidr/Z4eToWu6",
-      "rol": "user",
-      "nacimiento": "1976-10-02",
-      "imagen": "",
-      "genero": "o",
-      "hobbies": [
-         "musica",
-         "deporte"
-      ],
-      "domicilio": "la mas conocida                       ",
-      "ciudad": "plaza huincul",
-      "provincia": "neuquen",
-      "nosotros": ""
    }
 ]

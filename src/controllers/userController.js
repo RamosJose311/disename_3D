@@ -1,5 +1,5 @@
 const {loadUser,storeUser} =require ("../data/dbModules")
-const {validationResult} = require ('express-validator')
+const {validationResult, body} = require ('express-validator')
 const bcryptjs =require('bcryptjs')
 
 module.exports = {
@@ -38,6 +38,8 @@ module.exports = {
         const {nombre,apellido,email,password} =req.body;
         const usuario= loadUser();
         if(errors.isEmpty()){
+
+
             const nuevoUsuario={
             id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
             nombre:nombre.trim(),

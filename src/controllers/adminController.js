@@ -6,11 +6,15 @@ module.exports = {
     crearProducto : (req,res) =>{
         return res.render('crearProducto')
     },
+
+
     add : (req,res) => {
         return res.render('crearProducto',{
             categorias : loadCategories().sort()
         })
     },
+
+
     store : (req,res) => {
         let errors = validationResult(req);
         
@@ -39,19 +43,18 @@ module.exports = {
                 errors : errors.mapped(),
                 old : req.body
             })
-
-        }
-        
-
-
-   
+        } 
 	},
+
+
     editarProducto : (req,res) =>{
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
 
         return res.render('editarProducto', {product})
     },
+
+
     update : (req, res) =>{
         const products = loadProducts();
          /* return res.send(req.body) */
@@ -82,7 +85,6 @@ module.exports = {
         storeProducts(productsModify);
         return res.redirect('/');        
     }
-
 
 }
 

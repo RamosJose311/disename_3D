@@ -1,0 +1,34 @@
+[
+   {
+      "id": 1,
+      "firstname": "administrador",
+      "lastname": "creador",
+      "email": "admin@comision15.com",
+      "password": "$2a$10$rPFnJ4CA13I9U5zGrS.F5.88hZj0Pfdb5yPCr89vrrUOPMaywRn2C",
+      "rol": 1,
+      "dateBirth": null,
+      "address": "uno",
+      "city": "dos",
+      "province": ["tres"],
+      "country": "cuatro",
+      "description": "cinco",
+      "genderID": 1
+   },
+   {
+      "id": 2,
+      "firstname": "administrador",
+      "lastname": "administrador",
+      "email": "admin@disename3d.com",
+      "password": "$2a$10$Ib4cMZoyMN1rQNKi0Cy2mOiLnjFedtKhjrGNi3hs17sLINv4wiFgK",
+      "rol": 1,
+      "dateBirth": null,
+      "address": "uno",
+      "city": "dos",
+      "province": ["tres"],
+      "country": "cuatro",
+      "description": "cinco",
+      "genderID": 1
+   }
+]
+
+
