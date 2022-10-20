@@ -7,6 +7,7 @@ module.exports = {
         return res.render('productCart')
     },
 
+
     modelDisponible: (req, res) => {
         const products = loadProducts();
 
@@ -36,6 +37,7 @@ module.exports = {
          })
         
     },
+    
     detalle: (req, res) => {
         const products = loadProducts();
                 const product = products.find(product => product.id === +req.params.id);

@@ -7,7 +7,7 @@
       "height": 40,
       "time": 400,
       "categoryId": 1,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "maseta de groot (guardianes de la galaxia)",
       "imagen": "homer-3d.png",
       "view" : "print"
@@ -20,7 +20,7 @@
       "height": 10,
       "time": 300,
       "categoryId": 1,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "mate fachero del mismisimo superman(no exponerlo cerca de la kriptonita)",
       "imagen": "i2.png",
       "view" : "print"
@@ -33,7 +33,7 @@
       "height": 20,
       "time": 800,
       "categoryId": 2,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "figura de anime demon slayer  ",
       "imagen": "i3.png",
       "view" : "print"
@@ -46,7 +46,7 @@
       "height": 20,
       "time": 450,
       "categoryId": 2,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "figura de jefe maestro(halo)",
       "imagen": "i4.png",
       "view" : "print"
@@ -59,7 +59,7 @@
       "height": 15,
       "time": 4320,
       "categoryId": 1,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "equipo de mate (set de azucarero,yerbero y mate",
       "imagen": "i5.png",
       "view" : "print"
@@ -72,7 +72,7 @@
       "height": 20,
       "time": 1200,
       "categoryId": 2,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "figura parodia del pokemon",
       "imagen": "i6.png",
       "view" : "print"
@@ -85,7 +85,7 @@
       "height": 20,
       "time": 1300,
       "categoryId": 7,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "portajousting y celular de los caza fantasma",
       "imagen": "i7.png",
       "view" : "print"
@@ -98,7 +98,7 @@
       "height": 20,
       "time": 1200,
       "categoryId": 2,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "figura de pokemon ",
       "imagen": "i8.png",
       "view" : "stock"
@@ -111,7 +111,7 @@
       "height": 20,
       "time": 2880,
       "categoryId": 2,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "figura de baby yoda ,en su nave",
       "imagen": "i9.png",
       "view" : "stock"
@@ -124,46 +124,10 @@
       "height": 20,
       "time": 480,
       "categoryId": 7,
-      "materialId": "pla",
+      "materialId": 1,
       "description": "portajousting de metalgear ,con adornos incluidos",
       "imagen": "i10.png",
       "view" : "stock"
-   },
-   {
-      "id": 11,
-      "name": "LKALSKFLASKFLKSA90909809",
-      "price": 124333242,
-      "discount": 233,
-      "height": 3213,
-      "time": 312312,
-      "categoryId": 5,
-      "description": "321321",
-      "imagen": "groot1.jpg",
-      "view" : "stock"
-   },
-   {
-      "id": 13,
-      "name": "mate de la mujer maravilla",
-      "price": 2000,
-      "discount": 123,
-      "height": 96,
-      "time": 500,
-      "categoryId": 1,
-      "description": "una description",
-      "imagen": "",
-      "view" : "stock"
-   },
-   {
-      "id": 14,
-      "name": "figura de homero simpson",
-      "price": 1500,
-      "discount": 5,
-      "height": 25,
-      "time": 200,
-      "categoryId": 2,
-      "materialId": "plastico",
-      "description": "figura de plastico del mismisimo Homero padre de familia",
-      "imagen": "imagen-default.webp",
-      "view" : "stock"
    }
+   
 ]
