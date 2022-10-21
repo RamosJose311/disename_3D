@@ -2,19 +2,19 @@ const {check} = require('express-validator')
 
 module.exports = [
 
-    check('nombre')
+    check('name')
         .notEmpty().withMessage('El nombre es obligatorio').bail()
         .isLength({
             min : 2
         }).withMessage('Cómo mínimo 2 caracteres'),
-
-    check('precio')
+ 
+    check('price')
         .notEmpty().withMessage('El precio es obligatorio').bail()
         .isNumeric({
             no_symbols : true,
         }).withMessage('Debe un número entero positivo'),
 
-        check('descuento')
+        check('discount')
             .isInt({
                 min : 0,
                 max: 99
@@ -23,29 +23,28 @@ module.exports = [
                 no_symbols : true,
             }).withMessage('Debe ser un número entero positivo'),
 
-        check('altura')
+        check('height')
             .notEmpty().withMessage('La aultura es obligatoria').bail()
             .isNumeric({
                 no_symbols : true,
             }).withMessage('Debe ser un número entero positivo'),
 
-        check('tiempo')
+        check('time')
             .notEmpty().withMessage('El tiempo es obligatorio').bail()
             .isNumeric({
                 no_symbols : true,
             }).withMessage('Debe ser un número entero positivo'),
-
-        check('categoria')
-            .notEmpty().withMessage('La categoría es obligatoria'),
-
-        check('material')
-            .notEmpty().withMessage('El material es obligatorio'),
-
-
-        check('descripcion')
+            
+            check('description')
             .notEmpty().withMessage('La descripción es obligatoria').bail()
             .isLength({
                 min : 5,
             }).withMessage('Cómo mínimo 5 caracteres'),
+
+        check('categoryId')
+            .notEmpty().withMessage('La categoría es obligatoria'),
+
+        check('materialId')
+            .notEmpty().withMessage('El material es obligatorio'),
 
 ]
