@@ -62,11 +62,32 @@ module.exports = {
 
 
 
-    editarProducto : (req,res) =>{
-        const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
+    editarProducto : (req,res) => {
+        //const products = loadProducts();
+        //const product = products.find(product => product.id === +req.params.id);
 
-        return res.render('editarProducto', {product})
+        let categories = db.Category.findAll()
+        let materials = db.Material.findAll()
+
+        //return res.send(req.params.id)        
+        let product = db.Product.findByPk(req.params.id);
+        
+        Promise.all([categories,materials,product])
+            .then(([categories,materials,product]) => {
+                console.log(product) 
+                console.log(materials)
+                console.log(categories)
+                //return res.send(product)
+                res.render('editarProducto', {
+                    product,
+                    categories,
+                    materials
+                })
+            })
+            .catch(error => console.log ("=====ERROR======>" + error))
+
+
+        
     },
 
 
@@ -74,9 +95,7 @@ module.exports = {
         let genres = db.Genre.findAll({
             order : ['name']
         });
-
         let movie = db.Movie.findByPk(req.params.id);
-
         Promise.all([genres,movie])
         .then(([genres,movie]) => {
             res.render('moviesEdit',{

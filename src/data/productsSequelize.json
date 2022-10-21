@@ -26,7 +26,7 @@
       "view" : "print"
    },
    {
-      "id": 2,
+      "id": 3,
       "name": "figura",
       "price": 2500,
       "discount": 0,
@@ -39,7 +39,7 @@
       "view" : "print"
    },
    {
-      "id": 3,
+      "id": 4,
       "name": "jefe maestro",
       "price": 1500,
       "discount": 0,
@@ -52,7 +52,7 @@
       "view" : "print"
    },
    {
-      "id": 4,
+      "id": 5,
       "name": "set mate camion",
       "price": 3000,
       "discount": 0,
@@ -65,7 +65,7 @@
       "view" : "print"
    },
    {
-      "id": 5,
+      "id": 6,
       "name": "charmander mamado",
       "price": 1500,
       "discount": 0,
@@ -78,7 +78,7 @@
       "view" : "print"
    },
    {
-      "id": 6,
+      "id": 7,
       "name": "portajousting cazafantasmas",
       "price": 2800,
       "discount": 10,
@@ -91,7 +91,7 @@
       "view" : "print"
    },
    {
-      "id": 7,
+      "id": 8,
       "name": "squitle",
       "price": 1500,
       "discount": 0,
@@ -104,7 +104,7 @@
       "view" : "stock"
    },
    {
-      "id": 8,
+      "id": 9,
       "name": "figura de yoda",
       "price": 3000,
       "discount": 0,
@@ -117,7 +117,7 @@
       "view" : "stock"
    },
    {
-      "id": 9,
+      "id": 10,
       "name": "portajousting ",
       "price": 1500,
       "discount": 0,
