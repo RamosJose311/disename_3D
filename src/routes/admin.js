@@ -9,9 +9,13 @@ const adminSessionCheck = require ('../middlewares/adminSessionCheck')
 
 router
     .get('/crearProducto',adminSessionCheck,crearProducto)
+
     .get('/editarProducto/:id',adminSessionCheck, editarProducto)
-    .get('/add',adminSessionCheck,add)
+    
+    //.get('/add',adminSessionCheck,add)
+
     .post('/add', productValidator,store)
+    //.post('/add',store)
     .put('/update/:id', productValidator, update)
     .delete('/delete/:id', destroy)
 

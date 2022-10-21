@@ -1,50 +1,65 @@
 const {loadProducts,storeProducts,loadCategories} = require('../data/dbModules');
 const {validationResult} = require('express-validator');
 
+const db = require('../database/models')
+const sequelize = db.sequelize;
+const moment = require('moment');
+
+
 
 module.exports = {
+                                                    //Renderiza CrearProducto sin datos - OK
     crearProducto : (req,res) =>{
-        return res.render('crearProducto')
+        let categories = db.Category.findAll({
+            order : ['name']
+        });
+        let materials = db.Material.findAll({
+            order : ['name']
+        });
+
+        Promise.all([categories,materials])
+            .then(([categories,materials]) => { 
+                res.render('crearProducto',{
+                    categories,
+                    materials
+                })})
+                .catch(error => console.log(error))
     },
 
-
-    add : (req,res) => {
-        return res.render('crearProducto',{
-            categorias : loadCategories().sort()
-        })
-    },
-
-
+                                                    //Proceso de Guardar en Base de Datos y Renderiza Home - OK
     store : (req,res) => {
         let errors = validationResult(req);
-        
+        let categories = db.Category.findAll()
+        let materials = db.Material.findAll()
+
         if(errors.isEmpty()){
+            const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
             
-            const{nombre, precio, descuento, altura, tiempo, categoria, descripcion, material}= req.body;
-            let products = loadProducts();
-            const newProduct = {
-                id : products[products.length -1].id +1,
-                nombre : nombre.trim(),
-                precio : +precio,
-                descuento :  +descuento,
-                altura : +altura,
-                tiempo : +tiempo,
-                categoria: categoria,
-                material : material,
-                descripcion : descripcion.trim(),
-                imagen : 'imagen-default.webp'
-            }
-            productsModify = [...products, newProduct];
-            storeProducts(productsModify);
-            return res.redirect('/')
-            
-        }else{
-            return res.render('crearProducto', {
-                errors : errors.mapped(),
-                old : req.body
+            db.Product.create({
+                ...req.body,
+                name:name.trim(),
+                categoryId: req.body.categoryId,
+                materialId: req.body.materialId,
+                view : "stock"
             })
-        } 
-	},
+                .then(product => {
+                    console.log(product)
+                    return res.redirect('/')
+                })
+                .catch(error => console.log("======ERROR========>" + error))
+        }else{
+            Promise.all([categories,materials])
+                .then(([categories,materials]) => { 
+                    res.render('crearProducto',{
+                        categories,
+                        materials,
+                        errors : errors.mapped(),
+                        old : req.body
+                    })})
+                    .catch(error => console.log(error))
+            }
+        }, 
+
 
 
     editarProducto : (req,res) =>{
