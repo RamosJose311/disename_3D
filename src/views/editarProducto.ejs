@@ -55,7 +55,7 @@
                 </div>
                 <div class="caja--product--add">
                     <label for="description" class="label--add">Descripción</label>
-                    <textarea class="detalle--textarea-add" name="description" id="description" cols="35" rows="3" ></textarea>
+                    <textarea class="detalle--textarea-add" name="description" id="description" cols="35" rows="3" ><%= product.description %> </textarea>
                     <small class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
                 </div>
 

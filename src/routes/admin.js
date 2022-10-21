@@ -12,6 +12,9 @@ router
     .post('/add', productValidator,store)
 
     .get('/editarProducto/:id',adminSessionCheck, editarProducto)
+    
+    
+    
     .put('/update/:id', productValidator, update)
 
     //.get('/add',adminSessionCheck,add)

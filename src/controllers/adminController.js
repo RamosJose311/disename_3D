@@ -60,16 +60,11 @@ module.exports = {
             }
         }, 
 
-
-
+    //Renderiza EditarProducto con datos - OK
     editarProducto : (req,res) => {
-        //const products = loadProducts();
-        //const product = products.find(product => product.id === +req.params.id);
-
         let categories = db.Category.findAll()
         let materials = db.Material.findAll()
 
-        //return res.send(req.params.id)        
         let product = db.Product.findByPk(req.params.id);
         
         Promise.all([categories,materials,product])
@@ -77,7 +72,6 @@ module.exports = {
                 console.log(product) 
                 console.log(materials)
                 console.log(categories)
-                //return res.send(product)
                 res.render('editarProducto', {
                     product,
                     categories,
@@ -85,65 +79,48 @@ module.exports = {
                 })
             })
             .catch(error => console.log ("=====ERROR======>" + error))
-
-
-        
     },
-
-
-   /*  edit: function(req, res) {
-        let genres = db.Genre.findAll({
-            order : ['name']
-        });
-        let movie = db.Movie.findByPk(req.params.id);
-        Promise.all([genres,movie])
-        .then(([genres,movie]) => {
-            res.render('moviesEdit',{
-                genres,
-                Movie:movie,
-                moment : moment
-            });
-        })
-        .catch((error) => console.log(error))
-        
-    },
- */
-
-
-
-
-
-
-
-
-
-
-
 
 
     update : (req, res) =>{
-        const products = loadProducts();
-         /* return res.send(req.body) */
-        const {id} = req.params;
-        const {nombre,precio,descuento, categoria, descripcion, tiempo, altura, imagen} = req.body;
-        const productsEdit= products.map(product => {
-            if(product.id === +id){
-               return {
-                ...product,
-                nombre : nombre.trim(),
-                precio: +precio,
-                descuento: +descuento,
-                altura: +altura,
-                tiempo: +tiempo ,
-                imagen : imagen
-                   }
+        return res.send(req.body)
+        db.Product.update(
+            {
+                ...req.body,
+                name : req.body.name.trim()
+            },
+            {
+                where : {id:req.params.id}
             }
-            else{  return product }
-        } )
-        storeProducts(productsEdit);
-        return res.redirect('/products/detalle/'+id)
+        )
+        .then (result => {
+            console.log(result)
+            return res.redirect('/products/detalle/'+ req.params.id)
+        })
+        .catch(error => console.log(error))
+
     },
-    
+ 
+/*         update: function (req,res) {
+        db.Movie.update(
+            {
+                ...req.body,
+                title : req.body.title.trim()
+            },
+            {
+                where : {id:req.params.id}
+            }
+        )
+        .then (result => {
+            console.log(result)
+            return res.redirect('/movies/detail/' + req.params.id)
+        })
+        .catch(error => console.log(error))
+        
+    }, */
+
+
+
     destroy : (req,res) => {
         const products = loadProducts();
         const {id} = req.params;
