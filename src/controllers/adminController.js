@@ -8,7 +8,7 @@ const moment = require('moment');
 
 
 module.exports = {
-                                                    //Renderiza CrearProducto sin datos - OK
+    //Renderiza CrearProducto sin datos - OK
     crearProducto : (req,res) =>{
         let categories = db.Category.findAll({
             order : ['name']
@@ -26,7 +26,7 @@ module.exports = {
                 .catch(error => console.log(error))
     },
 
-                                                    //Proceso de Guardar en Base de Datos y Renderiza Home - OK
+    //Proceso de Guardar en Base de Datos y Renderiza Home - OK
     store : (req,res) => {
         let errors = validationResult(req);
         let categories = db.Category.findAll()
@@ -68,6 +68,38 @@ module.exports = {
 
         return res.render('editarProducto', {product})
     },
+
+
+   /*  edit: function(req, res) {
+        let genres = db.Genre.findAll({
+            order : ['name']
+        });
+
+        let movie = db.Movie.findByPk(req.params.id);
+
+        Promise.all([genres,movie])
+        .then(([genres,movie]) => {
+            res.render('moviesEdit',{
+                genres,
+                Movie:movie,
+                moment : moment
+            });
+        })
+        .catch((error) => console.log(error))
+        
+    },
+ */
+
+
+
+
+
+
+
+
+
+
+
 
 
     update : (req, res) =>{
