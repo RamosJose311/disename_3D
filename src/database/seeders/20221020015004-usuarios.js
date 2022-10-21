@@ -8,7 +8,7 @@ const users = usuarios.map(({firstname,lastname,email,password,rol,dateBirth,add
     email,
     password,
     rol,
-    dateBirth,
+    dateBirth: new Date(),
     address,
     city,
     province,

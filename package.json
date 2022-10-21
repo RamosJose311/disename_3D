@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www --ignore /src/data/*.json"
+    "dev": "nodemon ./src/bin/www --ignore /src/data/*.json"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
