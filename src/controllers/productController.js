@@ -70,7 +70,7 @@ module.exports = {
     detalle: (req, res) => {/* 
         const products = loadProducts();
                 const product = products.find(product => product.id === +req.params.id); */
-                db.Product.findByPk(req.body.id)
+                db.Product.findByPk(req.params.id)
                 .then(products => res.render('detalle', {
                     products,
                     toThousand

@@ -83,7 +83,7 @@ module.exports = {
         db.Product.update(
             {
                 ...req.body,
-                view : req.body.name.trim()
+                name : req.params.name.trim()
             },
             {
                 where : {id:req.params.id}
