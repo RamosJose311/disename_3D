@@ -1,20 +1,29 @@
 const { loadProducts, storeProducts } = require('../data/dbModules');
+const db = require('../database/models');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const sequelize = db.sequelize;
 //const db = require('../database/models')
 
 module.exports = {
     productCart: (req, res) => {
-        return res.render('productCart')
+        db.carts.findAll()
+                .then(carts => res.render('productCart', {carts}) )
+         
     },
 
 
     modelDisponible: (req, res) => {
-        const products = loadProducts();
+        const products = loadProducts(); // se saca??
+        db.products.findAll()
+                    .then(products => res.render('modelDisponible',{
+                        products,
+                        toThousand
+                     }))
 
-         return res.render('modelDisponible',{
+         /* return res.render('modelDisponible',{
             products,
             toThousand
-         })
+         }) */
     },
 
     personalizado: (req, res) => {
