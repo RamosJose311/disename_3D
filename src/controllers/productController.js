@@ -8,6 +8,8 @@ module.exports = {
     },
 
 
+    
+
     modelDisponible: (req, res) => {
         const products = loadProducts();
 
