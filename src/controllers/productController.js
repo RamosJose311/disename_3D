@@ -1,5 +1,6 @@
 const { loadProducts, storeProducts } = require('../data/dbModules');
 const db = require('../database/models');
+const { Op } = require("sequelize");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const sequelize = db.sequelize;
 //const db = require('../database/models')
@@ -84,12 +85,38 @@ module.exports = {
 
     search : (req,res) => {
 
-        const products = loadProducts();
+        /* const products = loadProducts();
         const result = products.filter(product => product.categoria.toLowerCase().includes(req.query.keywords.toLowerCase()))
         return res.render('result', {
             products : result,
             keywords : req.query.keywords
-        })
+        }) */
+        let { keywords } = req.query;
+
+		db.Product.findAll({
+			where: {
+				[Op.or]: [
+					{
+						name: {
+							[Op.substring]: keywords,
+						},
+					},
+					{
+						description: {
+							[Op.substring]: keywords,
+						},
+					},
+				],
+			},
+			/* include: ["images"] */
+		})
+			.then((result) => {
+				return res.render("result", {
+					result,
+					toThousand,
+					keywords,
+				});
+			})
     },
 
 
