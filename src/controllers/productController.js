@@ -71,8 +71,8 @@ module.exports = {
         const products = loadProducts();
                 const product = products.find(product => product.id === +req.params.id); */
                 db.Product.findByPk(req.params.id)
-                .then(products => res.render('detalle', {
-                    products,
+                .then(product =>  res.render('detalle', {
+                    product,
                     toThousand
                  }))
         /* return res.render('detalle', {
