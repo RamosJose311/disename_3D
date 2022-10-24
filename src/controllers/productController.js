@@ -12,6 +12,8 @@ module.exports = {
     },
 
 
+    
+
     modelDisponible: (req, res) => {
         const products = loadProducts(); // se saca??
         db.products.findAll()
