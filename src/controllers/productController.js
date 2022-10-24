@@ -9,8 +9,8 @@ module.exports = {
     productCart: (req, res) => {
         db.carts.findAll()
             .then(carts => res.render('productCart', {carts}))
+            .catch(error => console.log(error))
 
-         
     },
 
 
@@ -20,6 +20,8 @@ module.exports = {
                         products,
                         toThousand
                      }))
+                     .catch(error => console.log(error))
+
    },
 
    
@@ -39,6 +41,8 @@ module.exports = {
                 products
             }))
         )
+        .catch(error => console.log(error))
+
     },
     
     imprimir: (req, res) => {
@@ -48,6 +52,8 @@ module.exports = {
                         products,
                         toThousand
                      }))
+                     .catch(error => console.log(error))
+
         
     },
     
@@ -59,6 +65,8 @@ module.exports = {
                     product,
                     toThousand
                  }))
+                 .catch(error => console.log(error))
+
  
     },
 
@@ -90,6 +98,8 @@ module.exports = {
 					keywords,
 				});
 			})
+            .catch(error => console.log(error))
+
     },
 
 
