@@ -15,8 +15,8 @@ module.exports = {
     
 
     modelDisponible: (req, res) => {
-        const products = loadProducts(); // se saca??
-        db.products.findAll()
+        /* const products = loadProducts(); // se saca?? */
+        db.Product.findAll()
                     .then(products => res.render('modelDisponible',{
                         products,
                         toThousand
@@ -29,33 +29,56 @@ module.exports = {
     },
 
     personalizado: (req, res) => {
-        const products = loadProducts();
+        
+        db.Product.update(
+            {
+                ...req.body,
+                view : req.body.view //tendria q devolver el campo view como personal pero no me sale 
+            },
+            {
+                where : {id:req.params.id}
+            }
+        )
+        .then (
+             (products => res.render('personalizado', {
+                products
+            }))
+        )
 
-
-        return res.render('personalizado', {
+        /* return res.render('personalizado', {
             products,
             toThousand
-        })
+        }) */
 
     },
     
     imprimir: (req, res) => {
-        const products =loadProducts();
+        
+        db.Product.findAll()
+                    .then(products => res.render('modelPrint',{
+                        products,
+                        toThousand
+                     }))
 
-         return res.render('modelPrint',{
+         /* return res.render('modelPrint',{
             products,
             toThousand
-         })
+         }) */
         
     },
     
-    detalle: (req, res) => {
+    detalle: (req, res) => {/* 
         const products = loadProducts();
-                const product = products.find(product => product.id === +req.params.id);
-        return res.render('detalle', {
+                const product = products.find(product => product.id === +req.params.id); */
+                db.Product.findByPk(req.body.id)
+                .then(products => res.render('detalle', {
+                    products,
+                    toThousand
+                 }))
+        /* return res.render('detalle', {
             product,
             toThousand
-        })
+        }) */
     },
 
 
