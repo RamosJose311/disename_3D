@@ -9,13 +9,10 @@ module.exports = {
     productCart: (req, res) => {
         db.carts.findAll()
             .then(carts => res.render('productCart', {carts}))
-            
             .catch(error => console.log(error))
 
     },
 
-
-    
 
     modelDisponible: (req, res) => {
         db.Product.findAll()
@@ -27,6 +24,7 @@ module.exports = {
 
    },
 
+   
     personalizado: (req, res) => {
         
         db.Product.update(
