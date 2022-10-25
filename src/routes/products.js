@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const productValidator = require('../validations/productsValidator')
 
 const {detalle,productCart,modelDisponible,personalizado,imprimir,search} = require('../controllers/productController');
 
@@ -12,6 +12,7 @@ router
     .get('/productCart',productSessionCheck, productCart)
     .get('/disponible',modelDisponible)
     .get('/personalizado',productSessionCheck,personalizado)
+    .post('personalizado', productSessionCheck,personalizado, productValidator)
     .get('/imprimir',imprimir)
     .get('/search',search)
 

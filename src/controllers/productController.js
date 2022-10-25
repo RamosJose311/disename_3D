@@ -39,8 +39,8 @@ module.exports = {
             }
         )
         .then (
-             (products => res.render('personalizado', {
-                products
+             (product => res.render('personalizado', {
+                product
             }))
         )
         .catch(error => console.log(error))

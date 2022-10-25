@@ -10,11 +10,11 @@
             <main class="general_main"> 
                 <section class="section--add">
                     <h1 class="form__title--add">Agregar producto</h1>
-                    <form action="/admin/add" method="POST" class="form__register-add">
+                    <form action="/products/personalizado" method="POST" class="form__register-add">
                         <div class="caja--product--add">
                             <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
                             <label for="nombre" class="label--add">Nombre</label>
-                            <input type="text" class="form--input"  id="nombre" name="nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>">
+                            <input type="text" class="form--input"  id="nombre" name="nombre" value="<%= locals.old && old.name ? old.name : null %>">
                             <small class="text-danger"><%= locals.errors && errors.nombre ? errors.nombre.msg : null %></small>
                         </div> 
                         <div class="caja--product--add">
