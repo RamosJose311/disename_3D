@@ -10,63 +10,44 @@
             <main class="general_main"> 
                 <section class="section--add">
                     <h1 class="form__title--add">Agregar producto</h1>
-                    <form action="/products/personalizado" method="POST" class="form__register-add">
+                    <form action="/products/addPersonalizado" method="POST" class="form__register-add">
                         <div class="caja--product--add">
-                            <!-- <input class="form--input" type="text" id="nombre" name="nombre" placeholder="agregar producto" > -->
-                            <label for="nombre" class="label--add">Nombre</label>
-                            <input type="text" class="form--input"  id="nombre" name="nombre" value="<%= locals.old && old.name ? old.name : null %>">
-                            <small class="text-danger"><%= locals.errors && errors.nombre ? errors.nombre.msg : null %></small>
+                            <label for="name" class="label--add">Nombre</label>
+                            <input type="text" class="form--input"  id="name" name="name" value="<%= locals.old && old.name ? old.name : null %>">
+                            <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
                         </div> 
                         <div class="caja--product--add">
-                            <!-- <input class="form--input" type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder=" Nombre de Usuario"> -->
-                            <label for="precio" class="label--add">Precio</label>
-                            <input type="number" class="" id="precio" name="precio" value="<%= locals.old && old.precio? old.precio : null %>">
-                            <small class="text-danger"><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
-        
+                            <label for="height" class="label--add">Altura</label>
+                            <input type="number" class="" id="height" name="height" placeholder="en centimetros" value="<%= locals.old && old.height ? errors.height ? null : old.height : null %>">
+                            <small class="text-danger"><%= locals.errors && errors.height ? errors.height.msg : null %></small>
                         </div>
                         <div class="caja--product--add">
-                            <label for="descuento" class="label--add">Descuento</label>
-                            <input type="number" class="" id="descuento" name="descuento" value="<%= locals.old && old.descuento ? errors.descuento ? 0 : old.descuento : 0 %>">
-                            <small class="text-danger"><%= locals.errors && errors.descuento ? errors.descuento.msg : null %></small>
-                            
-                        </div>
-                        <div class="caja--product--add">
-                            <label for="altura" class="label--add">Altura</label>
-                            <input type="number" class="" id="altura" name="altura" placeholder="en centimetros" value="<%= locals.old && old.altura ? errors.altura ? null : old.altura : null %>">
-                            <small class="text-danger"><%= locals.errors && errors.altura ? errors.altura.msg : null %></small>
-                        </div>
-                        <div class="caja--product--add">
-                            <label for="material" class="label--add">Material</label>
-                            <input type="text" class="" id="material" name="material" value="<%= locals.old && old.material ? old.material : null %>">
-                            <small class="text-danger"><%= locals.errors && errors.material? errors.material.msg : null %></small>
-                        </div>
-                        <div class="caja--product--add">
-                            <label for="tiempo" class="label--add">Tiempo</label>
-                            <input type="number" class="" id="tiempo" name="tiempo" placeholder="en minutos" value="<%= locals.old && old.tiempo ? errors.tiempo ? null : old.tiempo : null %>">
-                            <small class="text-danger"><%= locals.errors && errors.tiempo ? errors.tiempo.msg : null %></small>
-                        </div>
-                        <div class="caja--product--add">
-                            <label for="categoria" class="label--add">Categoría</label>
-                            <select class="form-select" aria-label="Default select example" id="categoria " name="categoria">
-                                <option value="" selected hidden>Seleccione...</option>
-                                <option value="mates">Mates</option>
-                                <option value="figuras">Figuras</option>
-                                <option value="llaveros">Llaveros</option>
-                                <option value="articulados">Articulados</option>
-                                <option value="portacelular">Portacelular</option>
-                                <option value="cosplay">Cosplay</option>
-                                <option value="juegos">Juegos</option>
-                                <option value="funkos">Funkos</option>
+                            <label for="materialId" class="label--add">Material</label>
+                            <select class="form-select" aria-label="Default select example" id="materialId" name="materialId">
+                                <option value="" hidden selected> Seleccione Categoria</option>
+                                <% materials.forEach(material => { %>
+                                    <option value="<%= material.id %>" <%= locals.old && material.id === +old.materialId ? 'selected' : null %>> <%= material.name %></option>
+                                <% }) %>
                             </select>
-                            <small class="text-danger"><%= locals.errors && errors.categoria ? errors.categoria.msg : null %></small>
-                            </div>
-                            
+                            <small class="text-danger"><%= locals.errors && errors.materialId? errors.materialId.msg : null %></small>
+                        </div>
+                        <div class="caja--product--add">
+                            <label for="categoryId" class="label--add">Categoría</label>
+                            <select class="form-select" aria-label="Default select example" id="categoryId" name="categoryId">
+                                <option value="" hidden selected> Seleccione Categoria</option>
+                                <% categories.forEach(categoria => { %>
+                                    <option value="<%= categoria.id %>" <%= locals.old && categoria.id === +old.categoryId ? 'selected' :null %> ><%= categoria.name %></option>
+                                <% }) %>
+                            </select>
+                            <small class="text-danger"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small>
+                        </div>
                         <div class="tex--add">
                             <h4 class="Descripcion-add">Descripcion</h4>
-                            <textarea class="detalle--textarea-add " name="descripcion" id="descripcion" cols="35" rows="3"><%= locals.old && old.descripcion ? old.descripcion : null %></textarea>
-                            <small class="text-danger"><%= locals.errors && errors.descripcion ? errors.descripcion.msg : null %></small>
+                            <textarea class="detalle--textarea-add " name="description" id="description" cols="35" rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
+                            <small class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
                         </div>
-                        </div>
+        
+                        <!--FALTA HACER ALGO-->
                         <div class="label--add">
                             <a class="imagen--product--add" href="">
                                 <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
@@ -74,6 +55,8 @@
                             <small class="text-danger"><%= locals.errors && errors.imagen ? errors.imagen.msg : null %></small>
                             </a>
                         </div>
+        
+
                         <div class="caja--product--add boton--cancelar--guardar">
                             <a href="/" class="form__button form__button--cancel">Cancelar</a>
                             <button class="form__button form__button--send" type="submit">Guardar</button>
