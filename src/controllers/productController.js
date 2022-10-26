@@ -56,16 +56,13 @@ module.exports = {
     
     // VISTA QUE MUESTRA LOS PRODUCTOS PERSONALIZADOS REQUERIDOS
     addPersonalizado: (req, res) => {
-      // return res.send(req.body)
-
        let errors = validationResult(req);
        let categories = db.Category.findAll()
        let materials = db.Material.findAll()
-
        if(errors.isEmpty()){
            const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
-           
            db.Product.create({
+                
                ...req.body,
                name:name.trim(),
                price: 0,
@@ -91,8 +88,6 @@ module.exports = {
                    })})
                    .catch(error => console.log(error))
            }
-
-
     },
 
 
@@ -104,9 +99,9 @@ module.exports = {
                     toThousand
                  }))
                  .catch(error => console.log(error))
-
     },
 
+    
     search : (req,res) => {
 
         let { keywords } = req.query;
