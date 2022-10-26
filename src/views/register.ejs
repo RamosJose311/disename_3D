@@ -33,12 +33,12 @@
                 </div>
                 <form action="process" class="register_section_main-form" method="post">
                     <div class="reg_sec_main_form-container">
-                        <input type="text" name="nombre"  placeholder="ingrese su nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>">
-                        <span class="login_error"> <%= locals.errors && errors.nombre ? errors.nombre.msg : null  %>  </span>
+                        <input type="text" name="firstName"  placeholder="ingrese su nombre" value="<%= locals.old && old.firstName ? old.firstName : null %>">
+                        <span class="login_error"> <%= locals.errors && errors.firstName ? errors.firstName.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="text" name="apellido" placeholder="ingrese apellido" value="<%= locals.old && old.apellido ? old.apellido : null %>">
-                        <span class="login_error"> <%= locals.errors && errors.apellido ? errors.apellido.msg : null  %>  </span>
+                        <input type="text" name="lastName" placeholder="ingrese apellido" value="<%= locals.old && old.lastName ? old.lastName : null %>">
+                        <span class="login_error"> <%= locals.errors && errors.lastName ? errors.lastName.msg : null  %>  </span>
                     </div>
                     <div class="reg_sec_main_form-container">
                         <input type="email" name="email" placeholder="ingrese email" value="<%= locals.old && old.email ? old.email : null %>">

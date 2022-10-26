@@ -5,6 +5,7 @@ const {login,register,processRegister,processLogin,profile,logout,update} = requ
 const loginValidator = require ('../validations/loginValidator')
 const registerValidator =require('../validations/registerValidation')
 const userSessionCheck = require('../middlewares/userSessionCheck');
+const uploadFile = require('../middlewares/uploadFile')
 
 
 
@@ -17,8 +18,8 @@ router
 .post('/process',registerValidator,processRegister)
 
 .get('/profile',userSessionCheck,profile)
-.put('/update/:id',update)
+.put('/update/:id',uploadFile.single('avatar'),update)
 
-.get('/logout',logout)
+.get('/logout/:id',logout)
 
 module.exports = router;

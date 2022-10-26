@@ -28,12 +28,12 @@
             <ul>
                 <li>
                     <% if (locals.userLogin) { %>
-                        <% if (userLogin.rol === "admin") { %>
+                        <% if (userLogin.rol === true) { %>
                             <a class="header_Bottom_reg bt-neon" href="/../admin/crearProducto">crearProducto <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                         <% } %>
                         <a class="bt-neon" href="/../products/productCart">carrito <i class="fa-solid fa-cart-shopping"></i></a>
-                        <a class="header_Bottom_reg bt-neon" href="/users/profile"><%= userLogin.nombre %></a>
-                        <a class="header_Bottom_reg bt-neon" href="/users/logout">salir</a>
+                        <a class="header_Bottom_reg bt-neon" href="/users/profile"><%= userLogin.firstName %></a>
+                        <a class="header_Bottom_reg bt-neon" href="/users/logout/<%= userLogin.id %> ">salir</a>
                         <% } else { %>
                             <a class="bt-neon" href="">nosotros <i class="fa-solid fa-people-group"> </i></a>
                           <!--  <a class="header_Bottom_reg bt-neon" href="../users/register">registrate <i class="fa-solid fa-arrow-right-to-bracket"></i></a> -->

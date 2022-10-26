@@ -1,27 +1,32 @@
 const {loadUser,storeUser} =require ("../data/dbModules")
 const {validationResult, body} = require ('express-validator')
-const bcryptjs =require('bcryptjs')
+const {hashSync} =require('bcryptjs');
+const db = require('../database/models')
+const moment = require('moment');
 
 module.exports = {
 
     login : (req,res) =>{
         return res.render('login')
     },
-
-    processLogin : (req,res) => {
+    // terminado
+    processLogin : (req,res) => {  
         const errors = validationResult(req)
-        
         if(errors.isEmpty()){
-            const {id,nombre,rol} = loadUser().find(user => user.email === req.body.email);
-
-            req.session.userLogin = {
-                id,
-                nombre,
-                rol
-            }
-
-            return res.redirect('/')                              //redirigir a algun lado 
-        } else{
+            db.User.findOne({
+                where : {
+                    email : req.body.email
+                }
+            }).then(({id, firstName, rol}) => {
+                req.session.userLogin = {
+                    id,
+                    firstName,
+                    rol : rol
+                };
+            return res.redirect('/')
+            })
+            .catch(error => console.log(error))  //redirigir a algun lado 
+        }else{
             return res.render('login', {
                 errors:errors.mapped()
             })
@@ -33,85 +38,110 @@ module.exports = {
         return res.render('register')
     },
 
+
+    //terminado
     processRegister :(req,res) =>{
+
         const errors =validationResult(req);
-        const {nombre,apellido,email,password} =req.body;
-        const usuario= loadUser();
+        const {firstName,lastName,email,password} =req.body;
         if(errors.isEmpty()){
 
-
-            const nuevoUsuario={
-            id:usuario[usuario.length-1] ? usuario[usuario.length-1].id+1:1,
-            nombre:nombre.trim(),
-            apellido:apellido.trim(),
-            email:email.trim(),
-            password :bcryptjs.hashSync(password.trim(),10),
-            rol:"user",
-            nacimiento: null,
-            imagen:null,
-            genero:null,
-            hobbies : [],
-            domicilio: null,
-            ciudad: null,
-            provincia: null,
-            nosotros: null
-        } 
-        const userModify=[...usuario,nuevoUsuario];
-
-        storeUser(userModify);
-
-        return res.redirect('/users/login')
-     }else {
+            db.User.create({
+                firstName : firstName.trim(),
+                lastName: lastName.trim(),
+                email : email.trim(),
+                password : hashSync(password, 10),
+                rol : false,
+                avatar : 'imagen-default.webp'
+                })
+                /* .then(user => {
+                db.Address.create({
+                    street: '',
+                    city: '',
+                    province: '',
+                    postalCode: '',
+                    number: '',
+                    userId: user.id
+                }) */
+                .then( () => {
+                    return res.redirect('/users/login')
+                })
+            .catch(error => console.log(error))
+            
+        }else{
         return res.render('register',{
             errors:errors.mapped(),
             old:req.body
         })
-     }
-    },
-
-
-
+    }
+},
+  //terminado
     profile:(req,res)=>{
-        const user = loadUser().find(user => user.id === req.session.userLogin.id)
-        
-        return res.render('profile', {
-            user
-        })
+        db.User.findByPk(req.session.userLogin.id)
+            .then(user => {
+                return res.render('profile',{
+                    user,
+                    moment,
+                })
+            })
+            .catch(error => console.log(error))
     },
 
 
     update : (req,res) => {
-        
-        const {nombre,apellido,nacimiento,domicilio,ciudad,provincia,nosotros} = req.body
-        const users = loadUser();
-
-        let usersModify = users.map(user => { 
-
-            if(user.id === +req.params.id){
-                return{
-                    ...user,
-                    ...req.body
-                } 
-            }
-            return user
-        });
-
-        req.session.userLogin = {
-            ...req.session.userLogin,
-            nombre
+        //const {id,firstName,rol}= req.session.userLogin
+        /* return res.send(id) */
+        const errors =validationResult(req);
+        if (errors.isEmpty()) {
+            db.User.update({
+                lastName: req.body.lastName,
+                email: req.body.email,
+                avatar: req.file ? req.file.filename : this.avatar
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                db.Address.update({
+                    street: req.body.address,
+                    city: req.body.city,
+                    province: req.body.province,
+                    postalCode: req.body.postalCode,
+                    userId: req.params.id
+                }, {
+                    where: {
+                        userId: req.params.id
+                    }
+                })
+                .then(() => {
+                    res.redirect('/user/profile');
+                })
+            })
+        } else {
+            res.render('profile', {
+                errors: errors.mapped(),
+                session: req.session,
+                old: req.body,
+                userLogin : req.session.userLogin ? req.ssession.userLogin : ''
+            })
         }
-        
-        storeUser(usersModify);
-        return res.redirect('/users/profile')
-
-
     },
 
 
-
+//terminado
     logout: (req, res)=> {
-        req.session.destroy();
-        return res.redirect('/');
+        db.User.destroy({
+            where :{
+                id : req.params.id
+            }
+        })
+        .then(() => {
+            req.session.destroy()
+            return res.redirect('/')
+        })
+        .catch( error => console.log(error))
+
     }
 
 }
