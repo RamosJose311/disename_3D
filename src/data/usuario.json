@@ -30,5 +30,21 @@
       "ciudad": null,
       "provincia": null,
       "nosotros": null
+   },
+   {
+      "id": 3,
+      "nombre": "JUAN",
+      "apellido": "LICCIARDI",
+      "email": "juanelicciardi@gmail.com",
+      "password": "$2a$10$HI.zn0q1d8j3mRIeTIZV4OC/Sh.ftEtLwJRBKQY0/KkgJkf1Se78i",
+      "rol": "user",
+      "nacimiento": null,
+      "imagen": null,
+      "genero": null,
+      "hobbies": [],
+      "domicilio": null,
+      "ciudad": null,
+      "provincia": null,
+      "nosotros": null
    }
 ]
