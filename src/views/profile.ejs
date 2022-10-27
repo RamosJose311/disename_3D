@@ -15,20 +15,20 @@
             <form class="profile_form" action="/users/update/<%= user.id %>?_method=PUT"  method="POST">
                 <div class="profile_form_group" >
                     <div class="profile_form_contenedor">
-                        <label for="nomber">Nombre</label>
-                        <input  type="text" id="nombre" name="nombre" value="<%= user.nombre %>">
+                        <label for="firstName">Nombre</label>
+                        <input  type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
                     </div>
                     <div class="profile_form_contenedor">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" value="<%= user.apellido %>">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
                     </div>
                     <div class="profile_form_contenedor">
                         <label for="email">Correo Electronico</label>
                         <input type="text" id="email"  name="email" value="<%= user.email %>" readonly>
                     </div>
                     <div class="profile_form_contenedor">
-                        <label for="nacimiento">Fecha de Nacimiento</label> <br>
-                        <input type="date" id="nacimiento" name="nacimiento" value="<%= user.nacimiento %>">
+                        <label for="dateBirth">Fecha de Nacimiento</label> <br>
+                        <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirthe).format('YYYY-MM-DD') %>" required>
                     </div>
                 </div>
 
@@ -57,18 +57,18 @@
                     <div class="profile_form_contenedor">
                         <h3> Domicilio</h3>
 
-                        <label for="domicilio"> Calle</label>
-                        <input type="text" id="domicilio" name="domicilio" value="<%= user.domicilio %> ">
+                        <label for="address"> Calle</label>
+                        <input type="text" id="address" name="address" value="<%= user.address %> ">
                         <hr>
-                        <select name="ciudad" id="">
-                            <option value="" hidden selected>Seleccione su ciudad</option>
-                            <option value="cutral co" <%= user.ciudad === 'cutral co' && 'selected' %>>Cutral Co </option>
-                            <option value="plaza huincul" <%= user.ciudad === 'plaza huincul' && 'selected' %>>Plaza Huincul </option>
-                            <option value="zapala" <%= user.ciudad === 'zapala' && 'selected' %>>Zapala </option>
-                            <option value="buenos aires" <%= user.ciudad === 'buenos aires' && 'selected' %>>Buenos Aires </option>
-                            <option value="jujuy" <%= user.ciudad === 'jujuy' && 'selected' %>>Jujuy </option>
+                        <select name="city" id="">
+                            <label value="" hidden selected>Seleccione su ciudad</label>
+                            <option value="cutral co" <%= user.city === 'cutral co' && 'selected' %>>Cutral Co </option>
+                            <option value="plaza huincul" <%= user.city === 'plaza huincul' && 'selected' %>>Plaza Huincul </option>
+                            <option value="zapala" <%= user.city === 'zapala' && 'selected' %>>Zapala </option>
+                            <option value="buenos aires" <%= user.city === 'buenos aires' && 'selected' %>>Buenos Aires </option>
+                            <option value="jujuy" <%= user.city === 'jujuy' && 'selected' %>>Jujuy </option>
                         </select>
-                        <select name="provincia" id="">
+                        <select name="province" id="">
                             <option value="" hidden selected>Seleccione su provincia</option>
                             <option value="neuquen" <%= user.provincia === 'neuquen' && 'selected' %>>Neuquén</option>
                             <option value="buenos aires" <%= user.provincia === 'buenos aires' && 'selected' %>>Buenos Aires</option>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="profile_form_contenedor">
                         <h3>Acerca de mi</h3>
-                        <textarea name="nosotros" id="" cols="30" rows="10" value="<%= user.nosotros %> " ></textarea>
+                        <textarea name="description" id="" cols="30" rows="10" value="<%= user.description %> " ></textarea>
                         <label for="imagen">Seleccione imagen</label>
                         <input hidden type="file" id="imagen" name="imagen">
                     </div>

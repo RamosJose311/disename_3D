@@ -1,24 +1,32 @@
 const {check,body} = require ('express-validator');
 const {loadUser} = require ('../data/dbModules');
+const db = require('../database/models');
 
 module.exports = [
-    check('nombre')
+    check('firstName')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
     .isAlpha('es-ES',{ignore: ' '}).withMessage('Debe ingresar valores alfabeticos'),
     
     
-    check('apellido')
+    check('lastName')
     .notEmpty().withMessage('El apellido es obligatorio').bail()
     .isAlpha('es-ES',{ignore: ' '}).withMessage('Debe ingresar valores alfabeticos'),
        
      
-    body('email')
+     body('email')
     .notEmpty().withMessage('El email es obligatorio').bail()
     .isEmail().withMessage('Debe ser un email valido').bail()
-    .custom((value, {req}) => {
-        const user = loadUser().find(user => user.email === value)   
-            return user ? false : true
-    }).withMessage('El mail ingresado existe'),
+    .custom( (value,{req}) => {
+      return db.User.findOne({
+        where : {
+            email : value
+        }
+      }).then( user => {
+            if(user) {
+                return Promise.reject()
+            }
+      }).catch( () => Promise.reject('El email ingresado ya existe'))
+    }),
 
 
     body('password')
@@ -30,14 +38,9 @@ module.exports = [
 
     body('password2')
         .notEmpty().withMessage('Debe repetir la contraseña').bail()
-        .custom((value, {req}) => {
-              const pass= req.body.password
-              if (pass === value){
-                return true;
-              } else {
-                return false
-              }
-        }).withMessage('La contraseña ingresada no es igual'),
+        .custom( (value, {req}) => {
+          return req.body.password !== value ? false : true
+      }).withMessage('Las contraseñas no coinciden'),
 
 
 ]

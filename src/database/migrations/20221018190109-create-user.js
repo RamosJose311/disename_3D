@@ -34,22 +34,23 @@ module.exports = {
       },
       address: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:true
       },
       city: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:true
       },
       province: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:true
       },
       country: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:true
       },
       description: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull:true
       },
       genderId: {
         type: Sequelize.INTEGER,

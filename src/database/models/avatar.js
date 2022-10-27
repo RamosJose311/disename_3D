@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      /* Avatar.hasOne(models.User, {
+        as : 'user',
+        foreignKey : 'userId'
+      }); */
     }
   }
   Avatar.init({
