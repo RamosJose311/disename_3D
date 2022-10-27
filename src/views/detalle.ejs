@@ -16,8 +16,8 @@
                 <div class="detalle__menu--image">
                     <div class="glider-contain">
                         <div class="glider caja--gliter">
-                            <div><img src="/images/imgModelos_Imprimir/<%= product.imagen %>" alt=""></div>
-                            <div><img src="/images/imgModelos_Stock/<%= product.imagen %>" alt=""></div>
+                            <div><img src="/images/imgModelos_Imprimir/<%= product.images %>" alt=""></div>
+                            <div><img src="/images/imgModelos_Stock/<%= product.images %>" alt=""></div>
                         </div>
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
@@ -26,11 +26,11 @@
                 </div>
 
                 <div class="detalle--menu--principal">
-                    <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.nombre %></h3>
+                    <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.nome %></h3>
 
                     <div class="detalle__menu--caja1">
-                        <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.precio %></span></h3>
-                        <h3 class="detalle__menu--titulo detalle-h3">descuento : <span class="detalle--span"><%= product.descuento %></span>% OFF</h3>
+                        <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.price %></span></h3>
+                        <h3 class="detalle__menu--titulo detalle-h3">descuento : <span class="detalle--span"><%= product.discount %></span>% OFF</h3>
                         <h3 class="detalle__menu--titulo detalle-h3">total: $ <% if (product.descuento > 0) { %> 
                                 <span class="detalle--span"></span>
                                 <p class="detalle--span">
@@ -38,7 +38,7 @@
                                 </p>
                              <% }else{ %>
                             <b class="detalle--span">
-                                <%= product.precio %>
+                                <%= product.price %>
                             </b>
                             <% } %>
                             </h3>
@@ -46,12 +46,12 @@
                     <article class="detalle__menu--article--descripcion">
                         <h4 class="detalle__menu--descripcion--general">*Descripcion</h4>
                         <div class="detalle__menu--p">
-                            <p>Altura:     <%= product.altura %></p>
+                            <p>Altura:     <%= product.height %></p>
                             <p>Material:   <%= product.material %></p>
-                            <p>Tiempo:     <%= product.tiempo %>  (en minutos)</p>
+                            <p>Tiempo:     <%= product.time %>  (en minutos)</p>
                         </div>
                         <p class="detalle__menu--descripcion--general">Descripcion general:</p>
-                            <p class="detalle__menu--parrafo"><%= product.descripcion %> </p>
+                            <p class="detalle__menu--parrafo"><%= product.description %> </p>
                     </article>
                     <div class="detalle__menu--button">
                         <a class="detalle__menu--button1" <% if (locals.userLogin) { %> href="/products/productCart"

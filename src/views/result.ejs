@@ -8,13 +8,13 @@
             <div class="caja--menu-lista">
                 <h2 class="products-title">Resultados de la búsqueda: <strong><%= keywords %></strong></h2>
             </div class="caja-de-imagenes">
-            <% if (products.length > 0) { %>
-				<% products.forEach(({id,nombre,precio,imagen}) => { %>
+            <% if (result.length > 0) { %>
+				<% result.forEach(({id,name,price,images}) => { %>
 					<div class ="caja">
-                        <img src="/images/<%= imagen %>" alt="">
+                        <img src="/images/<%= images %>" alt="">
                         <div>
-                            <p><%= nombre %> </p>
-                            <p><%= precio %> </p>
+                            <p><%= name %> </p>
+                            <p><%= price %> </p>
                             <a class="general__button__product " href="/products/detalle/<%= id %>">ver más</a>
                         </div>
                     </div> 

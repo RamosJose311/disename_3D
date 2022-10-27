@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrado de la Película</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <main class="del_main">
+        <section class="del_seccion">
+            <div class="del_caja-titulo">
+                <h1>Estas seguro de querer borrar la película</h1>
+            </div>
+            <div class="del_caja-titulo">
+                <h2><%= product.name %></h2>
+            </div>
+
+            <form action="/admin/delete/<%= product.id %>" method="POST">
+                <div class="del_caja-botones">
+                    <button class="boton_borrar" type="submit">Borrar</button>
+                    <a  class="boton_Return" href="/">regresar</a></p>
+                </div>
+            </form>
+        </section>
+    </main>    
+</body>
+
+</html>

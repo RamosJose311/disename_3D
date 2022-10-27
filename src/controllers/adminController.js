@@ -69,9 +69,6 @@ module.exports = {
         
         Promise.all([categories,materials,product])
             .then(([categories,materials,product]) => {
-                console.log(product) 
-                console.log(materials)
-                console.log(categories)
                 res.render('editarProducto', {
                     product,
                     categories,
@@ -81,13 +78,12 @@ module.exports = {
             .catch(error => console.log ("=====ERROR======>" + error))
     },
 
-
+    //Proceso de Actualizar en Base de Datos y Renderiza Detail - OK
     update : (req, res) =>{
-        return res.send(req.body)
         db.Product.update(
             {
                 ...req.body,
-                name : req.body.name.trim()
+                name : req.params.name.trim()
             },
             {
                 where : {id:req.params.id}
@@ -100,34 +96,32 @@ module.exports = {
         .catch(error => console.log(error))
 
     },
- 
-/*         update: function (req,res) {
-        db.Movie.update(
-            {
-                ...req.body,
-                title : req.body.title.trim()
-            },
-            {
-                where : {id:req.params.id}
+
+    //Consulta para Borrar en Base de Datos - POR APLICAR
+    delete: function (req, res) {
+        db.Product.findByPk(req.params.id)
+         .then(product => {
+             res.render('productDelete',{
+             product
+         })})
+         .catch(error => console.log(error))
+     },
+
+    //Proceso de Borrar en Base de Datos y Renderiza Home - OK
+    destroy: function (req, res) {
+        db.Product.destroy({
+            where : {
+                id : req.params.id
             }
-        )
+        })
         .then (result => {
             console.log(result)
-            return res.redirect('/movies/detail/' + req.params.id)
+            return res.redirect('/')
         })
         .catch(error => console.log(error))
-        
-    }, */
-
-
-
-    destroy : (req,res) => {
-        const products = loadProducts();
-        const {id} = req.params;
-        let productsModify=products.filter(product=> product.id !== +id )
-        storeProducts(productsModify);
-        return res.redirect('/');        
     }
+
+
 
 }
 
