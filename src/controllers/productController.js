@@ -16,7 +16,11 @@ module.exports = {
 
     // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS DISPONIBLES
     modelDisponible: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            where : {
+                view : "stock"
+            }
+        })
                     .then(products => res.render('modelDisponible',{
                         products,
                         toThousand
@@ -27,7 +31,11 @@ module.exports = {
     // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS PARA IMPRIMIR
     imprimir: (req, res) => {
         
-        db.Product.findAll()
+        db.Product.findAll({
+            where : {
+                view : "print"
+            }
+        })
                     .then(products => res.render('modelPrint',{
                         products,
                         toThousand
