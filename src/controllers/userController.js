@@ -3,6 +3,7 @@ const {validationResult, body} = require ('express-validator')
 const {hashSync} =require('bcryptjs');
 const db = require('../database/models')
 const moment = require('moment');
+const session = require("express-session");
 
 module.exports = {
 
@@ -17,15 +18,19 @@ module.exports = {
                 where : {
                     email : req.body.email
                 }
-            }).then(({id, firstName, rol}) => {
+            }).then(({id, firstName, lastName, rol}) => {
                 req.session.userLogin = {
                     id,
                     firstName,
+                    lastName,
                     rol : rol
                 };
+            
+           // req.body.remember && res.cookie('disename3d',req.session.userLogin, {maxAge : 1000 * 60});
+    
             return res.redirect('/')
             })
-            .catch(error => console.log(error))  //redirigir a algun lado 
+            .catch(error => console.log(error))   
         }else{
             return res.render('login', {
                 errors:errors.mapped()
@@ -91,25 +96,32 @@ module.exports = {
     update : (req,res) => {
         const {firstName,lastName,rol,email}= req.body
         const errors =validationResult(req);
-        
-        if (errors.isEmpty()) {
+        if (errors.isEmpty()) { 
             db.User.findByPk(req.session.userLogin.id)
-            .then(user =>{
-                db.User.update({
-                    firstName: firstName,
-                    lastName: lastName,
-                    email: email
-                    //avatar: req.file ? req.file.filename : this.avatar
-                }, {
-                    where: {
-                        id: req.params.id
-                    }
+                .then(user =>{
+                        db.User.update({
+                            firstName: firstName,
+                            lastName: lastName,
+                            email: email,
+                            //avatar: req.file ? req.file.filename : this.avatar
+                        }, 
+                        {
+                            where: {
+                                id: req.session.userLogin.id
+                            }
+                        })
+                        .then(() => {
+                            req.session.userLogin = {
+                                id: req.session.userLogin.id,
+                                firstName,
+                                lastName,
+                                rol : rol
+                            };
+                            res.redirect('/users/profile');
+                        })
                 })
-                
-                    .then(() => {
-                        res.redirect('/user/profile');
-                    })
-                }}else {
+                .catch(error => console.log(error))
+         } else {
                 res.render('profile', {
                     errors: errors.mapped(),
                     session: req.session,
@@ -117,7 +129,6 @@ module.exports = {
                     userLogin : req.session.userLogin ? req.session.userLogin : ''
                 })
             }
-            
         },
 
 
