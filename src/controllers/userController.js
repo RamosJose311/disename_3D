@@ -107,9 +107,10 @@ module.exports = {
                 })
                 
                     .then(() => {
-                        res.redirect('/user/profile');
+                        res.redirect('/users/profile');
                     })
-                }}else {
+                })
+            }else {
                 res.render('profile', {
                     errors: errors.mapped(),
                     session: req.session,
