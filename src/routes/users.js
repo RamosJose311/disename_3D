@@ -18,7 +18,7 @@ router
 .post('/process',registerValidator,processRegister)
 
 .get('/profile',userSessionCheck,profile)
-.put('/update/:id',uploadFile.single('avatar'),update)
+.put('/update/:id',update)/* ,uploadFile.single('avatar') */
 
 .get('/logout/:id',logout)
 
