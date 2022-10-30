@@ -30,7 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     province: DataTypes.STRING,
     country: DataTypes.STRING,
     description: DataTypes.TEXT,
-    genderId: DataTypes.INTEGER
+    genderId: DataTypes.INTEGER,
+    //avatar : DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'User',
