@@ -1,25 +1,31 @@
 var express = require('express');
 var router = express.Router();
 
-const {login,register,processRegister,processLogin,profile,logout,update} = require('../controllers/userController');
+
+
+const {login,register,processRegister,processLogin,profile,userLogout,update,userDestroy} = require('../controllers/userController');
 const loginValidator = require ('../validations/loginValidator')
 const registerValidator =require('../validations/registerValidation')
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const uploadFile = require('../middlewares/uploadFile')
+const cookieCheck = require('../middlewares/cookieCheck');
+const profileValidator = require('../validations/profileValidator')
 
 
 
-/* /user */
+/* /users */
 router
 .get('/login',login)
-.post('/login',loginValidator,processLogin)
+.post('/login',loginValidator,cookieCheck,processLogin) //cookieCheck
 
 .get('/register',register)
 .post('/process',registerValidator,processRegister)
 
-.get('/profile',userSessionCheck,profile)
-.put('/update',update)/* ,uploadFile.single('avatar') */
+.get('/profile',cookieCheck,userSessionCheck,profile)
+.put('/update' ,profileValidator ,update)/* ,uploadFile.single('avatar') */
 
-.get('/logout/:id',logout)
+.get('/logout/:id',userLogout)
+.delete('/destroy',userDestroy)
 
 module.exports = router;
+

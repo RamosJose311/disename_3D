@@ -8,7 +8,7 @@ var logger = require('morgan');
 
 const methodOverride =  require('method-override');
 const session = require ('express-session');
-// const {cookieCheck} =require('./middlewares')
+const cookieCheck =require('./middlewares/cookieCheck');//cambie la desestructuracion
 
 
 const localsUserCheck = require('./middlewares/localUserCheck');
@@ -37,7 +37,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-//app.use(cookiecheck)
+app.use(cookieCheck)
+
 app.use(express.urlencoded({ extended: false }));
 app.use(localsUserCheck);
 

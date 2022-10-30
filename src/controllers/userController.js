@@ -23,10 +23,10 @@ module.exports = {
                     id,
                     firstName,
                     lastName,
-                    rol : rol
+                    rol : rol,
+                    //avatar: user.avatar
                 };
-            
-           // req.body.remember && res.cookie('disename3d',req.session.userLogin, {maxAge : 1000 * 60});
+            req.body.remember && res.cookie('userLogin',req.session.userLogin, {maxAge : 1000 * 60});
     
             return res.redirect('/')
             })
@@ -94,7 +94,7 @@ module.exports = {
 
 
     update : (req,res) => {
-        const {firstName,lastName,rol,email}= req.body
+        const {firstName,lastName,rol,email,address,dateBirth}= req.body
         const errors =validationResult(req);
         if (errors.isEmpty()) { 
             db.User.findByPk(req.session.userLogin.id)
@@ -103,6 +103,9 @@ module.exports = {
                             firstName: firstName,
                             lastName: lastName,
                             email: email,
+                            address:address,
+                            dateBirth:dateBirth
+
                             //avatar: req.file ? req.file.filename : this.avatar
                         }, 
                         {
@@ -113,39 +116,52 @@ module.exports = {
                         .then(() => {
                             req.session.userLogin = {
                                 id: req.session.userLogin.id,
-                                firstName,
-                                lastName,
-                                rol : rol
+                                firstName:firstName,
+                                lastName:lastName,
+                                rol : rol,
+                                address:address,
+                                dateBirth:dateBirth,
+
                             };
                             res.redirect('/users/profile');
                         })
                 })
                 .catch(error => console.log(error))
-         } else {
+         }  else {
                 res.render('profile', {
                     errors: errors.mapped(),
-                    session: req.session,
+                    //session: req.session,
                     old: req.body,
-                    userLogin : req.session.userLogin ? req.session.userLogin : ''
+                    //userLogin : req.session.userLogin ? req.session.userLogin : ''
                 })
-            }
+            } 
         },
 
 
 
 //terminado
-    logout: (req, res)=> {
+    userDestroy: (req, res)=> {
         db.User.destroy({
             where :{
-                id : req.params.id
+                id : req.session.userLogin.id
             }
         })
         .then(() => {
             req.session.destroy()
+            if(req.cookies.userLogin){
+                        res.cookie('userLogin', '', {maxAge: -1})
+                    } 
             return res.redirect('/')
         })
         .catch( error => console.log(error))
 
-    }
+    },
+    userLogout: (req, res) => {
+        req.session.destroy()
+        if(req.cookies.userLogin){
+            res.cookie('userLogin', '', {maxAge: -1})
+        }
+        res.redirect('/../users/login')
+    }, 
 
 }
