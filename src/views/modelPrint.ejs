@@ -24,16 +24,15 @@
              <div><a href="/">funkos</a></div>
 
          </div>
-         <div class="caja-de-imagenes">
-            
-            <% products.forEach(product => { %>
+         <div class="caja-de-imagenes">    
+            <% products.forEach( ({id, name, price, images}) => { %>
                 <div class="caja-de-producto">
-                    <a href="/products/detalle/<%= product.id%>">
+                    <a href="/products/detalle/<%= id%>">
                         <figure>
-                            <img src="/images/imgModelos_Imprimir/<%= product.imagen %> " >
+                            <p> por <%= images %> </p>                          
                         </figure>
                         <article>
-                            <p><%= product.nombre %>   <%= product.precio %> </p>
+                            <p><%= name %>   "$" <%= price %> </p>
                         </article>
                     </a>
                 </div>

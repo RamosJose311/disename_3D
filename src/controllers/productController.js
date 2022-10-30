@@ -17,14 +17,23 @@ module.exports = {
     // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS DISPONIBLES
     modelDisponible: (req, res) => {
         db.Product.findAll({
-            where : {
+            include: [
+                {
+                    association : 'images',
+                    attributes : ['id', 'file','productsId']
+                }
+            ],
+
+             where : {
                 view : "stock"
             }
-        })
-                    .then(products => res.render('modelDisponible',{
-                        products,
-                        toThousand
-                     }))
+         })
+                    .then(products => {
+                        //return res.send(products) 
+                        res.render('modelDisponible',{
+                            products,
+                            toThousand
+                     })})
                      .catch(error => console.log(error))
    },
 
@@ -32,14 +41,23 @@ module.exports = {
     imprimir: (req, res) => {
         
         db.Product.findAll({
+            include: [
+                {
+                    association : 'images',
+                    attributes : ['id', 'file','productsId']
+                }
+            ],
+
             where : {
                 view : "print"
             }
         })
-                    .then(products => res.render('modelPrint',{
+                    .then(products => { 
+                        return res.send(products) 
+                        res.render('modelPrint',{
                         products,
                         toThousand
-                     }))
+                     })})
                      .catch(error => console.log(error))
     },
 

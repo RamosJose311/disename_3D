@@ -24,16 +24,16 @@
              <div><a href="/">funkos</a></div>
 
          </div>
-         <div class="caja-de-imagenes">
-            
-            <% products.forEach(product => { %>
+         <div class="caja-de-imagenes">    
+            <% products.forEach( (product) => { %>
                 <div class="caja-de-producto">
                     <a href="/products/detalle/<%= product.id%>">
                         <figure>
-                            <img src="/images/imgModelos_Stock/<%= product.imagen %> " >
+                            <p> <%= product.images[0].id %> </p>
+                            <img src="/images/imgModelos_Stock/<%= product.images[0].file %>" >                            
                         </figure>
                         <article>
-                            <p><%= product.nombre %>   <%= product.precio %> </p>
+                            <p><%= product.name %>   "$" <%= product.price %> </p>
                         </article>
                     </a>
                 </div>
