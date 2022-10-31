@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         as : 'gender',
         foreignKey : 'genderId'
       });
+      /* User.hasMany(models.Avatar,{
+         as : 'avatar',
+         foreignKey : 'userId'
+      }) */
       
     }
   }

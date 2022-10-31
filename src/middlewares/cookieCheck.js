@@ -1,7 +1,7 @@
 
 module.exports = (req,res,next) => {
-    if(req.cookies.userLogin){
-        req.session.userLogin = req.cookies.userLogin
+    if(req.cookies.disename3d){
+        req.session.disename3d = req.cookies.disename3d
     }
     next()
 }
