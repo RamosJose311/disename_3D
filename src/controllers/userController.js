@@ -26,7 +26,7 @@ module.exports = {
                     rol : rol,
                     //avatar: user.avatar
                 };
-            req.body.remember && res.cookie('userLogin',req.session.userLogin, {maxAge : 1000 * 60});
+            req.body.remember && res.cookie('disename3d',req.session.userLogin, {maxAge : 1000 * 60});
     
             return res.redirect('/')
             })
@@ -130,9 +130,9 @@ module.exports = {
          }  else {
                 res.render('profile', {
                     errors: errors.mapped(),
-                    //session: req.session,
+                    session: req.session,
                     old: req.body,
-                    //userLogin : req.session.userLogin ? req.session.userLogin : ''
+                    userLogin : req.session.userLogin ? req.session.userLogin : ''
                 })
             } 
         },
@@ -148,8 +148,8 @@ module.exports = {
         })
         .then(() => {
             req.session.destroy()
-            if(req.cookies.userLogin){
-                        res.cookie('userLogin', '', {maxAge: -1})
+            if(req.cookies.disename3d){
+                        res.cookie('disename3d', '', {maxAge: -1})
                     } 
             return res.redirect('/')
         })
@@ -158,8 +158,8 @@ module.exports = {
     },
     userLogout: (req, res) => {
         req.session.destroy()
-        if(req.cookies.userLogin){
-            res.cookie('userLogin', '', {maxAge: -1})
+        if(req.cookies.disename3d){
+            res.cookie('disename3d', '', {maxAge: -1})
         }
         res.redirect('/../users/login')
     }, 
