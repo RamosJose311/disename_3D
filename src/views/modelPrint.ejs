@@ -25,14 +25,18 @@
 
          </div>
          <div class="caja-de-imagenes">    
-            <% products.forEach( ({id, name, price, images}) => { %>
+            <% products.forEach( (product) => { %>
                 <div class="caja-de-producto">
-                    <a href="/products/detalle/<%= id%>">
+                    <a href="/products/detalle/<%= product.id%>">
                         <figure>
-                            <p> por <%= images %> </p>                          
+                            <% if (product.images.length !== 0) { %>
+                                <img src="/images/imgModelos_Imprimir/<%= product.images[0].file %>" >                         
+                            <% }else{ %>
+                                <img src="/images/imgDefault/<%= "imagen-default.webp" %>" >                         
+                            <% } %>    
                         </figure>
                         <article>
-                            <p><%= name %>   "$" <%= price %> </p>
+                            <p><%= product.name %>   "$" <%= product.price %> </p>
                         </article>
                     </a>
                 </div>

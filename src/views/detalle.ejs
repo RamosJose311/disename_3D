@@ -15,9 +15,15 @@
                 <div class="detalle__menu--image">
                     <div class="glider-contain">
                         <div class="glider caja--gliter">
-                            <div><img src="/images/imgModelos_Imprimir/<%= product.images %>" alt=""></div>
-                            <div><img src="/images/imgModelos_Stock/<%= product.images %>" alt=""></div>
-                        </div>
+                            <div>
+                                <% if (product.view === "stock") { %>
+                                    <img src="/images/imgModelos_Stock/<%= product.images[0].file %>" >
+                                <% }else{ %>
+                                    <img src="/images/imgModelos_Imprimir/<%= product.images[0].file %>" >
+                                <% } %>
+
+                            </div>
+                         </div>
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
                         <div role="tablist" class="dots"></div>
@@ -25,7 +31,7 @@
                 </div>
 
                 <div class="detalle--menu--principal">
-                    <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.nome %></h3>
+                    <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.name %></h3>
 
                     <div class="detalle__menu--caja1">
                         <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.price %></span></h3>

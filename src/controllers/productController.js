@@ -53,7 +53,7 @@ module.exports = {
             }
         })
                     .then(products => { 
-                        return res.send(products) 
+                        //return res.send(products) 
                         res.render('modelPrint',{
                         products,
                         toThousand
@@ -119,11 +119,19 @@ module.exports = {
 
     detalle: (req, res) => {
 
-        db.Product.findByPk(req.params.id)
-            .then(product =>  res.render('detalle', {
+        db.Product.findByPk(req.params.id,{
+                    include: [
+                        {
+                            association : 'images',
+                            attributes : ['id', 'file','productsId']
+                        }
+                    ]})
+            .then(product => { 
+                    //return res.send(product)
+                    res.render('detalle', {
                     product,
                     toThousand
-                 }))
+                 })})
                  .catch(error => console.log(error))
     },
 

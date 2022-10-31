@@ -1,10 +1,10 @@
 [
    {
       "id": 1,
-      "name": "mate groot",
-      "price": 800,
+      "name": "MATE CHUCKY",
+      "price": 1800,
       "discount": 0,
-      "height": 40,
+      "height": 12,
       "time": 400,
       "categoryId": 1,
       "materialId": 1,
