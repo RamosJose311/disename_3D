@@ -9,7 +9,7 @@
     <main class="general_main"> 
         <section class="section--add">
             <h1 class="form__title--add">editar producto</h1>
-            <form action="/admin/update/<%= product.id %> ?_method=PUT" class="form__register-add" method="POST">
+            <form class="form__register-add" action="/admin/update/<%= product.id %>?_method=PUT"  method="POST" enctype="multipart/form-data">
                 <div class="caja--product--add">
                     <label for="name" class="label--add">Nombre</label>
                     <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">

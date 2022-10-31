@@ -64,11 +64,18 @@
                 <!--FALTA HACER ALGO-->
                 <div class="label--add">
                     <a class="imagen--product--add" href="">
-                        <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
-                    <input hidden class="form--input" type="file" id="imagen" name="imagen" accept="image/*" multiple>
+                        <label class="form__button--imagen" for="imageProduct">Seleccione una imagen</label>
+                    <input hidden class="form--input" type="file" id="imageProduct" name="imageProduct" accept="image/*" multiple>
+                    <label for="file-1" id="file-1-preview">
+                        <img src="/public/images/imgDefault/imagen-default.webp">
+                    </label>
                     <small class="text-danger"><%= locals.errors && errors.imagen ? errors.imagen.msg : null %></small>
                     </a>
                 </div>
+                
+                
+                
+                
                 <div class="caja--product--add boton--cancelar--guardar">
                     <a href="/" class="form__button form__button--cancel">Cancelar</a>
                     <button class="form__button form__button--send" type="submit">Guardar</button>

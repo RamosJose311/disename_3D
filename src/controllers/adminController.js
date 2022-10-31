@@ -16,7 +16,7 @@ module.exports = {
         let materials = db.Material.findAll({
             order : ['name']
         });
-
+        
         Promise.all([categories,materials])
             .then(([categories,materials]) => { 
                 res.render('crearProducto',{
