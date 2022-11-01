@@ -9,7 +9,7 @@
     <main class="general_main"> 
         <section class="section--add">
             <h1 class="form__title--add">Agregar producto</h1>
-            <form action="/admin/add" method="POST" class="form__register-add">
+            <form action="/admin/add" method="POST" enctype="multipart/form-data" class="form__register-add">
                 <div class="caja--product--add">
                     <label for="name" class="label--add">Nombre</label>
                     <input type="text" class="form--input"  id="name" name="name" value="<%= locals.old && old.name ? old.name : null %>">
@@ -65,11 +65,8 @@
                 <div class="label--add">
                     <a class="imagen--product--add" href="">
                         <label class="form__button--imagen" for="imageProduct">Seleccione una imagen</label>
-                    <input hidden class="form--input" type="file" id="imageProduct" name="imageProduct" accept="image/*" multiple>
-                    <label for="file-1" id="file-1-preview">
-                        <img src="/public/images/imgDefault/imagen-default.webp">
+                        <input hidden class="form--input" type="file" id="imageProduct" name="imageProduct" accept="image/*" multiple>
                     </label>
-                    <small class="text-danger"><%= locals.errors && errors.imagen ? errors.imagen.msg : null %></small>
                     </a>
                 </div>
                 

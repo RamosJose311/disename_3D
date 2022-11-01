@@ -35,19 +35,41 @@ module.exports = {
         if(errors.isEmpty()){
             const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
             
+            let array = [];
+            if (req.files) {
+                    array = req.files
+                }
+            
+
+            //return res.send(array[0].filename)
+
             db.Product.create({
                 ...req.body,
-                name:name.trim(),
+                name:req.body.name.trim(),
                 categoryId: req.body.categoryId,
                 materialId: req.body.materialId,
                 view : "stock"
             })
-                .then(product => {
-                    console.log(product)
-                    return res.redirect('/')
-                })
+                .then((product) => {
+                    let namefiles = ""
+                    if(array.length > 0){
+                        namefiles = array[0].filename
+                            console.log('------nombre:' + array[0].filename)
+                            console.log('------nombre2'+ namefiles)
+                    }else{
+                        namefiles = "default_no_image.jfif"
+                    }
+
+                        db.Image.create({
+                            file: namefiles,
+                            productsId: product.id
+                        })
+                            .then(() => res.redirect('/'))
+                            .catch(err => console.log(err))
+                    }
+                )
                 .catch(error => console.log("======ERROR========>" + error))
-        }else{
+         }else{
             Promise.all([categories,materials])
                 .then(([categories,materials]) => { 
                     res.render('crearProducto',{

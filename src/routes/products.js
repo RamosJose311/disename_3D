@@ -9,7 +9,7 @@ const productSessionCheck = require('../middlewares/productSessionCheck');
 /* /products*/
 router
     .get('/personalizado',productSessionCheck,personalizado)
-    .post('/addPersonalizado', productSessionCheck,prodPersonalValidator,addPersonalizado)
+    .post('/addPersonalizado',productSessionCheck,prodPersonalValidator,addPersonalizado)
 
 
     .get('/detalle/:id',detalle)// agrego id del producto

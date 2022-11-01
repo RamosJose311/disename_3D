@@ -15,15 +15,14 @@
                 <div class="detalle__menu--image">
                     <div class="glider-contain">
                         <div class="glider caja--gliter">
-                            <div>
-                                <% if (product.view === "stock") { %>
-                                    <img src="/images/imgModelos_Stock/<%= product.images[0].file %>" >
-                                <% }else{ %>
-                                    <img src="/images/imgModelos_Imprimir/<%= product.images[0].file %>" >
-                                <% } %>
+                            <% for( let i = 0; i < product.images.length; i++ ) { %>
+                                <div>
+                                    <img src="/images/imgProducts/<%= product.images[i].file %>" >
+                                </div>
+    |                            
+                            <% } %>
 
-                            </div>
-                         </div>
+                        </div>
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
                         <div role="tablist" class="dots"></div>
