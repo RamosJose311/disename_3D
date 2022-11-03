@@ -31,10 +31,10 @@ module.exports = {
     //Proceso de Guardar en Base de Datos y Renderiza Home - OK
     store : (req,res) => {
         let errors = validationResult(req);
-        
+        let categories = db.Category.findAll()
+        let materials = db.Material.findAll()
 
         errors = errors.mapped();
-        //return res.send(errors)
          if (req.fileValidationError){
             errors ={
                 ...errors,
@@ -43,19 +43,12 @@ module.exports = {
                 }
             }
         } 
-        let categories = db.Category.findAll()
-        let materials = db.Material.findAll()
-        return res.send(errors)
-        return res.send(req.body)
-        if(Object.entries(errors).length){
+        if(Object.entries(errors).length === 0){
             const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
             let array = [];
             if (req.files) {
                     array = req.files
                 }
-            
-
-            //return res.send(array[0].filename)
 
             db.Product.create({
                 ...req.body,
@@ -68,8 +61,6 @@ module.exports = {
                     let namefiles = ""
                     if(array.length > 0){
                         namefiles = array[0].filename
-                            console.log('------nombre:' + array[0].filename)
-                            console.log('------nombre2'+ namefiles)
                     }else{
                         namefiles = "default_no_image.jfif"
                     }
@@ -86,15 +77,17 @@ module.exports = {
          }else{
  
             //return res.send(errors)
-            /* if (req.files.length > 0){
+            if (req.files.length > 0){
                 req.files.forEach(({filename}) => {
-                    fs.existsSync(path.resolve(__dirname,"..","public","images","imgProducts",filename)) &&
-                    fs.unlink (path.resolve(__dirname,"..","public","images","imgProducts",filename))
+                    fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename)) &&
+                    fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename))
                 });
-            } */
-            return res.send(req.body)
+            } 
+            //return res.send(req.body)
+
             Promise.all([categories,materials])
                 .then(([categories,materials]) => { 
+                    //return res.send(req.body)
                     res.render('crearProducto',{
                         categories,
                         materials,
