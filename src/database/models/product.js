@@ -15,6 +15,15 @@ module.exports = (sequelize, DataTypes) => {
          as : 'images',
          foreignKey : 'productsId'
       })
+      Product.belongsTo(models.Category,{
+        as : 'categories',
+        foreignKey : 'categoryId'
+     })
+     Product.belongsTo(models.Material,{
+      as : 'materials',
+      foreignKey : 'materialId'
+   })
+
     }
   }
   Product.init({

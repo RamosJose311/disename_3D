@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Material.hasMany(models.Product,{
+        as : 'products',
+        foreignKey : 'materialId'
+     })
     }
   }
   Material.init({

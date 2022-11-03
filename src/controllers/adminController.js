@@ -31,8 +31,6 @@ module.exports = {
     //Proceso de Guardar en Base de Datos y Renderiza Home - OK
     store : (req,res) => {
         let errors = validationResult(req);
-        let categories = db.Category.findAll()
-        let materials = db.Material.findAll()
 
         errors = errors.mapped();
          if (req.fileValidationError){
@@ -43,8 +41,9 @@ module.exports = {
                 }
             }
         } 
+
         if(Object.entries(errors).length === 0){
-            const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
+            const {name, price, discount, heigth, time, categoryId, materialId,description,view,imagen} = req.body;
             let array = [];
             if (req.files) {
                     array = req.files
@@ -75,7 +74,8 @@ module.exports = {
                 )
                 .catch(error => console.log("======ERROR========>" + error))
          }else{
- 
+            let categories = db.Category.findAll()
+            let materials = db.Material.findAll()
             //return res.send(errors)
             if (req.files.length > 0){
                 req.files.forEach(({filename}) => {
