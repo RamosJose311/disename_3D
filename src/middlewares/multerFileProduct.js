@@ -11,13 +11,12 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, callback) => {
-    if(!file.originalname.match("/\.(jpg|jpeg|png|webp|bmp|jfif")){
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)){
        req.fileValidationError = "Solo se permite la carga de archivos de imagen"
        return callback(null, false, req.fileValidationError) 
     }
     return callback(null,true)
 }
-
 
 const fileUpload = multer({
     storage,

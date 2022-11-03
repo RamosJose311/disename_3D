@@ -66,6 +66,8 @@
                     <a class="imagen--product--add" href="">
                         <label class="form__button--imagen" for="imageProduct">Seleccione una imagen</label>
                         <input hidden class="form--input" type="file" id="imageProduct" name="imageProduct" accept="image/*" multiple>
+                        <small class="text-danger"><%= locals.errors && errors.imageProduct ? errors.imageProduct.msg : null %></small>
+
                     </label>
                     </a>
                 </div>

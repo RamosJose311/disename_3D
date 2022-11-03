@@ -4,6 +4,8 @@ const {validationResult} = require('express-validator');
 const db = require('../database/models')
 const sequelize = db.sequelize;
 const moment = require('moment');
+const fs = require ('fs');
+const path = require('path')
 
 
 
@@ -29,12 +31,24 @@ module.exports = {
     //Proceso de Guardar en Base de Datos y Renderiza Home - OK
     store : (req,res) => {
         let errors = validationResult(req);
+        
+
+        errors = errors.mapped();
+        //return res.send(errors)
+         if (req.fileValidationError){
+            errors ={
+                ...errors,
+                imageProduct : {
+                    msg:req.fileValidationError
+                }
+            }
+        } 
         let categories = db.Category.findAll()
         let materials = db.Material.findAll()
-
-        if(errors.isEmpty()){
+        return res.send(errors)
+        return res.send(req.body)
+        if(Object.entries(errors).length){
             const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
-            
             let array = [];
             if (req.files) {
                     array = req.files
@@ -70,12 +84,21 @@ module.exports = {
                 )
                 .catch(error => console.log("======ERROR========>" + error))
          }else{
+ 
+            //return res.send(errors)
+            /* if (req.files.length > 0){
+                req.files.forEach(({filename}) => {
+                    fs.existsSync(path.resolve(__dirname,"..","public","images","imgProducts",filename)) &&
+                    fs.unlink (path.resolve(__dirname,"..","public","images","imgProducts",filename))
+                });
+            } */
+            return res.send(req.body)
             Promise.all([categories,materials])
                 .then(([categories,materials]) => { 
                     res.render('crearProducto',{
                         categories,
                         materials,
-                        errors : errors.mapped(),
+                        errors : errors,
                         old : req.body
                     })})
                     .catch(error => console.log(error))
