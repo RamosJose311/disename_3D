@@ -103,10 +103,17 @@ module.exports = {
         let categories = db.Category.findAll()
         let materials = db.Material.findAll()
 
-        let product = db.Product.findByPk(req.params.id);
-        
-        Promise.all([categories,materials,product])
+        let product = db.Product.findByPk(req.params.id,{
+            include: [
+                {
+                    association : 'images',
+                    attributes : ['id', 'file','productsId']
+                }
+            ]});
+
+            Promise.all([categories,materials,product])
             .then(([categories,materials,product]) => {
+                //return res.send(product)
                 res.render('editarProducto', {
                     product,
                     categories,
@@ -116,8 +123,11 @@ module.exports = {
             .catch(error => console.log ("=====ERROR======>" + error))
     },
 
+
+
     //Proceso de Actualizar en Base de Datos y Renderiza Detail - OK
     update : (req, res) =>{
+        
         db.Product.update(
             {
                 ...req.body,
@@ -128,6 +138,7 @@ module.exports = {
             }
         )
         .then (result => {
+            return res.send(result)
             console.log(result)
             return res.redirect('/products/detalle/'+ req.params.id)
         })

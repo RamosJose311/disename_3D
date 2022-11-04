@@ -63,7 +63,7 @@
                                 href="/users/login" <% } %>>
                                 añadir al carrito</a>
                                 
-                        <% if (locals.userLogin && userLogin.rol === 'admin') { %>
+                        <% if (locals.userLogin && userLogin.rol === true) { %>
                             <a class="detalle__menu--button2" href="/admin/editarProducto/<%= product.id %>">EDITAR</a>
                             <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST" class="form_delete">
                                 <button type="submit" class="detalle__menu--button2">ELIMINAR</button>

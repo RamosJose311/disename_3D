@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const sequelize = db.sequelize;
 const {validationResult} = require('express-validator');
-//const db = require('../database/models')
+const fs = require ('fs');
 
 module.exports = {
     // HAY QUE TRABAJAR EN LA VISTA DE PRODUCTCART
@@ -14,7 +14,7 @@ module.exports = {
             .catch(error => console.log(error))
     },
 
-    // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS DISPONIBLES
+    // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS DISPONIBLES -- OK
     modelDisponible: (req, res) => {
         db.Product.findAll({
             include: [
@@ -37,7 +37,7 @@ module.exports = {
                      .catch(error => console.log(error))
    },
 
-    // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS PARA IMPRIMIR
+    // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS PARA IMPRIMIR --OK
     imprimir: (req, res) => {
         
         db.Product.findAll({
@@ -62,7 +62,7 @@ module.exports = {
     },
 
 
-    // VISTA QUE MUESTRA LOS PRODUCTOS PERSONALIZADOS REQUERIDOS
+    // VISTA QUE MUESTRA LOS PRODUCTOS PERSONALIZADOS REQUERIDOS --OK
     personalizado: (req, res) => {
         let categories = db.Category.findAll({
             order : ['name']
@@ -80,15 +80,26 @@ module.exports = {
                 .catch(error => console.log(error))
     },
     
-    // VISTA QUE MUESTRA LOS PRODUCTOS PERSONALIZADOS REQUERIDOS
+    // VISTA QUE MUESTRA LOS PRODUCTOS PERSONALIZADOS - PARA CARGAR POR USUARIO - OK
     addPersonalizado: (req, res) => {
        let errors = validationResult(req);
-       let categories = db.Category.findAll()
-       let materials = db.Material.findAll()
-       if(errors.isEmpty()){
+       errors = errors.mapped();
+       if (req.fileValidationError){
+          errors ={
+              ...errors,
+              imagePersonal : {
+                  msg:req.fileValidationError
+              }
+          }
+      } 
+      //return res.send(errors)
+      if(Object.entries(errors).length === 0){
            const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
+           let array = [];
+           if (req.files) {
+                   array = req.files
+           }
            db.Product.create({
-                
                ...req.body,
                name:name.trim(),
                price: 0,
@@ -98,18 +109,37 @@ module.exports = {
                materialId: req.body.materialId,
                view : "personal"
            })
-               .then(product => {
-                   console.log(product)
-                   return res.redirect('/')
-               })
-               .catch(error => console.log("======ERROR========>" + error))
+           .then((product) => {
+            let namefiles = ""
+            if(array.length > 0){
+                namefiles = array[0].filename
+            }else{
+                namefiles = "No_Image.png"
+            }
+                db.Image.create({
+                    file: namefiles,
+                    productsId: product.id
+                })
+                    .then(() => res.redirect('/'))
+                    .catch(err => console.log(err))
+            }
+        )
+        .catch(error => console.log("======ERROR========>" + error))
        }else{
-           Promise.all([categories,materials])
+            if (req.files.length > 0){
+                req.files.forEach(({filename}) => {
+                    fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename)) &&
+                    fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename))
+                });
+            } 
+            let categories = db.Category.findAll()
+            let materials = db.Material.findAll()
+            Promise.all([categories,materials])
                .then(([categories,materials]) => { 
                    res.render('personalizado',{
                        categories,
                        materials,
-                       errors : errors.mapped(),
+                       errors : errors,
                        old : req.body
                    })})
                    .catch(error => console.log(error))
@@ -117,6 +147,10 @@ module.exports = {
     },
 
 
+
+
+
+    
     detalle: (req, res) => {
 
         db.Product.findByPk(req.params.id,{
