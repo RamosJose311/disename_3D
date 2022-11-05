@@ -33,7 +33,7 @@ module.exports = {
         let errors = validationResult(req);
 
         errors = errors.mapped();
-         if (req.fileValidationError){
+        if (req.fileValidationError){
             errors ={
                 ...errors,
                 imageProduct : {
@@ -61,7 +61,7 @@ module.exports = {
                     if(array.length > 0){
                         namefiles = array[0].filename
                     }else{
-                        namefiles = "default_no_image.jfif"
+                        namefiles = "No_Image.png"
                     }
 
                         db.Image.create({
@@ -113,7 +113,6 @@ module.exports = {
 
             Promise.all([categories,materials,product])
             .then(([categories,materials,product]) => {
-                //return res.send(product)
                 res.render('editarProducto', {
                     product,
                     categories,
@@ -127,24 +126,138 @@ module.exports = {
 
     //Proceso de Actualizar en Base de Datos y Renderiza Detail - OK
     update : (req, res) =>{
-        
-        db.Product.update(
-            {
-                ...req.body,
-                name : req.params.name.trim()
-            },
-            {
-                where : {id:req.params.id}
-            }
-        )
-        .then (result => {
-            return res.send(result)
-            console.log(result)
-            return res.redirect('/products/detalle/'+ req.params.id)
-        })
-        .catch(error => console.log(error))
+        let errors = validationResult(req);
 
-    },
+        // Evaluacion de errores de IMAGEN - Solo se permite imagen
+         errors = errors.mapped();
+         if (req.fileValidationError){
+            errors ={
+                ...errors,
+                imageProduct : {
+                    msg:req.fileValidationError
+                }
+            }
+        } 
+
+        // proyecto de agregar mas de una imagen ... por ahora solo una.. carga una nueva imagen
+        let arrayImages = [];
+        if (req.files) {
+            console.log(req.files)
+            for (clave in req.files) {
+                array = req.files[clave]
+                console.log(array)
+                arrayImages.push(`${array.filename}`);
+                console.log("-----este valor toma imagen---->    " + arrayImages)
+            }
+        }
+
+
+        if (Object.entries(errors).length === 0) {
+            const {name, price, discount, heigth, time, categoryId, materialId,description,view,imagen} = req.body;
+                
+            db.Product.update(
+                {
+                    ...req.body,
+                    name:req.body.name.trim(),
+                    categoryId: req.body.categoryId,
+                    materialId: req.body.materialId,
+                },
+                {
+                    where : {id:req.params.id}
+                }
+            )
+            .then (() => {
+                // Condicional que controla si se carga  una nueva imagen
+               
+                if (arrayImages.length > 0) {
+                    db.Image.findOne({
+                        where: {
+                            file: req.body.imageOldName
+                        }
+                    })
+                    .then( result => {
+
+                        console.log("--------------------dato viejo----------------------")
+                        console.log(result)
+                        console.log(result.id)
+                        console.log(result.filename)
+                        console.log("----------------------------------------------------")
+
+                        db.Image.destroy({
+                            where: {
+                                id: result.id
+                            }
+                        })
+
+
+                        console.log("--------------------dato nuevo----------------------")
+                        console.log(arrayImages)
+                        console.log(arrayImages[0])
+                        console.log("----------------------------------------------------")
+
+                        db.Image.create({
+                            file: arrayImages[0],
+                            productsId: req.params.id
+                        }) 
+                    })
+                }
+                return res.redirect('/../products/detalle/'+ req.params.id)
+            })
+            .catch(error => console.log("//////  Error 03: "+ error))
+
+        }else{
+
+
+
+             if (req.files.length > 0){
+                req.files.forEach(({filename}) => {
+                    fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename)) &&
+                    fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename))
+                });
+            } 
+            //return res.send(req.files)
+
+            let categories = db.Category.findAll()
+            let materials = db.Material.findAll()
+    
+            let product = db.Product.findByPk(req.params.id,{
+                include: [
+                    {
+                        association : 'images',
+                        attributes : ['id', 'file','productsId']
+                    }
+                ]});
+    
+                Promise.all([categories,materials,product])
+                .then(([categories,materials,product]) => {
+                    res.render('editarProducto', {
+                        product,
+                        categories,
+                        materials,                        
+                        errors : errors,
+                        old : req.body
+
+                    })
+                })
+                .catch(error => console.log ("=====ERROR======>" + error))
+
+
+
+        }
+        
+        },
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Consulta para Borrar en Base de Datos - POR APLICAR
     delete: function (req, res) {

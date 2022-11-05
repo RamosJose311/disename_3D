@@ -9,10 +9,29 @@
     <main class="general_main"> 
         <section class="section--add">
             <h1 class="form__title--add">editar producto</h1>
+
             <form class="form__register-add" action="/admin/update/<%= product.id %>?_method=PUT"  method="POST" enctype="multipart/form-data">
+
+                <div style="width: 40%; display: flexbox;">
+                    <div style="width: 90%">
+                        <input type="text" name="imageOldName" value="<%= product.images[0].file %>">
+                        <p> <%= product.images[0].file %> </p>
+                        <img style="width: 100%" src="/images/imgProducts/<%= product.images[0].file %>" >
+                    </div>
+                    <div class="label--add">
+                        <a class="imagen--product--add" href="">
+                            <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
+                        <input hidden class="form--input" type="file" id="imagen" name="imageProduct" accept="image/*" multiple value="<%= product.images[0].file %>">
+                        <small class="text-danger"><%= locals.errors && errors.imageProduct ? errors.imageProduct.msg : null %></small>
+                        </a>
+                    </div>
+                </div>
+
+
+
                 <div class="caja--product--add">
                     <label for="name" class="label--add">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
+                    <input type="text" class="form-control" id="name" name="name" value="<%= locals.old && old.name ? old.name : product.name %>">
                     <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
                 </div> 
                 <div class="caja--product--add">
@@ -61,13 +80,9 @@
 
                 
                 <!--FALTA HACER ALGO-->
-                <div class="label--add">
-                    <a class="imagen--product--add" href="">
-                        <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
-                    <input hidden class="form--input" type="file" id="imagen" name="imagen" value="<%= product.imagen %>">
-                    <small class="text-danger"><%= locals.errors && errors.imagen ? errors.imagen.msg : null %></small>
-                    </a>
-                </div>
+
+
+
                 <div class="caja--product--add boton--cancelar--guardar">
                     <a href="/products/detalle/<%= product.id %>" class="form__button form__button--cancel">Cancelar</a>
                     <button class="form__button form__button--send" type="submit">Guardar</button>

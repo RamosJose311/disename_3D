@@ -91,8 +91,11 @@ module.exports = {
                   msg:req.fileValidationError
               }
           }
-      } 
-      //return res.send(errors)
+       } 
+
+
+
+
       if(Object.entries(errors).length === 0){
            const {name, price, discount, heigth, time, categoryId, materialId,description,imagen,view} = req.body;
            let array = [];
@@ -126,12 +129,14 @@ module.exports = {
         )
         .catch(error => console.log("======ERROR========>" + error))
        }else{
-            if (req.files.length > 0){
+
+/*             if (req.files.length > 0){
                 req.files.forEach(({filename}) => {
                     fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename)) &&
                     fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename))
                 });
             } 
+ */
             let categories = db.Category.findAll()
             let materials = db.Material.findAll()
             Promise.all([categories,materials])
@@ -158,6 +163,16 @@ module.exports = {
                         {
                             association : 'images',
                             attributes : ['id', 'file','productsId']
+                        },
+                        {
+                            association : 'materials',
+                            attributes : ['name']
+                            
+                        },
+                        {
+                            association : 'categories',
+                            attributes : ['name']
+                            
                         }
                     ]})
             .then(product => { 
