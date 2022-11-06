@@ -11,14 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasOne(models.Gender, {
-        as : 'gender',
+      User.belongsTo(models.Gender, {
+        as : 'genders',
         foreignKey : 'genderId'
       });
-      /* User.hasMany(models.Avatar,{
-         as : 'avatar',
+       User.hasMany(models.Avatar,{
+         as : 'avatars',
          foreignKey : 'userId'
-      }) */
+      })
       
     }
   }
@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
     country: DataTypes.STRING,
     description: DataTypes.TEXT,
     genderId: DataTypes.INTEGER,
-    //avatar : DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'User',

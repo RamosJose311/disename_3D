@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      /*Avatar.belongsTo(models.User,{
-        as : 'user',
-        foreignKey : 'userIdd'
-     }) */
+      Avatar.belongsTo(models.User,{
+        as : 'users',
+        foreignKey : 'userId'
+     }) 
     }
   }
   Avatar.init({

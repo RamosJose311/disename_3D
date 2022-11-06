@@ -22,7 +22,7 @@ router
 .post('/process',registerValidator,processRegister)
 
 .get('/profile',cookieCheck,userSessionCheck,profile)
-.put('/update' ,profileValidator ,update)/* ,uploadFile.single('avatar') */
+.put('/update',uploadFile.single('avatar') ,profileValidator ,update)/* ,uploadFile.single('avatar') */
 
 .get('/logout/:id',userLogout)
 .delete('/destroy',userDestroy)

@@ -4,13 +4,17 @@ const {hashSync} =require('bcryptjs');
 const db = require('../database/models')
 const moment = require('moment');
 const session = require("express-session");
+const fs = require ('fs');
+const path = require('path')
 
 module.exports = {
-
+    // CONTROLADOR QUE RENDERIZA LA VISTA PARA LOGUEARSE-OK
     login : (req,res) =>{
         return res.render('login')
     },
-    // terminado
+    
+
+    //CONTROLADOR QUE TE LOGUEA-OK
     processLogin : (req,res) => {  
         const errors = validationResult(req)
         if(errors.isEmpty()){
@@ -39,12 +43,13 @@ module.exports = {
  
     },
 
+    //CONTROLADOR QUE TE RENDERIZA LA VISTA PARA REGISTRARTE-OK
     register : (req,res) =>{
         return res.render('register')
     },
 
 
-    //terminado
+    //CONTROLADOR QUE TE REGISTRA-OK
     processRegister :(req,res) =>{
 
         const errors =validationResult(req);
@@ -57,18 +62,14 @@ module.exports = {
                 email : email.trim(),
                 password : hashSync(password, 10),
                 rol : false,
-                avatar : 'imagen-default.webp'
+
                 })
-                /* .then(user => {
-                db.Address.create({
-                    street: '',
-                    city: '',
-                    province: '',
-                    postalCode: '',
-                    number: '',
-                    userId: user.id
-                }) */
-                .then( () => {
+                
+                .then( (result) => {
+                    db.Avatar.create({
+                        avatar:'default-img.webp',
+                        userId: result.id
+                    })
                     return res.redirect('/users/login')
                 })
             .catch(error => console.log(error))
@@ -80,10 +81,23 @@ module.exports = {
         })
     }
 },
-  //terminado
+  //CONTROLADOR QUE TE RENDERIZA LA VISTA DE TU PERFIL
     profile:(req,res)=>{
-        db.User.findByPk(req.session.userLogin.id)
+        db.User.findByPk(req.session.userLogin.id,{
+             include: [
+                {
+                    association : 'avatars',
+                    attributes : ['avatar','userId']
+                },
+                {
+                    association : 'genders',
+                    attributes : ['name']
+                }
+
+            ],
+        })
             .then(user => {
+                //return res.send(user)
                 return res.render('profile',{
                     user,
                     moment,
@@ -92,40 +106,102 @@ module.exports = {
             .catch(error => console.log(error))
     },
 
-
+    //CONTROLADOR QUE TE GUARDA LOS CAMBIOS EN EL PERFIL
     update : (req,res) => {
-        const {firstName,lastName,rol,email,address,dateBirth}= req.body
+        const {firstName,lastName,rol,email,address,dateBirth,avatar,city,province,description,genderId,country,genero}= req.body
         const errors =validationResult(req);
+        let avatarUser = "";
+        //return res.send(req.body)
+        if (req.file) {
+            avatarUser = req.file
+        }
+    
+
+    //return res.send(req.body)
+
         if (errors.isEmpty()) { 
-            db.User.findByPk(req.session.userLogin.id)
+            db.User.findByPk(req.session.userLogin.id,{
+
+                include: [
+                    {
+                        association : 'avatars',
+                        attributes : ['avatar','userId']
+                    },
+                     {
+                        association : 'genders',
+                        attributes : ['name','id']
+                    } 
+    
+                ],
+            })
                 .then(user =>{
+                    //return res.send(user)
                         db.User.update({
                             firstName: firstName,
                             lastName: lastName,
                             email: email,
                             address:address,
-                            dateBirth:dateBirth
-
-                            //avatar: req.file ? req.file.filename : this.avatar
+                            dateBirth:dateBirth,
+                            city:city,
+                            province:province,
+                            country:country,
+                            description:description,
+                            genderId: genero? genero : genderId
                         }, 
                         {
                             where: {
                                 id: req.session.userLogin.id
                             }
                         })
-                        .then(() => {
-                            req.session.userLogin = {
-                                id: req.session.userLogin.id,
-                                firstName:firstName,
-                                lastName:lastName,
-                                rol : rol,
-                                address:address,
-                                dateBirth:dateBirth,
+                        .then((user) => {
+                            //return res.send(req.session.userLogin)
+                                let namefile = ""
+                                if(avatarUser){
+                                    namefile = avatarUser.filename
+                                        console.log('------nombre:' + avatarUser.filename)
+                                        console.log('------nombre2'+ namefile)
+                                }else{
+                                    namefile = "default-img.webp"
+                                }
+                                //return res.send(avatarUser)
+                                if(req.file){
+                                    
+                                            /* fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",req.file.filename)) &&
+                                            fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",req.file.filename)) */
+                                    
+                                    db.Avatar.destroy({
+                                        where :{
+                                            userId : req.session.userLogin.id
+                                        }
+                                    })
+                                    db.Avatar.create({
 
-                            };
-                            res.redirect('/users/profile');
+                                        avatar: namefile,
+                                        userId: req.session.userLogin.id
+                                    })
+                                
+                                        .then(() =>{
+
+                                        req.session.userLogin = {
+                                            id: req.session.userLogin.id,
+                                            firstName:firstName,
+                                            lastName:lastName,
+                                            rol : rol,
+                                            address:address,
+                                            dateBirth:dateBirth,
+                                            avatar : namefile
+            
+                                        }
+                                        res.redirect('/users/profile')
+                                    })
+                                        .catch(err => console.log(err))
+                                }
+                                res.redirect('/users/profile')
+                                })
+
+                            
+                            
                         })
-                })
                 .catch(error => console.log(error))
          }  else {
                 res.render('profile', {
@@ -139,13 +215,22 @@ module.exports = {
 
 
 
-//terminado
+//CONTROLADOR QUE TE DESTRUYE EL USIARIO DE LA BASE DE DATOS
     userDestroy: (req, res)=> {
-        db.User.destroy({
+        //return res.send(req.session.userLogin)
+        db.Avatar.destroy({
             where :{
-                id : req.session.userLogin.id
+                userId: req.session.userLogin.id
             }
         })
+        .then(() => {
+            db.User.destroy({
+                where: {
+                    id: req.session.userLogin.id
+                }
+            })
+        })
+
         .then(() => {
             req.session.destroy()
             if(req.cookies.disename3d){
@@ -156,6 +241,8 @@ module.exports = {
         .catch( error => console.log(error))
 
     },
+
+    //CONTROLADOR QUE TE DESLOGUEA
     userLogout: (req, res) => {
         req.session.destroy()
         if(req.cookies.disename3d){
