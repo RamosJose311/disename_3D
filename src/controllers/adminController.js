@@ -77,6 +77,7 @@ module.exports = {
             let categories = db.Category.findAll()
             let materials = db.Material.findAll()
             //return res.send(errors)
+            //console.log("--------NUEVA IMAGEN------>"+req.files[0].filename);
             if (req.files.length > 0){
                 req.files.forEach(({filename}) => {
                     fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename)) &&
@@ -168,7 +169,6 @@ module.exports = {
             )
             .then (() => {
                 // Condicional que controla si se carga  una nueva imagen
-               
                 if (arrayImages.length > 0) {
                     db.Image.findOne({
                         where: {
@@ -180,7 +180,7 @@ module.exports = {
                         console.log("--------------------dato viejo----------------------")
                         console.log(result)
                         console.log(result.id)
-                        console.log(result.filename)
+                        console.log(result.file)
                         console.log("----------------------------------------------------")
 
                         db.Image.destroy({
@@ -188,6 +188,13 @@ module.exports = {
                                 id: result.id
                             }
                         })
+
+                        // Si la imagen al momento de cargar el producto es por defecto... esta imagen no se borra (es imagen general)
+                        if(result.file !== "No_Image.png"){
+                            fs.existsSync(path.resolve(__dirname,"..","..","public","images","imgProducts",result.file)) &&
+                            fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",result.file))
+                        }
+
 
 
                         console.log("--------------------dato nuevo----------------------")
@@ -203,11 +210,9 @@ module.exports = {
                 }
                 return res.redirect('/../products/detalle/'+ req.params.id)
             })
-            .catch(error => console.log("//////  Error 03: "+ error))
+            .catch(error => console.log("//////  Error 001: "+ error))
 
         }else{
-
-
 
              if (req.files.length > 0){
                 req.files.forEach(({filename}) => {
@@ -215,8 +220,8 @@ module.exports = {
                     fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",filename))
                 });
             } 
-            //return res.send(req.files)
 
+            
             let categories = db.Category.findAll()
             let materials = db.Material.findAll()
     
@@ -240,8 +245,6 @@ module.exports = {
                     })
                 })
                 .catch(error => console.log ("=====ERROR======>" + error))
-
-
 
         }
         
