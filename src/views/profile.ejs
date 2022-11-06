@@ -11,8 +11,12 @@
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
     <main class="general_main">
         <h1 class="profile_titulo">PERFIL DE USUARIO</h2>
+            <div class="contenedor_avatar">
+                <img class="img-avatar" src="/images/imgUsers/<%= user.avatars[0].avatar %>" alt="">
+            </div>
         <section class="profile_section">
-            <form class="profile_form" action="/users/update?_method=PUT"  method="POST">
+            
+            <form class="profile_form" action="/users/update?_method=PUT"  method="POST"  enctype="multipart/form-data">
                 <div class="profile_form_group" >
                     <div class="profile_form_contenedor">
                         <label for="firstName">Nombre</label>
@@ -29,29 +33,22 @@
                     </div>
                     <div class="profile_form_contenedor">
                         <label for="dateBirth">Fecha de Nacimiento</label> <br>
-                        <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirthe).format('YYYY-MM-DD') %>" required>
+                        <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirth).format('YYYY-MM-DD') %>" required>
                     </div>
                 </div>
 
                 <div class="genero_hobbies" >
                     <div>
                         <H3>Género</H3>
-                        <label for="genero"> <input name="genero" type="radio" id="genero" value="m" 
-                            <%= user.genero === 'm' && 'checked' %>> Masculino</label>  <br>
-                        <label for="genero"> <input name="genero" type="radio" id="genero" value="f"
-                            <%= user.genero === 'f' && 'checked' %>> Femenino</label>  <br>
-                        <label for="genero"> <input name="genero" type="radio" id="genero" value="o"
-                            <%= user.genero === 'o' && 'checked' %>> Otro</label>
+                        
+                        <label for="genero"> <input name="genero" type="radio" id="genero" value="1" 
+                            <%= user.genders ? user.genders.name  === 'Masculino' && 'checked' : 'uncheked' %>> Masculino</label>  <br>
+                        <label for="genero"> <input name="genero" type="radio" id="genero" value="2"
+                            <%= user.genders ? user.genders.name === 'Femeninos' && 'checked' :'uncheked' %>> Femenino</label>  <br>
+                        <label for="genero"> <input name="genero" type="radio" id="genero" value="3"
+                            <%= user.genders? user.genders.name === 'Otros' && 'checked' :'uncheked'%>> Otro</label>
                     </div>
-                    <div>
-                        <H3>Hobbies</H3>
-                        <input type="checkbox" id="musica" value="musica" name="hobbies">  
-                        <label for="musica">Música</label>  <br>
-                        <input type="checkbox" id="deporte" value="deporte" name="hobbies">
-                        <label for="deporte">Deporte</label>  <br>
-                        <input type="checkbox" id="aireLibre" value="aireLibre" name="hobbies">
-                        <label for="aireLibre">Aire Libre</label>
-                    </div>
+                    
                 </div>
 
                 <div class="profile_form_group">
@@ -61,6 +58,9 @@
                         <label for="address"> Calle</label>
                         <input type="text" id="address" name="address" value="<%= user.address %> ">
                         <hr>
+
+                        <div class="section--add input">
+                            <label for="">Ciudad</label>
                         <select name="city" id="">
                             <label value="" hidden selected>Seleccione su ciudad</label>
                             <option value="cutral co" <%= user.city === 'cutral co' && 'selected' %>>Cutral Co </option>
@@ -69,30 +69,48 @@
                             <option value="buenos aires" <%= user.city === 'buenos aires' && 'selected' %>>Buenos Aires </option>
                             <option value="jujuy" <%= user.city === 'jujuy' && 'selected' %>>Jujuy </option>
                         </select>
+                        </div>
+
+                        <div class="section--add input">
+                            <label for="">Provincia</label>
                         <select name="province" id="">
                             <option value="" hidden selected>Seleccione su provincia</option>
-                            <option value="neuquen" <%= user.provincia === 'neuquen' && 'selected' %>>Neuquén</option>
-                            <option value="buenos aires" <%= user.provincia === 'buenos aires' && 'selected' %>>Buenos Aires</option>
-                            <option value="jujuy" <%= user.provincia === 'jujuy' && 'selected' %>>jujuy</option>
+                            <option value="neuquen" <%= user.province === 'neuquen' && 'selected' %>>Neuquén</option>
+                            <option value="buenos aires" <%= user.province === 'buenos aires' && 'selected' %>>Buenos Aires</option>
+                            <option value="jujuy" <%= user.province === 'jujuy' && 'selected' %>>jujuy</option>
                         </select>
+                        </div>
+
+                        <div class="section--add input">
+                            <label for="">Pais</label>
+                            <select name="country" id="">
+                                <option value="" hidden selected>Seleccione su Pais</option>
+                                <option value="Argentina" <%= user.country === 'Argentina' && 'selected' %>>Argentina</option>
+                                <option value="Chile" <%= user.country === 'Chile' && 'selected' %>>Chile</option>
+                                <option value="Uruguay" <%= user.country === 'Uruguay' && 'selected' %>>Uruguay</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="profile_form_contenedor">
                         <h3>Acerca de mi</h3>
-                        <textarea name="description" id="" cols="30" rows="10" value="<%= user.description %> " ></textarea>
-                        <label for="imagen">Seleccione imagen</label>
-                        <input hidden type="file" id="imagen" name="imagen">
+                        <textarea name="description" id="" cols="30" rows="10" value="<%= user.description %>"></textarea>
+                        <div>
+                            <label class="form__button form__button--cancel" for="imagen">Seleccione imagen</label>
+                        <input hidden type="file" id="imagen" name="avatar" accept="image/*">
+                        </div>
                     </div>
+                    
                 </div>
                 <div class="profile_form_button" >
-                    <a  class="boton_salir" href="/">Salir</a>                    
-                    <button type="submit">Guardar Cambios</button>                    
+                    <a  class="form__button form__button--send" href="/">Salir</a>                    
+                    <button class="imagen--product--add" type="submit">Guardar Cambios</button>                    
                 </div>
                 
                 
             </form>
             <div style="margin:1%">                        
                 <form action="/users/destroy?_method=DELETE"  method="POST">
-                    <button class="boton_salir" id="delete-button" type="submit" id="buttonSubmitDelete" onclick="return alert('¿Estas seguro de querer eliminar el usuario?')">Eliminar cuenta</button>
+                    <button class="form__button form__button--send" id="delete-button" type="submit" id="buttonSubmitDelete" onclick="return alert('¿Estas seguro de querer eliminar el usuario?')">Eliminar cuenta</button>
                 </form>
             </div>
         </section>

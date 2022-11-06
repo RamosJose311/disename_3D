@@ -81,6 +81,19 @@
 
 /* ======================= MEDIA QUERY || TABLET =======================*/
 @media (min-width:768px) {
+
+    .contenedor_avatar{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-avatar{
+        border-radius: 50%;
+        width: 15%;
+        margin-bottom: 2%;
+        
+    }
  
     .profile_section{
         width: 60%;
@@ -107,5 +120,10 @@
 
 /* ======================= MEDIA QUERY || DESKTOP =======================*/
 @media (min-width:1024px) {
+    .genero_hobbies{
+        margin-left: 15%;
+        margin-right: 15%;
+        justify-content: space-between;
+    }
 
 }
