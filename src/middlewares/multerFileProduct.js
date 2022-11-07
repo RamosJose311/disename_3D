@@ -1,6 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 
+
 const storage = multer.diskStorage({
     destination : function (req,file,callback) {
         callback(null, path.join(__dirname,'../../public/images/imgProducts'));
@@ -15,8 +16,10 @@ const fileFilter = (req, file, callback) => {
        req.fileValidationError = "Solo se permite la carga de archivos de imagen"
        return callback(null, false, req.fileValidationError) 
     }
+
     return callback(null,true)
 }
+
 
 const fileUpload = multer({
     storage,

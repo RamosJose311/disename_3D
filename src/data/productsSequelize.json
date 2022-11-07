@@ -193,6 +193,31 @@
       "description": "Producto realizado con material denominado PLA (plastico), Rostro Buda (Consulte por otras figuras)",
       "imagen": "figura_buda.jpg",
       "view" : "print"
+   },
+   {
+      "id": 16,
+      "name": "HOMERO BUDA",
+      "price": 0,
+      "discount": 0,
+      "height": 25,
+      "time": 0,
+      "categoryId": 2,
+      "materialId": 1,
+      "description": "Solicitamos informacion respecto de cual seria el costo para fabricar el muñero de la foto",
+      "imagen": "figura_homerobuda.jpg",
+      "view" : "personal"
+   },
+   {
+      "id": 17,
+      "name": "Porta Cartas Poker",
+      "price": 0,
+      "discount": 0,
+      "height": 5,
+      "time": 0,
+      "categoryId": 5,
+      "materialId": 1,
+      "description": "Solicitamos informacion respecto de cual seria el costo para fabricar el muñero de la foto",
+      "imagen": "juegos_portacartas.jpg",
+      "view" : "personal"
    }
-   
 ]

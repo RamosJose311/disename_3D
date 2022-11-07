@@ -26,12 +26,17 @@
                     
                     <div class="caja_bottom">
                         <a <% if (locals.userLogin) { %>
+                                <% if (userLogin.rol === false) { %>
                                     href="/../products/personalizado"><img src="/images/imgHome/imgPersonalizado.webp" alt="">
-                                <p>Personalizado</p>
+                                    <p>Modelos Personalizados</p>
                                 <% }else{ %>
-                                    <a href="../users/login"><img src="/images/imgHome/imgPersonalizado.webp" alt="Registrate">
-                                        <p>Modelos Personalizados</p>
-                                    <% } %>
+                                    <a href="/../products/reqPersonal"><img src="/images/imgHome/imgPersonalizado.webp" alt="">
+                                    <p>Modelos personalizados Solicitados</p>
+                                <% } %>
+                            <% }else{ %>
+                                <a href="../users/login"><img src="/images/imgHome/imgPersonalizado.webp" alt="Registrate">
+                                <p>Modelos Personalizados</p>
+                            <% } %>
                         </a>
                     </div>
                 </section>

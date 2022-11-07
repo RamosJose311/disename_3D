@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 const prodPersonalValidator = require('../validations/productPersonalValidator')
 const editProductsValidator = require('../validations/productsValidator')
-const {detalle,productCart,modelDisponible,personalizado,addPersonalizado,imprimir,search} = require('../controllers/productController');
+const {detalle,productCart,modelDisponible,reqPersonalizados,personalizado,addPersonalizado,imprimir,search} = require('../controllers/productController');
 
 const productSessionCheck = require('../middlewares/productSessionCheck');
 const upload = require('../middlewares/multerFileProduct')
 
 /* /products*/
 router
+    .get('/reqPersonal',reqPersonalizados)
     .get('/personalizado',productSessionCheck,personalizado)
     .post('/addPersonalizado',productSessionCheck,upload.array('imagePersonal'),prodPersonalValidator,addPersonalizado)
 
