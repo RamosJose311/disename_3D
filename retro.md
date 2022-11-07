@@ -42,4 +42,23 @@ Nos vemos en la retro del proximo Sprint!!!
 <img src="" >
 </p>
 
+---
+# **Comenzo el SPRINT VI, Asi que hay que contar que nos paso en el Sprint V  !!!**
+En esta oportunidad vamos a contar que nos ha ocurrido durante la etapa del Sprint V, lo vamos a dividir en los cinco puntos fundamentales 
+que nos permite como guia el metodo ESTRELLA DE MAR, de esta manera desarrollamos 
+
+- HACER MAS: en este punto debemos remarcar que hay que mejorar la asistencia
+de lo integrantes del grupo a las reuniones que se han propuesto y que se dan los dias Lunes y Viernes.
+
+- SEGUIR HACIENDO: Reuniones luego de que los docentes liberan el material necesario para el desarrollo del Sprint, para comenzar a dividir las 
+correspondientes tareas. Se insta a continuar designando el Lider de Equipo para que pueda coordinar las tareas.
+
+- EMPEZAR HACER: Es necesario que los integrantes del grupo en forma conjunta comiencen hacer proactivos, a fin de poder cumplir con las tareas
+fijadas en la respetiva reunion
+
+- DEJAR DE HACER: Es necesario dejar de entregar los Sprint fuera de termino y cumplir con todos los requisitos del SPRIN, incluso aquellas tareas que 
+son opcionales
+
+- HACER MENOS: No encontramos tareas que se deban disminuir.
+
 

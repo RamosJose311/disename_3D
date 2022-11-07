@@ -257,12 +257,6 @@ module.exports = {
 
 
 
-
-
-
-
-
-
     //Consulta para Borrar en Base de Datos - POR APLICAR
     delete: function (req, res) {
         db.Product.findByPk(req.params.id)
@@ -273,22 +267,24 @@ module.exports = {
          .catch(error => console.log(error))
      },
 
+
     //Proceso de Borrar en Base de Datos y Renderiza Home - OK
     destroy: function (req, res) {
-        db.Product.destroy({
+        db.Image.destroy({
             where : {
-                id : req.params.id
+                productsId : req.params.id
             }
         })
-        .then (result => {
-            console.log(result)
+        .then( () => {
+            db.Product.destroy({
+                where : {
+                    id : req.params.id
+                }
+            })
             return res.redirect('/')
         })
         .catch(error => console.log(error))
     }
-
-
-
 }
 
 

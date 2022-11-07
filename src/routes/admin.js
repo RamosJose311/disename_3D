@@ -19,11 +19,7 @@ router
     .get('/editarProducto/:id',adminSessionCheck, editarProducto)
     .put('/update/:id',upload.array('imageProduct'),productValidator, update)
 
-    //.get('/add',adminSessionCheck,add)
     
-    //.get('/add',adminSessionCheck,add)
-
-    //.post('/add',store)
 
     
     .delete('/delete/:id', destroy)
