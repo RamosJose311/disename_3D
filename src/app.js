@@ -19,6 +19,11 @@ var productsRouter = require('./routes/products');
 var adminRouter = require('./routes/admin');
 const { cookie } = require('express-validator');
 
+//api
+var apiProductsRouter = require('./routes/api/apiProducts')
+var apiUsersRouter = require('./routes/api/apiUsers')
+var apiAuthRouter = require('./routes/api/apiAuth')
+
 var app = express();
 
 // view engine setup
@@ -46,6 +51,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products',productsRouter);
 app.use('/admin',adminRouter);
+
+//ruta api
+app.use('/api/products',apiProductsRouter);
+app.use('api/users',apiUsersRouter);
+app.use('api/auth',apiAuthRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
