@@ -54,6 +54,11 @@
                             <p>Tiempo:     <%= product.time %>  (en minutos)</p>
                             <p>Categoría:     <%= product.categories.name %> </p>
                             <p>Material:   <%= product.materials.name %></p>
+                            <% if (locals.userLogin && userLogin.rol === true) { %>
+                                <p>usuario <%= locals.userLogin.name %> </p>
+                            <% } %>
+
+
                         </div>
                         <p class="detalle__menu--descripcion--general">Descripcion general:</p>
                             <p class="detalle__menu--parrafo"><%= product.description %> </p>

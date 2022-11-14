@@ -1,11 +1,15 @@
-const { signIn, signUp } = require('../../controllers/api/apiAuthController');
+var express = require('express');
+const router = express.Router();
+const registerValidator =require('../../validations/registerValidation')
 
-const router = require('express').Router();
 
-/* /api/users */
+
+const { processRegister, processLogin } = require('../../controllers/api/apiAuthController');
+const {checkToken} = require ('../../middlewares/checkToken');
+/* api/auth */
 
 router
-    .post('/signin',signIn)
-    .post('/signup',signUp)
+    .get('/login',checkToken,processLogin)
+    .post('/register',registerValidator,processRegister)
 
-module.exports = router
+module.exports = router;
