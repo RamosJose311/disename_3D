@@ -17,8 +17,8 @@ module.exports = {
             if(Object.entries(errors).length === 0){
                 const user = await db.User.create({
                     firstName : firstName.trim(),
-                    lastName : lastName,
-                    email: email,
+                    lastName : lastName.trim(),
+                    email: email.trim(),
                     password : hashSync(password,10),
                     rol : false,
                 })
@@ -84,11 +84,76 @@ module.exports = {
   },
 
 
-
+    /* autenticación de usuario y token */
     processLogin : async (req,res) => {
-        /* autenticación de usuario y token */
-        return res.json({
-            mensaje : "que bien llegas"
-        })
-    },
+
+        const errors = validationResult(req);
+
+        try {
+            if( errors.isEmpty()){
+                const user = await db.User.findOne({
+                        where : {
+                            email:req.body.email
+                        }
+                })
+
+                const token = sign(
+                {
+                    id: user.id,
+                    rol: user.rol
+                },
+                process.env.SECRET_TOKEN,
+                {
+                    expiresIn: '1h'
+                }
+              ) 
+            
+              return res.status(200).json({
+                    Meta: {
+                        Process_Login : "OK"
+                    },
+                    Status : 200,
+                    Data : {
+                        Token : token
+                    }
+                })
+
+            } 
+            
+            throw errors
+            
+            
+
+        } catch (error) {
+
+                let msgErrorsObjet1 = new Object(); 
+                console.log("--------valor inicial ------ "+msgErrorsObjet1)
+                 error.errors.forEach(err => {
+                    console.log ("que valor tiene err:   " + err.msg )
+                    console.log ("que valor tiene msgerror:   " + msgErrorsObjet1  )
+                    msgErrorsObjet1 = {
+
+                       ['err.param'] : err.msg
+                    } 
+                })                    
+                 
+                let {errors} = error
+                return res.json(errors)
+
+
+
+            console.log ("aca vienen los errores" , error)
+            return res.status(400).json({
+                    msg : "ando por aca",
+                    erroress : error
+                        })
+
+        }
+
+
+        
+    }
+    
+    
+    
 }

@@ -13,7 +13,7 @@ module.exports = [
     check('password')
         .notEmpty().withMessage('debe ingresar su contraseña').bail(),
 
-     body('password')
+    body('password')
         .custom( (value,{req}) => {
             return db.User.findOne({
                 where : {
@@ -28,7 +28,7 @@ module.exports = [
                 console.log(user)
                 if(!bcryptjs.compareSync(value, user.dataValues.password)){
                     return Promise.reject()} */
-    
+   
               }).catch( () => Promise.reject('Alguno de los datos no es valido'))
         })
 
