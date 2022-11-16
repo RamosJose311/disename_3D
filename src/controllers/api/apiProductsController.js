@@ -68,7 +68,7 @@ module.exports = {
             // ARMADO DE LA URL PARA LOS BOTONES PREV,NEXT
 
              const queryKeys = {
-				limit,
+				limit:+limit,
 			} 
              let queryUrl = "";
 
@@ -120,7 +120,8 @@ module.exports = {
                 throw createError(400,'El ID debe ser un numero');
             }
             // BUSCO EL PRODUCTO
-                const product = await db.Product.findByPk(req.params.id,{
+                /* const back =  */
+                const product = await db.Product.findByPk(id,{
 
                 //-----------------------TABLAS VINCULADAS---------------------
                 include :[
@@ -174,7 +175,67 @@ module.exports = {
     },
     getImageProduct : async (req,res) => {
         /* devuelve la imagen del producto */
-        return res.sendFile(path.join(__dirname, '..','..','public','images','imgProducts', req.params.imagen ))
-    }
+        console.log(req.params.imagen)
+        return res.sendFile(path.join(__dirname,'..', '..','..','public','images','imgProducts', req.params.img ))
+    },
+
+
+
+
+    getImage : async (req,res) => {
+        /* devuelve la imagen un producto */
+        const {id} = req.params;
+        //MENSAJE DE ERROR ID INVALIDA
+        try {
+            if(isNaN(id)){
+                throw createError(400,'El ID debe ser un numero');
+            }
+            // BUSCO EL PRODUCTO
+                /* const back =  */
+                const product = await db.Product.findByPk(id,{
+
+                //-----------------------TABLAS VINCULADAS---------------------
+                include :[
+                {
+                        association : 'images',
+                    attributes :{
+                        exclude :['createdAt','updatedAt','id','productsId','file'],
+                        include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/products/imagen/',file)`),'url']]
+                    }
+                }
+            //----------------------------------------------------------------
+            ],
+            
+            //ATRIBUTOS EXCLUIDOS DE LA TABLA 'PRODUCTS'
+                attributes :{
+                    exclude :['createdAt', 'updatedAt','materialId','categoryId']
+                }
+                    });
+                    //MENSAJE DE ERROR POR SI PONE UN ID QUE NO EXISTE
+                    if(!product){
+                        throw createError(404,'no existe una imagen con ese ID');
+                    }
+
+                //RETORNO DEL LA IMAGEN ENCONTRADA
+                return res.status(200).json({
+                data :{
+                product : product.name,
+                imagen : product.images
+                }
+                
+            })
+            //ERRORES
+        } catch (error) {
+            console.log(error);
+            return res.status(error.status || 500).json({
+                ok:false,
+                status : error.status || 500,
+                msg:error.message,
+            });
+        }
+    },
 }
+
+
+
 
