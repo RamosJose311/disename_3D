@@ -126,19 +126,19 @@ module.exports = {
 
         } catch (error) {
 
-                let msgErrorsObjet1 = new Object(); 
-                console.log("--------valor inicial ------ "+msgErrorsObjet1)
+                let msgErrorsObjet1 = {}; 
+                console.log("--------valor iniciales ------ ", msgErrorsObjet1 )
                  error.errors.forEach(err => {
                     console.log ("que valor tiene err:   " + err.msg )
-                    console.log ("que valor tiene msgerror:   " + msgErrorsObjet1  )
+                    console.log ("que valor tiene msgerror:   ", msgErrorsObjet1  )
                     msgErrorsObjet1 = {
-
-                       ['err.param'] : err.msg
+                        ...msgErrorsObjet1,
+                       [err.param] : err.msg
                     } 
                 })                    
-                 
+                  
                 let {errors} = error
-                return res.json(errors)
+                return res.json(msgErrorsObjet1)
 
 
 

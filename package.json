@@ -2,8 +2,10 @@
   "name": "grupo-1-disename-3d",
   "version": "0.0.0",
   "private": true,
+  "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon ./src/bin/www --ignore /src/data/*.json"
+    "dev": "nodemon ./src/bin/www --ignore /src/data/*.json",
+    "start": "node src/app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
