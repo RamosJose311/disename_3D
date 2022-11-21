@@ -1,6 +1,8 @@
 const db=require('../../database/models')
-const {literal}=require('sequelize')
-
+const fs = require ('fs');
+const path = require ('path');
+const { literal} = require('sequelize');
+const createError = require('../../helpers/createError')
 
 module.exports = {
     all : async (req,res) => {
@@ -48,18 +50,60 @@ module.exports = {
         
         
     },
-    getOne : async (req,res) => {
-        /* devuelve solo un usuario */
-        return res.json({
-            algun : "Estoy llegando getOne"
-        })
 
+    
+    /* Retorna los datos de un solo usuario */
+    getOneUser : async (req,res) => {
+        const {id} = req.params;
+        try {
+            if(isNaN(id)){                                                    //Verificación de que Id debe ser un número caso contrario ERROR
+                throw createError(400,'El ID debe ser un numero');
+            }
+
+            const user = await db.User.findByPk(id,{                          // Busqueda de un Usuario por Id
+                        include :[                                            // Incluye la Tabla asociada Avatar
+                            {
+                                association : 'avatars',
+                                attributes :{                      
+                                    exclude :['id', 'userId', 'createdAt','updatedAt'],                                                      //Excluye los campos indicados de la tabla User'
+                                    include : [[literal(`CONCAT('${req.protocol}://${req.get('host')}/api/users/avatar/',avatar)`),'url']]   //Incluye la url creada
+                                }
+                            }
+                        ],
+            
+                        attributes :{                                         
+                            exclude :['createdAt', 'updatedAt', 'password']   //Excluye los campos indicados de la tabla User'
+                        }
+                    });
+
+            if(!user){                                                        //Verificación de que el usuario debe existir caso contrario ERROR
+                throw createError(404,'No existe un Usuario con ese ID');
+            }
+
+             return res.status(200).json({                                    //Muestra resultado de la Busqueda por Id
+                meta : {
+                    search_User: "Ok",
+                    Avatar: "Ok",
+                    status : 200,
+                },
+                data : user
+            })
+
+
+        } catch (error) {                                                     // CATCH ABSORVE LOS ERRORES QUE SURGEN
+            return res.status(error.status || 500).json({
+                            search_User: "No Process",
+                            status : error.status || 500,
+                            msg:error.message,
+                        });
+        }
     },
-    getAvatar : async (req,res) => {
-        /* devuelve la imagen de perfil del usuario */
-        return res.json({
-            algun : "Estoy llegando getAvatar"
-        })
 
-    }
+    /* Permite visualizar el Avatar de un Usuario */
+    getAvatar : async (req,res) => {
+        console.log(req.params.avatar)
+        return res.sendFile(path.join(__dirname,'..', '..','..','public','images','imgUsers', req.params.avatar ))
+    },
+
+
 }

@@ -6,11 +6,9 @@ const { param } = require("../../routes");
 
 
 module.exports = {
-     /* Registro al usuario y devuelvo un token */
+     // Registro al usuario y devuelvo un token 
      processRegister: async (req,res) => {
- 
-
-        try {
+         try {
             let errors=validationResult(req)            
             const {firstName, lastName, email, password} = req.body
             errors = errors.mapped()
@@ -52,34 +50,24 @@ module.exports = {
                 })
 
             }else{
-                let msgErrorsObjet = {}
-// Errors es un objeto.. por eso tiene mapped()
-                for (const property in errors) {
-                    console.log(msgErrorsObjet)
-                    msgErrorsObjet = {
-                        ...msgErrorsObjet,
-                        [property] : errors[property].msg
-                    } 
-                  }
-
-// Si errors fuera un array sin mapped() 
-/*                 errors.errors.forEach(error => {
-                    msgErrorsObjet = {
-                        ...msgErrorsObjet,
-                       [error.param] : error.msg
-                    } 
-                })                    
- */                 
-                res.json({
-                    meta:{
-                        User_Create: "No process"
-                    },
-                    validatorErrors: msgErrorsObjet 
-                    }               
-                )
+                throw errors
             } 
         } catch (errors) {
-            console.log (errors)
+            let msgErrorsObjet = {}
+            // Errors es un objeto.. por eso tiene mapped()
+            for (const property in errors) {
+                console.log(msgErrorsObjet)
+                msgErrorsObjet = {
+                    ...msgErrorsObjet,
+                    [property] : errors[property].msg
+                    } 
+            }
+            return res.json({
+                meta:{
+                    User_Create: "No process"
+                },
+                validatorErrors: msgErrorsObjet 
+            })
         }
   },
 
@@ -88,7 +76,6 @@ module.exports = {
     processLogin : async (req,res) => {
 
         const errors = validationResult(req);
-
         try {
             if( errors.isEmpty()){
                 const user = await db.User.findOne({
@@ -117,40 +104,26 @@ module.exports = {
                         Token : token
                     }
                 })
-
             } 
             
             throw errors
-            
-            
 
         } catch (error) {
 
                 let msgErrorsObjet1 = {}; 
-                console.log("--------valor iniciales ------ ", msgErrorsObjet1 )
-                 error.errors.forEach(err => {
-                    console.log ("que valor tiene err:   " + err.msg )
-                    console.log ("que valor tiene msgerror:   ", msgErrorsObjet1  )
+                error.errors.forEach(err => {
                     msgErrorsObjet1 = {
                         ...msgErrorsObjet1,
                        [err.param] : err.msg
                     } 
                 })                    
                   
-                let {errors} = error
-                return res.json(msgErrorsObjet1)
-
-
-
-            console.log ("aca vienen los errores" , error)
-            return res.status(400).json({
-                    msg : "ando por aca",
-                    erroress : error
+                //console.log ("aca vienen los errores" , error)
+                return res.status(400).json({
+                        msg : msgErrorsObjet1,
+                        erroress : error
                         })
-
         }
-
-
         
     }
     

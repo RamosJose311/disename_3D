@@ -173,6 +173,7 @@ module.exports = {
             });
         }
     },
+    
     getImageProduct : async (req,res) => {
         /* devuelve la imagen del producto */
         console.log(req.params.imagen)
