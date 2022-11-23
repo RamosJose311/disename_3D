@@ -106,14 +106,38 @@
 .log_sec_main_form-container{
     width: 95%;
     text-align: left;
-    color:blueviolet
+    color:blueviolet;
+    position: relative;
 }
+
+
+/* password visible */
+.password-visible{
+    position: absolute;
+    right: 15px;
+    top: 1px;
+    /* background-color: blueviolet; */
+}
+.password-visible .fas.active{
+    display: block;
+}
+.password-visible .fas{
+    display: none;
+    color: blueviolet;
+    font-size: 20px;
+}
+/* ----------------- */
+
+
 
 .log_sec_main_form-container-boton{
     width: 95%;
     text-align: center;
-    color:blueviolet
+    color:blueviolet;
+    
 }
+
+
 .log_sec_main_form-container input{
     width: 100%;
 }
