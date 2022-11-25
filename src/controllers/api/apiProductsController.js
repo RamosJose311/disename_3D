@@ -9,7 +9,7 @@ module.exports = {
     //terminado
     all : async (req,res) => {
         
-        //console.log(req.body)
+         //console.log(req.body)
          try {
             //----------------- PAGINADO----------------
             let {limit = 10, page = 1} = req.query;
