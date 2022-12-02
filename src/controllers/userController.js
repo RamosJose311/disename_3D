@@ -84,7 +84,7 @@ module.exports = {
   //CONTROLADOR QUE TE RENDERIZA LA VISTA DE TU PERFIL
     profile:(req,res)=>{
         db.User.findByPk(req.session.userLogin.id,{
-             include: [
+            include: [
                 {
                     association : 'avatars',
                     attributes : ['avatar','userId']
@@ -96,13 +96,15 @@ module.exports = {
 
             ],
         })
+            //.then(response => response.json())
             .then(user => {
-                //return res.send(user)
                 return res.render('profile',{
                     user,
                     moment,
+                    
                 })
             })
+
             .catch(error => console.log(error))
     },
 

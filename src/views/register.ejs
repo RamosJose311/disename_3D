@@ -31,27 +31,41 @@
                     <button> <i class="fa-brands fa-google"></i> GOOGLE</button>
                     <P>registrate con el correo electrónico</P>
                 </div>
-                <form action="process" class="register_section_main-form" method="post">
+                <form action="process" class="register_section_main-form" id="register_section_main-form" method="post">
                     <div class="reg_sec_main_form-container">
-                        <input type="text" name="firstName"  placeholder="ingrese su nombre" value="<%= locals.old && old.firstName ? old.firstName : null %>">
+                        <input type="text" name="firstName" id="firstName" placeholder="ingrese su nombre" value="<%= locals.old && old.firstName ? old.firstName : null %>">
                         <span class="login_error"> <%= locals.errors && errors.firstName ? errors.firstName.msg : null  %>  </span>
+                        <span id="errorNombre" class="login_error"></span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="text" name="lastName" placeholder="ingrese apellido" value="<%= locals.old && old.lastName ? old.lastName : null %>">
+                        <input type="text" name="lastName" id="lastName" placeholder="ingrese apellido" value="<%= locals.old && old.lastName ? old.lastName : null %>">
                         <span class="login_error"> <%= locals.errors && errors.lastName ? errors.lastName.msg : null  %>  </span>
+                        <span id="errorApellido" class="login_error"></span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="email" name="email" placeholder="ingrese email" value="<%= locals.old && old.email ? old.email : null %>">
+                        <input type="email" name="email" id="email" placeholder="ingrese email" value="<%= locals.old && old.email ? old.email : null %>">
                         <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
+                        <span id="errorEmail" class="login_error"></span>
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" name="password" placeholder="ingrese password" >
-                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %>  </span>
+                        <input type="password" name="password" id="password" placeholder="ingrese password" >
+                        <span class="login_error"> <%= locals.errors && errors.password ? errors.password.msg : null  %></span>
+                        <span id="errorPassword" class="login_error"></span>
+                        <!-- <div class="password-visible">
+                            <i class="fas fa-eye" onclick="password_visible('ocultar',this)"></i>
+                            <i class="fas fa-eye-slash active"  onclick="password_visible('mostrar',this)"></i>
+                        </div> -->
                     </div>
                     <div class="reg_sec_main_form-container">
-                        <input type="password" name="password2" placeholder="confirme su password " >
+                        <input type="password" name="password2" id="password2" placeholder="confirme su password " >
                         <span class="login_error"> <%= locals.errors && errors.password2 ? errors.password2.msg : null  %>  </span>
+                        <span id="errorPassword2" class="login_error"></span>
+                    <!--  <div class="password-visible">
+                            <i class="fas fa-eye" onclick="password_visible('ocultar',this)"></i>
+                            <i class="fas fa-eye-slash active"  onclick="password_visible('mostrar',this)"></i>
+                    </div> -->
                     </div>
+                    <span id="errorForm" class="login_error"></span>
                     <div class="reg_sec_main_form-container">
                         <button type="submit">Iniciar Sesión</button>
                     </div>
@@ -61,6 +75,7 @@
                         <span>y</span>
                         <a href="">Términos y Condiciones</a>
                     </div>
+                    
                 </form>
             </main>
         </section>
@@ -70,6 +85,9 @@
 
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
+    <script src="/javascripts/userRegister.js"></script>
+    <!-- vinculo a la carpeta de js que esta en public -->
+    <script src="/javascripts/passwordViews.js"></script>
 </body>
 
 </html>

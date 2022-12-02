@@ -109,7 +109,7 @@
                 
             </form>
             <div style="margin:1%">                        
-                <form action="/users/destroy?_method=DELETE"  method="POST">
+                <form action="/users/destroy?_method=DELETE"  method="POST" id="eliminar">
                     <button class="form__button form__button--send" id="delete-button" type="submit" id="buttonSubmitDelete" onclick="return alert('¿Estas seguro de querer eliminar el usuario?')">Eliminar cuenta</button>
                 </form>
             </div>
@@ -117,5 +117,6 @@
     </main>
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
+
 </body>
 </html>

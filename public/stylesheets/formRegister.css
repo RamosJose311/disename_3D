@@ -115,11 +115,32 @@
 .reg_sec_main_form-container{
     width: 95%;
     text-align: center;
+    
 }
+
 
 .reg_sec_main_form-container input{
     width: 100%;
+    position: relative;
 }
+
+/* password visible */
+.password-visible{
+    position: absolute;
+    right: 15px;
+    top: 1px;
+    /* background-color: blueviolet; */
+}
+.password-visible .fas.active{
+    display: block;
+}
+.password-visible .fas{
+    display: none;
+    color: blueviolet;
+    font-size: 20px;
+}
+/* ----------------- */
+
 
 .reg_sec_main_form-container button{
     width: 100px;
