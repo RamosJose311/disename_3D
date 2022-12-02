@@ -42,7 +42,7 @@
 * 11 Y 12 DE NOVIEMBRE SE REALIZA LA ULTIMA REUNION PARA VERIFICAR QUE TODO FUNCIONE CORRECTAMENTE 
 
 
-## **DAYLIS DEL SEXTO SPRINT**
+>## **DAYLIS DEL SEXTO SPRINT**
 *(06/10/22).(asistencia: Juan, Jose, Santiago). Nos reunimos para hacer la división de tareas, desde el punto 1 hasta el punto 6.
 
 *(07/10/22). Asistencia:(Juan, Jose, Santiago). Empezamos a trabajar en la base de datos de nuestro proyecto(punto 4 y 5 del sprint)
@@ -54,3 +54,13 @@
 *(21/10/22). Asistencia(Juan, Geremias, Santiago). Nos dividimos las últimas tareas del punto 7(CRUD).
 
 *(23/10/22)asistencia(Juan, Geremias, Santiago). Contamos nuestros progresos y nos ayudamos en algunas tareas en las que nos habíamos trabado.
+
+>## **dayli septimo sprim**
+- lunes 28: se llevo a cabo la reunion para la division de tareas del septimo sprim , lo cuales e dividieron de la sieguiente manera.
+Santiago: La validacion de register en front-end y back-end
+Juan: La validacion de la creación y modificación de productos en frond-end y back-end
+José:la validacion de login en frond-end y back-end
+
+- jueves 1: 20:00 junta para resolver dudas y ver el progreso de los compañeros
+
+>## **dayli octavo sprim**
