@@ -152,13 +152,15 @@ $("password2").addEventListener("blur",function(){
 
         const elements = this.elements;
             for (let i = 0; i < elements.length - 1; i++) {
-
             if(!elements[i].value.trim()){
                 $('errorForm').innerText = 'Algunos de los campos no es valido'
+                console.log('no Esta todo bien')               
+            }else{
+                this.submit()
             }
         }
+     });
 
-    });
 
 
 /* ---------------------eliminar usuario "Profile"-------------------- */

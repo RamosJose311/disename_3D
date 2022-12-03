@@ -20,9 +20,17 @@
 
 .caja--menu-lista{
     display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
+    border: 2px solid red
+    
+}
+
+.caja--menu-lista h1{
+    width: 100%;
+    border: 2px solid green;
+    text-align: center;
 }
 
 .listado_categoria{
