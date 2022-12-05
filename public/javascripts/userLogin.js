@@ -1,4 +1,5 @@
 const $ = (element) => document.getElementById(element);
+console.log("userRegister.js connected!");
 
 
 const exRegs = {
@@ -34,7 +35,7 @@ $("password").addEventListener("blur",function(){
             break;
     }
 })
-$("register_section_main-form").addEventListener("submit", function (e) {
+$("login_section_main-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const elements = this.elements;
