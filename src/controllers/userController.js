@@ -98,6 +98,7 @@ module.exports = {
         })
             //.then(response => response.json())
             .then(user => {
+                //console.log(user)
                 return res.render('profile',{
                     user,
                     moment,
@@ -120,7 +121,7 @@ module.exports = {
     
 
     //return res.send(req.body)
-
+        console.log(errors,'-------------------------------------------')
         if (errors.isEmpty()) { 
             db.User.findByPk(req.session.userLogin.id,{
 
