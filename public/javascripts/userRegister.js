@@ -152,34 +152,14 @@ $("password2").addEventListener("blur",function(){
 
         const elements = this.elements;
             for (let i = 0; i < elements.length - 1; i++) {
-
             if(!elements[i].value.trim()){
                 $('errorForm').innerText = 'Algunos de los campos no es valido'
+                console.log('no Esta todo bien')               
+            }else{
+                this.submit()
             }
         }
-
     });
 
 
-/* ---------------------eliminar usuario "Profile"-------------------- */
-$("eliminar").addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    swal({
-        title: "¿Estás seguro?",
-        text: "Esta accion eliminara su perfil",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-        })
-        .then((willDelete) => {
-        if (willDelete) {
-            swal("Su perfil se elimino correctamente", {
-            icon: "success",
-        });
-        } else {
-            swal("Su perfil no a sido eliminado");
-        }
-    });
-
-});

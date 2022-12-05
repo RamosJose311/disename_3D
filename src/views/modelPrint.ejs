@@ -7,23 +7,20 @@
     
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
     <main class="general_main">
-        <div class="carrucel">
-         
-        </div>
+ 
         <div class="caja--menu-lista">
-        <div class="listado_categoria"><h1>categoria</h1>
-           
-            
-             <div><a href="/">mates</a></div>
-             <div><a href="/">figuras</a></div>
-             <div><a href="/">llaveros</a></div>
-             <div><a href="/">articulados</a></div>
-             <div><a href="/">portacelular</a></div>
-             <div><a href="/">cosplay</a></div>
-             <div><a href="/">juegos</a></div>
-             <div><a href="/">funkos</a></div>
-
-         </div>
+            <h1>CATEGORIAS</h1>
+            <div class="listado_categoria">
+                <div><a href="/">mates</a></div>
+                <div><a href="/">figuras</a></div>
+                <div><a href="/">llaveros</a></div>
+                <div><a href="/">articulados</a></div>
+                <div><a href="/">portacelular</a></div>
+                <div><a href="/">cosplay</a></div>
+                <div><a href="/">juegos</a></div>
+                <div><a href="/">funkos</a></div>
+            </div>
+        </div>
          <div class="caja-de-imagenes">    
             <% products.forEach( (product) => { %>
                 <div class="caja-de-producto">
@@ -43,7 +40,7 @@
                 
             <% }) %>
         </div>
-        </div>
+  
     </main>
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
