@@ -1,5 +1,5 @@
 const $ = (element) => document.getElementById(element);
-
+console.log("userLogin.js connected!");
 
 const exRegs = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
@@ -10,39 +10,41 @@ const exRegs = {
 $("email").addEventListener("blur",async function(){
     switch (true) {
         case !this.value.trim():
-            $('errorEmail').innerText = 'El email es obligatorio'
+            $('emailErroneo').innerText = 'El email es obligatorio'
             break;
     
         case !exRegs.exRegEmail.test(this.value):
-            $('errorEmail').innerText ="El Email no tiene el formato correcto"
+            $('emailErroneo').innerText ="El Email no tiene el formato correcto"
             break;
 
          default:
-            $('errorEmail').innerText =null
+            $('emailErroneo').innerText =null
             break;
     }
 }),
 $("password").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
-            $('errorPassword').innerText = 'La contraseña es obligatoria'
+            $('contraseñaErronea').innerText = 'La contraseña es obligatoria'
             break;
 
 
         default:
-            $('errorPassword').innerText =null
+            $('contraseñaErronea').innerText =null
             break;
     }
 })
-$("register_section_main-form").addEventListener("submit", function (e) {
+$("login_section_main-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const elements = this.elements;
         for (let i = 0; i < elements.length - 1; i++) {
-
         if(!elements[i].value.trim()){
-            $('errorForm').innerText = 'Algunos de los campos no es valido'
+            $('errorlogin').innerText = 'El email o la contraseña son incorrectos'
+                      
+        }else{
+            this.submit()
         }
     }
-
 });
+
