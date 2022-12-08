@@ -43,6 +43,8 @@ $("login_section_main-form").addEventListener("submit", function (e) {
 
         if(!elements[i].value.trim()){
             $('errorForm').innerText = 'Algunos de los campos no es valido'
+        }else{
+            this.submit()
         }
     }
 
