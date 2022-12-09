@@ -27,8 +27,7 @@
                         <a href="../users/login">Iniciar Sesión</a>
                     </div>
                 </div>
-                <form action="login"  method="POST" class="login_section_main-form" id="login_section_main-form">  
-                    <!-- Formulario Login-->
+                <form action="login"  method="POST" class="login_section_main-form" id="login_section_main-form">    <!-- Formulario Login-->
                     <div class="log_sec_main_form-container">
                         <input type="email" id= "email" name="email" placeholder="Ingrese su email">
                         <span class="login_error"> <%= locals.errors && errors.email ? errors.email.msg : null  %>  </span>
