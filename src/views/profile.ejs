@@ -16,17 +16,19 @@
             </div>
         <section class="profile_section">
             
-            <form class="profile_form" action="/users/update?_method=PUT"  method="POST"  enctype="multipart/form-data">
+            <form class="profile_form" action="/users/update?_method=PUT" id="profileForm" method="POST"  enctype="multipart/form-data">
                 <div class="profile_form_group" >
                     <div class="profile_form_contenedor">
                         <label for="firstName">Nombre</label>
                         <input  type="text" id="firstName" name="firstName" value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>">
                         <span class="login_error"> <%= locals.errors && errors.firstName ? errors.firstName.msg : null %></span>
+                        <span id="errorNombre" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
                         <label for="lastName">Apellido</label>
                         <input type="text" id="lastName" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>">
                         <span class="login_error"> <%= locals.errors && errors.lastName ? errors.lastName.msg : null  %></span>
+                        <span id="errorApellido" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
                         <label for="email">Correo Electronico</label>
@@ -35,6 +37,7 @@
                     <div class="profile_form_contenedor">
                         <label for="dateBirth">Fecha de Nacimiento</label> <br>
                         <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirth).format('YYYY-MM-DD') %>" required>
+                        <span id="errorNacimiento" class="login_error"></span>
                     </div>
                 </div>
 
@@ -56,13 +59,14 @@
                     <div class="profile_form_contenedor">
                         <h3> Domicilio</h3>
 
-                        <label for="address"> Calle</label>
+                        <label for="address"> Direccion :</label>
                         <input type="text" id="address" name="address" value="<%= user.address %> ">
+                        <span id="errorCalle" class="login_error"></span>
                         <hr>
 
                         <div class="section--add input">
                             <label for="">Ciudad</label>
-                        <select name="city" id="">
+                        <select name="city" id="city">
                             <label value="" hidden selected>Seleccione su ciudad</label>
                             <option value="cutral co" <%= user.city === 'cutral co' && 'selected' %>>Cutral Co </option>
                             <option value="plaza huincul" <%= user.city === 'plaza huincul' && 'selected' %>>Plaza Huincul </option>
@@ -70,34 +74,41 @@
                             <option value="buenos aires" <%= user.city === 'buenos aires' && 'selected' %>>Buenos Aires </option>
                             <option value="jujuy" <%= user.city === 'jujuy' && 'selected' %>>Jujuy </option>
                         </select>
+                        <span id="errorCiudad" class="login_error"></span>
                         </div>
 
                         <div class="section--add input">
                             <label for="">Provincia</label>
-                        <select name="province" id="">
+                        <select name="province" id="province">
                             <option value="" hidden selected>Seleccione su provincia</option>
                             <option value="neuquen" <%= user.province === 'neuquen' && 'selected' %>>Neuquén</option>
                             <option value="buenos aires" <%= user.province === 'buenos aires' && 'selected' %>>Buenos Aires</option>
                             <option value="jujuy" <%= user.province === 'jujuy' && 'selected' %>>jujuy</option>
                         </select>
+                        <span id="errorProvincia" class="login_error"></span>
                         </div>
 
                         <div class="section--add input">
                             <label for="">Pais</label>
-                            <select name="country" id="">
+                            <select name="country" id="country">
                                 <option value="" hidden selected>Seleccione su Pais</option>
                                 <option value="Argentina" <%= user.country === 'Argentina' && 'selected' %>>Argentina</option>
                                 <option value="Chile" <%= user.country === 'Chile' && 'selected' %>>Chile</option>
                                 <option value="Uruguay" <%= user.country === 'Uruguay' && 'selected' %>>Uruguay</option>
                             </select>
+                            <span id="errorPais" class="login_error"></span>
                         </div>
                     </div>
                     <div class="profile_form_contenedor">
                         <h3>Acerca de mi</h3>
-                        <textarea name="description" id="" cols="30" rows="10" value="<%= user.description %>"></textarea>
+                        <textarea name="description" id="sobreMi" cols="30" rows="10" value="<%= user.description %>"></textarea>
+                        <span id="errorSobreMi" class="login_error"></span>
                         <div>
+                            <br>
+                            <br>
                             <label class="form__button form__button--cancel" for="imagen">Seleccione imagen</label>
-                        <input hidden type="file" id="imagen" name="avatar" accept="image/*">
+                        <input hidden type="file" id="imagenPerfil" name="avatar" accept="image/*">
+                        <span id="errorImgPerfil" class="login_error"></span>
                         </div>
                     </div>
                     
@@ -107,11 +118,12 @@
                     <button class="imagen--product--add" type="submit">Guardar Cambios</button>                    
                 </div>
                 
+                <span id="errorFormPerfil" class="login_error"></span>
                 
             </form>
             <div style="margin:1%">                        
                 <form action="/users/destroy?_method=DELETE"  method="POST" id="eliminar">
-                    <button class="form__button form__button--send" id="delete-button" type="submit" id="buttonSubmitDelete" onclick="return alert('¿Estas seguro de querer eliminar el usuario?')" >Eliminar cuenta</button>
+                    <button class="form__button form__button--send" id="delete-button" type="submit" >Eliminar cuenta</button>
                 </form>
             </div>
         </section>
