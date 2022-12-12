@@ -111,8 +111,9 @@ module.exports = {
 
     //CONTROLADOR QUE TE GUARDA LOS CAMBIOS EN EL PERFIL
     update : (req,res) => {
-        const {firstName,lastName,rol,email,address,dateBirth,avatar,city,province,description,genderId,country,genero}= req.body
+        
         const errors =validationResult(req);
+        const {firstName,lastName,rol,email,address,dateBirth,avatar,city,province,description,genderId,country,genero}= req.body
         let avatarUser = "";
         //return res.send(req.body)
         if (req.file) {
