@@ -10,16 +10,18 @@
             <main class="general_main"> 
                 <section class="section--add">
                     <h1 class="form__title--add">Agregar producto</h1>
-                    <form action="/products/addPersonalizado" method="POST" enctype="multipart/form-data" class="form__register-add">
+                    <form action="/products/addPersonalizado" method="POST" enctype="multipart/form-data" class="form__register-add" id="personalizadoForm">
                         <div class="caja--product--add">
                             <label for="name" class="label--add">Nombre</label>
                             <input type="text" class="form--input"  id="name" name="name" value="<%= locals.old && old.name ? old.name : null %>">
                             <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                            <small class="error" id="msg_name"></small>
                         </div> 
                         <div class="caja--product--add">
                             <label for="height" class="label--add">Altura</label>
                             <input type="number" class="" id="height" name="height" placeholder="en centimetros" value="<%= locals.old && old.height ? errors.height ? null : old.height : null %>">
                             <small class="text-danger"><%= locals.errors && errors.height ? errors.height.msg : null %></small>
+                            <small class="error" id="msg_height"></small>
                         </div>
                         <div class="caja--product--add">
                             <label for="materialId" class="label--add">Material</label>
@@ -30,6 +32,7 @@
                                 <% }) %>
                             </select>
                             <small class="text-danger"><%= locals.errors && errors.materialId? errors.materialId.msg : null %></small>
+                            <small class="error" id="msg_materialId"></small>
                         </div>
                         <div class="caja--product--add">
                             <label for="categoryId" class="label--add">Categoría</label>
@@ -40,11 +43,13 @@
                                 <% }) %>
                             </select>
                             <small class="text-danger"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small>
+                            <small class="error" id="msg_categoryId"></small>
                         </div>
                         <div class="tex--add">
                             <h4 class="Descripcion-add">Descripcion</h4>
                             <textarea class="detalle--textarea-add " name="description" id="description" cols="35" rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
                             <small class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+                            <small class="error" id="msg_description"></small>
                         </div>
 
                         
@@ -56,15 +61,12 @@
                             <small class="text-danger"><%= locals.errors && errors.imagePersonal ? errors.imagePersonal.msg : null %></small>
                             </a>
                         </div>
-        
 
                         <div class="caja--product--add boton--cancelar--guardar">
                             <a href="/" class="form__button form__button--cancel">Cancelar</a>
-                            <button class="form__button form__button--send" type="submit">Guardar</button>
+                            <button class="form__button form__button--send" type="submit" id="personalizadoGuardar">Guardar</button>
                         </div>
-                        
-        
-        
+                        <h6 class="errorForm" id="msg_personalizadoForm"></h6>
                     </form>
                 </section>
             </main>
@@ -72,6 +74,13 @@
                 </div>
                 <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
                 <%- include('./partials/footer') %>
-    </body>
+
+    <!-- vinculo a la carpeta de js que esta en public -->
+    <script src="/javascripts/personalizado.js"> 
+
+    
+    </script>
+    
+</body>
 
     </html>
