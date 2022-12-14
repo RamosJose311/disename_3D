@@ -9,26 +9,30 @@
     <main class="general_main"> 
         <section class="section--add">
             <h1 class="form__title--add">Agregar producto</h1>
-            <form action="/admin/add" method="POST" enctype="multipart/form-data" class="form__register-add">
+            <form action="/admin/add" method="POST" enctype="multipart/form-data" class="form__register-add" id="newProductForm">
                 <div class="caja--product--add">
                     <label for="name" class="label--add">Nombre</label>
                     <input type="text" class="form--input"  id="name" name="name" value="<%= locals.old && old.name ? old.name : null %>">
                     <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                    <small class="error" id="msg_name"></small>
                 </div> 
                 <div class="caja--product--add">
                     <label for="price" class="label--add">Precio</label>
                     <input type="number" class="" id="price" name="price" value="<%= locals.old && old.price? old.price : null %>">
                     <small class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+                    <small class="error" id="msg_price"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="discountlabel--add">Descuento</label>
                     <input type="number" class="" id="discount" name="discount" value="<%= locals.old && old.discount ? errors.discount ? 0 : old.discount : 0 %>">
                     <small class="text-danger"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                    <small class="error" id="msg_discount"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="height" class="label--add">Altura</label>
                     <input type="number" class="" id="height" name="height" placeholder="en centimetros" value="<%= locals.old && old.height ? errors.height ? null : old.height : null %>">
                     <small class="text-danger"><%= locals.errors && errors.height ? errors.height.msg : null %></small>
+                    <small class="error" id="msg_height"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="materialId" class="label--add">Material</label>
@@ -39,11 +43,13 @@
                         <% }) %>
                     </select>
                     <small class="text-danger"><%= locals.errors && errors.materialId? errors.materialId.msg : null %></small>
+                    <small class="error" id="msg_materialId"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="time" class="label--add">Tiempo</label>
                     <input type="number" class="" id="time" name="time" placeholder="en minutos" value="<%= locals.old && old.time ? errors.time ? null : old.time : null %>">
                     <small class="text-danger"><%= locals.errors && errors.time ? errors.time.msg : null %></small>
+                    <small class="error" id="msg_time"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="categoryId" class="label--add">Categoría</label>
@@ -54,12 +60,15 @@
                         <% }) %>
                     </select>
                     <small class="text-danger"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small>
+                    <small class="error" id="msg_categoryId"></small>
                 </div>
                 <div class="tex--add">
                     <h4 class="Descripcion-add">Descripcion</h4>
                     <textarea class="detalle--textarea-add " name="description" id="description" cols="35" rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
                     <small class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+                    <small class="error" id="msg_description"></small>
                 </div>
+
 
                 <!--FALTA HACER ALGO-->
                 <div class="label--add">
@@ -67,7 +76,6 @@
                         <label class="form__button--imagen" for="imageProduct">Seleccione una imagen</label>
                         <input hidden class="form--input" type="file" id="imageProduct" name="imageProduct" accept="image/*" multiple>
                         <small class="text-danger"><%= locals.errors && errors.imageProduct ? errors.imageProduct.msg : null %></small>
-
                     </label>
                     </a>
                 </div>
@@ -77,10 +85,11 @@
                 
                 <div class="caja--product--add boton--cancelar--guardar">
                     <a href="/" class="form__button form__button--cancel">Cancelar</a>
-                    <button class="form__button form__button--send" type="submit">Guardar</button>
+                    <button class="form__button form__button--send" type="submit" id="newProductGuardar">Guardar</button>
                 </div>
             </form>
         </section>
     </main>
+    <script src="/javascripts/newProduct.js"></script>
 </body>
 
