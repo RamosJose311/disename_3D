@@ -4,33 +4,48 @@
     <%- include('./partials/header') %>
 
     <main class="general_main">
-        <div>
-            <div class="caja--menu-lista">
-                <h2 class="products-title">Resultados de la búsqueda: <strong><%= keywords %></strong></h2>
-            </div class="caja-de-imagenes">
+        <div class="find_General" >
+            <div class="find_contenedor_title">
+                <h2 class="find_Title">Resultados de la búsqueda: <strong><%= keywords %></strong></h2>
+            </div>
+            <div class="caja-de-imagenes">
             <% if (result.length > 0) { %>
                 <% result.forEach( (product) => { %>
                     <div class="caja-de-producto">
                         <a href="/products/detalle/<%= product.id%>">
-                            <figure>
+                            <figure class="find_Figure">
                                 <% if (product.images.length !== 0) { %>
-                                    <p> <%= product.images[0].file %> </p>
+                                    <p> <%= product.name %> </p>
                                     <img src="/images/imgProducts/<%= product.images[0].file %>">                         
                                 <% } %>
                             </figure>
                             <article>
-                                <p><%= product.name %>   "$" <%= product.price %> </p>
+                                <p>'$' <%= product.price %> </p>   
+                                <p> <%= product.description %> </p>
                             </article>
                         </a>
                     </div>
                 <% }) %>
 
 				<% }else{ %>
-					<div class="col-12">
-						<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
-					</div>
-			
+					<div class="find_Contenedor">
+                        <div class="find_Alert" >
+                            OOPS!!!
+                        </div>
+                        <div class="find_Mensaje" >
+                            No se ha encontrado ningún producto
+                            <p>¿Que debo hacer?</p>
+                            <ul>
+                                <li> Compruebe los términos introducidos</li>
+                                <li> Intente utilizar una sola palabra</li>
+                                <li> Utilice términos genéricos en la búsqueda</li>
+                                <li> Utilice sinonimos al término deseado</li>
+                            </ul>
+                        </div>
+
+                    </div>
 			<% } %>
+        </div>
         </div>
     </main>
 

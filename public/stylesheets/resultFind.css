@@ -1,0 +1,108 @@
+
+.find_General{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3%;
+    
+}
+
+.find_General a{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: 3%;
+}
+
+.find_contenedor_title{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 5%;
+    background-color: white;
+    color: red;
+    border-radius: 60% 10%;
+    box-shadow: 2px 1px 3px rgb(238, 81, 42), 3px 2px 5px rgb(226, 113, 109);
+}
+
+
+.find_Title{
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.find_Figure{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1%;
+}
+
+.find_Figure img{
+    width: 100%;
+}
+
+.find_Contenedor{
+    display: flex;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 5px red;
+    margin: 10px auto 20px;
+}
+
+.find_Alert {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto ;
+    width: 100%;
+    color: rgba(30, 117, 30, 0.692);
+    font-size: 35px;
+
+}
+
+.find_Mensaje{
+    margin-top: 7px;
+    width: 100%;
+    color:rgb(60, 60, 65);
+    font-size: 12px;
+}
+
+
+@media(min-width:768px) {
+
+    .find_General{
+        width: 80%;
+    }
+    
+    .find_Title{
+        font-size: 28px;
+    }
+    
+    .find_Contenedor{
+        width: 90%;
+    }
+    
+    .find_Alert {
+        width: 40%;
+    }
+    
+    .find_Mensaje{
+        width: 60%;
+    }
+}
+
+@media(min-width:1024px) {
+
+        .find_General{
+            max-width: 60%;
+        }
+
+}   

@@ -243,8 +243,7 @@ module.exports = {
 			},
 		})
 			.then((result) => {
-
-				return res.render("result", {
+                return res.render("result", {
 					result,
 					toThousand,
 					keywords,
