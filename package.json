@@ -25,7 +25,7 @@
     "mysql2": "^2.3.3",
     "node-fetch": "^3.3.0",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.25.5",
+    "sequelize": "^6.27.0",
     "sequelize-cli": "^6.5.2"
   }
 }

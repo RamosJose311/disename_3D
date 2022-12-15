@@ -40,8 +40,8 @@ $("login_section_main-form").addEventListener("submit", function (e) {
     const elements = this.elements;
         for (let i = 0; i < elements.length - 1; i++) {
         if(!elements[i].value.trim()){
+            console.log(i)
             $('errorlogin').innerText = 'El email o la contraseña son incorrectos'
-                      
         }else{
             this.submit()
         }
