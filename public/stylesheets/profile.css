@@ -41,7 +41,7 @@
 
 .profile_form h3{
     width: 100%;
-    color: orangered;
+    color: var(--colorTitulo);
     text-align: center;
     margin: 0;
     padding: 0;

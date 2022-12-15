@@ -1,6 +1,7 @@
 
 const $ = (element) => document.getElementById(element);
 console.log("profile.js connected!");
+/* const apiUrlBase = "https://apis.datos.gob.ar/georef/api" */
 
 const exRegs = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
@@ -219,3 +220,25 @@ $("delete-button").addEventListener("click", function (e) {
         })
 
 });
+
+/* const getProvinces = async () => {
+    try {
+
+        const response = await fetch(`${apiUrlBase}/provincias`);
+        const result = await response.json();
+
+        console.log(result.provincias)
+        
+    } catch (error) {
+        console.error
+    }
+
+}
+
+
+
+window.addEventListener('load', () => {
+
+    getProvinces()
+
+}) */
