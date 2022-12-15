@@ -124,6 +124,18 @@ $("password").addEventListener("blur",function(){
     }
 })
 
+/* -------------------cartelito password--------------------- */
+$("password").addEventListener("click",function(){
+    $("recommended").classList.remove("class-recommended")
+    $("recommended").classList.add("class-recommended2")
+
+})
+
+$("password2").addEventListener("click",function (){
+    $("recommended").classList.remove("class-recommended2")
+    $("recommended").classList.add("class-recommended")
+})
+
 
 /* ------------------------confirmacion del password------------------------------------ */
 
