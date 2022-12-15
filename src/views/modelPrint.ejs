@@ -11,6 +11,18 @@
         <div class="caja--menu-lista">
             <h1>CATEGORIAS</h1>
             <div class="listado_categoria">
+                <% let a=[] %> 
+                <% products.forEach( (product) => { %>
+                    a.push(product.categories.name) 
+                     <%= a %> 
+                
+                <% }) %>
+
+
+                <ul>
+                    <li><a href="/"><%= products[0].categories.name %> </a></li>
+                </ul>
+
                 <div><a href="/">mates</a></div>
                 <div><a href="/">figuras</a></div>
                 <div><a href="/">llaveros</a></div>
@@ -20,6 +32,7 @@
                 <div><a href="/">juegos</a></div>
                 <div><a href="/">funkos</a></div>
             </div>
+
         </div>
          <div class="caja-de-imagenes">    
             <% products.forEach( (product) => { %>

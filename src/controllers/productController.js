@@ -45,6 +45,11 @@ module.exports = {
                 {
                     association : 'images',
                     attributes : ['id', 'file','productsId']
+                },
+                {
+                    association : 'categories',
+                    attributes : ['name']
+                    
                 }
             ],
 
@@ -62,7 +67,7 @@ module.exports = {
     },
 
 
-    // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS PARA IMPRIMIR --OK
+    // VISTA QUE MUESTRA LOS PRODUCTOS SOLICITADOS POR USUARIOS --OK
     reqPersonalizados: (req, res) => {
         
         db.Product.findAll({
@@ -251,7 +256,5 @@ module.exports = {
 			})
             .catch(error => console.log(error))
     },
-
-
 }
 

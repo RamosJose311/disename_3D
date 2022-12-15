@@ -78,8 +78,8 @@
 
 .caja-de-producto:hover {
     box-shadow: 3px 3px 6px rgba(211, 28, 28, 0.5);
-    border: 1px solid rgb(85, 4, 54);
-    background-color: rgb(192, 216, 85)
+    border: 0px solid rgb(85, 4, 54);
+    background-color: rgb(215, 219, 154)
   }
 
 .listado_categoria h1{
