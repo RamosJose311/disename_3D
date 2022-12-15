@@ -1,0 +1,38 @@
+
+
+.specialTittle1 {
+
+  	font-family: --letraGaramond;
+    font-size: 45px;
+  	letter-spacing: 0;
+  	padding: .25em 0 .325em;
+	display: block;
+	margin: 0 auto;
+  	text-shadow: 4px 4px 80px rgba(153, 13, 13, 0.5);
+
+/* Clip Background Image */
+
+	  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+}

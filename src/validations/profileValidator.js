@@ -3,6 +3,7 @@ const db = require('../database/models');
 
 module.exports = [
 
+  
     check('firstName')
         .notEmpty().withMessage('El nombre es obligatorio').bail()
         .isLength({
