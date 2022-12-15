@@ -7,41 +7,38 @@
     
     <!-- ======================== BODY || MAQUETADO DEL MAIN ======================== -->
     <main class="general_main">
-        <div class="carrucel">
-         
-        </div>
+        
         <div class="caja--menu-lista">
-        <div class="listado_categoria"><h1>categoria</h1>
-           
-            
-             <div><a href="/">mates</a></div>
-             <div><a href="/">figuras</a></div>
-             <div><a href="/">llaveros</a></div>
-             <div><a href="/">articulados</a></div>
-             <div><a href="/">portacelular</a></div>
-             <div><a href="/">cosplay</a></div>
-             <div><a href="/">juegos</a></div>
-             <div><a href="/">funkos</a></div>
-
-         </div>
-         <div class="caja-de-imagenes">    
+            <h3>CATEGORIAS</h3>
+            <div class="listado_categoria">
+                <ul>
+                    <% menu.forEach( (element,index) => { %>
+                        <li><button id="boton" class="bt-neon" ><%= element %></button></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <h1 class = "product-title" >PRODUCTOS</h1>
+        <div class="caja-de-imagenes">    
             <% products.forEach( (product) => { %>
                 <div class="caja-de-producto">
                     <a href="/products/detalle/<%= product.id%>">
-                        <figure>
+                        <figure class="caja-de-figura">
                             <% if (product.images.length !== 0) { %>
-                                <p> <%= product.images[0].file %> </p>
+                                <h3> <%= product.name %> </h3>
                                 <img src="/images/imgProducts/<%= product.images[0].file %>">                         
                             <% } %>
                         </figure>
                         <article>
-                            <p><%= product.name %>   "$" <%= product.price %> </p>
+                            <p>$ <%= product.price %> </p>   
+                            <br>
+                            <p> <%= product.description %> </p>
                         </article>
                     </a>
                 </div>
             <% }) %>
         </div>
-        </div>
+
     </main>    <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
 </body>

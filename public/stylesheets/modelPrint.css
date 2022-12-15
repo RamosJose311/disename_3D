@@ -22,26 +22,48 @@
     width: 100%;
 }
 
-.caja--menu-lista h1{
+.caja--menu-lista h3{
     width: 100%;
-    border: 2px solid green;
+    font-family: var(--letraGaramond);
     text-align: center;
+    font-size: 1rem;
 }
 
 .listado_categoria{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
-    width: 25%;
-    border: 1px solid white;
-    align-content: flex-start;
-    padding: 0px;
-    margin-top: 7px;
-    background-color: black;
-    box-shadow: 0 0 10px red;
+    width: 50%;
+    padding: 3px 0px;
+    margin: auto;
+    background-color: rgb(109, 6, 69);
+    box-shadow: 2px 2px 3px red;
     color:var(--colorLetra);
-    height: -webkit-fill-available;;
+    border-radius: 5px 10px;
+
+
 }
+
+.listado_categoria ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+.listado_categoria ul li{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.listado_categoria ul button{
+    margin: 3px;
+    color: green
+}
+
 
 .caja-de-imagenes{
     display:flex;
@@ -52,28 +74,12 @@
 }
 
 .caja-de-producto{
-
-
     border-radius: 5px;
     overflow: hidden;
     transition: 300ms;
     margin: 20px 0;
-    background-color: rgb(132, 111, 230)
-
-
-    /*     display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(11, 185, 49);
-    width: 48%;
-    padding: 0px;
-    margin-top: 7px;
-    margin-right: 4px;
-    margin-bottom :7px;
-    box-shadow: 0 0 10px red;
-   background-color: rgb(221, 62, 181); */
+    background-color: rgb(132, 111, 230);
+   
 }
 
 .caja-de-producto:hover {
@@ -82,34 +88,39 @@
     background-color: rgb(215, 219, 154)
   }
 
-.listado_categoria h1{
-    font-size: 13px;
-    padding: opx;
-    margin: 0px;
-    color:white;
-
-}
-.listado_categoria a{
-    font-size: 12px;
-    margin:0px;
-    padding: 0px;
+.caja-de-producto a{
     text-decoration: none;
-    color :white;
-    
+
+}
+
+.product-title{
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 80%;
+    font-size: 28px;
+    text-align: center;
 }
 
 
-.caja img{
+.caja-de-figura{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
-
+    margin: 1%;
 }
 
-.caja p{
+.caja-de-figura img{
+    width: 95%;
+}
+
+.caja-de-producto p{
     display: inline-block;
     font-size: 13px;
-    text-transform: uppercase;
     margin:0px auto;
-    padding: 0px;
+    padding: 0px 15px;
+    font-family: var(--letraGaramond);
+    font-size: 18px;
 }
 
 /*====== Media-Queries ======*/

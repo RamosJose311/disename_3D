@@ -21,6 +21,10 @@ module.exports = {
                 {
                     association : 'images',
                     attributes : ['id', 'file','productsId']
+                },{
+                    association : 'categories',
+                    attributes : ['name']
+                    
                 }
             ],
 
@@ -29,9 +33,16 @@ module.exports = {
             }
          })
                     .then(products => {
+                        let menu=[]
+                        products.forEach(element => {
+                            if(!menu.includes(element.categories.name)){
+                                menu.push(element.categories.name)
+                            }
+                        });
                         //return res.send(products) 
                         res.render('modelDisponible',{
                             products,
+                            menu,
                             toThousand
                      })})
                      .catch(error => console.log(error))
@@ -58,9 +69,18 @@ module.exports = {
             }
         })
                     .then(products => { 
-                        //return res.send(products) 
+
+                        let menu=[]
+                        products.forEach(element => {
+                            if(!menu.includes(element.categories.name)){
+                                menu.push(element.categories.name)
+                            }
+                        });
+                        
+
                         res.render('modelPrint',{
                         products,
+                        menu,
                         toThousand
                      })})
                      .catch(error => console.log(error))
