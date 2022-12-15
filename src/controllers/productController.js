@@ -213,24 +213,37 @@ module.exports = {
     search : (req,res) => {
 
         let { keywords } = req.query;
-
+        
 		db.Product.findAll({
+            include: [
+                {
+                    association : 'images',
+                    attributes : ['id', 'file','productsId']
+                },
+                {
+                    association : 'materials',
+                    attributes : ['name']
+                    
+                },
+                {
+                    association : 'categories',
+                    attributes : ['name']
+                    
+                }
+            ],
 			where: {
 				[Op.or]: [
 					{
-						name: {
-							[Op.substring]: keywords,
-						},
+						name: {	[Op.substring]: keywords}
 					},
 					{
-						description: {
-							[Op.substring]: keywords,
-						},
+						description: {[Op.substring]: keywords}
 					},
 				],
 			},
 		})
 			.then((result) => {
+
 				return res.render("result", {
 					result,
 					toThousand,
