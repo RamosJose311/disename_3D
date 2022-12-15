@@ -1,4 +1,4 @@
-console.log("personalizado.js connected!");
+console.log("newProduct.js connected!");
 
 const $getId = (element) => document.getElementById(element);   
 
@@ -6,7 +6,7 @@ window.onload = function(){
     console.log("estamos llegando")
 
     let errores = {}    
-    const elementForm = $getId('personalizadoForm').elements
+    const elementForm = $getId('newProductForm').elements
  
     $getId('name').focus()
 
@@ -17,6 +17,30 @@ window.onload = function(){
             errores.name = ""
          } 
         $getId('msg_name').innerHTML = errores.name
+    })
+
+    $getId('price').addEventListener('blur', function(){
+        if($getId('price').value.length < 1){
+            errores.price = "El precio es obligatorio"
+        }else if($getId('price').value <= 0.1){
+            errores.price = "Debe ingresar un valor mayor a 0.1 cm"
+        }else{
+            errores.price = ""
+        } 
+        $getId('msg_price').innerHTML = errores.price
+        
+    })
+    
+    $getId('discount').addEventListener('blur', function(){
+        if($getId('discount').value.length < 1){
+            errores.discount = "El descuento es obligatorio"
+        }else if($getId('discount').value < 0 || $getId('discount').value > 99 ){
+            errores.discount = "Debe ingresar un valor entre 0 y 99"
+        }else{
+            errores.discount = ""
+        } 
+        $getId('msg_discount').innerHTML = errores.discount
+        
     })
 
     $getId('height').addEventListener('blur', function(){
@@ -40,9 +64,21 @@ window.onload = function(){
         $getId('msg_materialId').innerHTML = errores.materialId
     })
 
+    $getId('time').addEventListener('blur', function(){
+        if($getId('time').value.length < 1){
+            errores.time = "El tiempo de impresión es obligatorio"
+        }else if($getId('time').value <= 0.1){
+            errores.time = "Debe ingresar un valor mayor a 0.1 cm"
+        }else{
+            errores.time = ""
+        } 
+        $getId('msg_time').innerHTML = errores.time
+        
+    })
+
     $getId('categoryId').addEventListener('blur', function(){
         if($getId('categoryId').value.length < 1){
-            errores.categoryId = "Debe seleccionar material"
+            errores.categoryId = "Debe seleccionar Categoria"
         }else{
             errores.categoryId = ""
          } 
@@ -61,22 +97,22 @@ window.onload = function(){
 
     console.log(errores)
 
-    $getId('personalizadoGuardar').addEventListener('click', function (event) {
+    $getId('newProductGuardar').addEventListener('click', function (event) {
             event.preventDefault()
             console.log("estamos bien")
+            console.log(elementForm)
             for (let i=0; i< elementForm.length-2; i++){
                 if (!elementForm[i].value){
                     console.log('%cEsta vacio','color: red ', elementForm[i])
-                    $getId("msg_personalizadoForm").innerHTML = "Aun hay campos sin completar"
-                } else if (!elementForm[5].value) {
-                    $getId("msg_personalizadoForm").innerHTML = "Para finalizar su pedido, es importante que ingrese una imagen ilustrativa"
+                    console.log('%cFalta imagen','color: blue ', elementForm[i])
+                    //$getId("msg_personalizadoForm").innerHTML = "Aun hay campos sin completar"
+                } else if (!elementForm[8].value) {
+                    //$getId("msg_personalizadoForm").innerHTML = "Para finalizar su pedido, es importante que ingrese una imagen ilustrativa"
                 } else {
                     console.log('%cYa no Esta vacio','color: green ', elementForm[i])
-                    $getId("msg_personalizadoForm").innerHTML = ""
-                    $getId('personalizadoForm').submit()
+                    //$getId("msg_personalizadoForm").innerHTML = ""
+                    //$getId('personalizadoForm').submit()
                 }
             }
         })
-
-
-}
+    }

@@ -19,23 +19,23 @@
             <form class="profile_form" action="/users/update?_method=PUT" id="profileForm" method="POST"  enctype="multipart/form-data">
                 <div class="profile_form_group" >
                     <div class="profile_form_contenedor">
-                        <label for="firstName">Nombre</label>
+                        <h3 for="firstName">Nombre</h3>
                         <input  type="text" id="firstName" name="firstName" value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>">
                         <span class="login_error"> <%= locals.errors && errors.firstName ? errors.firstName.msg : null %></span>
                         <span id="errorNombre" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
-                        <label for="lastName">Apellido</label>
+                        <h3 for="lastName">Apellido</h3>
                         <input type="text" id="lastName" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>">
                         <span class="login_error"> <%= locals.errors && errors.lastName ? errors.lastName.msg : null  %></span>
                         <span id="errorApellido" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
-                        <label for="email">Correo Electronico</label>
+                        <h3 for="email">Correo Electronico</h3>
                         <input type="text" id="email"  name="email" value="<%= user.email %>" readonly>
                     </div>
                     <div class="profile_form_contenedor">
-                        <label for="dateBirth">Fecha de Nacimiento</label> <br>
+                        <h3 for="dateBirth">Fecha de Nacimiento</h3> <br>
                         <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirth).format('YYYY-MM-DD') %>" required>
                         <span id="errorNacimiento" class="login_error"></span>
                     </div>
@@ -65,31 +65,28 @@
                         <hr>
 
                         <div class="section--add input">
-                            <label for="">Ciudad</label>
-                        <select name="city" id="city">
-                            <label value="" hidden selected>Seleccione su ciudad</label>
-                            <option value="cutral co" <%= user.city === 'cutral co' && 'selected' %>>Cutral Co </option>
-                            <option value="plaza huincul" <%= user.city === 'plaza huincul' && 'selected' %>>Plaza Huincul </option>
-                            <option value="zapala" <%= user.city === 'zapala' && 'selected' %>>Zapala </option>
-                            <option value="buenos aires" <%= user.city === 'buenos aires' && 'selected' %>>Buenos Aires </option>
-                            <option value="jujuy" <%= user.city === 'jujuy' && 'selected' %>>Jujuy </option>
-                        </select>
-                        <span id="errorCiudad" class="login_error"></span>
-                        </div>
-
-                        <div class="section--add input">
-                            <label for="">Provincia</label>
+                            <h3 >Provincia</h3>
+                            
+                            <input hidden type="text" class="form-input" id="province-input" value="<%= user.province %>"><%= user.province %>
+                            
                         <select name="province" id="province">
-                            <option value="" hidden selected>Seleccione su provincia</option>
-                            <option value="neuquen" <%= user.province === 'neuquen' && 'selected' %>>Neuquén</option>
-                            <option value="buenos aires" <%= user.province === 'buenos aires' && 'selected' %>>Buenos Aires</option>
-                            <option value="jujuy" <%= user.province === 'jujuy' && 'selected' %>>jujuy</option>
                         </select>
                         <span id="errorProvincia" class="login_error"></span>
                         </div>
 
                         <div class="section--add input">
-                            <label for="">Pais</label>
+                            <h3>Ciudad</h3>
+                            <input hidden type="text" class="form-input" id="city-input" value="<%= user.city %>"><%= user.city %>
+                            
+                        <select name="city" id="city">
+
+                        </select>
+                        <span id="errorCiudad" class="login_error"></span>
+                        </div>
+
+
+                        <div class="section--add input">
+                            <h3>Pais</h3>
                             <select name="country" id="country">
                                 <option value="" hidden selected>Seleccione su Pais</option>
                                 <option value="Argentina" <%= user.country === 'Argentina' && 'selected' %>>Argentina</option>
@@ -131,6 +128,67 @@
     <!-- ======================== BODY || MAQUETADO DEL fOOTER ======================== -->
     <%- include('./partials/footer') %>
     <script src="/javascripts/profile.js"></script>
+
+    <script>
+        console.log("userProfile.js connected!");
+        const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+        const apiUrlBase = "https://apis.datos.gob.ar/georef/api"
+
+
+        const getProvinces = async () => {
+            try {
+
+            const response = await fetch(`${apiUrlBase}/provincias`);
+            const result = await response.json();
+
+            result.provincias.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
+
+            return result.provincias
+
+            } catch (error) {
+            console.error
+            }
+
+        };
+
+        const getCities = async (provincia) => {
+            try {
+
+            const response = await fetch(`${apiUrlBase}/localidades?provincia=${provincia}&max=4000`);
+            const result = await response.json();
+
+            result.localidades.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
+
+            return result.localidades
+
+            } catch (error) {
+            console.error
+            }
+        }
+
+
+
+        window.addEventListener('load', async () => {
+
+
+            let provincias = await getProvinces();
+            provincias.forEach(provincia => {
+            $('province').innerHTML += `<option value="${provincia.nombre}"  ${provincia.nombre === $('province-input').value && 'selected'}>${provincia.nombre}</option>`
+            });
+
+            $('province').addEventListener('change', async ({target}) => {
+            $('city').innerHTML = `<option selected hidden>Cargando...</option>`;
+
+            let localidades = await getCities(target.value);
+            $('city').innerHTML = `<option selected hidden>Seleccione...</option>`;
+            localidades.forEach(localidad => {
+            $('city').innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`
+            });
+            })
+
+
+        })
+        </script>
 
 </body>
 </html>
