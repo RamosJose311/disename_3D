@@ -124,6 +124,19 @@
     position: relative;
 }
 
+.class-recommended{
+    display: none;
+}
+
+.class-recommended2{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    color: var(--colorMargendiv);
+    margin-top: 10px;
+}
+
+
 /* password visible */
 .password-visible{
     position: absolute;
