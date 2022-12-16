@@ -253,6 +253,7 @@ module.exports = {
 
 
 
+
     //Consulta para Borrar en Base de Datos - POR APLICAR
     delete: function (req, res) {
         db.Product.findByPk(req.params.id)

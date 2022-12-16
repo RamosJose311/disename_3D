@@ -24,6 +24,10 @@
  */
 
 
+
+
+
+
 .section--add{
     display: flex;
     flex-wrap: wrap;
@@ -39,6 +43,19 @@
     flex-direction: column;
     margin-bottom: 8%;
 }
+
+.caja--product-image{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.caja--product img{
+    width: 90%;
+}
+
+
 .caja--product--add{
     width: 100%;
     margin-top: 5%;
@@ -155,8 +172,6 @@
         border: 2px solid var(--colorBlanco);
         box-shadow: 5px 5px 8px var(--colorMargendiv);
         padding: 0px 2%;
-        /* border: 10px solid rgb(136, 16, 32); */
-        
     }
     .label--add{
         width: 100%;

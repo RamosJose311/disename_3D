@@ -22,3 +22,22 @@
     padding: 3px 10px;
 
 }
+
+.bt-confirm{
+    margin: 5px;
+    padding: 4px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    background: #066e1d;
+    color: #fff;
+}
+
+.bt-cancel{
+    margin: 5px;
+    padding: 4px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    background: #ffffff;
+    color: rgb(1, 97, 25);
+}
+

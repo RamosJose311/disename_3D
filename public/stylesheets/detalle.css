@@ -48,6 +48,7 @@
     border-radius: 15px;
     box-shadow: 2px 2px 2px 5px red, 2px 2px 3px 10px blue, 2px 2px 4px 15px green;
     margin: 10% 0 15% 0;
+    
 
 
 }
@@ -61,7 +62,7 @@
     text-align: center;
     color: var(--colorTitulo_1);
     width: 100%;
-    border: 1px solid red;
+    
 }
 
 .detalle__menu--titulo{
@@ -84,13 +85,17 @@
 
 /* botones */
 .detalle__menu--button{
-    padding-left: 2%;
-    transition-property: background-color, color;
-    transition-duration: 0.9s;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
+    padding: 10px;
+    margin: 0px auto;
+    gap: 7px;
+
 }
+
+ 
 .detalle__menu--button1{
     border-radius: 5px;
     padding: 4px;
@@ -102,14 +107,18 @@
     
 }
 .detalle__menu--button2{
+    display: block;
+    width: 100%;
     border-radius: 5px;
     padding: 4px 23px;
     background-color: var(--colorAzulOscuro);
     font-family: var(--letraGaramond);
     font-size: 15px;
+    text-align: center;
     color: white;
     text-transform: uppercase;
 }
+
 .form_delete{
     display: inline;
 }
@@ -182,9 +191,9 @@
     color: var(--colorBlanco);
 }
 .detalle__menu--comentario{
-    background-image: url('/images/fondoComentario.jpeg') ;
+   /* background-image: url('/images/fondoComentario.jpeg') ;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
     height: 100px;
     padding-top: 20px;
     width: 90%;
@@ -285,13 +294,13 @@
         flex-direction: column;
         padding-top: 3%;
     }
-    .detalle__menu--button{
+    /* .detalle__menu--button{
         display: inline;
         flex-direction: row;
         padding-left: 0;
         margin-top: 4%;
         
-    }
+    } */
     .detalle__menu--article--producto{
         display: flex;
         flex-wrap: wrap;
@@ -310,9 +319,9 @@
     }
     .detalle__menu--comentario{
         width: 32%;
-        background-image: url('/images/fondoComentario.jpeg');
+       /* background-image: url('/images/fondoComentario.jpeg');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover;*/
         padding-top: 20px;
         
     }
@@ -348,10 +357,10 @@
         font-size: 22px;
         
     }
-    .detalle__menu--button{
+    /* .detalle__menu--button{
         margin-left: 14%;
         margin-top: 8%;
-    }
+    } */
     .detalle__menu--p{
         font-size: 22px;
     }
