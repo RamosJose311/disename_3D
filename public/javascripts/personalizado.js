@@ -74,9 +74,30 @@ window.onload = function(){
                     console.log('%cYa no Esta vacio','color: green ', elementForm[i])
                     $getId("msg_personalizadoForm").innerHTML = ""
                     $getId('personalizadoForm').submit()
+                    Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Su pedido ha sido realizado con éxito',
+                showConfirmButton: false,
+                timer: 60000
+            })
                 }
+
             }
         })
 
 
+        /* $getId("personalizadoGuardar").addEventListener("click", function (e) {
+            e.preventDefault();
+        
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Su pedido ha sido realizado con éxito',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        
+        
+        }); */
 }

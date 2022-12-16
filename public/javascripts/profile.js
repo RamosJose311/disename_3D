@@ -82,7 +82,7 @@ $("address").addEventListener("blur",function(){
 
 
 /* -------------------------------error Ciudad----------------------------- */
-$("city").addEventListener("blur",function(){
+$("city-input").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
             $('errorCiudad').innerText = 'La ciudad es obligatoria'
@@ -96,7 +96,7 @@ $("city").addEventListener("blur",function(){
 
 
 /* -------------------------------error Provincia----------------------------- */
-$("province").addEventListener("blur",function(){
+$("province-input").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
             $('errorProvincia').innerText = 'La Provincia es obligatoria'
@@ -126,7 +126,7 @@ $("country").addEventListener("blur",function(){
 
 
 /* -------------------------------Sobre  mi----------------------------- */
-$("sobreMi").addEventListener("blur",function(){
+/* $("sobreMi").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
             $('errorSobreMi').innerText = 'nos interesa saber sobre usted'
@@ -140,7 +140,7 @@ $("sobreMi").addEventListener("blur",function(){
             $('errorSobreMi').innerText =null
             break;
     }
-})
+}) */
 
 
 
@@ -166,14 +166,20 @@ $("sobreMi").addEventListener("blur",function(){
         let error = false
             for (let i = 0; i < elements.length - 1; i++) {
                 if(!elements[i].value.trim() && i != 12){
-                    console.log("kljlklkjlk-------",elements[i])
                     error = true
                     $('errorFormPerfil').innerText = 'Algunos de los campos no es valido'
-                    console.log(elements[i],i)
+                    //console.log(elements[i],i)
                 }
             
         }
         if(!error){
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Cambio realizado con éxito',
+                showConfirmButton: false,
+                timer: 60000
+            })
             this.submit();
         }
     });
@@ -224,24 +230,3 @@ $("delete-button").addEventListener("click", function (e) {
 
 });
 
-/* const getProvinces = async () => {
-    try {
-
-        const response = await fetch(`${apiUrlBase}/provincias`);
-        const result = await response.json();
-
-        console.log(result.provincias)
-        
-    } catch (error) {
-        console.error
-    }
-
-}
-
-
-
-window.addEventListener('load', () => {
-
-    getProvinces()
-
-}) */
