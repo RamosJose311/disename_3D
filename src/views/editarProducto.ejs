@@ -13,7 +13,8 @@
             <form class="form__register-add" action="/admin/update/<%= product.id %>?_method=PUT"  method="POST" enctype="multipart/form-data" id="editProductForm">
 
                 <div class="caja--product-image">
-                        <img style="width: 100%" src="/images/imgProducts/<%= product.images[0].file %>" >
+                    <input hidden type="text" name="imageOldName" value="<%= product.images[0].file %>">
+                    <img  src="/images/imgProducts/<%= product.images[0].file %>" >
                 </div>
 
                 <div class="caja--product--add">
@@ -98,4 +99,5 @@
             </form>
         </section>
     </main>
+    <script src="/javascripts/editProduct.js"></script>
 </body>
