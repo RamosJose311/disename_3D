@@ -191,9 +191,9 @@
     color: var(--colorBlanco);
 }
 .detalle__menu--comentario{
-    background-image: url('/images/fondoComentario.jpeg') ;
+   /* background-image: url('/images/fondoComentario.jpeg') ;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
     height: 100px;
     padding-top: 20px;
     width: 90%;
@@ -319,9 +319,9 @@
     }
     .detalle__menu--comentario{
         width: 32%;
-        background-image: url('/images/fondoComentario.jpeg');
+       /* background-image: url('/images/fondoComentario.jpeg');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover;*/
         padding-top: 20px;
         
     }

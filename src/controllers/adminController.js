@@ -140,7 +140,7 @@ module.exports = {
                 }
             }
         } 
-
+        
         // proyecto de agregar mas de una imagen ... por ahora solo una.. carga una nueva imagen
         let arrayImages = [];
         if (req.files) {
@@ -156,7 +156,7 @@ module.exports = {
 
         if (Object.entries(errors).length === 0) {
             const {name, price, discount, heigth, time, categoryId, materialId,description,view,imagen} = req.body;
-                
+            console.log("--------------------ACA ESTA PASANDO ---------------------------------")
             db.Product.update(
                 {
                     ...req.body,
@@ -169,21 +169,27 @@ module.exports = {
                 }
             )
             .then (() => {
+                console.log("--------------------ACA ESTA PASANDO 1 ---------------------------------")
+
                 // Condicional que controla si se carga  una nueva imagen
                 if (arrayImages.length > 0) {
+                    console.log(req.body)
+                    console.log("--------------------ACA ESTA PASANDO 2---------------------------------")
+                    
                     db.Image.findOne({
                         where: {
                             file: req.body.imageOldName
                         }
                     })
                     .then( result => {
+                        console.log("--------------------ACA ESTA PASANDO 4 ---------------------------------")
 
                         console.log("--------------------dato viejo----------------------")
                         console.log(result)
                         console.log(result.id)
                         console.log(result.file)
                         console.log("----------------------------------------------------")
-
+                        //return res.send(result)
                         db.Image.destroy({
                             where: {
                                 id: result.id

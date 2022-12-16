@@ -112,8 +112,9 @@ window.onload = function(){
                     errorGral=true
                 } else{
                     errorGral=false
+                    $getId("msg_createProductForm").innerHTML = "Aun hay campos sin completar"
                 }
-                if (!elementForm[8].value) {
+                if (!errorGral && !elementForm[8].value) {
                     $getId("msg_img_createProductForm").innerHTML = "OOPS!!, No olvide la imagen del producto"
                     errorGral=true
                 } else {
@@ -129,7 +130,7 @@ window.onload = function(){
                         title: 'El producto se ha cargado satisfactoriamente !!',
                         showConfirmButton: false,
                         timer: 15000
-                    })
+                    })    
                 }                 
             })
             

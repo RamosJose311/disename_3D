@@ -10,44 +10,35 @@
         <section class="section--add">
             <h1 class="form__title--add">editar producto</h1>
 
-            <form class="form__register-add" action="/admin/update/<%= product.id %>?_method=PUT"  method="POST" enctype="multipart/form-data">
+            <form class="form__register-add" action="/admin/update/<%= product.id %>?_method=PUT"  method="POST" enctype="multipart/form-data" id="editProductForm">
 
-                <div style="width: 40%; display: flexbox;">
-                    <div style="width: 90%">
-                        <input type="text" name="imageOldName" value="<%= product.images[0].file %>">
-                        <p> <%= product.images[0].file %> </p>
+                <div class="caja--product-image">
                         <img style="width: 100%" src="/images/imgProducts/<%= product.images[0].file %>" >
-                    </div>
-                    <div class="label--add">
-                        <a class="imagen--product--add" href="">
-                            <label class="form__button--imagen" for="imagen">Seleccione una imagen</label>
-                        <input hidden class="form--input" type="file" id="imagen" name="imageProduct" accept="image/*" multiple value="<%= product.images[0].file %>">
-                        <small class="text-danger"><%= locals.errors && errors.imageProduct ? errors.imageProduct.msg : null %></small>
-                        </a>
-                    </div>
                 </div>
-
-
 
                 <div class="caja--product--add">
                     <label for="name" class="label--add">Nombre</label>
                     <input type="text" class="form-control" id="name" name="name" value="<%= locals.old && old.name ? old.name : product.name %>">
                     <small class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                    <small class="error" id="msg_name"></small>
                 </div> 
                 <div class="caja--product--add">
                     <label for="price" class="label--add">Precio</label>
                     <input type="number" class="form-control" id="price" name="price" value="<%= product.price %>">
                     <small class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+                    <small class="error" id="msg_price"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="discount" class="label--add">Descuento</label>
                     <input type="number" class="form-control" id="discount" name="discount" value="<%= product.discount %>" >
                     <small class="text-danger"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                    <small class="error" id="msg_discount"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="height" class="label--add">Altura</label>
                     <input type="number" class="form-control" id="height" name="height" placeholder="en centimetros" value="<%= product.height %>">
                     <small class="text-danger"><%= locals.errors && errors.height ? errors.height.msg : null %></small>
+                    <small class="error" id="msg_height"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="materialId" class="label--add">Material</label>
@@ -57,11 +48,13 @@
                         <% }) %>
                     </select>
                     <small class="text-danger"><%= locals.errors && errors.materialId? errors.materialId.msg : null %></small>
+                    <small class="error" id="msg_materialId"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="time" class="label--add">Tiempo</label>
                     <input type="number" class="form-control" id="time" name="time" placeholder="en minutos" value="<%= product.time %>">
                     <small class="text-danger"><%= locals.errors && errors.time ? errors.time.msg : null %></small>
+                    <small class="error" id="msg_time"></small>
                 </div>
                 <div class="caja--product--add">
                     <label for="categoryId" class="label--add">Categoría</label>
@@ -71,11 +64,22 @@
                         <% }) %>
                     </select>
                     <small class="text-danger"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small>
+                    <small class="error" id="msg_categoryId"></small>
                 </div>
+
                 <div class="caja--product--add">
                     <label for="description" class="label--add">Descripción</label>
                     <textarea class="detalle--textarea-add" name="description" id="description" cols="35" rows="3" ><%= product.description %> </textarea>
                     <small class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+                    <small class="error" id="msg_description"></small>
+                </div>
+
+                <div class="label--add">
+                    <a class="imagen--product--add" href="">
+                        <label class="form__button--imagen" for="imagen">Modifica o Agrega Imagen</label>
+                    <input hidden class="form--input" type="file" id="imagen" name="imageProduct" accept="image/*" multiple value="<%= product.images[0].file %>">
+                    <small class="text-danger"><%= locals.errors && errors.imageProduct ? errors.imageProduct.msg : null %></small>
+                    </a>
                 </div>
 
                 
@@ -85,7 +89,11 @@
 
                 <div class="caja--product--add boton--cancelar--guardar">
                     <a href="/products/detalle/<%= product.id %>" class="form__button form__button--cancel">Cancelar</a>
-                    <button class="form__button form__button--send" type="submit">Guardar</button>
+                    <button class="form__button form__button--send" type="submit" id="editar_Guardar">Guardar</button>
+                </div>
+                <div class="caja--product--add">
+                    <h6 class="errorForm" id="msg_editProductForm"></h6>
+                    <h6 class="errorForm" id="msg_img_editProductForm"></h6>
                 </div>
             </form>
         </section>
