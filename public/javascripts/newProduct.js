@@ -123,16 +123,21 @@ window.onload = function(){
 
                 }   
                 if(!errorGral){
-                    $getId('newProductForm').submit()
+                    
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
                         title: 'El producto se ha cargado satisfactoriamente !!',
                         showConfirmButton: false,
-                        timer: 15000
-                    })    
+                        timer: 1500
+                    }).then(()=>{
+                        $getId('newProductForm').submit()
+                    })
+                    }
+
+                        
                 }                 
-            })
+            )
             
 
 

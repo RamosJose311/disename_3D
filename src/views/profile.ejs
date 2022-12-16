@@ -12,6 +12,7 @@
     <main class="general_main">
         <h1 class="profile_titulo">PERFIL DE USUARIO</h2>
             <div class="contenedor_avatar">
+                
                 <img class="img-avatar" src="/images/imgUsers/<%= user.avatars[0].avatar %>" alt="">
             </div>
         <section class="profile_section">
@@ -97,13 +98,15 @@
                             <textarea name="description" id="sobreMi" cols="30" rows="10" value="<%= user.description %>"></textarea>
                             <span id="errorSobreMi" class="login_error"></span>
                         </div>
+
                         <div class="section--add_image">
                             <a class="imagen--avatar--add" href="">
-                                <label class="form__button--avatar" for="imagen">Seleccione imagen</label>
+                                <label class="form__button--avatar" for="imagenPerfil">Seleccione imagen</label>
                                 <input hidden class="form--input" type="file" id="imagenPerfil" name="avatar" accept="image/*">
                                 <span id="errorImgPerfil" class="login_error"></span>
                             </a>
                         </div>
+                    
                     </div>
                     
                 </div>
