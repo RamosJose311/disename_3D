@@ -6,6 +6,7 @@ window.onload = function(){
     console.log("estamos llegando")
 
     let errores = {}    
+    let errorGral = false;
     const elementForm = $getId('newProductForm').elements
  
     $getId('name').focus()
@@ -88,6 +89,7 @@ window.onload = function(){
     $getId('description').addEventListener('blur', function(){
         if($getId('description').value.length < 10){
             errores.description = "Debe Ingresar una descripción minima de 10 caracteres "
+            errorGral=true
         }else{
             errores.description = ""
          } 
@@ -102,17 +104,35 @@ window.onload = function(){
             console.log("estamos bien")
             console.log(elementForm)
             for (let i=0; i< elementForm.length-2; i++){
+
                 if (!elementForm[i].value){
                     console.log('%cEsta vacio','color: red ', elementForm[i])
                     console.log('%cFalta imagen','color: blue ', elementForm[i])
-                    //$getId("msg_personalizadoForm").innerHTML = "Aun hay campos sin completar"
-                } else if (!elementForm[8].value) {
-                    //$getId("msg_personalizadoForm").innerHTML = "Para finalizar su pedido, es importante que ingrese una imagen ilustrativa"
-                } else {
-                    console.log('%cYa no Esta vacio','color: green ', elementForm[i])
-                    //$getId("msg_personalizadoForm").innerHTML = ""
-                    //$getId('personalizadoForm').submit()
+                    $getId("msg_createProductForm").innerHTML = "Aun hay campos sin completar"
+                    errorGral=true
+                } else{
+                    errorGral=false
                 }
-            }
-        })
+                if (!elementForm[8].value) {
+                    $getId("msg_img_createProductForm").innerHTML = "OOPS!!, No olvide la imagen del producto"
+                    errorGral=true
+                } else {
+                    $getId("msg_img_createProductForm").innerHTML = ""
+                } 
+
+                }   
+                if(!errorGral){
+                    $getId('newProductForm').submit()
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'El producto se ha cargado satisfactoriamente !!',
+                        showConfirmButton: false,
+                        timer: 15000
+                    })
+                }                 
+            })
+            
+
+
     }

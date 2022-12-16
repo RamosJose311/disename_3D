@@ -59,22 +59,31 @@
 
 
                         </div>
-                        <p class="detalle__menu--descripcion--general">Descripcion general:</p>
+                            <p class="detalle__menu--descripcion--general">Descripcion general:</p>
                             <p class="detalle__menu--parrafo"><%= product.description %> </p>
                     </article>
-                    <div class="detalle__menu--button">
-                        <a class="detalle__menu--button1" <% if (locals.userLogin) { %> href="/products/productCart"
-                            <% }else{ %>
-                                href="/users/login" <% } %>>
-                                añadir al carrito</a>
-                                
+
+                    
+                            <% if (locals.userLogin && userLogin.rol === false) { %> 
+                                <div class="detalle__menu--button">
+                                    <a class="detalle__menu--button2" href="/products/productCart" > Añadir al Carrito </a>
+                                </div>
+                            <% }else if (!locals.userLogin){ %>
+                                <div class="detalle__menu--button">
+                                    <a class="detalle__menu--button2" href="/users/login" > Añadir al Carrito </a> 
+                                </div>
+                            <% } %>
+
                         <% if (locals.userLogin && userLogin.rol === true) { %>
-                            <a class="detalle__menu--button2" href="/admin/editarProducto/<%= product.id %>">EDITAR</a>
-                            <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST" class="form_delete">
-                                <button type="submit" class="detalle__menu--button2">ELIMINAR</button>
-                            </form>
+                            <div class="detalle__menu--button">            
+                                <a class="detalle__menu--button2" href="/admin/editarProducto/<%= product.id %>">EDITAR</a>
+                                <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST" class="form_delete" id="form_delete">
+                                    <button type="submit" class="detalle__menu--button2" id="product_Delete">ELIMINAR</button>
+                                </form>
+                            </div>
                         <% } %>
-                    </div>
+                    
+
                 </div>
              </article>
         </section >
@@ -111,6 +120,7 @@
 
 
     <script src="/javascripts/glider.js"></script>
+    <script src="/javascripts/productDelete.js"></script>
     <script>
         window.addEventListener('load', function () {
             new Glider(document.querySelector('.glider'), {
