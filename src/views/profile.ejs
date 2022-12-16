@@ -19,24 +19,24 @@
             <form class="profile_form" action="/users/update?_method=PUT" id="profileForm" method="POST"  enctype="multipart/form-data">
                 <div class="profile_form_group" >
                     <div class="profile_form_contenedor">
-                        <h3 for="firstName">Nombre</h3>
+                        <label for="firstName">Nombre</label>
                         <input  type="text" id="firstName" name="firstName" value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>">
                         <span class="login_error"> <%= locals.errors && errors.firstName ? errors.firstName.msg : null %></span>
                         <span id="errorNombre" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
-                        <h3 for="lastName">Apellido</h3>
+                        <label for="lastName">Apellido</label>
                         <input type="text" id="lastName" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>">
                         <span class="login_error"> <%= locals.errors && errors.lastName ? errors.lastName.msg : null  %></span>
                         <span id="errorApellido" class="login_error"></span>
                     </div>
                     <div class="profile_form_contenedor">
-                        <h3 for="email">Correo Electronico</h3>
+                        <label for="email">Correo Electronico</label>
                         <input type="text" id="email"  name="email" value="<%= user.email %>" readonly>
                     </div>
                     <div class="profile_form_contenedor">
-                        <h3 for="dateBirth">Fecha de Nacimiento</h3> <br>
-                        <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirth).format('YYYY-MM-DD') %>" required>
+                        <label for="dateBirth">Fecha de Nacimiento</label> <br>
+                        <input type="date" id="dateBirth" name="dateBirth" value="<%= moment(user.dateBirth).format('YYYY-MM-DD') %>">
                         <span id="errorNacimiento" class="login_error"></span>
                     </div>
                 </div>
@@ -56,34 +56,8 @@
                 </div>
 
                 <div class="profile_form_group">
+                    <h3> Domicilio</h3>
                     <div class="profile_form_contenedor">
-                        <h3> Domicilio</h3>
-
-                        <label for="address"> Direccion :</label>
-                        <input type="text" id="address" name="address" value="<%= user.address %> ">
-                        <span id="errorCalle" class="login_error"></span>
-                        <hr>
-
-                        <div class="section--add input">
-                            <h3 >Provincia</h3>
-                            
-                            <input hidden type="text" class="form-input" id="province-input" value="<%= user.province %>"><%= user.province %>
-                            
-                        <select name="province" id="province">
-                        </select>
-                        <span id="errorProvincia" class="login_error"></span>
-                        </div>
-
-                        <div class="section--add input">
-                            <h3>Ciudad</h3>
-                            <input hidden type="text" class="form-input" id="city-input" value="<%= user.city %>"><%= user.city %>
-                            
-                        <select name="city" id="city">
-
-                        </select>
-                        <span id="errorCiudad" class="login_error"></span>
-                        </div>
-
 
                         <div class="section--add input">
                             <h3>Pais</h3>
@@ -95,17 +69,40 @@
                             </select>
                             <span id="errorPais" class="login_error"></span>
                         </div>
+
+                        <div class="section--add input">
+                            <h3 >Provincia</h3>
+                            <input hidden type="text" class="form-input" id="province-input" value="<%= user.province %>"><%= user.province %>
+                            <select name="province" id="province"></select>
+                            <span id="errorProvincia" class="login_error"></span>
+                        </div>
+
+                        <div class="section--add input">
+                            <h3>Ciudad</h3>
+                            <input hidden type="text" class="form-input" id="city-input" value="<%= user.city %>"><%= user.city %>
+                            <select name="city" id="city"></select>
+                            <span id="errorCiudad" class="login_error"></span>
+                        </div>
+
+                        <div class="section--add input">
+                            <label for="address"> Calle :</label>
+                            <input type="text" id="address" name="address" value="<%= user.address %> ">
+                            <span id="errorCalle" class="login_error"></span>
+                        </div>
                     </div>
+
                     <div class="profile_form_contenedor">
-                        <h3>Acerca de mi</h3>
-                        <textarea name="description" id="sobreMi" cols="30" rows="10" value="<%= user.description %>"></textarea>
-                        <span id="errorSobreMi" class="login_error"></span>
-                        <div>
-                            <br>
-                            <br>
-                            <label class="form__button form__button--cancel" for="imagen">Seleccione imagen</label>
-                        <input hidden type="file" id="imagenPerfil" name="avatar" accept="image/*">
-                        <span id="errorImgPerfil" class="login_error"></span>
+                        <div class="section--add input" >
+                            <label>Acerca de mi</label>
+                            <textarea name="description" id="sobreMi" cols="30" rows="10" value="<%= user.description %>"></textarea>
+                            <span id="errorSobreMi" class="login_error"></span>
+                        </div>
+                        <div class="section--add_image">
+                            <a class="imagen--avatar--add" href="">
+                                <label class="form__button--avatar" for="imagen">Seleccione imagen</label>
+                                <input hidden class="form--input" type="file" id="imagenPerfil" name="avatar" accept="image/*">
+                                <span id="errorImgPerfil" class="login_error"></span>
+                            </a>
                         </div>
                     </div>
                     

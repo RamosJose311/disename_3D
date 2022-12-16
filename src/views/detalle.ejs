@@ -12,16 +12,15 @@
     <main class="general_main">
         <section class="detalle__menu--section--producto">
             <article class="detalle__menu--article--producto">
+                <!-- ============= MAQUETACION DE GLIDER ====================== -->
                 <div class="detalle__menu--image">
                     <div class="glider-contain">
                         <div class="glider caja--gliter">
                             <% for( let i = 0; i < product.images.length; i++ ) { %>
                                 <div>
                                     <img src="/images/imgProducts/<%= product.images[i].file %>" >
-                                </div>
-    |                            
+                                </div>                            
                             <% } %>
-
                         </div>
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
@@ -29,28 +28,28 @@
                     </div>
                 </div>
 
+                <!-- ============= MAQUETACION DE INFORMACION ====================== -->
                 <div class="detalle--menu--principal">
+
                     <h3 class="detalle__menu--titulo_1 detalle-h3"><%= product.name %></h3>
 
                     <div class="detalle__menu--caja1">
-                        <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.price %></span></h3>
-                        <h3 class="detalle__menu--titulo detalle-h3">descuento : <span class="detalle--span"><%= product.discount %></span>% OFF</h3>
-                        <h3 class="detalle__menu--titulo detalle-h3">total: $ <% if (product.descuento > 0) { %> 
-                                <span class="detalle--span"></span>
-                                <p class="detalle--span">
-                                    $<%= toThousand((product.precio - (product.precio * product.descuento / 100)).toFixed(0))%>
-                                </p>
-                             <% }else{ %>
-                            <b class="detalle--span">
-                                <%= product.price %>
-                            </b>
-                            <% } %>
-                            </h3>
+                        <h3 class="detalle__menu--titulo detalle-h3">
+                             <% if (product.discount > 0) { %> 
+                                        <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <%= product.price %></h3>
+                                        <h3 class="detalle__menu--titulo detalle-h3">descuento : <%= product.discount %> % OFF</h3>
+                                        <h3 class="detalle__menu--titulo detalle-h3">
+                                            Precio Amigo: $ <%= toThousand((product.price - (product.price * product.discount / 100)).toFixed(0))%>
+                                        </h3>
+                                     <% }else{ %>
+                                            <h3 class="detalle__menu--titulo detalle-h3">Precio: $ <span class="detalle--span"><%= product.price %></span></h3>
+                                    <% } %>
+                        </h3>
                     </div>       
                     <article class="detalle__menu--article--descripcion">
-                        <h4 class="detalle__menu--descripcion--general">*Descripcion</h4>
+                        <h4 class="detalle__menu--descripcion--general">   Descripcion</h4>
                         <div class="detalle__menu--p">
-                            <p>Altura:     <%= product.height %></p>
+                            <p>Altura:     <%= product.height %> (en centimetros) </p>
                             <p>Tiempo:     <%= product.time %>  (en minutos)</p>
                             <p>Categoría:     <%= product.categories.name %> </p>
                             <p>Material:   <%= product.materials.name %></p>

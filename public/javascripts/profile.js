@@ -95,7 +95,7 @@ $("city").addEventListener("blur",function(){
 })
 
 
-/* -------------------------------error Ciudad----------------------------- */
+/* -------------------------------error Provincia----------------------------- */
 $("province").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
@@ -143,9 +143,11 @@ $("sobreMi").addEventListener("blur",function(){
 })
 
 
- $("imagenPerfil").addEventListener('click', 
+
+
+ /* $("imagenPerfil").addEventListener('click', 
     function fileValidation(){
-        let filePath = imagenPerfil.value, 
+        let filePath = $("imagenPerfil").value, 
             allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i 
         if(!allowefExtensions.exec(filePath)){ 
             errorImgPerfil.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
@@ -155,7 +157,7 @@ $("sobreMi").addEventListener("blur",function(){
             }
         }
     );
-
+ */
 
     $("profileForm").addEventListener("submit", function (e) {
         e.preventDefault();
@@ -163,11 +165,12 @@ $("sobreMi").addEventListener("blur",function(){
         const elements = this.elements;
         let error = false
             for (let i = 0; i < elements.length - 1; i++) {
-            if(!elements[i].value.trim() && i != 12){
-            error = true
-                $('errorFormPerfil').innerText = 'Algunos de los campos no es valido'
-                console.log(elements[i],i)
-            }
+                if(!elements[i].value.trim() && i != 12){
+                    console.log("kljlklkjlk-------",elements[i])
+                    error = true
+                    $('errorFormPerfil').innerText = 'Algunos de los campos no es valido'
+                    console.log(elements[i],i)
+                }
             
         }
         if(!error){

@@ -1,9 +1,5 @@
 
 
-
-
-
-
 /* gliter */
 .caja--gliter{
     width: 90%;
@@ -15,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 .detalle__menu--article--producto{
     display: flex;
@@ -22,12 +19,17 @@
     justify-content: center;
     align-items: flex-start;
     width: 90%;
+    padding: 0px 15px;
+
+
 }
 
 .detalle__menu--image{
     display: flex;
     width: 100%;
-    margin-top: 8%;
+    margin: 10% 0 10% 0;
+
+
 }
 
 .detalle__menu--image img{
@@ -41,9 +43,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: 95%;
     background-color: rgba(255, 255, 255,.5);
-    margin-top: 8%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 5px red, 2px 2px 3px 10px blue, 2px 2px 4px 15px green;
+    margin: 10% 0 15% 0;
+
+
 }
 
 
@@ -51,11 +57,11 @@
     text-transform: uppercase;
     font-family: var(--letraGaramond);
     font-size: 16px;
-    padding-left: 4%;
-    margin: 2px;
+    margin-top: 20px;
     text-align: center;
     color: var(--colorTitulo_1);
     width: 100%;
+    border: 1px solid red;
 }
 
 .detalle__menu--titulo{
@@ -133,6 +139,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
+    margin-left: 10px;
 }
 .detalle__menu--parrafo{
     margin-top: 0;
