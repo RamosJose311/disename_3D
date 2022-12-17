@@ -96,6 +96,7 @@
         justify-content: space-around;
     }
     .footer h4{
+        margin-top: 5%;
         font-size: 20px;
     }
 
@@ -143,6 +144,11 @@
     }
     .servicios--menu--footer li{
         margin-right: 10%;
+    }
+
+    .footer h4{
+        margin-top: 2%;
+        font-size: 20px;
     }
 }
 
