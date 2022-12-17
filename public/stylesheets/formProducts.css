@@ -121,7 +121,7 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    padding: 10px;
+    padding: 7px 20px;
 }
 .form__button--cancel {
     background-color: grey;
@@ -138,7 +138,9 @@
 }
 
 .form__button--send:hover {
-    background-color: OrangeRed;
+    background-color: #a945c7;
+    box-shadow: 0 0 10px #a945c7, 0 0 30px #a945c7,0 0 100px #a945c7;
+    color: #fff;
     cursor: pointer;
 }
 .boton--cancelar--guardar{

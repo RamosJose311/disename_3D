@@ -95,11 +95,13 @@
                             <input type="text" id="address" name="address" value="<%= user.address %> ">
                             <span id="errorCalle" class="login_error"></span>
                         </div>
-                    
+                        <br>
+                        <br>
+                        <span id="errorFormPerfil" class="login_error"></span>
                     </div>
                     <div class="section--add_image">
                         <a class="imagen--avatar--add" href="">
-                            <label class="form__button--avatar" for="imagenPerfil">Seleccione imagen</label>
+                            <label class="bt-neon " for="imagenPerfil">Seleccione imagen</label>
                             <input hidden class="form--input" type="file" id="imagenPerfil" name="avatar" accept="image/*">
                             <span id="errorImgPerfil" class="login_error"></span>
                         </a>
@@ -107,16 +109,16 @@
                     
                 </div>
                 <div class="profile_form_button" >
-                    <a  class="form__button form__button--send" href="/">Salir</a>                    
-                    <button class="imagen--product--add" type="submit" id="update-button">Guardar Cambios</button>                    
+                    <a  class="form__button form__button--send " href="/">Salir</a>                    
+                    <button class="imagen--product--add bt-neon" type="submit" id="update-button">Guardar Cambios</button>                    
                 </div>
                 
-                <span id="errorFormPerfil" class="login_error"></span>
+                
                 
             </form>
             <div style="margin:1%">                        
                 <form action="/users/destroy?_method=DELETE"  method="POST" id="eliminar">
-                    <button class="form__button form__button--send" id="delete-button" type="submit" >Eliminar cuenta</button>
+                    <button class="form__button form__button--send" id="delete-button" type="submit" >Eliminar Cuenta</button>
                 </form>
             </div>
         </section>
