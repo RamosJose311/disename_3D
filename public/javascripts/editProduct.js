@@ -116,13 +116,15 @@ window.onload = function(){
     
                     }   
                     if(!errorGral){
-                        $getId('editProductForm').submit()
+                        
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'El producto se ha cargado satisfactoriamente !!',
+                            title: 'El producto se ha actualizado satisfactoriamente !!',
                             showConfirmButton: false,
-                            timer: 15000
+                            timer: 1500
+                        }).then(()=>{
+                            $getId('editProductForm').submit()
                         })    
                     }                 
                 })

@@ -6,7 +6,7 @@ function App() {
     <React.Fragment>
       	<div id="wrapper">
           <SideBar />
-          <ContentWrapper />
+          {/*<ContentWrapper />*/}
         </div>
     </React.Fragment>
   );

@@ -1,0 +1,9 @@
+.contentWrapperProduct{
+    width: 40%;
+    height: 70%;
+    border: 2px solid red;
+    border-radius: 30px;
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    background: rgba(255, 255, 255, .5);
+}

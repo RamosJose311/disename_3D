@@ -1,0 +1,142 @@
+.leftWarepper{
+    width: 10px;
+    height: 100%;
+    background-color: aqua;
+}
+
+.logo{
+    width: 60%;
+}
+
+.sidebar1{
+    position: fixed;
+    left: -250px;
+    width: 260px;
+    height: 100%;
+    background-color: #042331;
+    transition: all .5s ease;
+
+}
+
+.sidebar1 header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+
+}
+
+.sidebar1 ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+
+ul li:hover a{
+    padding-left: 50px;
+}
+
+.sidebar1 ul a i{
+    margin-right: 16px;
+}
+
+#check{
+    display: block;
+}
+
+label #btn, label #cancel, label #btn1{
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+
+label #btn{
+    left: 140px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    order: 3;
+    transition: all .5s ease;
+}
+
+label #btn1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: transparent;
+    left: 10px;
+    top: 2px;
+    transition: all .5s ease;
+    width: 130px;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 3px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+}
+
+#check:checked~.sidebar1{
+    left:  0px ;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #btn1{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#check:checked ~ label #cancel{
+    left: 210px;
+}
+
+#check:checked ~ .section{
+    width: 95%;
+    margin-left: 230px;
+}
+
+
+
+.section{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: url('../../../../../Imagenes/imgPersonalizado.webp') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    transition: all .5s ease;
+    margin: 0;
+
+}
+
+.general_Wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}

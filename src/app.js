@@ -11,6 +11,8 @@ const session = require ('express-session');
 const cookieCheck =require('./middlewares/cookieCheck');//cambie la desestructuracion
 
 
+const cors = require ('cors')
+
 const localsUserCheck = require('./middlewares/localUserCheck');
 
 var indexRouter = require('./routes/index');
@@ -27,6 +29,8 @@ var apiAuthRouter = require('./routes/api/apiAuth')
 
 var app = express();
 
+
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

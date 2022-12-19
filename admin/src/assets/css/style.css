@@ -1,0 +1,19 @@
+@import 'app.css';
+@import 'sidebar.css';
+@import 'topWarepper.css';
+@import 'contentWarapper.css';
+@import './footerWrapper.css';
+@import 'contentWrapperInfo.css';
+@import 'contentWrapperProduct.css';
+@import 'contentWrapperCategories.css';
+
+
+/*@import 'sidebarDesplegable.css';
+@import 'siderTitan.css';
+*/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}

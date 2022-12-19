@@ -12,9 +12,9 @@ module.exports = {
          //console.log(req.body)
          try {
             //----------------- PAGINADO----------------
-            let {limit = 10, page = 1} = req.query;
+            let {limit = 100, page = 1} = req.query;
 
-            limit = limit > 10 ? 10 : +limit;
+            limit = 100 //limit > 10 ? 10 : +limit;
 			page = +page;
 			let offset = +limit * (+page - 1);
             //-------------------------------------------

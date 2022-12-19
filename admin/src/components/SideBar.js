@@ -1,63 +1,84 @@
 import React from 'react';
-import image from '../assets/images/Dise-ame-3D-7-8-2022.png';
+
+import logoLetter from '../assets/images/Dise-ame-3D-7-8-2022.png';
+import logoImage from '../assets/images/print3d.png'
+
+import ContentWrapperInfo from './contentWrapper/WrapperInfo/ContentWrapperInfo';
+import CategoriesInDb from './contentWrapper/Categorias/CategoriesInDb';
+import WrapperInfoInDb from './contentWrapper/WrapperInfo/WrapperInfoInDb';
+
+
+
+
+import ContentWrapper from './ContentWrapper';
+
 
 function SideBar(){
     return(
         <React.Fragment>
-            {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+         
 
-                {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
-                    </div>
-                </a>
-
-                {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider my-0"/>
-
-                {/*<!-- Nav Item - Dashboard -->*/}
-                <li className="nav-item active">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DISENAME-3D</span></a>
-                </li>
-
-                {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider"/>
-
-                {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
-
-                {/*<!-- Nav Item - Pages -->*/}
-                <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </a>
-                </li>
-
-                {/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></a>
-                </li>
-
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
-                </li>
-
-                {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider d-none d-md-block"/>
+    
+        <input type="checkbox" id="check"/>
+        <label for="check">
+        <i className = "fas fa-bars" id="btn"></i>
+        <i className = "fas fa-times" id="cancel"></i>
+        <div id='btn1'> 
+                <img className='logo'  src={logoImage} alt=""></img> 
+                <img className='logo' src={logoLetter} alt=""></img> 
+        </div>
+        </label>
+        
+        <div className='sidebar1'>
+            <header> 
+                <img className='logo'  src={logoImage} alt=""></img> 
+                <img className='logo' src={logoLetter} alt=""></img> 
+            </header>
+            <ul>
+                <li><a href="/"><i className="fas fa-qrcode"></i>Opcion 1</a></li>
+                <li><a href="/"><i className="fas fa-link"></i>Opcion 2</a></li>
+                <li><a href="/"><i className="fas fa-stream"></i>Opcion 3</a></li>
+                <li><a href="/"><i className="fas fa-calendar-week"></i>Opcion 4</a></li>
+                <li><a href="/"><i className="far fa-question-circle"></i>Opcion 5</a></li>
+                <li><a href="/"><i className="far fa-envelope"></i>Opcion 6555</a></li>
             </ul>
-            {/*<!-- End of Sidebar -->*/}
+        </div>
+
+        <section className='section'>
             
-        </React.Fragment>
+            
+                <div className='topWarepper'>
+                    
+                </div>
+                <div className='contentWarepper'>
+                    <div className='contentWrapperInfo'>
+                        <WrapperInfoInDb/>
+                    </div>
+
+                    <div className='contentWrapperProduct'>
+                        
+                        
+                    </div>
+
+                    <div className='contentWrapperCategories'>
+                        
+                    <CategoriesInDb/>
+
+                    </div>
+
+
+                </div>
+                <div className='footerWarepper'>
+                    
+                </div>
+
+               {/*<ContentWrapper/>
+               <i className = "fas fa-bars" id="btn"></i>*/}
+
+        </section>
+
+
+    </React.Fragment>
     )
 }
-export default SideBar;
+export default SideBar; 
