@@ -28,8 +28,9 @@ window.onload = function(){
                 swalButtons.fire(
                     'Eliminado!',
                     'Su usuario se a eliminado',
+                ).then(()=>{
                     $getId("form_delete").submit()
-                )
+                })
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
             ) {

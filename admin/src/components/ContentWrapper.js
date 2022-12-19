@@ -7,9 +7,9 @@ function ContentWrapper(){
     return (
         <React.Fragment>
             {/*<!-- Content Wrapper -->*/}
-            <div id="content-wrapper" className="d-flex flex-column">
+            <div id="content-wrapper" className="mio">
                 {/*<!-- Main Content -->*/}
-                <div id="content">
+                <div id="content" className="mio">
                     <TopBar />
                     <ContentRowTop />
                     <ContentBeforeFooter />

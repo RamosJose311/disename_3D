@@ -196,8 +196,6 @@ module.exports = {
                             fs.unlinkSync(path.resolve(__dirname,"..","..","public","images","imgProducts",result.file))
                         }
 
-
-
                         console.log("--------------------dato nuevo----------------------")
                         console.log(arrayImages)
                         console.log(arrayImages[0])

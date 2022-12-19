@@ -10,7 +10,6 @@ function Footer(){
 					</div>
 				</div>
 			</footer>
-
         </React.Fragment>
     )
 }
