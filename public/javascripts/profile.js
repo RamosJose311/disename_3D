@@ -194,8 +194,8 @@ $("delete-button").addEventListener("click", function (e) {
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
+            confirmButton: 'bt-confirm',
+            cancelButton: 'bt-cancel'
         },
         buttonsStyling: false
     })

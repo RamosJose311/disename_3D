@@ -111,14 +111,19 @@
 .imagen--avatar--add{
     border-radius: 5px;
     padding: 4px 23px;
-    background-color: var(--colorAzulOscuro);
+    /* background-color: var(--colorAzulClaro); */
     font-family: var(--letraGaramond);
     text-decoration: none;
-    margin-top: 7%;
+    margin-top: 2%;
+    /* color: white; */
+    background-color: #a945c7;
+    box-shadow: 0 0 10px #a945c7, 0 0 30px #a945c7,0 0 100px #a945c7;
+    color: #fff;
 }
 
 .form__button--avatar{
-   color: white
+    color: white;
+   /* background-color: white; */
     
 }
 
@@ -169,7 +174,7 @@
     .genero_hobbies{
         margin-left: 15%;
         margin-right: 15%;
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
 
 }
