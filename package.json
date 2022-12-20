@@ -4,8 +4,11 @@
   "private": true,
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon ./src/bin/www --ignore /src/data/*.json",
-    "start": "node src/app.js"
+    "start": "nodemon ./src/bin/www --ignore /src/data/*.json",
+    "server": "nodemon ./src/bin/www",
+    "client:start": "cd admin & npm run start",
+    "client:build": "cd admin & npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client:start\""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -28,5 +31,8 @@
     "nodemon": "^2.0.20",
     "sequelize": "^6.27.0",
     "sequelize-cli": "^6.5.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }

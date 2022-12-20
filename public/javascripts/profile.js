@@ -55,7 +55,7 @@ $("lastName").addEventListener("blur",function(){
 
 
 /* -------------------------------error fecha de nacimiento----------------------------- */
-$("dateBirth").addEventListener("blur",function(){
+/* $("dateBirth").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
             $('errorNacimiento').innerText = 'La fecha de nacimiento es obligatoria'
@@ -65,10 +65,10 @@ $("dateBirth").addEventListener("blur",function(){
             $('errorNacimiento').innerText =null
             break;
     }
-})
+}) */
 
 /* -------------------------------error calle----------------------------- */
-$("address").addEventListener("blur",function(){
+/* $("address").addEventListener("blur",function(){
     switch (true) {
         case !this.value.trim():
             $('errorCalle').innerText = 'su direccion es obligatoria'
@@ -78,7 +78,7 @@ $("address").addEventListener("blur",function(){
             $('errorCalle').innerText =null
             break;
     }
-})
+}) */
 
 
 /* -------------------------------error Ciudad----------------------------- */

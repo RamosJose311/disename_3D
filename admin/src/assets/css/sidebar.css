@@ -124,7 +124,7 @@ label #cancel{
     justify-content: start;
     flex-direction: row;
     flex-wrap: wrap;
-    background: url('../../../../../Imagenes/imgPersonalizado.webp') no-repeat;
+    /* background: url('../../../../../Imagenes/imgPersonalizado.webp') no-repeat; */
     background-position: center;
     background-size: cover;
     height: 100vh;
