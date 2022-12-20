@@ -27,7 +27,7 @@ window.onload = function(){
             if (result.isConfirmed) {
                 swalButtons.fire(
                     'Eliminado!',
-                    'Su usuario se a eliminado',
+                    'El producto se a eliminado',
                 ).then(()=>{
                     $getId("form_delete").submit()
                 })
