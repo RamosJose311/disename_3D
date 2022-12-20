@@ -66,7 +66,72 @@
    {
       "file": "juegos_portacartas.jpg",
       "productsId": 17
+   },
+   {
+      "file": "Mate-Forma-Ambulancia.jpg",
+      "productsId": 1
+   },
+   {
+      "file": "funko-loky-2.jpg",
+      "productsId": 13
+   },
+   {
+      "file": "funko-loky-3.jpg",
+      "productsId": 13
+   },
+   {
+      "file": "img-picolo-2.jpg",
+      "productsId": 2
+   },
+   {
+      "file": "img-picolo-3.jpg",
+      "productsId": 2
+   },
+   {
+      "file": "llavero-nombre-2.jpg",
+      "productsId": 3
+   },
+   {
+      "file": "porta-celular-gato-2.jpg",
+      "productsId": 5
+   },
+   {
+      "file": "img-esc-cap-america-2.webp",
+      "productsId": 6
+   },
+   {
+      "file": "img-esc-cap-america-3.webp",
+      "productsId": 6
+   },
+   {
+      "file": "img-funko-gato-2.jpg",
+      "productsId": 8
+   },
+   {
+      "file": "img-funko-gato-3.jpg",
+      "productsId": 8
+   },
+   {
+      "file": "img-llavero-figuras-2.jpg",
+      "productsId": 10
+   },
+   {
+      "file": "img-mate-chuki-2.jpg",
+      "productsId": 9
+   },
+   {
+      "file": "img-mate-chuki.jpg",
+      "productsId": 9
+   },
+   {
+      "file": "img-tateti-2.png",
+      "productsId": 7
+   },
+   {
+      "file": "img-tateti-3.png",
+      "productsId": 7
    }
+   
 
    
 ]
