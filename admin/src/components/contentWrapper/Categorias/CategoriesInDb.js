@@ -6,36 +6,7 @@ import WarapperCategories from './WarapperCategories';
 
 function CategoriesInDb() {
 
-
-    const [categories, setCategories] = useState({
-        data:[]
-    })
-
-
-    useEffect( () =>  {
-        let cat = []
-        let aux = []
-        {
-            products.data.map((elem,index)=>{
-                console.log("vamos que sale",cat)
-                if(!cat.includes(elem.categories.name)){
-                    cat.push(elem.categories.name)
-                    aux.push(elem.categories)
-                }
-                
-            })
-
-
-        setCategories({
-            ...categories,
-            data : [...aux]
-        })
-        }
-        
-    },[])
-
-
-    const [products, setproducts] = useState({
+      const [products, setproducts] = useState({
         data:[]
     })
 
@@ -57,23 +28,50 @@ function CategoriesInDb() {
                         })
                         console.log("esto estoy viendo",products)
 
+                        
                     }
                   }
-                  
+
             }
     
         ApiCall ("http://localhost:4000/api/products/")
 
     }, [])
 
+    const [categories, setCategories] = useState({
+        data:[]
+    })
 
 
+    useEffect( () =>  {
+        let cat = []
+        let aux = []
+        {
+            products.data.map((elem,index)=>{
+                console.log("vamos que sale",cat)
+                if(!cat.includes(elem.categories.name)){
+                    cat.push(elem.categories.name)
+                    aux.push(elem.categories)
+                }
+                
+            })
 
-    
+        setCategories({
+            ...categories,
+            data : [...aux]
+        })
+        }
+        
+    },[products])
+
+   
+
     
   return (
     <React.Fragment>
+
         {categories.data.length === 0 && <p>Cargando....</p>}
+
         {
            categories.data.map((elem,index)=>{
             console.log("que mostras: ",elem);

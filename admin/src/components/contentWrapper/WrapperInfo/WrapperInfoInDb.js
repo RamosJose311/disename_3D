@@ -67,7 +67,7 @@ function WrapperInfoInDb() {
         ApiCall ("http://localhost:4000/api/users/")
     }, [])
 
-    
+     
 
     let Users ={
         titulo: "Usuarios en Base de Datos",
@@ -86,7 +86,7 @@ function WrapperInfoInDb() {
     let Categories ={
         titulo: "Categorias Activas en Base de Datos",
         color: "info",
-        cifra : products.Total.length,
+        cifra : 8,
         icono : "fa-solid fa-list"
     }
     
