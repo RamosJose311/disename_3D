@@ -3,25 +3,23 @@ import React from 'react'
 function ContentWrapperInfo(props) {
   return (
     <React.Fragment>
-
-        <div className={`card border-left-primary shadow h-100 py-2`}>
+        <div className={`contentInfo border-bottom-${props.color} border-left-${props.color}`} style={{ boxShadow: `3px 3px 10px white`}}>
+        <div className={` informacion `}>
             <div className="card-body">
-                <div className="row no-gutters align-items-center">
-                    <div className="col mr-2">
-                        <div className={`text-xs font-weight-bold text-primary text-uppercase mb-1`}>{props.name}</div>
+                <div className="row no-gutters align-items-center" >
+                    <div className=" col mr-2">
+                        <div className={`datos  text-${props.color} text-uppercase mb-1`}>{props.titulo}</div>
                         <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            {props.count}
+                            {props.cifra}
                         </div>
                     </div>
                     <div className="col-auto">
-                        <i className={`fas fa-user fa-2x text-gray-300`}></i>
+                        <i className={`${props.icono} fa-3x text-${props.color}`}></i>
                     </div>
                 </div>
             </div>
         </div>
-
-
-  
+        </div>
 
     </React.Fragment>
   )

@@ -10,31 +10,31 @@ function WrapperInfoInDb() {
     })
 
     useEffect( () =>  {
-        async function ApiCall(url) {
-            let respuesta
-            respuesta = await fetch(url)
-                        .then ((response) => response.json())
-                        .then((respuesta)=>{
-                            console.log(respuesta.data.count)
-                          {
-                            if(!respuesta){
-                                setproducts({
-                                    ...products,
-                                    Total: respuesta.data
-                                })
-                            } else {
-                                setproducts({
-                                    ...products,
-                                    Total: respuesta.data
-                                })
-                                console.log(products.data)
-                            }
-                          }
-                        })
-                        .catch(error => console.log(error))
+        const ApiCall = async (url) => {
+            const resp = await fetch(url)
+            const data = await resp.json()
+            console.log("Lo podre ver",data.data.productos)
+            {
+                if(data.data.productos.length === 0){
+                    setproducts({
+                        ...products,
+                        Total: data.data.productos
+                    })
+                } else {
+                    setproducts({
+                        ...products,
+                        Total: data.data.productos
+                    })
+                    console.log("esto estoy viendo aaa",products)
+
+
+
+                }
+              }
+
         }
-    
-        ApiCall ("http://localhost:4000/api/products/")
+
+    ApiCall ("http://localhost:4000/api/products/")
 
     }, [])
 
@@ -44,49 +44,68 @@ function WrapperInfoInDb() {
     })
 
     useEffect( () =>  {
-        async function ApiCall(url) {
-            let respuesta
-            respuesta = await fetch(url)
-                        .then ((response) => response.json())
-                        .then((respuesta)=>{
-                            console.log("usuarios: ",respuesta.data)
-                          {
-                            if(!respuesta){
-                                setproducts({
+        const ApiCall = async (url) => {
+            const response = await fetch(url)
+            const respuesta = await response.json()
+                            console.log("usuarios AAA: ",respuesta.data.Users.length)
+                            console.log("usuarios BBB: ",respuesta.data)
+                            {
+                            if(respuesta.data.Users.length === 0){
+                                setUsers({
                                     ...users,
-                                    Total: respuesta
+                                    Total: respuesta.data
                                 })
                             } else {
-                                setproducts({
+                                setUsers({
                                     ...users,
-                                    Total: respuesta
+                                    Total: respuesta.data
                                 })
                                 console.log(users.Total)
                             }
                           }
-                        })
-
-                        .catch(error => console.log(error))
         }
-    
         ApiCall ("http://localhost:4000/api/users/")
-
     }, [])
 
+    
+
+    let Users ={
+        titulo: "Usuarios en Base de Datos",
+        color: "primary",
+        cifra : users.Total.Total_User,
+        icono : "fa-sharp fa-solid fa-users"
+    }
+    
+    let Products ={
+        titulo: "Productos en Base de Datos",
+        color: "success",
+        cifra : products.Total.length,
+        icono : "fa-solid fa-cubes"
+    }
+    
+    let Categories ={
+        titulo: "Categorias Activas en Base de Datos",
+        color: "info",
+        cifra : products.Total.length,
+        icono : "fa-solid fa-list"
+    }
+    
+    let CardsList = [Users,Products,Categories]
 
 
 
   return (
     <React.Fragment>
-        <div className='sipi'>
-                {console.log("sera usuario", users)}
-            <ContentWrapperInfo {...products.Total.Total_User} />
-            <ContentWrapperInfo count = {users.Total.Total_user} />
-            <ContentWrapperInfo {...products.Total} />
-            
+        
 
+        {
+       CardsList.map( (card,index) => {
+        return <ContentWrapperInfo key={index} {...card}/>
+        }
+        )
+      }
 
-        </div>
+        
    </React.Fragment>
   )
 }

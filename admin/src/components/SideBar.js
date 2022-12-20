@@ -6,6 +6,7 @@ import logoImage from '../assets/images/print3d.png'
 import ContentWrapperInfo from './contentWrapper/WrapperInfo/ContentWrapperInfo';
 import CategoriesInDb from './contentWrapper/Categorias/CategoriesInDb';
 import WrapperInfoInDb from './contentWrapper/WrapperInfo/WrapperInfoInDb';
+import WrapperProdustInDb from './contentWrapper/Products/WrapperProdustInDb';
 
 
 
@@ -35,12 +36,11 @@ function SideBar(){
                 <img className='logo' src={logoLetter} alt=""></img> 
             </header>
             <ul>
-                <li><a href="/"><i className="fas fa-qrcode"></i>Opcion 1</a></li>
-                <li><a href="/"><i className="fas fa-link"></i>Opcion 2</a></li>
-                <li><a href="/"><i className="fas fa-stream"></i>Opcion 3</a></li>
-                <li><a href="/"><i className="fas fa-calendar-week"></i>Opcion 4</a></li>
-                <li><a href="/"><i className="far fa-question-circle"></i>Opcion 5</a></li>
-                <li><a href="/"><i className="far fa-envelope"></i>Opcion 6555</a></li>
+                <li><a href="/"><i className="fa fa-tachometer fa-lg"></i>Dashboard</a></li>
+                <li><a href="http://localhost:4000"><i className="fa fa-home"></i>Home</a></li>
+                <li><a href="/"><i className="fa fa-plus-circle"></i>Crear Producto</a></li>
+                <li><a href="/"><i className="far fa-address-book"></i>Pedidos</a></li>
+
             </ul>
         </div>
 
@@ -56,7 +56,7 @@ function SideBar(){
                     </div>
 
                     <div className='contentWrapperProduct'>
-                        
+                        <WrapperProdustInDb/>
                         
                     </div>
 

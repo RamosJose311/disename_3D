@@ -1,9 +1,37 @@
 .contentWrapperProduct{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
     width: 40%;
     height: 70%;
-    border: 2px solid red;
     border-radius: 30px;
+}
+
+
+
+.contenido{
+
+    width: 98%;
+    height: 98%;
+
+}
+.contenido1{
+
+    width: 98%;
+    height: 98%;
+
+    
+}
+.contenido2{
+
+  
+    width: 100%;
+    height: 98%;
+    background: rgb(164, 211, 155);
+    border-radius: 0px 0px 30px 30px;
     box-shadow: 2px 2px 8px rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
-    background: rgba(255, 255, 255, .5);
+    
+
+    
 }
