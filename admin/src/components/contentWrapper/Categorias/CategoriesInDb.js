@@ -10,32 +10,39 @@ function CategoriesInDb() {
     })
 
     useEffect( () =>  {
-        async function ApiCall(url) {
-            let respuesta
-            respuesta = await fetch(url)
-                        .then ((response) => response.json())
-                        .then((respuesta)=>{
-                          {
-                            if(!respuesta){
-                                setproducts({
-                                    ...products,
-                                    data: respuesta.data.productos
-                                })
-                            } else {
-                                setproducts({
-                                    ...products,
-                                    data: respuesta.data.productos
-                                })
-                                console.log(products)
-                            }
-                          }
+       const ApiCall = async (url) => {
+                
+                const resp = await fetch(url)
+                const data = await resp.json()
+                console.log("Lo podre ver",data.data.productos)
+                {
+                    if(data.data.productos.length == 0){
+                        setproducts({
+                            ...products,
+                            data: data.data.productos
                         })
-                        .catch(error => console.log(error))
-        }
+                    } else {
+                        setproducts({
+                            ...products,
+                            data: data.data.productos
+                        })
+                        console.log("esto estoy viendo",products)
+
+                    }
+                  }
+
+            }
     
         ApiCall ("http://localhost:4000/api/products/")
 
     }, [])
+
+
+    
+                  
+
+
+
 
 
 
