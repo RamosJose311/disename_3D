@@ -17,6 +17,7 @@ router
     .get('/detalle/:id',editProductsValidator,detalle)// agrego id del producto
     
     .get('/productCart',productSessionCheck, productCart)
+    
     .get('/disponible',modelDisponible)
     .get('/imprimir',imprimir)
     .get('/search',search)

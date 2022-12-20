@@ -30,7 +30,7 @@ module.exports = {
                     rol : rol,
                     //avatar: user.avatar
                 };
-            req.body.remember && res.cookie('disename3d',req.session.userLogin, {maxAge : 1000 * 60});
+            req.body.remember && res.cookie('disename3d',req.session.userLogin, {maxAge : 10000 * 60});
     
             return res.redirect('/')
             })

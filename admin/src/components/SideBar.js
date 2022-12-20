@@ -7,6 +7,7 @@ import ContentWrapperInfo from './contentWrapper/WrapperInfo/ContentWrapperInfo'
 import CategoriesInDb from './contentWrapper/Categorias/CategoriesInDb';
 import WrapperInfoInDb from './contentWrapper/WrapperInfo/WrapperInfoInDb';
 import WrapperProdustInDb from './contentWrapper/Products/WrapperProdustInDb';
+import Footer from './Footer';
 
 
 
@@ -38,8 +39,8 @@ function SideBar(){
             <ul>
                 <li><a href="/"><i className="fa fa-tachometer fa-lg"></i>Dashboard</a></li>
                 <li><a href="http://localhost:4000"><i className="fa fa-home"></i>Home</a></li>
-                <li><a href="/"><i className="fa fa-plus-circle"></i>Crear Producto</a></li>
-                <li><a href="/"><i className="far fa-address-book"></i>Pedidos</a></li>
+                <li><a href="http://localhost:4000/admin/crearProducto"><i className="fa fa-plus-circle"></i>Crear Producto</a></li>
+                <li><a href="http://localhost:4000/products/reqPersonal"><i className="far fa-address-book"></i>Pedidos</a></li>
 
             </ul>
         </div>
@@ -69,7 +70,7 @@ function SideBar(){
 
                 </div>
                 <div className='footerWarepper'>
-                    
+                    <Footer/>
                 </div>
 
                {/*<ContentWrapper/>

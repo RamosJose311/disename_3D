@@ -2,14 +2,10 @@ import React from 'react';
 
 function Footer(){
     return (
-        <React.Fragment>
-			<footer className="sticky-footer bg-white">
-				<div className="container my-auto">
-					<div className="copyright text-center my-auto">
-						<span>Copyright &copy; DISENAME-3D 2022</span>
+        <React.Fragment>	
+					<div className="copyright text-center text-white " >
+						Copyright &copy; DISENAME-3D 2022
 					</div>
-				</div>
-			</footer>
         </React.Fragment>
     )
 }

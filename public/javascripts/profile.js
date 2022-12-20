@@ -165,7 +165,7 @@ $("country").addEventListener("blur",function(){
         const elements = this.elements;
         let error = false
             for (let i = 0; i < elements.length - 1; i++) {
-                if(!elements[i].value.trim() && i != 12 && i!=10 && i!=11){
+                if(!elements[i].value.trim() && i != 12 && i!=10 && i!=11 && i!=8 && i!=13){
                     error = true
                     $('errorFormPerfil').innerText = 'Algunos de los campos no es valido'
                     console.log(elements[i],i)

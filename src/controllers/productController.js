@@ -9,9 +9,10 @@ const path = require ('path');
 module.exports = {
     // HAY QUE TRABAJAR EN LA VISTA DE PRODUCTCART
     productCart: (req, res) => {
-        db.carts.findAll()
+/*         db.carts.findAll()
             .then(carts => res.render('productCart', {carts}))
-            .catch(error => console.log(error))
+            .catch(error => console.log(error)) */
+            res.render('productCart')
     },
 
     // VISTA QUE MUESTRA LOS PRODUCTOS DISPONIBLES EN MODELOS DISPONIBLES -- OK
