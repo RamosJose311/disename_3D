@@ -61,9 +61,9 @@ function CategoriesInDb() {
         })
         }
         
-    },[])
+    },[products])
 
-   
+    
 const aux1 = categories.data.length
     
   return (
