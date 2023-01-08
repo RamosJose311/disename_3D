@@ -8,8 +8,8 @@ function ContentWrapperInfo(props) {
             <div className="card-body">
                 <div className="row no-gutters align-items-center" >
                     <div className=" col mr-2">
-                        <div className={`datos  text-${props.color} text-uppercase mb-1`}>{props.titulo}</div>
-                        <div className="h5 mb-0 font-weight-bold text-gray-800">
+                        <div className={`datos  text-${props.fontColor} text-uppercase mb-1`}>{props.titulo}</div>
+                        <div className="h5 mb-0 font-weight-bold text-danger">
                             {props.cifra}
                         </div>
                     </div>

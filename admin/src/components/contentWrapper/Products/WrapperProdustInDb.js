@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import WrapperProduct from './WrapperProduct';
 
-
 function WrapperProdustInDb() {
     const [products, setproducts] = useState({
         data:[]
@@ -31,9 +30,7 @@ function WrapperProdustInDb() {
             }
     
         ApiCall ("http://localhost:4000/api/products/")
-
     }, [])
-
     
      return (
     <React.Fragment>

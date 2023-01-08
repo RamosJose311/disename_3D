@@ -14,7 +14,6 @@ function CategoriesInDb() {
        const ApiCall = async (url) => {
                 const resp = await fetch(url)
                 const data = await resp.json()
-                console.log("Lo podre ver",data.data.productos)
                 {
                     if(data.data.productos.length === 0){
                         setproducts({
@@ -26,12 +25,8 @@ function CategoriesInDb() {
                             ...products,
                             data: data.data.productos
                         })
-                        console.log("esto estoy viendo",products)
-
-                        
                     }
                   }
-
             }
     
         ApiCall ("http://localhost:4000/api/products/")
@@ -42,13 +37,11 @@ function CategoriesInDb() {
         data:[]
     })
 
-
     useEffect( () =>  {
         let cat = []
         let aux = []
         {
             products.data.map((elem,index)=>{
-                console.log("vamos que sale",cat)
                 if(!cat.includes(elem.categories.name)){
                     cat.push(elem.categories.name)
                     aux.push(elem.categories)
