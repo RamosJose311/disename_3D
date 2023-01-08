@@ -13,7 +13,7 @@ function WrapperInfoInDb() {
         const ApiCall = async (url) => {
             const resp = await fetch(url)
             const data = await resp.json()
-            console.log("Lo podre ver",data.data.productos)
+            console.log("Info Lo podre ver",data.data.productos)
             {
                 if(data.data.productos.length === 0){
                     setproducts({
@@ -25,13 +25,12 @@ function WrapperInfoInDb() {
                         ...products,
                         Total: data.data.productos
                     })
-                    console.log("esto estoy viendo aaa",products)
+                    
 
 
 
                 }
               }
-
         }
 
     ApiCall ("http://localhost:4000/api/products/")
@@ -47,8 +46,8 @@ function WrapperInfoInDb() {
         const ApiCall = async (url) => {
             const response = await fetch(url)
             const respuesta = await response.json()
-                            console.log("usuarios AAA: ",respuesta.data.Users.length)
-                            console.log("usuarios BBB: ",respuesta.data)
+                            console.log("Info usuarios AAA: ",respuesta.data.Users.length)
+                            console.log("Info usuarios BBB: ",respuesta.data)
                             {
                             if(respuesta.data.Users.length === 0){
                                 setUsers({
@@ -67,45 +66,66 @@ function WrapperInfoInDb() {
         ApiCall ("http://localhost:4000/api/users/")
     }, [])
 
-    
+
+    const [categories, setCategories] = useState({
+        data:[]
+    })
+
+    useEffect( () =>  {
+        let cat = []
+        let aux = []
+        {
+            products.Total.map((elem,index)=>{
+                
+                if(!cat.includes(elem.categories.name)){
+                    cat.push(elem.categories.name)
+                    aux.push(elem.categories)
+                }
+                
+            })
+
+        setCategories({
+            ...categories,
+            data : [...aux]
+        })
+        }
+       
+    },[products])
+
 
     let Users ={
         titulo: "Usuarios en Base de Datos",
-        color: "primary",
+        fontColor: "primary",
+        color: "secondary",
         cifra : users.Total.Total_User,
         icono : "fa-sharp fa-solid fa-users"
     }
     
     let Products ={
         titulo: "Productos en Base de Datos",
-        color: "success",
+        fontColor: "primary",
+        color: "secondary",
         cifra : products.Total.length,
         icono : "fa-solid fa-cubes"
     }
     
     let Categories ={
         titulo: "Categorias Activas en Base de Datos",
-        color: "info",
-        cifra : products.Total.length,
+        fontColor: "primary",
+        color: "secondary",
+        cifra : categories.data.length,
         icono : "fa-solid fa-list"
     }
-    
+   
     let CardsList = [Users,Products,Categories]
-
-
 
   return (
     <React.Fragment>
-        
-
         {
-       CardsList.map( (card,index) => {
-        return <ContentWrapperInfo key={index} {...card}/>
-        }
+            CardsList.map( (card,index) =>  <ContentWrapperInfo key={index} {...card}/>
+        
         )
       }
-
-        
    </React.Fragment>
   )
 }

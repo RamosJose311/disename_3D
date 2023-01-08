@@ -51,24 +51,29 @@ function SideBar(){
                 <div className='topWarepper'>
                     
                 </div>
+
                 <div className='contentWarepper'>
+
+                <div class="wrapper backgroundWrapper">
+                    <div id="stars"></div>
+                    <div id="stars2"></div>
+                    <div id="stars3"></div>
+                </div>
+
                     <div className='contentWrapperInfo'>
                         <WrapperInfoInDb/>
                     </div>
 
                     <div className='contentWrapperProduct'>
                         <WrapperProdustInDb/>
-                        
                     </div>
 
                     <div className='contentWrapperCategories'>
-                        
-                    <CategoriesInDb/>
-
+                        <CategoriesInDb/>
                     </div>
 
-
                 </div>
+
                 <div className='footerWarepper'>
                     <Footer/>
                 </div>
